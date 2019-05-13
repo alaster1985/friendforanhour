@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCityTable extends Migration
+class CreateServiceTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateCityTable extends Migration
      */
     public function up()
     {
-        Schema::create('city', function (Blueprint $table) {
+        Schema::create('service_types', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('service_type_name', 50);
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateCityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('city');
+        Schema::dropIfExists('service_types');
     }
 }

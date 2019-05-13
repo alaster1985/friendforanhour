@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserServiceListTable extends Migration
+class CreateBalancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateUserServiceListTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_service_list', function (Blueprint $table) {
+        Schema::create('balances', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->decimal('balance', 10, 2)->unsigned()->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateUserServiceListTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_service_list');
+        Schema::dropIfExists('balance');
     }
 }
