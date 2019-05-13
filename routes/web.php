@@ -13,3 +13,7 @@
 
 Route::get('/', function () {return view('welcome');});
 Route::get('lara2', function () {return view('welcome2');});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
