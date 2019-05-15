@@ -15,7 +15,7 @@ class CreateBalancesTable extends Migration
     {
         Schema::create('balances', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('profile_id');
             $table->decimal('balance', 10, 2)->unsigned()->default(0);
             $table->timestamps();
         });

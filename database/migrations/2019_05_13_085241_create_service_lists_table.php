@@ -17,7 +17,7 @@ class CreateServiceListsTable extends Migration
             $table->bigIncrements('id');
             $table->string('service_name', 14);
             $table->string('service_description', 100);
-            $table->integer('price');
+            $table->integer('price')->unsigned();
             $table->bigInteger('service_type_id')->unsigned();
             $table->timestamps();
         });

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserServiceListsTable extends Migration
+class CreateProfileAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateUserServiceListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_service_lists', function (Blueprint $table) {
+        Schema::create('profile_addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('service_list_id')->unsigned();
-            $table->bigInteger('user_id')->unsigned();
-            $table->boolean('main_service_mark')->default(false);
+            $table->string('address', 100);
+            $table->float('latitude');
+            $table->float('longitude');
+            $table->bigInteger('city_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateUserServiceListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_service_lists');
+        Schema::dropIfExists('profile_addresses');
     }
 }

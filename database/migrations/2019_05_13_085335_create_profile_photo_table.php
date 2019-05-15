@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserAddressesTable extends Migration
+class CreateProfilePhotoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateUserAddressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_addresses', function (Blueprint $table) {
+        Schema::create('profile_photo', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('address', 100);
-            $table->float('latitude');
-            $table->float('longitude');
-            $table->bigInteger('city_id')->unsigned();
+            $table->string('photo_path', 100);
+            $table->bigInteger('profile_id');
+            $table->boolean('main_photo_marker')->default(false);
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateUserAddressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_addresses');
+        Schema::dropIfExists('profile_photo');
     }
 }

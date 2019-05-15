@@ -16,32 +16,34 @@ class CreateForeignKeyRelationshipsTable extends Migration
         Schema::table('cities', function (Blueprint $table) {
             $table->foreign('country_id')->references('id')->on('countries');
         });
-        Schema::table('user_addresses', function (Blueprint $table) {
+        Schema::table('profile_addresses', function (Blueprint $table) {
             $table->foreign('city_id')->references('id')->on('cities');
         });
-        Schema::table('user_photo', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::table('profile_photo', function (Blueprint $table) {
+            $table->foreign('profile_id')->references('id')->on('profiles');
         });
         Schema::table('service_lists', function (Blueprint $table) {
             $table->foreign('service_type_id')->references('id')->on('service_types');
         });
-        Schema::table('user_service_lists', function (Blueprint $table) {
+        Schema::table('profile_service_lists', function (Blueprint $table) {
             $table->foreign('service_list_id')->references('id')->on('service_lists');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('profile_id')->references('id')->on('profiles');
         });
         Schema::table('transactions', function (Blueprint $table) {
             $table->foreign('transaction_id')->references('id')->on('transaction_names');
         });
         Schema::table('balances', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('profile_id')->references('id')->on('profiles');
         });
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table) {
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('gender_id')->references('id')->on('genders');
-            $table->foreign('address_id')->references('id')->on('user_addresses');
-            $table->foreign('main_photo_id')->references('id')->on('user_photo');
+            $table->foreign('address_id')->references('id')->on('profile_addresses');
+//            $table->foreign('main_photo_id')->references('id')->on('profile_photo');
         });
-
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade')->onUpdate('cascade');
+        });
     }
 
     /**

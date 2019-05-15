@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserPhotoTable extends Migration
+class CreateProfileServiceListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateUserPhotoTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_photo', function (Blueprint $table) {
+        Schema::create('profile_service_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('photo_path', 100);
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('service_list_id')->unsigned();
+            $table->bigInteger('profile_id');
+            $table->boolean('main_service_mark')->default(false);
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateUserPhotoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_photo');
+        Schema::dropIfExists('profile_service_lists');
     }
 }
