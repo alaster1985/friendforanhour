@@ -1516,19 +1516,16 @@ user_type</ColNames>
     <column id="353" parent="259" name="first_name">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="354" parent="259" name="second_name">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="355" parent="259" name="date_of_birth">
       <Position>4</Position>
       <DataType>date|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="356" parent="259" name="about">
@@ -1539,32 +1536,27 @@ user_type</ColNames>
     <column id="357" parent="259" name="gender_id">
       <Position>6</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="358" parent="259" name="phone">
       <Position>7</Position>
       <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="359" parent="259" name="address_id">
       <Position>8</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="360" parent="259" name="is_deleted">
       <Position>9</Position>
       <DataType>tinyint(1)|0s</DataType>
-      <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="361" parent="259" name="is_banned">
       <Position>10</Position>
       <DataType>tinyint(1)|0s</DataType>
-      <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1576,15 +1568,13 @@ user_type</ColNames>
     <column id="363" parent="259" name="sms_checked">
       <Position>12</Position>
       <DataType>tinyint(1)|0s</DataType>
-      <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="364" parent="259" name="is_locked">
       <Position>13</Position>
       <DataType>tinyint(1)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="365" parent="259" name="created_at">
