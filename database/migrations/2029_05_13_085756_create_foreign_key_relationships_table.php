@@ -19,7 +19,7 @@ class CreateForeignKeyRelationshipsTable extends Migration
         Schema::table('profile_addresses', function (Blueprint $table) {
             $table->foreign('city_id')->references('id')->on('cities');
         });
-        Schema::table('profile_photo', function (Blueprint $table) {
+        Schema::table('profile_photos', function (Blueprint $table) {
             $table->foreign('profile_id')->references('id')->on('profiles');
         });
         Schema::table('service_lists', function (Blueprint $table) {
@@ -36,7 +36,7 @@ class CreateForeignKeyRelationshipsTable extends Migration
             $table->foreign('profile_id')->references('id')->on('profiles');
         });
         Schema::table('profiles', function (Blueprint $table) {
-            $table->foreign('city_id')->references('id')->on('cities');
+//            $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('gender_id')->references('id')->on('genders');
             $table->foreign('address_id')->references('id')->on('profile_addresses');
 //            $table->foreign('main_photo_id')->references('id')->on('profile_photo');

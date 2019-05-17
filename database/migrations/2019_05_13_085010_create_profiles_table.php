@@ -19,7 +19,7 @@ class CreateProfilesTable extends Migration
             $table->string('second_name', 50);
             $table->date('date_of_birth');
             $table->text('about')->nullable();
-            $table->bigInteger('city_id')->unsigned();
+//            $table->bigInteger('city_id')->unsigned();
             $table->bigInteger('gender_id')->unsigned();
 //            $table->bigInteger('main_photo_id')->unsigned();
             $table->string('phone', 50);

@@ -27,6 +27,7 @@ class ProfileAddressesTableSeeder extends Seeder
             $addresse->latitude = $value[0];
             $addresse->longitude = $value[1];
             $addresse->city_id = 1;
+            $addresse->save();
         }
     }
 }

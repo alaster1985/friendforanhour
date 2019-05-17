@@ -88,6 +88,6 @@ class UsersTableSeeder extends Seeder
         $moderator->profile_id = null;
         $moderator->save();
 
-        $moderator->attachRole($moderator);
+        $moderator->attachRole($moderatorRole);
     }
 }
