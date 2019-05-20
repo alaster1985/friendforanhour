@@ -1,5 +1,6 @@
 @include('layouts.header')
     <body>
+            <div class="container">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -24,10 +25,10 @@
 
                 <div class="links">
                     <a href="lara2">second page just for example link</a>
-                    <a href="lara2">second page just for example link</a>
-                    <a href="lara2">second page just for example link</a>
                 </div>
             </div>
         </div>
+       </div>
+       
     </body>
 @include('layouts.footer')
