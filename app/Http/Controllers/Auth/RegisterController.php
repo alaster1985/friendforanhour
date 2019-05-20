@@ -78,9 +78,9 @@ class RegisterController extends Controller
     {
         $user = null;
         DB::transaction(function () use ($data, &$user) {
-            $profile = Profile::createNewDefaultProfile();
+            $profile = Profile::createNewDefaultProfile($data);
             $user = User::create([
-                'name' => $data['name'],
+                'name' => $data['nickname'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'profile_id' => $profile->id,
@@ -92,6 +92,9 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
+        if ($data['bdate'] > date('Y-m-d', strtotime('- 18 years')) || $data['bdate'] <= date('Y-m-d', strtotime('+ 123 years'))) {
+            return Redirect::back();
+        }
         return $this->newUser($data);
     }
 }

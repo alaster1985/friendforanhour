@@ -17,3 +17,5 @@ Route::get('lara2', function () {return view('welcome2');});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('ulogin', 'UloginController@login');

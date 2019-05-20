@@ -51,7 +51,6 @@
                     {{ __('Login') }}
                 </button>
 
-
                 @if (Route::has('password.request'))
                     <a class="btn btn-link" href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
@@ -60,7 +59,6 @@
             </div>
         </div>
     </form>
-    <button class="btn btn-primary">VK</button>
-    <button class="btn btn-primary">FB</button>
-    <button class="btn btn-primary">OK</button>
+    @include('auth.social')
+
 </div>
