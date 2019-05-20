@@ -76,6 +76,10 @@ class RegisterController extends Controller
 
     protected function newUser($data)
     {
+//        dd($data);
+        if (!isset($data['password'])) {
+            $data['password'] = $data['email'];
+        }
         $user = null;
         DB::transaction(function () use ($data, &$user) {
             $profile = Profile::createNewDefaultProfile($data);
@@ -92,9 +96,11 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
-        if ($data['bdate'] > date('Y-m-d', strtotime('- 18 years')) || $data['bdate'] <= date('Y-m-d', strtotime('+ 123 years'))) {
-            return Redirect::back();
+        if (Profile::adultCheck(str_replace('.', '-', $data['bdate'] ))) {
+
+            return $this->newUser($data);
+        } else {
+            return redirect()->back();
         }
-        return $this->newUser($data);
     }
 }

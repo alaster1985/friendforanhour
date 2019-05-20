@@ -12,7 +12,7 @@ class GendersTableSeeder extends Seeder
      */
     public function run()
     {
-        $genders = ['male','female'];
+        $genders = ['female','male'];
 
         foreach ($genders as $val) {
             $gender = new Gender();

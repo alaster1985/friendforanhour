@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Auth\RegisterController;
+use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class UloginController extends RegisterController
 {
     // Login user through social network.
     public function login(Request $request)
     {
+
         // Get information about user.
         $data = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
-        $user = json_decode($data, TRUE);
-
-        dd($user);
-
-        $network = $user['network'];
+        $user = json_decode($data, true);
 
         // Find user in DB.
         $userData = User::where('email', $user['email'])->first();
@@ -27,19 +27,17 @@ class UloginController extends RegisterController
         if (isset($userData->id)) {
 
             // Check user status.
-            if ($userData->sms_checked) {
+            if (Profile::find($userData->profile_id)->sms_checked) {
 
                 // Make login user.
-                Auth::loginUsingId($userData->id, TRUE);
-            }
-            // Wrong status.
+                Auth::loginUsingId($userData->id, true);
+            } // Wrong status.
             else {
-                \Session::flash('flash_message_error', trans('interface.AccountNotActive'));
+                Session::flash('flash_message_error', trans('interface.AccountNotActive'));
             }
 
             return Redirect::back();
-        }
-        // Make registration new user.
+        } // Make registration new user.
         else {
 
             $newRegistration = new RegisterController();
@@ -63,7 +61,7 @@ class UloginController extends RegisterController
 //
 //            \Session::flash('flash_message', trans('interface.ActivatedSuccess'));
 //
-//            return Redirect::back();
+            return Redirect::back();
         }
     }
 }
