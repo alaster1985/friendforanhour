@@ -13,12 +13,12 @@ class ProfilesTableSeeder extends Seeder
     public function run()
     {
         $peoples = [
-          ['Спиридон', 'Лисицин', '1999-12-01', 1, '88005553535', 1, false, false, null, true, false],
-          ['Гертруда', 'Хомякова', '1999-12-02', 2, '88005553536', 2, false, false, null, true, false],
-          ['Берттрамфай', 'Йожькекъ', '1999-12-03', 1, '88005553537', 3, false, false, null, true, false],
-          ['Карамболла', 'Суррикатинова', '1999-12-04', 2, '88005553538', 4, false, false, null, true, false],
-          ['Серафим', 'Кротцкийн', '1999-12-05', 1, '88005553539', 5, false, false, null, true, false],
-          ['Ибрагимина', 'Акуловница', '1999-12-06', 2, '88005553530', 6, false, false, null, true, false],
+          ['Спиридон', 'Лисицин', '1999-12-01', 2, '88005553535', 1, false, false, null, true, false],
+          ['Гертруда', 'Хомякова', '1999-12-02', 1, '88005553536', 2, false, false, null, true, false],
+          ['Берттрамфай', 'Йожькекъ', '1999-12-03', 2, '88005553537', 3, false, false, null, true, false],
+          ['Карамболла', 'Суррикатинова', '1999-12-04', 1, '88005553538', 4, false, false, null, true, false],
+          ['Серафим', 'Кротцкийн', '1999-12-05', 2, '88005553539', 5, false, false, null, true, false],
+          ['Ибрагимина', 'Акуловница', '1999-12-06', 1, '88005553530', 6, false, false, null, true, false],
         ];
 
         foreach ($peoples as $human) {

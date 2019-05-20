@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb678a43-abe1-44ea-85dd-5bedea43ab05" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UloginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UloginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/GendersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/GendersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/social.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/social.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,36 +55,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RegisterController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Profile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Profile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UloginController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UloginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="e#40#89#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="users" pinned="false" current-in-tab="false">
         <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/users">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -99,38 +64,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="footer.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/footer.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="42" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="social.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/social.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="profiles" pinned="false" current-in-tab="false">
         <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/profiles">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfilesTableSeeder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -194,7 +141,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_05_13_085310_create_profile_addresses_table.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/loginn.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/loginTest.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/header.blade.php" />
@@ -209,9 +155,10 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/social.blade.php" />
-        <option value="$PROJECT_DIR$/app/Profile.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UloginController.php" />
+        <option value="$PROJECT_DIR$/app/Profile.php" />
+        <option value="$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php" />
       </list>
     </option>
   </component>
@@ -494,7 +441,7 @@
       <workItem from="1557987753777" duration="15289000" />
       <workItem from="1558073778973" duration="20737000" />
       <workItem from="1558163084079" duration="11801000" />
-      <workItem from="1558333093945" duration="13660000" />
+      <workItem from="1558333093945" duration="14955000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1556897042707</created>
@@ -531,26 +478,32 @@
       <option name="project" value="LOCAL" />
       <updated>1558346277771</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="register_start">
+      <created>1558354683422</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558354683422</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136507000" />
+    <option name="totallyTimeSpent" value="137802000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1030" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.33073497" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4994664" visible="true" weight="0.3207127" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4994664" visible="true" weight="0.3207127" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32962137" />
       <window_info content_ui="combo" x="833" y="294" width="254" height="510" id="Project" order="0" sideWeight="0.4980315" visible="true" weight="0.14621131" />
       <window_info anchor="bottom" id="Docker" order="7" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.17609392" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.17609392" />
       <window_info id="Structure" order="1" sideWeight="0.5019685" side_tool="true" weight="0.12646745" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -575,7 +528,8 @@
     <MESSAGE value="migration_start" />
     <MESSAGE value="seed_start" />
     <MESSAGE value="seed_start2" />
-    <option name="LAST_COMMIT_MESSAGE" value="seed_start2" />
+    <MESSAGE value="register_start" />
+    <option name="LAST_COMMIT_MESSAGE" value="register_start" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
@@ -811,13 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -870,27 +817,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/social.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/profiles">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
@@ -905,10 +831,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/social.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -919,6 +845,34 @@
           <folding>
             <element signature="e#40#89#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/profiles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
         </state>
       </provider>
     </entry>
