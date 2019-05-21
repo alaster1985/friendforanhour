@@ -37,6 +37,6 @@
                 @endif
             @endauth
         </div>
-        </header>
+    </header>
     @endif
 </div>
