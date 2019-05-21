@@ -21,15 +21,10 @@ class CreateProfilesTable extends Migration
             $table->text('about')->nullable()->default(null);
             $table->bigInteger('gender_id')->unsigned()->nullable()->default(null);
             $table->string('phone', 50)->nullable()->default(null);
-            $table->string('uid', 50)->nullable()->default(null);
-            $table->string('network', 50)->nullable()->default(null);
-            $table->string('social_profile', 100)->nullable()->default(null);
-            $table->string('identity', 100)->nullable()->default(null);
-            $table->bigInteger('address_id')->unsigned()->nullable()->default(null);
+            $table->bigInteger('profile_address_id')->unsigned()->nullable()->default(null);
             $table->boolean('is_deleted')->default(false)->nullable();
             $table->boolean('is_banned')->default(false)->nullable();
             $table->timestamp('ban_finish_time')->nullable()->default(null);
-            $table->boolean('sms_checked')->default(false)->nullable();
             $table->boolean('is_locked')->default(false)->nullable();
             $table->timestamps();
         });

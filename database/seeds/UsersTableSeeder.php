@@ -76,6 +76,7 @@ class UsersTableSeeder extends Seeder
         $admin->email = 'admin@gmail.com';
         $admin->password = bcrypt('admin@gmail.com');
         $admin->profile_id = null;
+        $admin->sms_checked = true;
         $admin->save();
 
         $admin->attachRole($adminRole);
@@ -86,6 +87,7 @@ class UsersTableSeeder extends Seeder
         $moderator->email = 'moderator@gmail.com';
         $moderator->password = bcrypt('moderator@gmail.com');
         $moderator->profile_id = null;
+        $moderator->sms_checked = true;
         $moderator->save();
 
         $moderator->attachRole($moderatorRole);
