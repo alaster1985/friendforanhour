@@ -36,10 +36,8 @@ class CreateForeignKeyRelationshipsTable extends Migration
             $table->foreign('profile_id')->references('id')->on('profiles');
         });
         Schema::table('profiles', function (Blueprint $table) {
-//            $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('gender_id')->references('id')->on('genders');
-            $table->foreign('address_id')->references('id')->on('profile_addresses');
-//            $table->foreign('main_photo_id')->references('id')->on('profile_photo');
+            $table->foreign('profile_address_id')->references('id')->on('profile_addresses');
         });
         Schema::table('users', function (Blueprint $table) {
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade')->onUpdate('cascade');

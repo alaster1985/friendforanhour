@@ -19,3 +19,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('ulogin', 'UloginController@login');
+
+
+Route::middleware('role:user')->group(function () {
+
+    Route::get('profile', 'ProfileController@index')->name('viewProfile');
+
+});

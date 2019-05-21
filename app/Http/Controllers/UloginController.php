@@ -27,7 +27,7 @@ class UloginController extends RegisterController
         if (isset($userData->id)) {
 
             // Check user status.
-            if (Profile::find($userData->profile_id)->sms_checked) {
+            if ($userData->sms_checked) {
 
                 // Make login user.
                 Auth::loginUsingId($userData->id, true);
@@ -42,6 +42,7 @@ class UloginController extends RegisterController
 
             $newRegistration = new RegisterController();
             $newRegistration->create($user);
+            $newUser = User::where('email', $user['email'])->first();
 
 //            // Create new user in DB.
 //            $newUser = User::create([
@@ -57,11 +58,11 @@ class UloginController extends RegisterController
 //            ]);
 //
 //            // Make login user.
-//            Auth::loginUsingId($newUser->id, TRUE);
+            Auth::loginUsingId($newUser->id, TRUE);
 //
 //            \Session::flash('flash_message', trans('interface.ActivatedSuccess'));
 //
-            return Redirect::back();
+            return Redirect::route('home');
         }
     }
 }
