@@ -214,5 +214,7 @@ template {
 }
 .header_title span{
     color: #fff;
-
+}
+.card-body{
+  padding: 0px;
 }
