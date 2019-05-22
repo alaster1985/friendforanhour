@@ -24,11 +24,13 @@ class CreateForeignKeyRelationshipsTable extends Migration
         });
         Schema::table('service_lists', function (Blueprint $table) {
             $table->foreign('service_type_id')->references('id')->on('service_types');
-        });
-        Schema::table('profile_service_lists', function (Blueprint $table) {
-            $table->foreign('service_list_id')->references('id')->on('service_lists');
+
             $table->foreign('profile_id')->references('id')->on('profiles');
         });
+//        Schema::table('profile_service_lists', function (Blueprint $table) {
+//            $table->foreign('service_list_id')->references('id')->on('service_lists');
+//            $table->foreign('profile_id')->references('id')->on('profiles');
+//        });
         Schema::table('transactions', function (Blueprint $table) {
             $table->foreign('transaction_id')->references('id')->on('transaction_names');
         });
