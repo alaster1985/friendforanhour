@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'profile_id'
+        'name', 'email', 'password', 'profile_id', 'sms_checked', 'uid', 'network', 'social_profile', 'identity',
     ];
 
     /**
@@ -41,6 +41,11 @@ class User extends Authenticatable
 
     public function profile()
     {
-        return $this->hasOne('App\Profile');
+        return $this->belongsTo('App\Profile');
+    }
+
+    public static function generateSmsCode()
+    {
+        return rand(10000, 99999);
     }
 }

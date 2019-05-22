@@ -10,4 +10,9 @@ class City extends Model
     {
         return $this->belongsTo('App\Country');
     }
+
+    public function profileAddress()
+    {
+        return $this->hasMany('App\ProfileAddress');
+    }
 }

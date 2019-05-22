@@ -29,11 +29,11 @@ class ProfilesTableSeeder extends Seeder
             $profile->about = 'Я, ' . $human[0] . ' ' . $human[1] . ', ' . 'родился ' . $human[2] . '. Тут может быть ваша реклама. Звоните по номеру: ' . $human[4] . '';
             $profile->gender_id = $human[3];
             $profile->phone = $human[4];
-            $profile->address_id = $human[5];
+            $profile->profile_address_id = $human[5];
             $profile->is_deleted = $human[6];
             $profile->is_banned = $human[7];
             $profile->ban_finish_time = $human[8];
-            $profile->sms_checked = $human[9];
+//            $profile->sms_checked = $human[9];
             $profile->is_locked = $human[10];
             $profile->save();
         }

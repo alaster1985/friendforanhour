@@ -52,9 +52,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'nickname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'bdate' => ['required'],
+            'phone' => ['required', 'string', 'min:10', 'max:13'],
         ]);
     }
 
@@ -76,8 +78,7 @@ class RegisterController extends Controller
 
     protected function newUser($data)
     {
-//        dd($data);
-        if (!isset($data['password'])) {
+        if (isset($data['network'])) {
             $data['password'] = $data['email'];
         }
         $user = null;
@@ -88,6 +89,11 @@ class RegisterController extends Controller
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'profile_id' => $profile->id,
+                'uid' => $data['uid'] ?? null,
+                'network' => $data['network'] ?? null,
+                'social_profile' => $data['profile'] ?? null,
+                'identity' => $data['identity'] ?? null,
+                'sms_checked' => true,
             ]);
             $user->attachRole(Role::find(3));
         });
@@ -97,7 +103,6 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if (Profile::adultCheck(str_replace('.', '-', $data['bdate'] ))) {
-
             return $this->newUser($data);
         } else {
             return redirect()->back();

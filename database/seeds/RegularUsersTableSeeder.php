@@ -19,6 +19,7 @@ class RegularUsersTableSeeder extends Seeder
             $user->email = 'user' . $i . '@gmail.com';
             $user->password = bcrypt('user' . $i . '@gmail.com');
             $user->profile_id = $i;
+            $user->sms_checked = true;
             $user->save();
             $user->attachRole(Role::find(3));
         }
