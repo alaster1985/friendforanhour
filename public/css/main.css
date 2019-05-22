@@ -5,6 +5,7 @@ html {
 }
 body {
   margin: 0;
+  background-color: #F4F7F9;
 }
 main {
   display: block;
@@ -216,5 +217,174 @@ template {
     color: #fff;
 }
 .card-body{
+  padding: 15px;
+  border:1px solid #D3D7DC;
+  margin-top: 20px;
+  background-color: #FFF;
+}
+.submit_button{
+  margin: 0 auto;
+  text-align: center
+}
+.card-body h5{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #465160;
+}
+.card-body h5 span:first-child{
+  color: #f89911;
+}
+.card-body h5 span:last-child{
+  color: #000;
+}
+.block_news{
+  background-color: #FFF;
+  border:1px solid #D3D7DC;
+}
+.block_news{
+  margin-top: 20px;
+  padding: 15px ;
+}
+.block_news h5{
+  color: #2C5C92;
+}
+.block_news a p{
+  margin: 0px;
+}
+.block_news a p:nth-child(1){
+  color: #999DA4;
+}
+.block_news a p:nth-child(2){
+  color: #465160;
+  border-bottom:1px solid #D3D7DC;
+  padding-bottom: 20px;
+}
+.block_news a:hover p{
+  text-decoration: none;
+  color: #f89911;
+}
+.block_news a:hover {
+  text-decoration: none;
+
+}
+.new_people_servis{
+  background-color: #FFF;
+  border-bottom: 1px solid #D3D7DC;
+  height: 150px;
+  
+}
+.new_people_servis{
+  padding: 10px;
+  margin: 0px;
+}
+.label_new_people {
+  background: #f89911;
+  position: relative;
+  height: 100%;
+  border-radius: 20px;
   padding: 0px;
+ }
+ .label_new_people::after {
+  content: '';
+  position: absolute;
+  right: -42px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 26px solid transparent;
+  border-left: 20px solid #f89911;
+  border-radius: 10px;
+  z-index: 20;
+ }
+ .label_new_people p{
+  text-align: center;
+  vertical-align: middle;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFF;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+ }
+ .gallery_list{
+   display: flex;
+   flex-direction: row;
+   list-style: none;
+ }
+ .content{
+   margin-top: 20px;
+ }
+.new_people_servis ul{
+  height: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+ 
+}
+.new_people_servis ul li{
+  height: 100%;
+  position: relative;
+  padding-right: 0px;
+  
+}
+.new_people_servis ul li a img{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.new_people_servis ul li a div{
+  position: absolute;
+    bottom:-85%;
+    z-index: 10;
+    background-color: #f89911;
+    padding: 10px;
+    visibility: hidden;
+    width:100%;
+    /* transition: 0.1s; */
+    border-radius: 10px;
+}
+.new_people_servis ul li a div:before {
+  content: ""; 
+  border: solid transparent;
+  position: absolute; 
+  bottom: 100%;
+  right: 50%;
+  transform: translateX(50%);
+  border-bottom-color: #f89911;
+  border-width: 9px;
+  margin-right: -1px;
+}
+.new_people_servis ul li a:hover{
+text-decoration: none
+}
+.new_people_servis ul li a:hover >div{
+visibility: visible;
+}
+.new_people_servis ul li a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+
+}
+.new_people_servis ul li a div p, .new_people_servis ul li a div span{
+  margin: 0px;
+  font-size: 12px;
+  color: #fff;
+}
+.prew_card_titl{
+  color: #FF2F2F!important;
+  font-weight: bold;
+}
+.prew_card_name{
+  padding: 0px;
+  display: block;
+}
+.prew_card_city{
+  float: right;
+}
+#map{
+  width: 100%;
+  height: 500px;
+  margin-top:20px;
 }
