@@ -24,5 +24,7 @@ Route::post('ulogin', 'UloginController@login');
 Route::middleware('role:user')->group(function () {
 
     Route::get('profile', 'ProfileController@index')->name('viewProfile');
+    Route::get('edit', 'ProfileController@edit')->name('editProfile');
+    Route::post('update', 'ProfileController@update')->name('updateProfile');
 
 });

@@ -15,4 +15,9 @@ class City extends Model
     {
         return $this->hasMany('App\ProfileAddress');
     }
+
+    public static function getAllCitiesByCountryId($id)
+    {
+        return City::all()->where('country_id', '=', $id);
+    }
 }

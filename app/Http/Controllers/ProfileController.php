@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
+use App\Country;
+use App\Gender;
 use App\ProfilePhoto;
 use App\ProfileServiceList;
 use App\ServiceList;
@@ -10,19 +13,33 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function getData($user)
     {
-        $user = Auth::user();
-        $services = ServiceList::getAllServicesListByProfileId($user->profile_id);
         $photos = ProfilePhoto::getAllPhotosByProfileId($user->profile_id);
         $friendsServices = ServiceList::getServiceListByProfileIdForSponsor($user->profile_id);
         $sponsorsServices = ServiceList::getServiceListByProfileIdForFriend($user->profile_id);
-        return view('viewProfile', [
+        return [
             'user' => $user,
-            'services' => $services,
             'photos' => $photos,
             'friendsServices' => $friendsServices,
             'sponsorsServices' => $sponsorsServices,
-        ]);
+        ];
+    }
+
+    public function index()
+    {
+        $user = Auth::user();
+        return view('viewProfile', $this->getData($user));
+    }
+
+    public function edit()
+    {
+        $user = Auth::user();
+        $countries = Country::getAllCountries();
+        $cities = City::getAllCitiesByCountryId($user->profile->profileAddress->city->country->id);
+        $genders = Gender::getAllGenders();
+        $allData = array_merge($this->getData($user),
+            ['countries' => $countries, 'cities' => $cities, 'genders' => $genders]);
+        return view('editProfile', $allData);
     }
 }

@@ -10,4 +10,9 @@ class Country extends Model
     {
         return $this->hasMany('App\City');
     }
+
+    public static function getAllCountries()
+    {
+        return Country::all();
+    }
 }

@@ -10,4 +10,9 @@ class Gender extends Model
     {
         return $this->hasMany('App\Profile');
     }
+
+    public static function getAllGenders()
+    {
+        return Gender::all();
+    }
 }
