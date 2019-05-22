@@ -1,6 +1,5 @@
 @include('layouts.app')
 @include('layouts.header')
-{{--{{dd($services[0]->serviceList->service_type_id)}}--}}
 <div>nickname = {{$user->name}}</div>
 <div>first name = {{$user->profile->first_name}}</div>
 <div>second name = {{$user->profile->second_name}}</div>
@@ -23,23 +22,21 @@
         <th>price</th>
         <th>main marker</th>
     </tr>
-    @foreach($services as $list)
-        @if($list->serviceList->service_type_id === 1)
+    @foreach($friendsServices as $list)
             <tr>
-                <td>{{$list->serviceList->service_name}}</td>
-                <td>{{$list->serviceList->service_description}}</td>
-                @if(!$list->serviceList->price)
+                <td>{{$list->service_name}}</td>
+                <td>{{$list->service_description}}</td>
+                @if(!$list->price)
                     <td>Бесплатно</td>
                 @else
-                    <td>{{$list->serviceList->price}}</td>
+                    <td>{{$list->price}}</td>
                 @endif
-                <td>{{$list->main_service_mark ? 'основная' : ''}}</td>
+                <td>{{$list->main_service_marker ? 'основная' : ''}}</td>
             </tr>
-        @endif
     @endforeach
 </table>
 <br>
-<div>I wont get for money:</div>
+<div>I wont give it to you for money:</div>
 <table border="1">
     <tr>
         <th>short service name</th>
@@ -47,19 +44,17 @@
         <th>price</th>
         <th>main marker</th>
     </tr>
-    @foreach($services as $list)
-        @if($list->serviceList->service_type_id === 2)
+    @foreach($sponsorsServices as $list)
             <tr>
-                <td>{{$list->serviceList->service_name}}</td>
-                <td>{{$list->serviceList->service_description}}</td>
-                @if(!$list->serviceList->price)
+                <td>{{$list->service_name}}</td>
+                <td>{{$list->service_description}}</td>
+                @if(!$list->price)
                     <td>Бесплатно</td>
                 @else
-                    <td>{{$list->serviceList->price}}</td>
+                    <td>{{$list->price}}</td>
                 @endif
-                <td>{{$list->main_service_mark ? 'основная' : ''}}</td>
+                <td>{{$list->main_service_marker ? 'основная' : ''}}</td>
             </tr>
-        @endif
     @endforeach
 </table>
 <br>

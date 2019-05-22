@@ -24,8 +24,6 @@
 
                 <div class="links">
                     <a href="lara2">second page just for example link</a>
-                    <a href="lara2">second page just for example link</a>
-                    <a href="lara2">second page just for example link</a>
                 </div>
                 <div class="links">
                     <a href="profile">personal profile page</a>

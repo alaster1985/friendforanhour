@@ -19,6 +19,12 @@ class CreateServiceListsTable extends Migration
             $table->string('service_description', 100);
             $table->integer('price')->unsigned();
             $table->bigInteger('service_type_id')->unsigned();
+
+            $table->bigInteger('profile_id');
+            $table->boolean('main_service_marker')->default(false);
+            $table->boolean('is_disabled')->default(false);
+            $table->boolean('is_deleted')->default(false);
+
             $table->timestamps();
         });
     }

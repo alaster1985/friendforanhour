@@ -2,7 +2,6 @@
 
 namespace App;
 
-use DateTime;
 use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
@@ -15,6 +14,11 @@ class Profile extends Model
     public function gender()
     {
         return $this->belongsTo('App\Gender');
+    }
+
+    public function serviceList()
+    {
+        return $this->hasMany('App\ServiceList');
     }
 
     public function profileAddress()

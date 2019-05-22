@@ -13,8 +13,32 @@ class ServiceList extends Model
         return $this->belongsTo('App\ServiceType');
     }
 
-    public function profileServiceList()
+    public static function getAllServicesListByProfileId($id)
     {
-        return $this->hasMany('App\ProfileServiceList');
+        return ServiceList::where('profile_id', '=', $id)->get();
     }
+
+    public static function getServiceListByProfileIdForSponsor($id)
+    {
+        return ServiceList::all()
+            ->where('profile_id', '=', $id)
+            ->where('service_type_id', '=', 1);
+    }
+
+    public static function getServiceListByProfileIdForFriend($id)
+    {
+        return ServiceList::all()
+            ->where('profile_id', '=', $id)
+            ->where('service_type_id', '=', 2);
+    }
+
+    public function profile()
+    {
+        return $this->belongsTo('App\Profile');
+    }
+
+//    public function profileServiceList()
+//    {
+//        return $this->hasMany('App\ProfileServiceList');
+//    }
 }
