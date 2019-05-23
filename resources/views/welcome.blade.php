@@ -176,7 +176,7 @@
               tilt: 45
         });
       // The marker, positioned at Uluru
-    //   var marker = new google.maps.Marker({position: uluru, map: map});
+      var marker = new google.maps.Marker({position: uluru, map: map});
     }
           
         </script>
