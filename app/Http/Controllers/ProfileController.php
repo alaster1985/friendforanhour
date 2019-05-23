@@ -42,4 +42,9 @@ class ProfileController extends Controller
             ['countries' => $countries, 'cities' => $cities, 'genders' => $genders]);
         return view('editProfile', $allData);
     }
+
+    public function update(Request $request)
+    {
+        dd($request);
+    }
 }
