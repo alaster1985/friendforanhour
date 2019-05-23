@@ -164,6 +164,7 @@
        </div>
        <script>
             function initMap() {
+<<<<<<< HEAD
     //   // The location of Uluru
       var uluru = {lat: 54.344, lng: 20.036};
       // The map, centered at Uluru
@@ -177,12 +178,32 @@
         });
       // The marker, positioned at Uluru
       var marker = new google.maps.Marker({position: uluru, map: map});
+=======
+           // The location of Uluru
+      var uluru = {lat: 55.7, lng: 37.536};
+      var uluru2 = {lat: 55.8, lng: 37.636};
+      // The map, centered at Uluru
+      var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 8, center: uluru});
+      // The marker, positioned at Uluru
+   var marker = new google.maps.Marker({position: uluru, map: map});
+   var marker = new google.maps.Marker({position: uluru2, map: map});
+>>>>>>> form_edit
     }
           
         </script>
         
 
+<<<<<<< HEAD
     
+=======
+   
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+>>>>>>> form_edit
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDubzSKVlBye9tVxy2huOy046M2BOx1fR4&callback=initMap">
 </script>
     @include('layouts.footer')
