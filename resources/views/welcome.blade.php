@@ -165,10 +165,16 @@
        <script>
             function initMap() {
     //   // The location of Uluru
-      var uluru = {lat: -25.344, lng: 131.036};
+      var uluru = {lat: 54.344, lng: 20.036};
       // The map, centered at Uluru
       var map = new google.maps.Map(
-          document.getElementById('map'), {zoom: 4, center: uluru});
+          document.getElementById('map'), {
+              zoom: 12, 
+              center: uluru,
+              mapTypeId: 'satellite',
+              heading: 90,
+              tilt: 45
+        });
       // The marker, positioned at Uluru
     //   var marker = new google.maps.Marker({position: uluru, map: map});
     }
@@ -176,15 +182,9 @@
         </script>
         
 
-    </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwNkoZ83xd1FR89Lf7SUK_oOPZvQj0gkE&callback=initMap">
-    </script>
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDubzSKVlBye9tVxy2huOy046M2BOx1fR4&callback=initMap">
+</script>
     @include('layouts.footer')
     
  
