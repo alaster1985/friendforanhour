@@ -144,8 +144,11 @@
                     </div>
                 </div>
                 <div class="col-9">
-                    <div id="map">
-                         
+                    <div class="map_container">
+                        <h6>Карта друзей, услуг и людей, у которых можно заработать деньги на 1-HF.com</h6>
+                        <div id="map">
+                            
+                        </div>
                     </div>
                     <!-- <div class="content">
                         <div class="title m-b-md">
@@ -159,22 +162,55 @@
                             <a href="profile">personal profile page</a>
                         </div>
                     </div> -->
-                    
+
                 </div>
             </div>
        </div>
-       <script>
-            function initMap() {
-           // The location of Uluru
-      var uluru = {lat: 55.7, lng: 37.536};
-      var uluru2 = {lat: 55.8, lng: 37.636};
-      // The map, centered at Uluru
-      var map = new google.maps.Map(
-          document.getElementById('map'), {zoom: 8, center: uluru});
-      // The marker, positioned at Uluru
-   var marker = new google.maps.Marker({position: uluru, map: map});
-   var marker = new google.maps.Marker({position: uluru2, map: map});
-    }
+<script>
+    function initMap() {
+        var element = document.getElementById('map');
+        var options = {
+            zoom: 12,
+          
+            center: {lat: 55.7, lng: 37.536}
+        };
+        var map = new google.maps.Map(element, options);
+        var Markers =[
+            {
+                coordinates: {lat: 55.7, lng: 37.536},
+                image: 'https://cdn.iconscout.com/icon/premium/png-256-thumb/destination-flag-3-739390.png',
+                
+                info: '<h1> Hey there!</h1>',
+            },
+            {
+                coordinates: {lat: 55.9, lng: 37.636},
+                info: '<h1> Hey there!</h1>',
+            }
+        ];
+        for( var i = 0; i < Markers.length; i++){
+            addMarker(Markers[i])
+        };
+        function addMarker(properties) {
+            var marker = new google.maps.Marker({
+                position: properties.coordinates,
+                map: map,
+            });
+            if(properties.image){
+                marker.setIcon(properties.image).Size(20, 32);
+                
+            }
+            
+            if(properties.info){
+                var InfoWindow = new google.maps.InfoWindow({
+                    content: properties.info
+                });
+                marker.addListener('click', function(){
+                    InfoWindow.open(map, marker);
+                })
+            }
+        }
+        
+    };
           
         </script>
         
