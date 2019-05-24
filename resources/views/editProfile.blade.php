@@ -53,7 +53,11 @@
                     <script>document.getElementById("ct{{$city->id}}").selected = true</script>
                 @endif
             @endforeach
+            <option value="new">there is no my city in this list</option>
         </select>
+    </div>
+    <div class="newCity" style="display: none">add new city
+        <input type="text" name="newCity" placeholder="city_name">
     </div>
     <div>country
         <select name="country">
@@ -64,7 +68,11 @@
                     <script>document.getElementById("cnt{{$country->id}}").selected = true</script>
                 @endif
             @endforeach
+            <option value="new">there is no my country in this list</option>
         </select>
+    </div>
+    <div class="newCountry" style="display: none">add new Country
+        <input type="text" name="newCountry" placeholder="Country_name">
     </div>
     <br>
     <div>I wont pay for:</div>
@@ -167,21 +175,27 @@
     </table>
     <button type="button" id="new_service_as_friend">add new service as 'friend'</button>
     <br>
-    <div>My photo</div>
-    <table border="1">
-        <tr>
-            <th>Photo</th>
-            <th>main marker</th>
-        </tr>
-        @foreach($photos as $photo)
-            <tr>
-                <td><img height="20%" src="{{asset($photo->photo_path)}}"></td>
-                <td><input type="radio" name="qwe" value="{{$photo->id}}" {{$photo->main_photo_marker ? 'checked' : ''}}></td>
-            </tr>
-        @endforeach
-    </table>
-    <br>
 </form>
 
+<br>
+<div>My photo</div>
+<table border="1">
+    <tr>
+        <th>Photo</th>
+        <th>main marker</th>
+    </tr>
+    @foreach($photos as $photo)
+        <tr>
+            <td><img height="20%" src="{{asset($photo->photo_path)}}"></td>
+            <td><input type="radio" name="qwe"
+                       value="{{$photo->id}}" {{$photo->main_photo_marker ? 'checked' : ''}}></td>
+        </tr>
+    @endforeach
+</table>
+
+{{--<form id="form1" runat="server">--}}
+{{--<input type='file' id="imgInp" />--}}
+{{--<img id="blah" src="#" alt="your image" />--}}
+{{--</form>--}}
 
 @include('layouts.footer')

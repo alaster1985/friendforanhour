@@ -59,5 +59,39 @@
         $('table').on('click', 'button', function () {
             this.closest('tr').remove()
         })
+
+        $("[name = 'city']").on("click", function () {
+            if (this.value === 'new') {
+                $(".newCity").css("display", "block");
+            } else {
+                $(".newCity").css("display", "none");
+            }
+        });
+
+        $("[name = 'country']").on("click", function () {
+            if (this.value === 'new') {
+                $(".newCountry").css("display", "block");
+            } else {
+                $(".newCountry").css("display", "none");
+            }
+        });
+
+        // function readURL(input) {
+        //
+        //     if (input.files && input.files[0]) {
+        //         var reader = new FileReader();
+        //
+        //         reader.onload = function(e) {
+        //             $('#blah').attr('src', e.target.result);
+        //         }
+        //
+        //         reader.readAsDataURL(input.files[0]);
+        //     }
+        // }
+        //
+        // $("#imgInp").change(function() {
+        //     readURL(this);
+        // });
+
     });
 }());

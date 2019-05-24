@@ -15,7 +15,10 @@ class ServiceList extends Model
 
     public static function getAllServicesListByProfileId($id)
     {
-        return ServiceList::where('profile_id', '=', $id)->get();
+        return ServiceList::where([
+            ['profile_id', '=', $id],
+            ['is_deleted', '=', 0],
+        ])->get();
     }
 
     public static function getServiceListByProfileIdForSponsor($id)
@@ -48,7 +51,27 @@ class ServiceList extends Model
     {
         $serviceForDelete = self::getServiceByServiceListId($serviceListId);
         $serviceForDelete->is_deleted = true;
+        $serviceForDelete->main_service_marker = false;
         $serviceForDelete->save();
+    }
+
+    public static function updateServiceListByProfileId($request, $id)
+    {
+//        dd($request);
+        foreach ($request->service_name as $key => $service_name) {
+            if ($key[1] === 'c') {
+                $currentService = self::getServiceByServiceListId(substr($key, 2));
+                $currentService->service_name = $service_name;
+                $currentService->service_description = $request->service_description[$key];
+                $currentService->price = $request->price[$key];
+                $currentService->is_disabled = $request->is_disabled[$key];
+                $currentService->main_service_marker = isset($request->main_service_marker[$key]) ? true : false;
+                $currentService->save();
+                dd($currentService);
+            }
+        }
+
+        dd($request);
     }
 
 //    public function profileServiceList()

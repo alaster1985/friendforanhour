@@ -16,6 +16,5 @@ class ServiceListController extends Controller
         } else {
             return redirect()->back()->with('message', 'something went wrong');
         }
-
     }
 }

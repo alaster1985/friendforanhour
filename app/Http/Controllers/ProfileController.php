@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\City;
 use App\Country;
 use App\Gender;
+use App\Profile;
 use App\ProfilePhoto;
 use App\ProfileServiceList;
 use App\ServiceList;
@@ -45,6 +46,7 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
-        dd($request);
+        $user = Auth::user();
+        Profile::updateProfile($request, $user);
     }
 }
