@@ -1,5 +1,6 @@
 @include('layouts.app')
 @include('layouts.header')
+<a href="edit">edit own profile</a>
 <div>nickname = {{$user->name}}</div>
 <div>first name = {{$user->profile->first_name}}</div>
 <div>second name = {{$user->profile->second_name}}</div>
@@ -26,11 +27,7 @@
             <tr>
                 <td>{{$list->service_name}}</td>
                 <td>{{$list->service_description}}</td>
-                @if(!$list->price)
-                    <td>Бесплатно</td>
-                @else
-                    <td>{{$list->price}}</td>
-                @endif
+                <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
                 <td>{{$list->main_service_marker ? 'основная' : ''}}</td>
             </tr>
     @endforeach
@@ -48,11 +45,7 @@
             <tr>
                 <td>{{$list->service_name}}</td>
                 <td>{{$list->service_description}}</td>
-                @if(!$list->price)
-                    <td>Бесплатно</td>
-                @else
-                    <td>{{$list->price}}</td>
-                @endif
+                <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
                 <td>{{$list->main_service_marker ? 'основная' : ''}}</td>
             </tr>
     @endforeach
