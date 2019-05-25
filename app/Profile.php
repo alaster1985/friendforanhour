@@ -55,22 +55,22 @@ class Profile extends Model
 
     public static function updateProfile($request, $user)
     {
+        if (!self::adultCheck($request->date_of_birth)){
+            return redirect()->back()->with('message', 'something went wrong');
+        }
         DB::transaction(function () use ($request, $user) {
             $currentProfile = Profile::find($user->profile_id);
             $currentProfile->first_name = $request->first_name;
             $currentProfile->second_name = $request->second_name;
             $currentProfile->date_of_birth = $request->bdate;
             $currentProfile->about = $request->about;
-            $currentProfile->gender = $request->gender;
+            $currentProfile->gender_id = $request->gender;
             $currentProfile->phone = $request->phone;
             $currentProfile->profile_address_id = ProfileAddress::updateProfileAddressByProfileId($request,
                 $user->profile_id);
             User::updateUserById($request, $user->id);
             ServiceList::updateServiceListByProfileId($request, $user->profile_id);
-
-//            dd($currentProfile->profileAddress->city->city_name);
-            dd($request);
+            $currentProfile->save();
         });
-
     }
 }

@@ -64,7 +64,7 @@
             @foreach($countries as $country)
                 <option id="cnt{{$country->id}}"
                         value="{{$country->id}}">{{$country->country_name}}</option>
-                @if($country->id === $user->profile->profileAddress->city->country->country_name)
+                @if($country->id === $user->profile->profileAddress->city->country->id)
                     <script>document.getElementById("cnt{{$country->id}}").selected = true</script>
                 @endif
             @endforeach

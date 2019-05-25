@@ -57,7 +57,6 @@ class ServiceList extends Model
 
     public static function updateServiceListByProfileId($request, $id)
     {
-//        dd($request);
         foreach ($request->service_name as $key => $service_name) {
             if ($key[1] === 'c') {
                 $currentService = self::getServiceByServiceListId(substr($key, 2));
@@ -67,11 +66,19 @@ class ServiceList extends Model
                 $currentService->is_disabled = $request->is_disabled[$key];
                 $currentService->main_service_marker = isset($request->main_service_marker[$key]) ? true : false;
                 $currentService->save();
-                dd($currentService);
+            } elseif ($key[1] === 'n') {
+                $newService = new ServiceList();
+                $newService->service_name = $service_name;
+                $newService->service_description = $request->service_description[$key];
+                $newService->price = $request->price[$key];
+                $newService->service_type_id = $key[0];
+                $newService->is_disabled = false;
+                $newService->is_deleted = false;
+                $newService->profile_id = $id;
+                $newService->main_service_marker = isset($request->main_service_marker[$key]) ? true : false;
+                $newService->save();
             }
         }
-
-        dd($request);
     }
 
 //    public function profileServiceList()

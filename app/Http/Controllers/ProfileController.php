@@ -48,5 +48,6 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         Profile::updateProfile($request, $user);
+        return redirect()->back()->with('message', 'DONE!');
     }
 }
