@@ -17,24 +17,28 @@
 </head>
 <div class="container">
     @if (Route::has('login'))
-    <header class="justify-content-between">
+    <header class="justify-content-between row">
             @auth
                 <a href="{{ url('/home') }}">HOME</a>
             @else
-            <a class="Logo" href="{{ url('/') }}">
+            <a class="Logo col-lg-2 col-xl-2 col-md-6" href="{{ url('/') }}">
                 1-<span>hf</span>.com
             </a>
-            <span class="header_title">One Hour <span>Friend</span> | Друг на час</span>
-            <div>
-            <a class="heder_link" href="{{ url('#') }}">Знакомства</a>
-            <a class="heder_link" href="{{ url('#') }}">Услуги</a>
-            <a class="heder_link" href="{{ url('#') }}">Заработать за час</a>
-            <a class="heder_link" href="{{ url('#') }}">Отдохнуть</a>
-                <a class="autorization" href="{{ route('login') }}">Войти</a>
+            <span class="header_title col-lg-3 col-xl-3 col-md-6">One Hour <span>Friend</span> | Друг на час</span>
+            <div class="col-lg-7 col-xl-7 col-md-12 row links_header">
+                <div  class="col-lg-8 col-xl-8 col-md-8">
+                <a class="heder_link" href="{{ url('#') }}">Знакомства</a>
+                <a class="heder_link" href="{{ url('#') }}">Услуги</a>
+                <a class="heder_link" href="{{ url('#') }}">Заработать за час</a>
+                 <a class="heder_link" href="{{ url('#') }}">Отдохнуть</a>
+                 </div>
+                 <div class="col-lg-4 col-xl-4 col-md-4">
+                <a class="autorization " href="{{ route('login') }}">Войти</a> 
 
                 @if (Route::has('register'))
-                    <a class="registration" href="{{ route('register') }}">Регистрация</a>
+                    <a class="registration " href="{{ route('register') }}">Регистрация</a>
                 @endif
+            </div>
             @endauth
         </div>
     </header>
