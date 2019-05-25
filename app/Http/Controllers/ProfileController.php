@@ -7,7 +7,6 @@ use App\Country;
 use App\Gender;
 use App\Profile;
 use App\ProfilePhoto;
-use App\ProfileServiceList;
 use App\ServiceList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,12 +15,12 @@ class ProfileController extends Controller
 {
     public function getData($user)
     {
-        $photos = ProfilePhoto::getAllPhotosByProfileId($user->profile_id);
+//        $photos = ProfilePhoto::getAllPhotosByProfileId($user->profile_id);
         $friendsServices = ServiceList::getServiceListByProfileIdForSponsor($user->profile_id);
         $sponsorsServices = ServiceList::getServiceListByProfileIdForFriend($user->profile_id);
         return [
             'user' => $user,
-            'photos' => $photos,
+//            'photos' => $photos,
             'friendsServices' => $friendsServices,
             'sponsorsServices' => $sponsorsServices,
         ];

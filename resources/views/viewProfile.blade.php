@@ -24,12 +24,12 @@
         <th>main marker</th>
     </tr>
     @foreach($friendsServices as $list)
-            <tr>
-                <td>{{$list->service_name}}</td>
-                <td>{{$list->service_description}}</td>
-                <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
-                <td>{{$list->main_service_marker ? 'основная' : ''}}</td>
-            </tr>
+        <tr>
+            <td>{{$list->service_name}}</td>
+            <td>{{$list->service_description}}</td>
+            <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
+            <td>{{$list->main_service_marker ? 'основная' : ''}}</td>
+        </tr>
     @endforeach
 </table>
 <br>
@@ -42,28 +42,24 @@
         <th>main marker</th>
     </tr>
     @foreach($sponsorsServices as $list)
-            <tr>
-                <td>{{$list->service_name}}</td>
-                <td>{{$list->service_description}}</td>
-                <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
-                <td>{{$list->main_service_marker ? 'основная' : ''}}</td>
-            </tr>
+        <tr>
+            <td>{{$list->service_name}}</td>
+            <td>{{$list->service_description}}</td>
+            <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
+            <td>{{$list->main_service_marker ? 'основная' : ''}}</td>
+        </tr>
     @endforeach
 </table>
 <br>
 <div>My photo</div>
-<table border="1">
+
+<table border="1" id="usersPhoto">
     <tr>
         <th>Photo</th>
         <th>main marker</th>
     </tr>
-    @foreach($photos as $photo)
-        <tr>
-            <td><img src="{{asset($photo->photo_path)}}"></td>
-            <td>{{$photo->main_photo_marker ? 'основная' : ''}}</td>
-        </tr>
-    @endforeach
 </table>
+<br>
 <br>
 
 @include('layouts.footer')

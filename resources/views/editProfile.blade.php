@@ -105,10 +105,10 @@
                 </td>
                 <td>
                     <select name="is_disabled[1c{{$list->id}}]">
-                        <option id="enabled" value="0">Enabled</option>
-                        <option id="disabled" value="1">Disabled</option>
+                        <option id="enabled{{$list->id}}" value="0">Enabled</option>
+                        <option id="disabled{{$list->id}}" value="1">Disabled</option>
                         @if($list->is_disabled === 1)
-                            <script>document.getElementById('disabled').selected = true</script>
+                            <script>document.getElementById('disabled{{$list->id}}').selected = true</script>
                         @endif
                     </select>
                 </td>
@@ -155,10 +155,10 @@
                 </td>
                 <td>
                     <select name="is_disabled[2c{{$list->id}}]">
-                        <option id="enabled" value="0">Enabled</option>
-                        <option id="disabled" value="1">Disabled</option>
+                        <option id="enabled{{$list->id}}" value="0">Enabled</option>
+                        <option id="disabled{{$list->id}}" value="1">Disabled</option>
                         @if($list->is_disabled === 1)
-                            <script>document.getElementById('disabled').selected = true</script>
+                            <script>document.getElementById('disabled{{$list->id}}').selected = true</script>
                         @endif
                     </select>
                 </td>
@@ -176,26 +176,22 @@
     <button type="button" id="new_service_as_friend">add new service as 'friend'</button>
     <br>
 </form>
-
 <br>
 <div>My photo</div>
-<table border="1">
-    <tr>
-        <th>Photo</th>
-        <th>main marker</th>
-    </tr>
-    @foreach($photos as $photo)
+<form id="updatePhotoForm">
+    <table border="1" id="usersPhoto">
         <tr>
-            <td><img height="20%" src="{{asset($photo->photo_path)}}"></td>
-            <td><input type="radio" name="qwe"
-                       value="{{$photo->id}}" {{$photo->main_photo_marker ? 'checked' : ''}}></td>
+            <th>Photo</th>
+            <th>main marker</th>
+            <th>remove</th>
         </tr>
-    @endforeach
-</table>
-
-{{--<form id="form1" runat="server">--}}
-{{--<input type='file' id="imgInp" />--}}
-{{--<img id="blah" src="#" alt="your image" />--}}
-{{--</form>--}}
+    </table>
+    <input type='file' id="imgInput"/>
+    <button id="cancelPreview" type="button">cancel</button>
+    <img id="preview" height="100px" src="{{asset('images/preview.png')}}" alt="your new photo"/>
+    <br>
+    <button type="submit" disabled>SAVE</button>
+</form>
+<br><br><br>
 
 @include('layouts.footer')
