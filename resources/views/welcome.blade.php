@@ -3,67 +3,67 @@
 <body>
     <div class="container">
         <div class="new_people_servis row">
-            <div class="label_new_people col-1">
+            <div class="label_new_people col-2 col-md-1">
                 <p>Новые друзья</p>
             </div>
-            <ul class="col-11">
-                <li style="width: 10%">
+            <ul class="col-10 col-md-11">
+                <li >
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
-                <li style="width: 10%">
+                <li >
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
-                <li style="width: 10%">
+                <li >
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
-                <li style="width: 10%">
+                <li >
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
-                <li style="width: 10%">
+                <li class="mobile_vi3">
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
-                <li style="width: 10%">
+                <li class="mobile_vi2">
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
-                <li style="width: 10%">
+                <li class="mobile_vi2">
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
-                <li style="width: 10%">
+                <li class="mobile_vi">
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
-                <li style="width: 10%">
+                <li class="mobile_vi">
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
-                <li style="width: 10%">
+                <li class="mobile_vi" >
                     <a href="">
-                        <img src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                        <img src="{{ asset('images/animals.jpg') }}">
 
                     </a>
                 </li>
@@ -128,7 +128,7 @@
                                 <td>
                                     <a href="">
                                         <img class="User_image"
-                                            src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                                            src="{{ asset('images/animals.jpg') }}">
                                         <span><img src="{{ asset('images/camera.svg') }}"> 9</span>
                                     </a>
                                 </td>
@@ -171,7 +171,7 @@
                                 <td>
                                     <a href="">
                                         <img class="User_image"
-                                            src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                                            src="{{ asset('images/animals.jpg') }}">
                                         <span><img src="{{ asset('images/camera.svg') }}"> 9</span>
                                     </a>
                                 </td>
@@ -215,7 +215,7 @@
                                 <td>
                                     <a href="">
                                         <img class="User_image"
-                                            src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                                            src="{{ asset('images/animals.jpg') }}">
                                         <span><img src="{{ asset('images/camera.svg') }}"> 9</span>
                                     </a>
                                 </td>
@@ -258,7 +258,7 @@
                                 <td>
                                     <a href="">
                                         <img class="User_image"
-                                            src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                                            src="{{ asset('images/animals.jpg') }}">
                                         <span><img src="{{ asset('images/camera.svg') }}"> 9</span>
                                     </a>
                                 </td>
@@ -301,7 +301,7 @@
                                 <td>
                                     <a href="">
                                         <img class="User_image"
-                                            src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                                            src="{{ asset('images/animals.jpg') }}">
                                         <span><img src="{{ asset('images/camera.svg') }}"> 9</span>
                                     </a>
                                 </td>
@@ -345,7 +345,7 @@
                                 <td>
                                     <a href="">
                                         <img class="User_image"
-                                            src="https://pp.userapi.com/_hHA3Vmnh97oA4_TT8Stxfim-J_rh8Fk4pr8pA/72Ox1NrQCk4.jpg?ava=1">
+                                            src="{{ asset('images/animals.jpg') }}">
                                         <span><img src="{{ asset('images/camera.svg') }}"> 9</span>
                                     </a>
                                 </td>

@@ -552,6 +552,12 @@ visibility: visible;
 .links_header div{
   padding: 0px;
  }
+ .mobile_autorization{
+  display: none;
+}
+.new_people_servis ul li{
+  width: 10%;
+}
  @media all and (max-width: 1200px) {
   
   .header_title, .links_header{
@@ -564,7 +570,7 @@ visibility: visible;
   padding: 3px 5px;
 }
 } 
-@media all and (max-width: 992px) {
+@media all and (max-width: 991px) {
 
 .header_title{
   text-align: right;
@@ -584,5 +590,43 @@ visibility: visible;
 }
 .header_title, .links_header {
   font-size: 16px;
+}
+.mobile_vi{
+  display: none;
+}
+.new_people_servis ul li {
+  width: 15%;
+}
+}
+@media all and (max-width: 767px) {
+  .mobile_autorization{
+    display: block;
+  }
+  .header_title {
+    display: none;
+  }
+  .links_header{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .change{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px;
+  }
+  .registration{
+    margin-left: 15px;
+  }
+  .links_header div{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+  }
+  .mobile_vi2{
+    display: none;
+  }
+  .new_people_servis ul li{
+    width: 20%;
+  }
 }
 }
