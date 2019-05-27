@@ -14,7 +14,9 @@
    
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}" />
 </head>
+<div class="header_background">
 <div class="container">
     @if (Route::has('login'))
     <header class="justify-content-between row">
@@ -79,6 +81,7 @@
         @endif
     </header>
     
+</div>
 </div>
 
 

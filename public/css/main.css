@@ -573,6 +573,26 @@ visibility: visible;
   
    color: #000;
  }
+.header_background{
+  background-color: #2D5c92;;
+  width: 100%;
+}
+
+ /* view profile people */
+.user_content{
+  background-color: #fff;
+  width: 100%;
+  
+}
+.photo_user div{
+  text-align: center;
+
+}
+.slick-slide{
+  padding: 5px;
+}
+
+ /* end  view profile people */
  @media all and (max-width: 1200px) {
   
   .header_title, .links_header{

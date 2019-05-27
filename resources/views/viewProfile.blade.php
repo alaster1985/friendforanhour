@@ -1,5 +1,21 @@
 
 @include('layouts.header')
+<div class="container">
+    <div class="user_content">
+
+            <div class="photo_user">
+                     <img src="{{ asset('images/animals.jpg') }}">
+                     <img src="{{ asset('images/animals.jpg') }}">
+                     <img src="{{ asset('images/animals.jpg') }}">
+                     <img src="{{ asset('images/animals.jpg') }}">
+                     <img src="{{ asset('images/animals.jpg') }}">
+                     <img src="{{ asset('images/animals.jpg') }}">
+                     <img src="{{ asset('images/animals.jpg') }}">
+                     <img src="{{ asset('images/animals.jpg') }}">
+                     <img src="{{ asset('images/animals.jpg') }}">
+                   
+            </div>
+    </div>
 <a href="edit">edit own profile</a>
 <div>nickname = {{$user->name}}</div>
 <div>first name = {{$user->profile->first_name}}</div>
@@ -61,5 +77,5 @@
 </table>
 <br>
 <br>
-
+</div>
 @include('layouts.footer')
