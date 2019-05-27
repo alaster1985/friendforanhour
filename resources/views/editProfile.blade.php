@@ -186,11 +186,13 @@
             <th>remove</th>
         </tr>
     </table>
-    <input type='file' id="imgInput"/>
+
+
+    <input type='file' id="imgInput">
     <button id="cancelPreview" type="button">cancel</button>
-    <img id="preview" height="100px" src="{{asset('images/preview.png')}}" alt="your new photo"/>
+    <img id="preview" height="100px" src="{{asset('images/preview.png')}}" alt="your new photo">
     <br>
-    <button type="submit" disabled>SAVE</button>
+    <button type="submit" >SAVE</button>
 </form>
 <br><br><br>
 

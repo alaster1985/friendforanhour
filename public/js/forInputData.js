@@ -73,7 +73,7 @@
         });
 
         $('#cancelPreview').click(function () {
-            $('#preview').attr('src', 'images/preview.png')
+            resetPreview()
         });
 
         $("[name = 'city']").on("click", function () {
@@ -107,17 +107,18 @@
         });
 
         $('#updatePhotoForm').submit(function (e) {
-            // addNewPhoto();
+            updatePhoto();
             e.preventDefault();
         })
     });
 
     function getPhoto() {
+        $('#usersPhoto').find('tr').not('tr:eq( 0 )').remove();
         var mark;
         var removePhotoButton = '';
         $.post('getPhotos', {
             _token: $('meta[name="csrf-token"]').attr('content')
-        }, function (data, status) {
+        }, function (data) {
             $(data).each(function (key, val) {
                 mark = val.main_photo_marker ? 'Основная' : '';
                 if (window.location.pathname === '/edit') {
@@ -133,19 +134,56 @@
         });
     }
 
-    function remove(photoId) {
-        $.post('removePhoto', {
-            _token: $('meta[name="csrf-token"]').attr('content'),
-            photo_id: photoId
-        }, function (data, status) {
-            if (status === 'success') {
-                $('#usersPhoto').find('tr').not('tr:eq( 0 )').remove();
-                getPhoto();
-            }
-        })
+    function checkPhotoQuantity() {
+        if ($("#usersPhoto td").closest("tr").length >= 1 || $("#usersPhoto td").closest("tr").length <= 9) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    function addNewPhoto() {
-        
+    function remove(photoId) {
+        if (checkPhotoQuantity()) {
+            $.post('removePhoto', {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                photo_id: photoId
+            }, function (data, status) {
+                if (status === 'success') {
+                    getPhoto();
+                }
+            });
+        } else {
+            alert('Photos quantity must be more than 1 and less than 9!')
+        }
+
+    }
+
+    function updatePhoto() {
+        if (checkPhotoQuantity()) {
+            var formData = new FormData();
+            var uploadFile = null;
+            var file = document.getElementById('imgInput');
+            if (file.files && file.files[0]) {
+                uploadFile = file.files[0];
+            }
+            formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+            formData.append('file', uploadFile);
+            formData.append('mainPhoto_id', $("#usersPhoto input[type='radio']:checked").val());
+            $.ajax({
+                url: 'updatePhoto',
+                data: formData,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    resetPreview();
+                    getPhoto()
+                },
+            });
+        }
+    }
+    function resetPreview() {
+        $('#preview').attr('src', 'images/preview.png');
+        $('#imgInput').val('');
     }
 }());

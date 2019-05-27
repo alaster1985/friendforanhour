@@ -18,6 +18,7 @@ class CreateProfilePhotosTable extends Migration
             $table->string('photo_path', 100);
             $table->bigInteger('profile_id');
             $table->boolean('main_photo_marker')->default(false);
+            $table->boolean('is_deleted')->default(false);
             $table->timestamps();
         });
     }
