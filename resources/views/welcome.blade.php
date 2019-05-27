@@ -3,10 +3,10 @@
 <body>
     <div class="container">
         <div class="new_people_servis row">
-            <div class="label_new_people col-2 col-md-1">
+            <div class="label_new_people col-sm-2 col-md-1">
                 <p>Новые друзья</p>
             </div>
-            <ul class="col-10 col-md-11">
+            <ul class="col-sm-10 col-md-11">
                 <li >
                     <a href="">
                         <img src="{{ asset('images/animals.jpg') }}">
@@ -37,7 +37,7 @@
 
                     </a>
                 </li>
-                <li class="mobile_vi2">
+                <li class="mobile_vi2 ">
                     <a href="">
                         <img src="{{ asset('images/animals.jpg') }}">
 
@@ -74,7 +74,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-3">
+            <div class="col-3 left-column">
                 @if (Route::has('login'))
                 <!-- <div class="top-right links">
                             @auth
@@ -97,7 +97,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-lg-9 col-12">
 
                 <div class="map_container">
                     <h6>Карта друзей, услуг и людей, у которых можно заработать деньги на 1-HF.com</h6>
@@ -121,7 +121,7 @@
         </div>
         <div class="container">
             <div class="row justify-content-between users_prew_block">
-                <div class="col-4">
+                <div class="col-lg-4 col-md-6">
                     <table id="tablePreview" class="col-12 card_user_prev table table-borderless">
                         <tbody class="row ">
                             <tr class="col-5 block_image">
@@ -164,7 +164,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-4">
+                <div  class="col-lg-4 col-md-6">
                     <table id="tablePreview" class="col-12 card_user_prev table table-borderless">
                         <tbody class="row ">
                             <tr class="col-5 block_image">
@@ -208,7 +208,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-4">
+                <div  class="col-lg-4 col-md-6">
                     <table id="tablePreview" class="col-12 card_user_prev table table-borderless">
                         <tbody class="row ">
                             <tr class="col-5 block_image">
@@ -251,7 +251,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-4">
+                <div  class="col-lg-4 col-md-6">
                     <table id="tablePreview" class="col-12 card_user_prev table table-borderless">
                         <tbody class="row ">
                             <tr class="col-5 block_image">
@@ -294,7 +294,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-4">
+                <div  class="col-lg-4 col-md-6">
                     <table id="tablePreview" class="col-12 card_user_prev table table-borderless">
                         <tbody class="row ">
                             <tr class="col-5 block_image">
@@ -338,7 +338,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-4">
+                <div  class="col-lg-4 col-md-6">
                     <table id="tablePreview" class="col-12 card_user_prev table table-borderless">
                         <tbody class="row ">
                             <tr class="col-5 block_image">

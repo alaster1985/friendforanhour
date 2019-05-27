@@ -6,7 +6,8 @@
 <script type="text/javascript" src="{{asset('js/forInputData.js')}}"></script>
 <script>
 if ($(window).width() <= '768'){
-            $('.change').appendTo('.mobile_autorization');
+            $('#navbarSupportedContent').appendTo('.mobile_autorization');
         } 
 </script>
+ <script src="{{ asset('js/app.js') }}" defer></script>
 </html>

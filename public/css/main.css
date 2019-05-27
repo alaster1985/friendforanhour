@@ -558,6 +558,21 @@ visibility: visible;
 .new_people_servis ul li{
   width: 10%;
 }
+#navbarSupportedContent ul{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+}
+#navbarSupportedContent ul li a{
+  padding: 5px 10px;
+ }
+ #navbarDropdown{
+   text-align: center;
+   border-radius: 10px;
+   background-color: #fff;
+  
+   color: #000;
+ }
  @media all and (max-width: 1200px) {
   
   .header_title, .links_header{
@@ -571,7 +586,9 @@ visibility: visible;
 }
 } 
 @media all and (max-width: 991px) {
-
+.left-column{
+  display: none;
+}
 .header_title{
   text-align: right;
   padding-right: 15px;
@@ -628,5 +645,66 @@ visibility: visible;
   .new_people_servis ul li{
     width: 20%;
   }
+.users_prew_block div{
+  margin: 0px;
+  padding: 0px;
 }
+}
+@media all and (max-width: 576px) {
+.label_new_people:after {
+  display: none;
+}
+.label_new_people{
+ height: 25%;
+ border-radius: 0;
+}
+.label_new_people p{
+text-align: center;
+width: 100%;
+}
+.new_people_servis{
+  padding: 0px;
+}
+.new_people_servis ul{
+  height: 75%;
+}
+.mobile_vi3{
+  display: block;
+}
+.links_header div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.links_header div a{
+  margin: 0px;
+}
+.heder_link{
+  line-height: 28px;
+}
+#navbarSupportedContent ul{
+  flex-direction: column
+}
+#navbarSupportedContent{
+  padding: 0px;
+}
+.autorization, .registration{
+  margin: 0px;
+}
+.registration{
+  margin-top: 5px;
+}
+.Logo{
+  font-size: 28px;
+}
+.links_header{
+  margin-top: 25px;
+}
+#map{
+  height: 350px;
+}
+}
+@media all and (max-width: 400px) {
+.new_people_servis{
+height: 115px;
 }

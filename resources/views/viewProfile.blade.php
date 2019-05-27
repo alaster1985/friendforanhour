@@ -1,4 +1,4 @@
-@include('layouts.app')
+
 @include('layouts.header')
 <a href="edit">edit own profile</a>
 <div>nickname = {{$user->name}}</div>
