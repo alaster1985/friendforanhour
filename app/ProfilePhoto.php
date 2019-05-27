@@ -68,7 +68,7 @@ class ProfilePhoto extends Model
             $photoForUpdate = self::getProfilePhotoByPhotoId($request->mainPhoto_id);
             $photoForUpdate->main_photo_marker = true;
             $photoForUpdate->save();
-            if ($request->file) {
+            if ($request->file == null) {
                 $newProfilePhoto = new ProfilePhoto();
                 $newPhoto = new UploadPhotoService();
                 $newPhoto->uploadProfilePhoto($request);

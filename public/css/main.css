@@ -579,9 +579,9 @@ visibility: visible;
 }
 
  /* view profile people */
-.user_content{
+ .information_user{
   background-color: #fff;
-  width: 100%;
+  padding: 15px 0px;;
   
 }
 .photo_user div{
@@ -591,7 +591,72 @@ visibility: visible;
 .slick-slide{
   padding: 5px;
 }
-
+.user_avatar img{
+  width: 100%;
+}
+.information_user{
+  margin: 20px 0px;;
+}
+.name_user{
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  margin: 0px;
+}
+.name_user span{
+  font-size: 16px;
+}
+.character_user{
+  color: #999DA4;
+  margin: 0px;
+}
+.service{
+  margin-top: 20px;
+}
+.offline_user{
+  color:#D65DBC;
+  position: relative;
+  margin-right: 20px;
+}
+.offline_user::before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #D65DBC;
+  border: 1px solid #F68727;
+  border-radius: 50%;
+  left:-20px;
+  top:3px;
+}
+.overview{
+  color: #999DA4;
+}
+.overview img{
+  height: 15px;
+  width: 15px;
+  position: relative;
+  top: -2px;
+  margin-right:5px; 
+}
+.distance{
+  color: #68C42B;
+  border-bottom: #68C42B 1px dashed;
+}
+.links_user{
+  margin-top: 15px;
+}
+.links_user button{
+  text-shadow: -1px -1px 0 #0D79BD;
+    border: solid 1px #037BC6;
+    border-bottom-color: #07598D;
+    border-top-color: #0285D8;
+    background-color: #009CFF;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
  /* end  view profile people */
  @media all and (max-width: 1200px) {
   
