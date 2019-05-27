@@ -25,6 +25,7 @@ class ProfilePhotoTableSeeder extends Seeder
                 } else {
                     $photo->main_photo_marker = false;
                 }
+                $photo->is_deleted = false;
                 $photo->save();
             }
 

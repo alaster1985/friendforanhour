@@ -440,5 +440,5 @@
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function
     -->
-    
+
     @include('layouts.footer')
