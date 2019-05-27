@@ -20,6 +20,6 @@ class ProfilePhotoController extends Controller
 
     public function updatePhoto(Request $request)
     {
-        dd($request);
+        ProfilePhoto::updateProfilePhoto($request);
     }
 }
