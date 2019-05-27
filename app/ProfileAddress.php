@@ -17,4 +17,23 @@ class ProfileAddress extends Model
     {
         return $this->belongsTo('App\City');
     }
+
+    public static function getProfileAddressByProfileId($id)
+    {
+        return Profile::find($id)->profileAddress;
+    }
+
+    public static function updateProfileAddressByProfileId($request, $id)
+    {
+        $profileAddress = self::getProfileAddressByProfileId($id);
+        $profileAddress->address = $request->address;
+        if ($request->city === 'new') {
+            $profileAddress->city_id = City::createNewCity($request);
+        } else {
+            $profileAddress->city_id = $request->city;
+        }
+
+        $profileAddress->save();
+        return $profileAddress->id;
+    }
 }

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Auth;
 use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
@@ -47,5 +48,16 @@ class User extends Authenticatable
     public static function generateSmsCode()
     {
         return rand(10000, 99999);
+    }
+
+    public static function updateUserById($request, $id)
+    {
+        $user = Auth::user();
+        if ($user->id === $id && isset($request->nickname)){
+            $user->name = $request->nickname;
+            $user->save();
+        } else {
+            return redirect()->back()->with('message', 'something went wrong');
+        }
     }
 }

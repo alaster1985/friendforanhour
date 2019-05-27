@@ -53,18 +53,26 @@
                     <script>document.getElementById("ct{{$city->id}}").selected = true</script>
                 @endif
             @endforeach
+            <option value="new">there is no my city in this list</option>
         </select>
+    </div>
+    <div class="newCity" style="display: none">add new city
+        <input type="text" name="newCity" placeholder="city_name">
     </div>
     <div>country
         <select name="country">
             @foreach($countries as $country)
                 <option id="cnt{{$country->id}}"
                         value="{{$country->id}}">{{$country->country_name}}</option>
-                @if($country->id === $user->profile->profileAddress->city->country->country_name)
+                @if($country->id === $user->profile->profileAddress->city->country->id)
                     <script>document.getElementById("cnt{{$country->id}}").selected = true</script>
                 @endif
             @endforeach
+            <option value="new">there is no my country in this list</option>
         </select>
+    </div>
+    <div class="newCountry" style="display: none">add new Country
+        <input type="text" name="newCountry" placeholder="Country_name">
     </div>
     <br>
     <div>I wont pay for:</div>
@@ -97,10 +105,10 @@
                 </td>
                 <td>
                     <select name="is_disabled[1c{{$list->id}}]">
-                        <option id="enabled" value="0">Enabled</option>
-                        <option id="disabled" value="1">Disabled</option>
+                        <option id="enabled{{$list->id}}" value="0">Enabled</option>
+                        <option id="disabled{{$list->id}}" value="1">Disabled</option>
                         @if($list->is_disabled === 1)
-                            <script>document.getElementById('disabled').selected = true</script>
+                            <script>document.getElementById('disabled{{$list->id}}').selected = true</script>
                         @endif
                     </select>
                 </td>
@@ -147,10 +155,10 @@
                 </td>
                 <td>
                     <select name="is_disabled[2c{{$list->id}}]">
-                        <option id="enabled" value="0">Enabled</option>
-                        <option id="disabled" value="1">Disabled</option>
+                        <option id="enabled{{$list->id}}" value="0">Enabled</option>
+                        <option id="disabled{{$list->id}}" value="1">Disabled</option>
                         @if($list->is_disabled === 1)
-                            <script>document.getElementById('disabled').selected = true</script>
+                            <script>document.getElementById('disabled{{$list->id}}').selected = true</script>
                         @endif
                     </select>
                 </td>
@@ -167,21 +175,23 @@
     </table>
     <button type="button" id="new_service_as_friend">add new service as 'friend'</button>
     <br>
-    <div>My photo</div>
-    <table border="1">
+</form>
+<br>
+<div>My photo</div>
+<form id="updatePhotoForm">
+    <table border="1" id="usersPhoto">
         <tr>
             <th>Photo</th>
             <th>main marker</th>
+            <th>remove</th>
         </tr>
-        @foreach($photos as $photo)
-            <tr>
-                <td><img height="20%" src="{{asset($photo->photo_path)}}"></td>
-                <td><input type="radio" name="qwe" value="{{$photo->id}}" {{$photo->main_photo_marker ? 'checked' : ''}}></td>
-            </tr>
-        @endforeach
     </table>
+    <input type='file' id="imgInput"/>
+    <button id="cancelPreview" type="button">cancel</button>
+    <img id="preview" height="100px" src="{{asset('images/preview.png')}}" alt="your new photo"/>
     <br>
+    <button type="submit" disabled>SAVE</button>
 </form>
-
+<br><br><br>
 
 @include('layouts.footer')

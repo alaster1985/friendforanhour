@@ -15,4 +15,12 @@ class Country extends Model
     {
         return Country::all();
     }
+
+    public static function createNewCountry($request)
+    {
+        $newCountry = new Country();
+        $newCountry->country_name = $request->newCountry;
+        $newCountry->save();
+        return $newCountry->id;
+    }
 }

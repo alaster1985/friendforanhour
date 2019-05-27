@@ -27,5 +27,8 @@ Route::middleware('role:user')->group(function () {
     Route::get('edit', 'ProfileController@edit')->name('editProfile');
     Route::post('update', 'ProfileController@update')->name('updateProfile');
     Route::get('deleteService/{id}', 'ServiceListController@deleteService')->name('deleteService');
+    Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
+    Route::post('removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
+    Route::post('updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
 
 });
