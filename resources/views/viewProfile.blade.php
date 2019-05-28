@@ -1,12 +1,12 @@
 @include('layouts.header')
 <div class="container">
     <div class="row information_user">
-        <div class="col-3 user_avatar">
+        <div class="col-sm-3 col-12 user_avatar">
                 <a  data-fancybox="images" rel="group"  href="{{ asset('images/animals.jpg') }}">
                     <img src="{{ asset('images/animals.jpg') }}">
             </a>   
         </div>
-        <div class="col-9">
+        <div class="col-sm-9 col-12">
             <p class="name_user ">{{$user->profile->second_name}} <span><span class="offline_user">Была вчера в
                         <span>19:59</span></span><span class="overview"><img
                             src="{{ asset('images/user_icon.png') }}">38</span></span></p>
@@ -20,7 +20,7 @@
                 <a href="">В черный список</a>
             </div>
             <div class="row  service service_close">
-                <div class="col-8">
+                <div class="col-lg-8 col-12 ">
                     <table class="col-12 table_for_me">
                         <tr>
                             <th class="table_title_service">Я сделаю за деньги</th>
@@ -54,7 +54,7 @@
                     <button class="table_paid_open"><span class="open_table">Подробнее</span><span
                             class="close_table">Свернуть</span></button>
                 </div>
-                <div class="col-4 about_user_block">
+                <div class="col-lg-4 col-12 about_user_block">
                     <p>Немного о себе</p>
                     <div>
                         {{$user->profile->about}}
@@ -92,8 +92,6 @@
                     <a data-fancybox="images" rel="group" href="{{ asset('images/animals.jpg') }}">
                             <img src="{{ asset('images/animals.jpg') }}">
                     </a>  
-                    
-                    
                 </div>
             </div>
             <div class="map_container">
