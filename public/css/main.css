@@ -657,6 +657,74 @@ visibility: visible;
     border-radius: 10px;
     padding: 5px 15px;
 }
+.links_user a{
+  color: #999DA4;
+  margin-left: 15px;
+}
+.about_user_block p{
+  color: #F68727;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.about_user_block div{
+  background-color:#F4F7F9;
+  padding: 10px;
+  border-radius: 10px;
+  height: calc(100% - 25px);
+  border: 1px solid #999DA4;
+}
+.service table tr th:first-child{
+  width: 80%;
+}
+.service table tr td::first-letter{
+  text-transform: uppercase;
+}
+.service table tr td:last-child{
+  text-align: center;
+}
+/* .service table tr td:first-child{
+  padding: 5px 0px;
+} */
+.table_title_service{
+  color: #F68727;
+  font-weight: 600;
+}
+.service table:last-child{
+  margin-top: 15px;
+}
+.table_paid{
+  margin-top: 20px;
+}
+.service table {
+ font-weight: 600;
+}
+.service button{
+  border: none;
+  background: #FFF;
+  padding: 0px;
+  color: #465160;
+  border-bottom: 1px dashed #465160;
+}
+.close_table{
+  display: none;
+}
+ .active_table {
+  display: block;
+} 
+.dissable_block{
+  display: none;
+}
+.table_paid_open, 
+.table_paid_open:active, 
+.table_paid_open:focus {
+    outline: none;
+}
+.user_content{
+  margin-top: 15px;
+}
+.photo_user a img{
+  width: 100%;
+}
  /* end  view profile people */
  @media all and (max-width: 1200px) {
   
