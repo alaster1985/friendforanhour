@@ -881,13 +881,23 @@ width: 100%;
 }
 .name_user span {
   margin-left:10px; 
+  width: 100%;
+  
 }
+
 .service div{
 padding: 10px;
 font-size: 14px;
 }
 .information_user{
   margin-top: 0px;
+}
+.user_avatar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.user_avatar img{
+  width: 50%;
 }
 }
 @media all and (max-width: 400px) {
