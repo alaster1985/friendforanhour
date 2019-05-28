@@ -7,8 +7,7 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
  <script src="{{ asset('js/slick.js') }} "defer ></script>
  <script src="{{ asset('js/jquery.fancybox.min.js') }}" ></script>
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDubzSKVlBye9tVxy2huOy046M2BOx1fR4&callback=initMap">
- </script>
+ 
 <script>
 if ($(window).width() <= '768'){
             $('#navbarSupportedContent').appendTo('.mobile_autorization');
