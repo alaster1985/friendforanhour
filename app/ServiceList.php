@@ -62,7 +62,7 @@ class ServiceList extends Model
                 $currentService = self::getServiceByServiceListId(substr($key, 2));
                 $currentService->service_name = $service_name;
                 $currentService->service_description = $request->service_description[$key];
-                $currentService->price = $request->price[$key];
+                $currentService->price = $request->price[$key] ?? 0;
                 $currentService->is_disabled = $request->is_disabled[$key];
                 $currentService->main_service_marker = isset($request->main_service_marker[$key]) ? true : false;
                 $currentService->save();

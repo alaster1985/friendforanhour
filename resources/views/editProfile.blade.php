@@ -5,6 +5,9 @@
         {{ session()->get('message') }}
     </div>
 @endif
+@if ($errors)
+    <div style="display: block; color: red">{{($errors->first())}}</div>
+@endif
 <form action="{{Route('updateProfile')}}" method="POST" enctype="multipart/form-data">
     <button type="submit">SAVE</button>
     {{csrf_field()}}

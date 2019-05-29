@@ -1,13 +1,14 @@
 <div class="card-body">
-    <h5>Войти на <span>1</span><span>-HF.com</span> </h5>
+    <h5>Войти на <span>1</span><span>-HF.com</span></h5>
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
         <div class="form-group row">
-            <!-- <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label> -->
+        <!-- <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label> -->
 
             <div class="col-12">
-                <input id="email" type="email" placeholder="E-mail" class="form-control @error('email') is-invalid @enderror" name="email"
+                <input id="email" type="email" placeholder="E-mail"
+                       class="form-control @error('email') is-invalid @enderror" name="email"
                        value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                 @error('email')
@@ -19,10 +20,11 @@
         </div>
 
         <div class="form-group row">
-            <!-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> -->
+        <!-- <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label> -->
 
             <div class="col-12">
-                <input id="password" type="password" placeholder="Пароль"  class="form-control @error('password') is-invalid @enderror"
+                <input id="password" type="password" placeholder="Пароль"
+                       class="form-control @error('password') is-invalid @enderror"
                        name="password" required autocomplete="current-password">
 
                 @error('password')
@@ -54,12 +56,14 @@
 
                 @if (Route::has('password.request'))
                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                        Забыли пароль? 
+                        Забыли пароль?
                     </a>
                 @endif
             </div>
         </div>
     </form>
-    @include('auth.social')
+    @guest
+        @include('auth.social')
+    @endguest
 
 </div>

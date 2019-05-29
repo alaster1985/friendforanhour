@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\City;
 use App\Country;
 use App\Gender;
+use App\Http\Requests\ProfileStoreRequest;
 use App\Profile;
 use App\ProfilePhoto;
 use App\ServiceList;
@@ -43,7 +44,7 @@ class ProfileController extends Controller
         return view('editProfile', $allData);
     }
 
-    public function update(Request $request)
+    public function update(ProfileStoreRequest $request)
     {
         $user = Auth::user();
         Profile::updateProfile($request, $user);

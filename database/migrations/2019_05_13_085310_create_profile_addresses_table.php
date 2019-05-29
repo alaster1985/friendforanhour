@@ -16,8 +16,8 @@ class CreateProfileAddressesTable extends Migration
         Schema::create('profile_addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('address', 100);
-            $table->float('latitude', 10, 6);
-            $table->float('longitude', 10, 6);
+            $table->float('latitude', 10, 6)->nullable();
+            $table->float('longitude', 10, 6)->nullable();
             $table->bigInteger('city_id')->unsigned();
             $table->timestamps();
         });
