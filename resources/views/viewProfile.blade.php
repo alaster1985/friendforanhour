@@ -95,9 +95,8 @@
                 </div>
             </div>
             <div class="map_container">
-                    <div id="map">
-
-                    </div> 
+            <h6>{{$user->profile->second_name}} на карте</h6>
+            @include('map')
             </div>
             
     </div>
