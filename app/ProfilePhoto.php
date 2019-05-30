@@ -68,7 +68,7 @@ class ProfilePhoto extends Model
                 $disableMainPhoto->main_photo_marker = false;
                 $disableMainPhoto->save();
             }
-            if ($request->mainPhoto_id != 'undefined') {
+            if (isset($request->mainPhoto_id)) {
                 $photoForUpdate = self::getProfilePhotoByPhotoId($request->mainPhoto_id);
                 $photoForUpdate->main_photo_marker = true;
                 $photoForUpdate->save();

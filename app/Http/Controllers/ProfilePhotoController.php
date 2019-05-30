@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfilePhotoStoreRequest;
 use App\ProfilePhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@ class ProfilePhotoController extends Controller
         return ProfilePhoto::removeProfilePhotoByPhotoId($request->photo_id);
     }
 
-    public function updatePhoto(Request $request)
+    public function updatePhoto(ProfilePhotoStoreRequest $request)
     {
         ProfilePhoto::updateProfilePhoto($request);
     }
