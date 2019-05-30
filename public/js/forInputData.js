@@ -34,7 +34,8 @@
                 }
             });
             lastRow.find('div').replaceWith('<button id="cancelServiceButton' + i + '" type="button">cancel</button>');
-            lastRow.find('select').detach();
+            lastRow.find('option').removeAttr( "id" );
+            // lastRow.find('select').detach();
             i++;
             lastRow.appendTo('.services_as_sponsor');
         });
@@ -55,7 +56,8 @@
                 }
             });
             lastRow.find('div').replaceWith('<button id="cancelServiceButton' + j + '" type="button">cancel</button>');
-            lastRow.find('select').detach();
+            lastRow.find('option').removeAttr( "id" );
+            // lastRow.find('select').detach();
             j++;
             lastRow.appendTo('.services_as_friend');
         });
@@ -165,9 +167,9 @@
             var file = document.getElementById('imgInput');
             if (file.files && file.files[0]) {
                 uploadFile = file.files[0];
+                formData.append('file', uploadFile);
             }
             formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
-            formData.append('file', uploadFile);
             formData.append('mainPhoto_id', $("#usersPhoto input[type='radio']:checked").val());
             $.ajax({
                 url: 'updatePhoto',

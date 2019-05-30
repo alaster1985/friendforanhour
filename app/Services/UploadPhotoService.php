@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Http\Controllers\Controller;
 use App\ProfilePhoto;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
 
@@ -18,9 +17,10 @@ class UploadPhotoService extends Controller
     {
         $image = $request->file;
         $image_resize = Image::make($image->getRealPath());
-        $path = ProfilePhoto::getMainProfilePhotoByProfileId(Auth::user()->profile_id)->photo_path;
+//        $path = ProfilePhoto::getMainProfilePhotoByProfileId(Auth::user()->profile_id)->photo_path;
 //        $path = explode('/', ProfilePhoto::getMainProfilePhotoByProfileId(Auth::user()->profile_id)->photo_path);
-        $this->pathFile = substr($path,0,strrpos($path,'/')) . '/';
+//        $this->pathFile = substr($path,0,strrpos($path,'/')) . '/';
+        $this->pathFile = 'profilepictures/' . Auth::user()->profile_id . '/';
         $image_resize->resize(640, 480);
 
         $this->newFileName = self::getGUID()
@@ -30,6 +30,19 @@ class UploadPhotoService extends Controller
         }
         $image_resize->save($this->pathFile . $this->newFileName);
 
+    }
+
+    public function uploadFirstPhotoFromSocial($photoUrl, $profileId)
+    {
+        $socialPhoto = Image::make($photoUrl);
+        $socialPhoto->resize(640, 480)->encode('jpg');
+        $this->pathFile = 'profilepictures/' . $profileId . '/';
+        $this->newFileName = self::getGUID()
+            . '.jpg';
+        if (!file_exists($this->pathFile)) {
+            mkdir($this->pathFile, 0777, true);
+        }
+        $socialPhoto->save($this->pathFile . $this->newFileName);
     }
 
     public static function getGUID()

@@ -13,7 +13,7 @@ class ProfilePhotoTableSeeder extends Seeder
     public function run()
     {
         $pathphoto = 'profilepictures';
-        $arr = ['fennec', 'hamster', 'hedgehog', 'meerkat', 'mole', 'shark'];
+        $arr = ['1', '2', '3', '4', '5', '6'];
 
         foreach ($arr as $key => $value) {
             for ($i = 1; $i <= 4; $i++) {

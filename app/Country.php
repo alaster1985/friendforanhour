@@ -18,11 +18,12 @@ class Country extends Model
 
     public static function createNewCountry($request)
     {
-        if (isset($request->newCountry)){
-            $newCountryName = $request->newCountry;
-        } else {
-            $newCountryName = $request['country'];
-        }
+//        if (isset($request->newCountry)){
+//            $newCountryName = $request->newCountry;
+//        } else {
+//            $newCountryName = $request['country'];
+//        }
+        $newCountryName = isset($request['country']) ? $request['country'] : $request->newCountry;
         $newCountry = new Country();
         $newCountry->country_name = $newCountryName;
         $newCountry->save();
@@ -36,7 +37,7 @@ class Country extends Model
         if (isset($country->id)) {
             return $country->id;
         } else {
-            return false;
+            return null;
         }
     }
 }

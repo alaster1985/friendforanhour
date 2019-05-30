@@ -81,6 +81,35 @@ class ServiceList extends Model
         }
     }
 
+    public static function servicesValidate($data)
+    {
+        $i = $j = 0;
+        $service_name = $data['service_name'] ?? [];
+        $service_description = $data['service_description'] ?? [];
+        $price = $data['price'] ?? [];
+        $is_disabled = $data['is_disabled'] ?? [];
+        $main_service_marker = $data['main_service_marker'] ?? [];
+        if (array_diff_key($service_name, $service_description) === array_diff_key($service_name,
+                $price) && array_diff_key($service_name, $price) === array_diff_key($is_disabled,
+                $price) && count($main_service_marker) <= 4) { // 4 = number of max total main_service_markers
+            foreach ($main_service_marker as $key => $value) {
+                if ($key[0] === 1) {
+                    $i++;
+                } elseif ($key[0] === 2) {
+                    $j++;
+                }
+                // 2 = number of max main_service_markers for each service_types
+                if (!array_key_exists($key, $service_name) || $i > 2 || $j > 2) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
 //    public function profileServiceList()
 //    {
 //        return $this->hasMany('App\ProfileServiceList');

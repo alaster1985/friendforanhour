@@ -42,6 +42,8 @@ class Profile extends Model
         $profile->gender_id = $data['sex'] ?? null;
         $profile->profile_address_id = ProfileAddress::createNewProfileAddress($data);
         $profile->save();
+        $photoFromSocial = $data['photo'] ?? null;
+        ProfilePhoto::createNewDefaultProfilePhoto($photoFromSocial, $profile->id);
         return $profile;
     }
 
@@ -58,9 +60,9 @@ class Profile extends Model
     {
         dd($request);
 
-        if (!self::adultCheck($request->date_of_birth)){
-            return redirect()->back()->with('message', 'something went wrong');
-        }
+//        if (!self::adultCheck($request->date_of_birth)){
+//            return redirect()->back()->with('message', 'something went wrong');
+//        }
         DB::transaction(function () use ($request, $user) {
             $currentProfile = Profile::find($user->profile_id);
             $currentProfile->first_name = $request->first_name;
