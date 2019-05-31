@@ -95,8 +95,9 @@
                 </div>
             </div>
             <div class="map_container">
-            <h6>{{$user->profile->second_name}} на карте</h6><button id="i_am_here">мое текущее место положение</button>
-            <button id="i_am_here_mouse">мое текущее место положение поставленное мышкой</button>
+            <h6>{{$user->profile->second_name}} на карте</h6>
+            <!-- <button id="i_am_here">мое текущее место положение</button>
+            <button id="i_am_here_mouse">мое текущее место положение поставленное мышкой</button> -->
             @include('map')
             </div>
             
