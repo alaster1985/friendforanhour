@@ -404,6 +404,7 @@ visibility: visible;
   margin-top:20px;
   padding: 15px;
   background: #FFF;
+  color: #F68727;
 }
 #map{
   height: 450px;
@@ -558,6 +559,178 @@ visibility: visible;
 .new_people_servis ul li{
   width: 10%;
 }
+#navbarSupportedContent ul{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+}
+#navbarSupportedContent ul li a{
+  padding: 5px 10px;
+ }
+ #navbarDropdown{
+   text-align: center;
+   border-radius: 10px;
+   background-color: #fff;
+  
+   color: #000;
+ }
+.header_background{
+  background-color: #2D5c92;;
+  width: 100%;
+}
+
+ /* view profile people */
+ .information_user{
+  background-color: #fff;
+  padding: 15px 0px;;
+  
+}
+.photo_user div{
+  text-align: center;
+
+}
+.slick-slide{
+  padding: 5px;
+}
+.user_avatar img{
+  width: 100%;
+}
+.information_user{
+  margin: 20px 0px;;
+}
+.name_user{
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  margin: 0px;
+}
+.name_user span{
+  font-size: 16px;
+}
+.character_user{
+  color: #999DA4;
+  margin: 0px;
+}
+.service{
+  margin-top: 20px;
+}
+.offline_user{
+  color:#D65DBC;
+  position: relative;
+  margin-right: 20px;
+}
+.offline_user::before{
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background: #D65DBC;
+  border: 1px solid #F68727;
+  border-radius: 50%;
+  left:-20px;
+  top:3px;
+}
+.overview{
+  color: #999DA4;
+}
+.overview img{
+  height: 15px;
+  width: 15px;
+  position: relative;
+  top: -2px;
+  margin-right:5px; 
+}
+.distance{
+  color: #68C42B;
+  border-bottom: #68C42B 1px dashed;
+}
+.links_user{
+  margin-top: 15px;
+}
+.links_user button{
+  text-shadow: -1px -1px 0 #0D79BD;
+    border: solid 1px #037BC6;
+    border-bottom-color: #07598D;
+    border-top-color: #0285D8;
+    background-color: #009CFF;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+.links_user a{
+  color: #999DA4;
+  margin-left: 15px;
+}
+.about_user_block p{
+  color: #F68727;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.about_user_block div{
+  background-color:#F4F7F9;
+  padding: 10px;
+  border-radius: 10px;
+  height: calc(100% - 25px);
+  border: 1px solid #999DA4;
+}
+.service table tr th:first-child{
+  width: 80%;
+}
+.service table tr td::first-letter{
+  text-transform: uppercase;
+}
+.service table tr td:last-child{
+  text-align: center;
+}
+/* .service table tr td:first-child{
+  padding: 5px 0px;
+} */
+.table_title_service{
+  color: #F68727;
+  font-weight: 600;
+}
+.service table:last-child{
+  margin-top: 15px;
+}
+.table_paid{
+  margin-top: 20px;
+}
+.service table {
+ font-weight: 600;
+}
+.service button{
+  border: none;
+  background: #FFF;
+  padding: 0px;
+  color: #465160;
+  border-bottom: 1px dashed #465160;
+}
+.close_table{
+  display: none;
+}
+ .active_table {
+  display: block;
+} 
+.dissable_block{
+  display: none;
+}
+.table_paid_open, 
+.table_paid_open:active, 
+.table_paid_open:focus {
+    outline: none;
+}
+.user_content{
+  margin-top: 15px;
+}
+.photo_user a img{
+  width: 100%;
+}
+
+ /* end  view profile people */
+ /* map */
+ 
+ /* end map */
  @media all and (max-width: 1200px) {
   
   .header_title, .links_header{
@@ -571,7 +744,9 @@ visibility: visible;
 }
 } 
 @media all and (max-width: 991px) {
-
+.left-column{
+  display: none;
+}
 .header_title{
   text-align: right;
   padding-right: 15px;
@@ -596,6 +771,17 @@ visibility: visible;
 }
 .new_people_servis ul li {
   width: 15%;
+}
+.links_user button{
+  display: block;
+}
+.links_user a{
+  display: inline-block;
+  margin: 10px 10px 0px 0px;
+}
+.about_user_block{
+  order:-1;
+  margin-bottom:15px;
 }
 }
 @media all and (max-width: 767px) {
@@ -628,5 +814,98 @@ visibility: visible;
   .new_people_servis ul li{
     width: 20%;
   }
+.users_prew_block div{
+  margin: 0px;
+  padding: 0px;
 }
+.links_user a{
+  display: inline-block;
+  margin: 10px 5px 0px 0px;
+}
+.name_user {
+  display: flex;
+    align-items: center;
+}
+}
+@media all and (max-width: 576px) {
+.label_new_people:after {
+  display: none;
+}
+.label_new_people{
+ height: 25%;
+ border-radius: 0;
+}
+.label_new_people p{
+text-align: center;
+width: 100%;
+}
+.new_people_servis{
+  padding: 0px;
+}
+.new_people_servis ul{
+  height: 75%;
+}
+.mobile_vi3{
+  display: block;
+}
+.links_header div{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.links_header div a{
+  margin: 0px;
+}
+.heder_link{
+  line-height: 28px;
+}
+#navbarSupportedContent ul{
+  flex-direction: column
+}
+#navbarSupportedContent{
+  padding: 0px;
+}
+.autorization, .registration{
+  margin: 0px;
+}
+.registration{
+  margin-top: 5px;
+}
+.Logo{
+  font-size: 28px;
+}
+.links_header{
+  margin-top: 25px;
+}
+#map{
+  height: 420px;
+}
+.name_user{
+  flex-direction: column-reverse;
+  align-items: end;
+}
+.name_user span {
+  margin-left:10px; 
+  width: 100%;
+  
+}
+
+.service div{
+padding: 10px;
+font-size: 14px;
+}
+.information_user{
+  margin-top: 0px;
+}
+.user_avatar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.user_avatar img{
+  width: 50%;
+}
+}
+@media all and (max-width: 400px) {
+.new_people_servis{
+height: 115px;
 }
