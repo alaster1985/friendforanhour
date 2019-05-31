@@ -35,12 +35,15 @@ class Profile extends Model
     public static function createNewDefaultProfile($data)
     {
         $profile = new Profile();
-        $profile->date_of_birth = date("Y-m-d", strtotime(str_replace('.', '-', $data['bdate']))) ?? null;
+        $profile->date_of_birth = date("Y-m-d", strtotime(str_replace('.', '-', $data['bdate'])));
         $profile->first_name = $data['first_name'] ?? null;
         $profile->second_name = $data['last_name'] ?? null;
         $profile->phone = $data['phone'] ?? null;
         $profile->gender_id = $data['sex'] ?? null;
+        $profile->profile_address_id = ProfileAddress::createNewProfileAddress($data);
         $profile->save();
+        $photoFromSocial = $data['photo'] ?? null;
+        ProfilePhoto::createNewDefaultProfilePhoto($photoFromSocial, $profile->id);
         return $profile;
     }
 
@@ -55,9 +58,11 @@ class Profile extends Model
 
     public static function updateProfile($request, $user)
     {
-        if (!self::adultCheck($request->date_of_birth)){
-            return redirect()->back()->with('message', 'something went wrong');
-        }
+        dd($request);
+
+//        if (!self::adultCheck($request->date_of_birth)){
+//            return redirect()->back()->with('message', 'something went wrong');
+//        }
         DB::transaction(function () use ($request, $user) {
             $currentProfile = Profile::find($user->profile_id);
             $currentProfile->first_name = $request->first_name;

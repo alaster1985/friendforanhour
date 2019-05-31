@@ -36,4 +36,15 @@ class ProfileAddress extends Model
         $profileAddress->save();
         return $profileAddress->id;
     }
+
+    public static function createNewProfileAddress($data)
+    {
+        $newProfileAddress = new ProfileAddress();
+        $newProfileAddress->address = 'unknown';
+        $newProfileAddress->latitude = null;
+        $newProfileAddress->longitude = null;
+        $newProfileAddress->city_id = City::checkCityIfExistByName($data) ?? City::createNewCity($data);
+        $newProfileAddress->save();
+        return $newProfileAddress->id;
+    }
 }

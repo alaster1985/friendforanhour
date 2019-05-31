@@ -34,7 +34,8 @@
                 }
             });
             lastRow.find('div').replaceWith('<button id="cancelServiceButton' + i + '" type="button">cancel</button>');
-            lastRow.find('select').detach();
+            lastRow.find('option').removeAttr("id");
+            // lastRow.find('select').detach();
             i++;
             lastRow.appendTo('.services_as_sponsor');
         });
@@ -55,7 +56,8 @@
                 }
             });
             lastRow.find('div').replaceWith('<button id="cancelServiceButton' + j + '" type="button">cancel</button>');
-            lastRow.find('select').detach();
+            lastRow.find('option').removeAttr("id");
+            // lastRow.find('select').detach();
             j++;
             lastRow.appendTo('.services_as_friend');
         });
@@ -131,19 +133,28 @@
                     '<td>' + mark + '</td>' + removePhotoButton +
                     '</tr>')
             });
+            checkNumberOfPhotos();
         });
     }
-
-    function checkPhotoQuantity() {
-        if ($("#usersPhoto td").closest("tr").length >= 1 || $("#usersPhoto td").closest("tr").length <= 9) {
-            return true;
+    
+    function checkNumberOfPhotos() {
+        if ($('#usersPhoto tr').length <= 9 ? true : false) {
+            $('#addNewPhoto').show()
         } else {
-            return false;
+            $('#addNewPhoto').hide()
         }
     }
 
+    // function checkPhotoQuantity() {
+    //     if ($("#usersPhoto td").closest("tr").length >= 1 || $("#usersPhoto td").closest("tr").length <= 9) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
+
     function remove(photoId) {
-        if (checkPhotoQuantity()) {
+        // if (checkPhotoQuantity()) {
             $.post('removePhoto', {
                 _token: $('meta[name="csrf-token"]').attr('content'),
                 photo_id: photoId
@@ -152,23 +163,27 @@
                     getPhoto();
                 }
             });
-        } else {
-            alert('Photos quantity must be more than 1 and less than 9!')
-        }
+        // } else {
+        //     alert('Photos quantity must be more than 1 and less than 9!')
+        // }
 
     }
 
     function updatePhoto() {
-        if (checkPhotoQuantity()) {
+        // if (checkPhotoQuantity()) {
             var formData = new FormData();
             var uploadFile = null;
             var file = document.getElementById('imgInput');
+            var mainPhoto_id = $("#usersPhoto input[type='radio']:checked").val();
             if (file.files && file.files[0]) {
                 uploadFile = file.files[0];
+                formData.append('file', uploadFile);
             }
             formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
-            formData.append('file', uploadFile);
-            formData.append('mainPhoto_id', $("#usersPhoto input[type='radio']:checked").val());
+            formData.append('count', $('#usersPhoto tr').length);
+            if (mainPhoto_id) {
+                formData.append('mainPhoto_id', mainPhoto_id);
+            }
             $.ajax({
                 url: 'updatePhoto',
                 data: formData,
@@ -177,11 +192,19 @@
                 processData: false,
                 success: function (data) {
                     resetPreview();
-                    getPhoto()
+                    getPhoto();
                 },
+                error: function (data) {
+                    $.each(data.responseJSON.errors, function (key, value) {
+                        $('.alert-danger').show();
+                        $('.alert-danger').empty();
+                        $('.alert-danger').append('<p>' + value + '</p>');
+                    });
+                }
             });
-        }
+        // }
     }
+
     function resetPreview() {
         $('#preview').attr('src', 'images/preview.png');
         $('#imgInput').val('');

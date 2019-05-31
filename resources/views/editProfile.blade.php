@@ -5,6 +5,9 @@
         {{ session()->get('message') }}
     </div>
 @endif
+@if ($errors)
+    <div style="display: block; color: red">{{($errors->first())}}</div>
+@endif
 <form action="{{Route('updateProfile')}}" method="POST" enctype="multipart/form-data">
     <button type="submit">SAVE</button>
     {{csrf_field()}}
@@ -178,6 +181,7 @@
 </form>
 <br>
 <div>My photo</div>
+<div class="alert-danger" style="display:none; color: red;"></div>
 <form id="updatePhotoForm">
     <table border="1" id="usersPhoto">
         <tr>
@@ -187,12 +191,13 @@
         </tr>
     </table>
 
-
-    <input type='file' id="imgInput">
-    <button id="cancelPreview" type="button">cancel</button>
-    <img id="preview" height="100px" src="{{asset('images/preview.png')}}" alt="your new photo">
+    <div id="addNewPhoto" style="display: block">
+        <input type='file' id="imgInput">
+        <button id="cancelPreview" type="button">cancel</button>
+        <img id="preview" height="100px" src="{{asset('images/preview.png')}}" alt="your new photo">
+    </div>
     <br>
-    <button type="submit" >SAVE</button>
+    <button type="submit">SAVE</button>
 </form>
 <br><br><br>
 
