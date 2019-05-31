@@ -1,6 +1,6 @@
 (function () {
     $(document).ready(function () {
-        if (window.location.pathname === '/edit' || window.location.pathname === '/profile') {
+        if (window.location.pathname === '/edit') {
             getPhoto();
         }
 

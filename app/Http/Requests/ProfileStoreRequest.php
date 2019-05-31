@@ -72,22 +72,24 @@ class ProfileStoreRequest extends FormRequest
                 Rule::in($countriesIds),
             ],
             'newCountry' => 'nullable|required_if:country,new|min:3|max:100',
-            'service_name' => 'required',
-            'service_description' => 'required',
-            'price' => 'required',
-            'is_disabled' => 'required',
+//            'service_name' => 'required',
+//            'service_description' => 'required',
+//            'price' => 'required',
+//            'is_disabled' => 'required',
+            'height' => 'nullable|integer|min:130|max:220',
+            'weight' => 'nullable|integer|min:30|max:280',
         ];
 
-        foreach ($this->request->get('service_name') as $key => $value) {
+        foreach ($this->request->get('service_name') ?? [] as $key => $value) {
             $rules['service_name.' . $key] = 'required|min:5|max:14';
         }
-        foreach ($this->request->get('service_description') as $key => $value) {
+        foreach ($this->request->get('service_description') ?? [] as $key => $value) {
             $rules['service_description.' . $key] = 'required|min:5|max:100';
         }
-        foreach ($this->request->get('price') as $key => $value) {
+        foreach ($this->request->get('price') ?? [] as $key => $value) {
             $rules['price.' . $key] = 'nullable|integer|min:0|max:100000';
         }
-        foreach ($this->request->get('is_disabled') as $key => $value) {
+        foreach ($this->request->get('is_disabled') ?? [] as $key => $value) {
             $rules['is_disabled.' . $key] = 'required|boolean';
         }
 
@@ -120,25 +122,33 @@ class ProfileStoreRequest extends FormRequest
             'newCountry.required_if' => 'Please, enter your country name',
             'newCountry.min' => 'I doubt that there are countries with so short name, but if it is true it’s better to contact technical support about this',
             'newCountry.max' => 'I know that there are countries with a name of more than 100 characters, but it’s better to contact technical support about this',
+//            'height.required' => 'Height must set the height',
+            'height.integer' => 'Use only numbers to set the height',
+            'height.min' => 'It\'s not enough',
+            'height.max' => 'It\'s to many for this parameter',
+//            'weight.required' => 'Weight must set the height',
+            'weight.integer' => 'Use only numbers to set the height',
+            'weight.min' => 'It\'s not enough',
+            'weight.max' => 'It\'s to many for this parameter',
 
         ];
 
-        foreach ($this->request->get('service_name') as $key => $value) {
+        foreach ($this->request->get('service_name') ?? [] as $key => $value) {
             $messages['service_name.' . $key . '.required'] = 'Please, set short service name';
             $messages['service_name.' . $key . '.min'] = 'It is too few characters for short service name. Min 5 characters';
             $messages['service_name.' . $key . '.max'] = 'Max 14 characters must be at short service name field';
         }
-        foreach ($this->request->get('service_description') as $key => $value) {
+        foreach ($this->request->get('service_description') ?? [] as $key => $value) {
             $messages['service_description.' . $key . '.required'] = 'Please, set description for service';
             $messages['service_description.' . $key . '.min'] = 'It is too few characters for service description. Min 5 characters';
             $messages['service_description.' . $key . '.max'] = 'Shorter please. Max 100 characters for description field';
         }
-        foreach ($this->request->get('price') as $key => $value) {
+        foreach ($this->request->get('price') ?? [] as $key => $value) {
             $messages['price.' . $key . '.integer'] = 'Please, use only numbers to set the prise';
             $messages['price.' . $key . '.min'] = 'You can\'t set price less than zero';
             $messages['price.' . $key . '.max'] = 'I see you know a lot about good services )) But max price must be less than 100000';
         }
-        foreach ($this->request->get('is_disabled') as $key => $value) {
+        foreach ($this->request->get('is_disabled') ?? [] as $key => $value) {
             $messages['is_disabled.' . $key . '.required'] = 'Please, make your choice to hide or to show this service';
             $messages['is_disabled.' . $key . '.boolean'] = 'You\'r good BRO! But use only this select. Tnx!';
         }

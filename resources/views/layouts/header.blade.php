@@ -33,22 +33,30 @@
             </span>
                 <div class="col-lg-7 col-xl-7 col-md-12 row links_header">
                     <div class="col-lg-8 col-xl-8 col-md-8 col-sm-12">
-                        <a class="heder_link" href="{{ url('#') }}">Знакомства</a>
-                        <a class="heder_link" href="{{ url('#') }}">Услуги</a>
-                        <a class="heder_link" href="{{ url('#') }}">Заработать за час</a>
-                        <a class="heder_link" href="{{ url('#') }}">Отдохнуть</a>
+                        <a class="heder_link" href="javascript:void(0);">Знакомства</a>
+                        <a class="heder_link" href="javascript:void(0);">Услуги</a>
+                        <a class="heder_link" href="javascript:void(0);">Заработать за час</a>
+                        <a class="heder_link" href="javascript:void(0);">Отдохнуть</a>
                     </div>
+
                     <div class="navbar-collapse col-lg-4 col-md-4 col-12" id="navbarSupportedContent">
+                        @guest
+                            <div class="text-center margin-bottom-20" id="ulogin"
+                                 data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,country,city,bdate,sex;
+                             providers=facebook,vkontakte,odnoklassniki;hidden=;{{--verify=1;--}}
+                                         redirect_uri={{ urlencode('http://' . $_SERVER['HTTP_HOST'])/* . '/demo/friendforanhour/public' */}}/ulogin;mobilebuttons=0;">
+                            </div>
+                        @endguest
                         <ul class="navbar-nav ml-auto">
                             @guest
-                                <li class="nav-item">
-                                    <a class="nav-link autorization" href="{{ route('login') }}">Войти</a>
-                                </li>
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link registration" href="{{ route('register') }}">Регистрация</a>
-                                    </li>
-                                @endif
+                                {{--<li class="nav-item">--}}
+                                {{--<a class="nav-link autorization" href="{{ route('login') }}">Войти</a>--}}
+                                {{--</li>--}}
+                                {{--@if (Route::has('register'))--}}
+                                {{--<li class="nav-item">--}}
+                                {{--<a class="nav-link registration" href="{{ route('register') }}">Регистрация</a>--}}
+                                {{--</li>--}}
+                                {{--@endif--}}
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -62,6 +70,9 @@
                                                      document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
+                                        <a class="dropdown-item" href="profile?prf={{Auth::user()->profile_id}}">view
+                                            own profile</a>
+                                        <a class="dropdown-item" href="edit">edit own profile</a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                               style="display: none;">

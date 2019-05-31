@@ -1,4 +1,4 @@
-@include('layouts.app')
+{{--@include('layouts.app')--}}
 @include('layouts.header')
 @if(session()->has('message'))
     <div class="alert alert-success" align="center">
@@ -12,28 +12,34 @@
     <button type="submit">SAVE</button>
     {{csrf_field()}}
     <div>nickname
-        <input type="text" name="nickname" value="{{$user->name}}">
+        <input type="text" name="nickname" value="{{$profile->user()->where('profile_id','=', $profile->id)->first()->name}}">
     </div>
     <div>first name
-        <input type="text" name="first_name" value="{{$user->profile->first_name}}">
+        <input type="text" name="first_name" value="{{$profile->first_name}}">
     </div>
     <div>second name
-        <input type="text" name="second_name" value="{{$user->profile->second_name}}">
+        <input type="text" name="second_name" value="{{$profile->second_name}}">
+    </div>
+    <div>height
+        <input type="number" min="130" max="220" name="height" value="{{$profile->height}}">
+    </div>
+    <div>weight
+        <input type="number" min="30" max="280" name="weight" value="{{$profile->weight}}">
     </div>
     <div>date of birth
         <input type="date" max="{{ date('Y-m-d', strtotime('- 18 years'))}}"
                min="{{ date('Y-m-d', strtotime('- 123 years'))}}" name="bdate"
-               value="{{$user->profile->date_of_birth}}">
+               value="{{$profile->date_of_birth}}">
     </div>
     <div>about me
-        <textarea name="about" rows="5">{{$user->profile->about}}</textarea>
+        <textarea name="about" rows="5">{{$profile->about}}</textarea>
     </div>
     <div>gender
         <select name="gender">
             @foreach($genders as $gender)
                 <option id="g{{$gender->id}}"
                         value="{{$gender->id}}">{{$gender->gender}}</option>
-                @if($gender->id === $user->profile->gender->id)
+                @if($gender->id === $profile->gender->id)
                     <script>document.getElementById("g{{$gender->id}}").selected = true</script>
                 @endif
             @endforeach
@@ -42,17 +48,17 @@
 
     <div>phone
         <input id="phone" type="tel" placeholder="+_(___)___-____" maxlength="13"
-               name="phone" value="{{$user->profile->phone}}">
+               name="phone" value="{{$profile->phone}}">
     </div>
     <div>address
-        <input type="text" name="address" value="{{$user->profile->profileAddress->address}}">
+        <input type="text" name="address" value="{{$profile->profileAddress->address}}">
     </div>
     <div>city
         <select name="city">
             @foreach($cities as $city)
                 <option id="ct{{$city->id}}"
                         value="{{$city->id}}">{{$city->city_name}}</option>
-                @if($city->id === $user->profile->profileAddress->city->id)
+                @if($city->id === $profile->profileAddress->city->id)
                     <script>document.getElementById("ct{{$city->id}}").selected = true</script>
                 @endif
             @endforeach
@@ -67,7 +73,7 @@
             @foreach($countries as $country)
                 <option id="cnt{{$country->id}}"
                         value="{{$country->id}}">{{$country->country_name}}</option>
-                @if($country->id === $user->profile->profileAddress->city->country->id)
+                @if($country->id === $profile->profileAddress->city->country->id)
                     <script>document.getElementById("cnt{{$country->id}}").selected = true</script>
                 @endif
             @endforeach

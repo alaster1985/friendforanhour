@@ -28,6 +28,9 @@ class ProfilesTableSeeder extends Seeder
             $profile->date_of_birth = $human[2];
             $profile->about = 'Я, ' . $human[0] . ' ' . $human[1] . ', ' . 'родился ' . $human[2] . '. Тут может быть ваша реклама. Звоните по номеру: ' . $human[4] . '';
             $profile->gender_id = $human[3];
+            $profile->height = rand(150,190);
+            $profile->weight = rand(45,90);
+            $profile->gender_id = $human[3];
             $profile->phone = $human[4];
             $profile->profile_address_id = $human[5];
             $profile->is_deleted = $human[6];

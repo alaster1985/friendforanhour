@@ -57,7 +57,7 @@ class ServiceList extends Model
 
     public static function updateServiceListByProfileId($request, $id)
     {
-        foreach ($request->service_name as $key => $service_name) {
+        foreach ($request->service_name ?? [] as $key => $service_name) {
             if ($key[1] === 'c') {
                 $currentService = self::getServiceByServiceListId(substr($key, 2));
                 $currentService->service_name = $service_name;

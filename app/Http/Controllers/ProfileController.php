@@ -11,26 +11,33 @@ use App\ProfilePhoto;
 use App\ServiceList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class ProfileController extends Controller
 {
-    public function getData($user)
+    public function getData($profile)
     {
-//        $photos = ProfilePhoto::getAllPhotosByProfileId($user->profile_id);
-        $friendsServices = ServiceList::getServiceListByProfileIdForSponsor($user->profile_id);
-        $sponsorsServices = ServiceList::getServiceListByProfileIdForFriend($user->profile_id);
+        $photos = ProfilePhoto::getAllPhotosByProfileId($profile->id);
+        $friendsServices = ServiceList::getServiceListByProfileIdForSponsor($profile->id);
+        $sponsorsServices = ServiceList::getServiceListByProfileIdForFriend($profile->id);
         return [
-            'user' => $user,
-//            'photos' => $photos,
+            'profile' => $profile,
+            'photos' => $photos,
             'friendsServices' => $friendsServices,
             'sponsorsServices' => $sponsorsServices,
         ];
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $user = Auth::user();
-        return view('viewProfile', $this->getData($user));
+        $request->validate([
+            'prf' => [
+                'required',
+                Rule::in(Profile::pluck('id')->all()),
+            ],
+        ]);
+        $profile = Profile::find($request['prf']);
+        return view('viewProfile', $this->getData($profile));
     }
 
     public function edit()
@@ -39,7 +46,7 @@ class ProfileController extends Controller
         $countries = Country::getAllCountries();
         $cities = City::getAllCitiesByCountryId($user->profile->profileAddress->city->country->id);
         $genders = Gender::getAllGenders();
-        $allData = array_merge($this->getData($user),
+        $allData = array_merge($this->getData(Profile::find($user->profile_id)),
             ['countries' => $countries, 'cities' => $cities, 'genders' => $genders]);
         return view('editProfile', $allData);
     }

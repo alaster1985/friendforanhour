@@ -18,6 +18,8 @@ class CreateProfilesTable extends Migration
             $table->string('first_name', 50)->nullable()->default(null);
             $table->string('second_name', 50)->nullable()->default(null);
             $table->date('date_of_birth')->nullable()->default(null);
+            $table->integer('height')->nullable()->default(null);
+            $table->integer('weight')->nullable()->default(null);
             $table->text('about')->nullable()->default(null);
             $table->bigInteger('gender_id')->unsigned()->nullable()->default(null);
             $table->string('phone', 50)->nullable()->default(null);

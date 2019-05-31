@@ -63,7 +63,7 @@ class Profile extends Model
 
     public static function updateProfile($request, $user)
     {
-        dd($request);
+//        dd($request);
 
 //        if (!self::adultCheck($request->date_of_birth)){
 //            return redirect()->back()->with('message', 'something went wrong');
@@ -74,6 +74,8 @@ class Profile extends Model
             $currentProfile->second_name = $request->second_name;
             $currentProfile->date_of_birth = $request->bdate;
             $currentProfile->about = $request->about;
+            $currentProfile->height = $request->height;
+            $currentProfile->weight = $request->weight;
             $currentProfile->gender_id = $request->gender;
             $currentProfile->phone = $request->phone;
             $currentProfile->profile_address_id = ProfileAddress::updateProfileAddressByProfileId($request,

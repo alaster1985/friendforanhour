@@ -14,7 +14,7 @@
                     @endif
 
                         <div class="links">
-                            <a href="profile">personal profile page</a>
+                            <a href="profile?prf={{Auth::user()->profile_id}}">personal profile page</a>
                         </div>
 
                     You are logged in!
