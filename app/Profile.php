@@ -27,6 +27,11 @@ class Profile extends Model
         return $this->belongsTo('App\ProfileAddress');
     }
 
+    public function profilePhoto()
+    {
+        return $this->hasMany('App\ProfilePhoto');
+    }
+
     public function getAge($bdate)
     {
         return date_diff(date_create($bdate), date_create('today'))->y;
@@ -77,5 +82,28 @@ class Profile extends Model
             ServiceList::updateServiceListByProfileId($request, $user->profile_id);
             $currentProfile->save();
         });
+    }
+
+    //last 10 records for "new friends"
+    public static function getNewProfiles()
+    {
+        return Profile::orderBy('created_at', 'desc')
+            ->where([
+                ['is_deleted', '=', 0],
+                ['is_locked', '=', 0],
+            ])
+            ->take(10)
+            ->get();
+    }
+
+    public static function getSixProfilesForLowerBlocks()
+    {
+        return Profile::orderBy('created_at', 'asc')
+            ->where([
+                ['is_deleted', '=', 0],
+                ['is_locked', '=', 0],
+            ])
+            ->take(6)
+            ->get();
     }
 }

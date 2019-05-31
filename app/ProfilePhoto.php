@@ -12,6 +12,11 @@ class ProfilePhoto extends Model
 {
     protected $table = 'profile_photos';
 
+    public function profile()
+    {
+        return $this->belongsTo('App\Profile');
+    }
+
     public static function getAllPhotosByProfileId($id)
     {
         return ProfilePhoto::where([

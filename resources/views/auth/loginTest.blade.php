@@ -1,4 +1,5 @@
 <div class="card-body">
+    @guest
     <h5>Войти на <span>1</span><span>-HF.com</span></h5>
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -62,7 +63,7 @@
             </div>
         </div>
     </form>
-    @guest
+
         @include('auth.social')
     @endguest
 
