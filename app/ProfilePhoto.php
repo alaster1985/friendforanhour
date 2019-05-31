@@ -64,14 +64,6 @@ class ProfilePhoto extends Model
     {
         DB::transaction(function () use ($request) {
             $disableMainPhoto = self::getMainProfilePhotoByProfileId(Auth::user()->profile_id);
-<<<<<<< HEAD
-            $disableMainPhoto->main_photo_marker = false;
-            $disableMainPhoto->save();
-            $photoForUpdate = self::getProfilePhotoByPhotoId($request->mainPhoto_id);
-            $photoForUpdate->main_photo_marker = true;
-            $photoForUpdate->save();
-            if ($request->file == null) {
-=======
             if (isset($disableMainPhoto->id)){
                 $disableMainPhoto->main_photo_marker = false;
                 $disableMainPhoto->save();
@@ -83,7 +75,6 @@ class ProfilePhoto extends Model
             }
 
             if ($request->file) {
->>>>>>> 6f50ca035694312460f0fc9f4cceb2d3a4907617
                 $newProfilePhoto = new ProfilePhoto();
                 $newPhoto = new UploadPhotoService();
                 $newPhoto->uploadProfilePhoto($request);
