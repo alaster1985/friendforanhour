@@ -13,13 +13,16 @@
 
 Route::get('/', 'MainController@index')->name('index');
 Route::get('lara2', function () {return view('welcome2');});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('ulogin', 'UloginController@login');
 Route::get('profile', 'ProfileController@index')->name('viewProfile');
+
+Route::middleware('auth')->group(function () {
+    Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+});
 
 Route::middleware('role:user')->group(function () {
 
@@ -30,4 +33,8 @@ Route::middleware('role:user')->group(function () {
     Route::post('removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
     Route::post('updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
 
+});
+
+Route::middleware('role:admin|moderator')->group(function () {
+    Route::get('admin/dashboard', 'Admin\AdminController@dashboard')->name('dashboard');
 });

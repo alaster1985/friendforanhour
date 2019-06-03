@@ -70,10 +70,13 @@
                                                      document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
-                                        <a class="dropdown-item" href="profile?prf={{Auth::user()->profile_id}}">view
-                                            own profile</a>
-                                        <a class="dropdown-item" href="edit">edit own profile</a>
-
+                                        @if(Auth::user()->hasRole('moderator|admin'))
+                                            <a class="dropdown-item" href="admin/dashboard">dashboard</a>
+                                        @else
+                                            <a class="dropdown-item" href="profile?prf={{Auth::user()->profile_id}}">view
+                                                own profile</a>
+                                            <a class="dropdown-item" href="edit">edit own profile</a>
+                                        @endif
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                               style="display: none;">
                                             @csrf
