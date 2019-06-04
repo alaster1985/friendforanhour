@@ -228,6 +228,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'ServiceList' => \App\ServiceList::class,
+        'Gender' => \App\Gender::class,
+        'City' => \App\City::class,
+        'Country' => \App\Country::class,
     ],
 
 ];

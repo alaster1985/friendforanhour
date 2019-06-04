@@ -11,7 +11,8 @@ class ProfilePhotoController extends Controller
 {
     public function getPhotos()
     {
-        return ProfilePhoto::getAllPhotosByProfileId(Auth::user()->profile_id);
+        $profileId = $_POST['profileId'];
+        return ProfilePhoto::getAllPhotosByProfileId(Auth::user()->profile_id ?? $profileId);
     }
 
     public function removePhoto(Request $request)

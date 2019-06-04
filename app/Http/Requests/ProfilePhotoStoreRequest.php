@@ -26,7 +26,8 @@ class ProfilePhotoStoreRequest extends FormRequest
      */
     public function rules()
     {
-        $profilePhotoIds = ProfilePhoto::getAllPhotosByProfileId(Auth::user()->profile_id)->pluck('id')->all() ?? [];
+
+        $profilePhotoIds = ProfilePhoto::getAllPhotosByProfileId(Auth::user()->profile_id ?? $this->request->get('profileId'))->pluck('id')->all() ?? [];
         if (count($profilePhotoIds) > 9) {
             return ['toomuch' => 'required'];
         }

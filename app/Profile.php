@@ -80,7 +80,7 @@ class Profile extends Model
             $currentProfile->phone = $request->phone;
             $currentProfile->profile_address_id = ProfileAddress::updateProfileAddressByProfileId($request,
                 $user->profile_id);
-            User::updateUserById($request, $user->id);
+            User::updateUserUserById($request, $user->id);
             ServiceList::updateServiceListByProfileId($request, $user->profile_id);
             $currentProfile->save();
         });

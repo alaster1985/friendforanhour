@@ -1,6 +1,7 @@
 (function () {
     $(document).ready(function () {
-        if (window.location.pathname === '/edit') {
+        if (window.location.pathname === '/edit' || window.location.pathname === '/admin/editProfileUser') {
+        // if (window.location.pathname === '/demo/friendforanhour/public/edit' || window.location.pathname === '/demo/friendforanhour/public/admin/editProfileUser') {
             getPhoto();
         }
 
@@ -119,19 +120,21 @@
         var mark;
         var removePhotoButton = '';
         $.post('getPhotos', {
-            _token: $('meta[name="csrf-token"]').attr('content')
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            profileId: $("input[name=profile_id]").val() ? $("input[name=profile_id]").val() : null
         }, function (data) {
             $(data).each(function (key, val) {
                 mark = val.main_photo_marker ? 'Основная' : '';
-                if (window.location.pathname === '/edit') {
+                // if (window.location.pathname === '/demo/friendforanhour/public/edit' || window.location.pathname === '/demo/friendforanhour/public/admin/editProfileUser') {
+                if (window.location.pathname === '/edit' || window.location.pathname === '/admin/editProfileUser') {
                     mark = '<input type="radio" name="marker" value="' + val.id + '"' + (val.main_photo_marker ? 'checked' : '') + '>';
                     removePhotoButton = '<td><button type="button" id="removePhotoButton' + val.id + '" >remove</button></td>';
                 }
 
                 $('#usersPhoto').append('<tr>' +
-                    '<td><img height="10%" src="' + val.photo_path + '"></td>' +
+                    '<td><img height="10%" src="/' + val.photo_path + '"></td>' +
                     '<td>' + mark + '</td>' + removePhotoButton +
-                    '</tr>')
+                    '</tr>');
             });
             checkNumberOfPhotos();
         });
@@ -180,6 +183,7 @@
                 formData.append('file', uploadFile);
             }
             formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+            formData.append('profileId', $("input[name=profile_id]").val() ? $("input[name=profile_id]").val() : null);
             formData.append('count', $('#usersPhoto tr').length);
             if (mainPhoto_id) {
                 formData.append('mainPhoto_id', mainPhoto_id);
@@ -206,7 +210,7 @@
     }
 
     function resetPreview() {
-        $('#preview').attr('src', 'images/preview.png');
+        $('#preview').attr('src', '/images/preview.png');
         $('#imgInput').val('');
     }
 }());

@@ -20,7 +20,7 @@ class UploadPhotoService extends Controller
 //        $path = ProfilePhoto::getMainProfilePhotoByProfileId(Auth::user()->profile_id)->photo_path;
 //        $path = explode('/', ProfilePhoto::getMainProfilePhotoByProfileId(Auth::user()->profile_id)->photo_path);
 //        $this->pathFile = substr($path,0,strrpos($path,'/')) . '/';
-        $this->pathFile = 'profilepictures/' . Auth::user()->profile_id . '/';
+        $this->pathFile = 'profilepictures/' . (Auth::user()->profile_id ?? $request->profileId) . '/';
         $image_resize->resize(640, 480);
 
         $this->newFileName = self::getGUID()

@@ -36,5 +36,21 @@ Route::middleware('role:user')->group(function () {
 });
 
 Route::middleware('role:admin|moderator')->group(function () {
+
     Route::get('admin/dashboard', 'Admin\AdminController@dashboard')->name('dashboard');
+
+    Route::get('admin/viewAdminUsers', 'Admin\AdminController@viewAdminUsers')->name('viewAdminUsers');
+    Route::get('admin/deleteAdminUser/{id}', 'Admin\AdminController@deleteAdminUser')->name('deleteAdminUser');
+    Route::get('admin/editAdminUser', 'Admin\AdminController@editAdminUser')->name('editAdminUser');
+    Route::post('admin/updateAdminUser', 'Admin\AdminController@updateAdminUser')->name('updateAdminUser');
+    Route::get('admin/createAdminUser', 'Admin\AdminController@createAdminUser')->name('createAdminUser');
+    Route::post('admin/addAdminUser', 'Admin\AdminController@addAdminUser')->name('addAdminUser');
+
+    Route::get('admin/viewProfileUsers', 'Admin\AdminController@viewProfileUsers')->name('viewProfileUsers');
+    Route::get('admin/editProfileUser', 'Admin\AdminController@editProfileUser')->name('editProfileUser');
+    Route::post('admin/updateProfileUser', 'Admin\AdminController@updateProfileUser')->name('updateProfileUser');
+
+    Route::post('admin/getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
+    Route::post('admin/removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
+    Route::post('admin/updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
 });

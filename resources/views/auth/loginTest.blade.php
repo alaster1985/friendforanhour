@@ -10,7 +10,7 @@
             <div class="col-12">
                 <input id="email" type="email" placeholder="E-mail"
                        class="form-control @error('email') is-invalid @enderror" name="email"
-                       value="{{ old('email') }}" required autocomplete="email" autofocus>
+                       value="{{ old('email') }}" required {{--autocomplete="email" autofocus--}}>
 
                 @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -26,7 +26,7 @@
             <div class="col-12">
                 <input id="password" type="password" placeholder="Пароль"
                        class="form-control @error('password') is-invalid @enderror"
-                       name="password" required autocomplete="current-password">
+                       name="password" required {{--autocomplete="current-password"--}}>
 
                 @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -55,15 +55,16 @@
                     Войти
                 </button>
 
-                @if (Route::has('password.request'))
-                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                        Забыли пароль?
-                    </a>
-                @endif
+
+                {{--@if (Route::has('password.request'))--}}
+                    {{--<a class="btn btn-link" href="{{ route('password.request') }}">--}}
+                        {{--Забыли пароль?--}}
+                    {{--</a>--}}
+                {{--@endif--}}
             </div>
         </div>
     </form>
-
+        <br>
         @include('auth.social')
     @endguest
 
