@@ -726,11 +726,136 @@ visibility: visible;
 .photo_user a img{
   width: 100%;
 }
-
+.user_description_cart a{
+  text-decoration: none;
+}
  /* end  view profile people */
  /* map */
  
  /* end map */
+
+
+
+  /*edit profile */
+  .edit_profile_general_block{
+    margin: 0px;
+    margin-top: 20px;
+
+  }
+  .about_user_block_edit p{
+    padding-left: 15px;
+  }
+  .about_user_block_edit textarea{
+    width: 100%;
+    border-radius: 15px;
+    padding: 15px;
+    height: 93%;
+  }
+  .about_user_block_edit{
+    padding-right: 0px;
+  }
+  .about_edit_input div{
+    padding-left: 0px;
+  }
+  .about_edit_input input{
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    border:1px solid #999DA4;
+  }
+  .gender_select select{
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .newCity,.newCountry{
+    margin-top: 10px;
+  }
+  
+  .services_as_sponsor{
+   
+    width: 100%;
+  }
+  .table_services_as_sponsor{
+    margin: 0px;
+    margin-top: 20px;
+  }
+  .table_services_as_sponsor input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 5px;
+  }
+  .table_services_as_sponsor td{
+    padding: 0px;
+  }
+  .table_services_as_sponsor th{
+    padding: 5px;
+    color: #F68727;
+    font-weight: 600;
+    text-align: center;
+  }
+  .services_as_friend{
+    width: 100%;
+  }
+  .table_services_as_sponsor button{
+    margin-left: auto;
+    margin-top: 15px;
+  }
+  .main_service_marker1, .main_service_marker2{
+    height: 20px!important;
+    /* width: 35px!important; */
+    vertical-align: middle;
+  }
+  .select_status_service{
+    padding: 0px!important;
+  }
+  .select_status_service select{
+   width: 100%;
+   height: 31px;
+  }
+  .delete_service{
+    text-align: center;
+    color: #FF2F2F;
+  }
+  .delete_service a{
+  
+    color: #FF2F2F;
+  }
+  .prise_service{
+    text-align: center;
+  }
+  .edit_profile_general_block label{
+    color: #2D5c92;
+    font-weight: 600;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    margin-top: 15px;
+  }
+  .table_services_as_sponsor p{
+    color: #2D5c92;
+    font-weight: 600;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    font-size: 18px;
+  }
+  #new_service_as_sponsor, #new_service_as_friend{
+    padding:5px 15px;
+    color: #fff;
+    background: #2D5c92;
+    border: none;
+    border-radius: 5px;
+  }
+  #cancelServiceButton0{
+    margin: 0px;
+    padding:5px 15px;
+    height:31px;
+width: 100%;
+background: #FF2F2F;
+border: none;
+color: #fff;
+}
+ /* end edit profile */
  @media all and (max-width: 1200px) {
   
   .header_title, .links_header{
