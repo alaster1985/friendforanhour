@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
@@ -19,7 +20,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'profile_id', 'sms_checked', 'uid', 'network', 'social_profile', 'identity',
+        'name',
+        'email',
+        'password',
+        'profile_id',
+        'sms_checked',
+        'uid',
+        'network',
+        'social_profile',
+        'identity',
+        'is_deleted',
     ];
 
     /**
@@ -28,7 +38,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -50,14 +61,48 @@ class User extends Authenticatable
         return rand(10000, 99999);
     }
 
-    public static function updateUserById($request, $id)
+    public static function updateUserUserById($request, $id)
     {
         $user = Auth::user();
-        if ($user->id === $id && isset($request->nickname)){
+        if ($user->id === $id && isset($request->nickname)) {
             $user->name = $request->nickname;
             $user->save();
         } else {
             return redirect()->back()->with('message', 'something went wrong');
         }
+    }
+
+    public static function getAdminUsers()
+    {
+        $users = User::whereRoleIs('moderator')->orWhereRoleIs('admin')->get()->where('is_deleted', '=', 0);
+        return $users;
+    }
+
+    public static function deleteUser($id)
+    {
+        $userForDelete = User::find($id);
+        $userForDelete->is_deleted = 1;
+        $userForDelete->password = Hash::make('default' . $userForDelete->name);
+        $userForDelete->save();
+    }
+
+    public static function updateUser($request)
+    {
+        $user = User::find($request->user_id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->roles()->sync(Role::find($request->role));
+        $user->save();
+    }
+
+    public static function addUser($request)
+    {
+        $newUser = new User();
+        $newUser->name = $request->name;
+        $newUser->email = $request->email;
+        $newUser->password = Hash::make($request->password);
+        $newUser->profile_id = null;
+        $newUser->save();
+        $newUser->attachRole(Role::find($request->role));
     }
 }

@@ -52,7 +52,7 @@ class City extends Model
     public static function checkCityIfExistByName($request)
     {
         $cityName = $request['city'];
-        $city = City::where('city_name', $cityName);
+        $city = City::where('city_name', $cityName)->first();
         if (isset($city->id)) {
             return $city->id;
         } else {

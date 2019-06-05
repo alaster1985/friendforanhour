@@ -39,9 +39,9 @@ class ProfilePhoto extends Model
         ])->first();
     }
 
-    public static function getFirstNotMainProfilePhoto()
+    public static function getFirstNotMainProfilePhotoByProfileId($id)
     {
-        $allPhotos = self::getAllPhotosByProfileId(Auth::user()->profile_id);
+        $allPhotos = self::getAllPhotosByProfileId($id);
         foreach ($allPhotos as $profile_photo) {
             if (!$profile_photo->main_photo_marker) {
                 return $profile_photo;
@@ -56,7 +56,7 @@ class ProfilePhoto extends Model
             $photoForDelete = self::getProfilePhotoByPhotoId($photoId);
             if ($photoForDelete->main_photo_marker) {
                 $photoForDelete->main_photo_marker = false;
-                $newMainPhoto = self::getFirstNotMainProfilePhoto();
+                $newMainPhoto = self::getFirstNotMainProfilePhotoByProfileId($photoForDelete->profile_id);
                 $newMainPhoto->main_photo_marker = true;
                 $newMainPhoto->save();
             }
@@ -68,7 +68,7 @@ class ProfilePhoto extends Model
     public static function updateProfilePhoto($request)
     {
         DB::transaction(function () use ($request) {
-            $disableMainPhoto = self::getMainProfilePhotoByProfileId(Auth::user()->profile_id);
+            $disableMainPhoto = self::getMainProfilePhotoByProfileId(Auth::user()->profile_id ?? $request->profileId);
             if (isset($disableMainPhoto->id)){
                 $disableMainPhoto->main_photo_marker = false;
                 $disableMainPhoto->save();
@@ -83,9 +83,9 @@ class ProfilePhoto extends Model
                 $newProfilePhoto = new ProfilePhoto();
                 $newPhoto = new UploadPhotoService();
                 $newPhoto->uploadProfilePhoto($request);
-                $newProfilePhoto->profile_id = Auth::user()->profile_id;
+                $newProfilePhoto->profile_id = Auth::user()->profile_id ?? $request->profileId;
                 $newProfilePhoto->photo_path = $newPhoto->pathFile . $newPhoto->newFileName;
-                $newProfilePhoto->main_photo_marker = isset(self::getMainProfilePhotoByProfileId(Auth::user()->profile_id)->id) ? false : true;
+                $newProfilePhoto->main_photo_marker = isset(self::getMainProfilePhotoByProfileId(Auth::user()->profile_id ?? $request->profileId)->id) ? false : true;
                 $newProfilePhoto->is_deleted = false;
                 $newProfilePhoto->save();
             }

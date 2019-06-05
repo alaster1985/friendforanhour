@@ -33,7 +33,7 @@ class Country extends Model
     public static function checkCountryIfExistByName($request)
     {
         $countryName = isset($request['country']) ? $request['country'] : $request->newCountry;
-        $country = Country::where('country_name', $countryName);
+        $country = Country::where('country_name', $countryName)->first();
         if (isset($country->id)) {
             return $country->id;
         } else {
