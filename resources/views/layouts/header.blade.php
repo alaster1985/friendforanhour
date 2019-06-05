@@ -65,22 +65,23 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
+                                        
                                         @if(Auth::user()->hasRole('moderator|admin'))
-                                            <a class="dropdown-item" href="admin/dashboard">dashboard</a>
+                                            <a class="dropdown-item" href="admin/dashboard">Панель администратора   </a>
                                         @else
-                                            <a class="dropdown-item" href="profile?prf={{Auth::user()->profile_id}}">view
-                                                own profile</a>
-                                            <a class="dropdown-item" href="edit">edit own profile</a>
+                                            <a class="dropdown-item" href="profile?prf={{Auth::user()->profile_id}}">Моя страница</a>
+                                            <a class="dropdown-item" href="edit">Настройки</a>
                                         @endif
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                               style="display: none;">
                                             @csrf
                                         </form>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            <!-- {{ __('Logout') }} -->
+                                            Выйти
+                                        </a>
                                     </div>
                                 </li>
                             @endguest

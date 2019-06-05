@@ -195,7 +195,7 @@
                 </table>
                 <button type="button" id="new_service_as_friend">Добавить услугу</button>
     </div>
-    <button  class="button_save" type="submit">SAVE</button>
+    <button  class="button_save" type="submit">Сохранить</button>
     </form>
     <form id="updatePhotoForm">
         <table border="1" id="usersPhoto">
@@ -210,11 +210,11 @@
         </div>
         <div id="addNewPhoto" style="display: block">
             <input type='file' id="imgInput">
-            <button id="cancelPreview" type="button">cancel</button>
+            <button id="cancelPreview" type="button">Отмена</button>
             <img id="preview" height="100px" src="{{asset('images/preview.png')}}" alt="your new photo">
         </div>
         
-        <button class="button_save" type="submit">SAVE</button>
+        <button class="button_save" type="submit">Сохранить</button>
     </form>
 
 </div> 
