@@ -855,6 +855,57 @@ background: #FF2F2F;
 border: none;
 color: #fff;
 }
+/* #usersPhoto1 div{
+  display: inline-flex;
+  width: 25%;
+  padding: 15px;
+}
+#usersPhoto1 img{
+  width: 100%;
+} */
+#updatePhotoForm table tr:first-child{
+  display: none!important;
+}
+#updatePhotoForm table tbody{
+  display: inline-flex;
+}
+#updatePhotoForm table tbody tr{
+  display: inline-flex;
+  flex-direction: column;
+  width: 20%;
+}
+#updatePhotoForm table tbody tr td img{
+  width: 100%;
+}
+#usersPhoto{
+  border: none;
+}
+#usersPhoto button{
+  border: none;
+  width:100%;
+  background: #FF2F2F;
+  color: #fff;
+  padding: 5px;
+}
+.marker_chect{
+  margin: auto;
+  width: 100%;
+}
+#addNewPhoto button{
+  color: #fff;
+  background: #FF2F2F;
+ border-radius: 5px;
+  border: none;
+  padding: 5px 15px;
+}
+.button_save{
+  color: #fff;
+  background-color: #f89911;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+}
  /* end edit profile */
  @media all and (max-width: 1200px) {
   
@@ -908,6 +959,15 @@ color: #fff;
   order:-1;
   margin-bottom:15px;
 }
+.edit_profile_general_block{
+  flex-direction: row-reverse!important;
+}
+.about_user_block_edit{
+  height: 300px;;
+}
+.edit_profile_general_block label{
+  margin-top: 5px;
+}
 }
 @media all and (max-width: 767px) {
   .mobile_autorization{
@@ -951,10 +1011,38 @@ color: #fff;
   display: flex;
     align-items: center;
 }
+.table_services_as_sponsor, .services_as_friend, #usersPhoto {
+  overflow: auto;
+}
+.about_user_block_edit{
+  padding-left: 0px;
+  order: 0;
+}
+.about_edit_input div{
+  padding: 0px;
+
+}
+.about_edit_input {
+  margin: 0px;
+}
+
+.edit_profile_general_block label {
+  margin-bottom: 5px;
+  padding-left: 0px;
+  margin-top: 5px;
+}
+
 }
 @media all and (max-width: 576px) {
 .label_new_people:after {
   display: none;
+}
+#usersPhoto tbody{
+  flex-direction: column;
+  width: 100%;
+}
+#usersPhoto tbody tr{
+  width: 100% !important;
 }
 .label_new_people{
  height: 25%;
