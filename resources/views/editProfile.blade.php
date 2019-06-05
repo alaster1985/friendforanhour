@@ -199,11 +199,11 @@
     </form>
     <form id="updatePhotoForm">
         <table border="1" id="usersPhoto">
-            <!-- <tr>
+            <tr>
                 <th>Photo</th>
                 <th>main marker</th>
                 <th>remove</th>
-            </tr> -->
+            </tr>
         </table>
 
         <div id="addNewPhoto" style="display: block">
