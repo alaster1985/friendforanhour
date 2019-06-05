@@ -1,5 +1,6 @@
 @include('admin/layouts.header')
 @include('admin/layouts.menu')
+{{--{{dd($complainsAgainst)}}--}}
 <div class="content-sec">
     <div class="container">
         <div class="title-date-range">
@@ -250,6 +251,59 @@
                                     <button type="button" id="new_service_as_friend">add new service as 'friend'
                                     </button>
                                 </div>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <div>All complains against this user. Total: {{count($complainsAgainst)}}</div>
+                                    <table border="1">
+                                        <tr>
+                                            <th>FROM</th>
+                                            <th>Description</th>
+                                            <th>Date</th>
+                                        </tr>
+                                        @foreach($complainsAgainst as $complain)
+                                            <tr>
+                                                <td>
+                                                    <a href="editProfileUser?prf={{$complain->profileFrom->id}}">{{$complain->profileFrom->first_name . ' ' . $complain->profileFrom->second_name}}</a>
+                                                </td>
+                                                <td>
+                                                    {{$complain->description}}
+                                                </td>
+                                                <td>
+                                                    {{$complain->created_at}}
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div>All complains from this user. Total: {{count($complainsFrom)}}</div>
+                                    <table border="1">
+                                        <tr>
+                                            <th>AGAINST</th>
+                                            <th>Description</th>
+                                            <th>Date</th>
+                                        </tr>
+                                        @foreach($complainsFrom as $complain)
+                                            <tr>
+                                                <td>
+                                                    <a href="editProfileUser?prf={{$complain->profileAgainst->id}}">{{$complain->profileAgainst->first_name . ' ' . $complain->profileAgainst->second_name}}</a>
+                                                </td>
+                                                <td>
+                                                    {{$complain->description}}
+                                                </td>
+                                                <td>
+                                                    {{$complain->created_at}}
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
                                 <div class="row">
                                     <div class="col-md-2">
                                         <div class="inline-form">

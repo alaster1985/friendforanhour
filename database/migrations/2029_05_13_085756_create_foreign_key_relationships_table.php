@@ -44,6 +44,10 @@ class CreateForeignKeyRelationshipsTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade')->onUpdate('cascade');
         });
+        Schema::table('complains', function (Blueprint $table) {
+            $table->foreign('complain_from_profile_id')->references('id')->on('profiles');
+            $table->foreign('complain_against_profile_id')->references('id')->on('profiles');
+        });
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Complain;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminUserStoreRequest;
 use App\Http\Requests\ProfileStoreRequest;
@@ -85,10 +86,14 @@ class AdminController extends Controller
         $profile = Profile::find($request->prf);
         $friendsServices = ServiceList::getServiceListByProfileIdForSponsor($profile->id);
         $sponsorsServices = ServiceList::getServiceListByProfileIdForFriend($profile->id);
+        $complainsAgainst = Complain::getAllComplainsAgainstProfileId($profile->id);
+        $complainsFrom = Complain::getAllComplainsFromProfileId($profile->id);
         return view('admin/editProfileUser', [
             'profile' => $profile,
             'friendsServices' => $friendsServices,
             'sponsorsServices' => $sponsorsServices,
+            'complainsAgainst' => $complainsAgainst,
+            'complainsFrom' => $complainsFrom,
             ]);
     }
 

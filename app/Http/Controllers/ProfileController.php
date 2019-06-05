@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\City;
+use App\Complain;
 use App\Country;
 use App\Gender;
 use App\Http\Requests\ProfileStoreRequest;
@@ -37,7 +38,8 @@ class ProfileController extends Controller
             ],
         ]);
         $profile = Profile::find($request['prf']);
-        return view('viewProfile', $this->getData($profile));
+        $checkComplain = Complain::checkIfComplainExist(Auth::user()->profile_id, $profile->id);
+        return view('viewProfile', $this->getData($profile), ['checkComplain' => $checkComplain]);
     }
 
     public function edit()
@@ -56,5 +58,10 @@ class ProfileController extends Controller
         $user = Auth::user();
         Profile::updateProfile($request, $user);
         return redirect()->back()->with('message', 'DONE!');
+    }
+
+    public function addComplain(Request $request)
+    {
+        Complain::addComplain($request);
     }
 }

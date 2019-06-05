@@ -32,6 +32,7 @@ Route::middleware('role:user')->group(function () {
     Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
     Route::post('removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
     Route::post('updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
+    Route::post('addComplain', 'ProfileController@addComplain')->name('addComplain');
 
 });
 
