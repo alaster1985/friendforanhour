@@ -171,7 +171,8 @@
                 }
 
                 $('#usersPhoto').append('<tr>' +
-                    '<td><img height="10%" src="/' + val.photo_path + '"></td>' +
+                    '<td><img height="10%" src="/demo/friendforanhour/public/' + val.photo_path + '"></td>' +
+                    // '<td><img height="10%" src="/' + val.photo_path + '"></td>' +
                     '<td>' + mark + '</td>' + removePhotoButton +
                     '</tr>');
             });
@@ -187,16 +188,7 @@
         }
     }
 
-    // function checkPhotoQuantity() {
-    //     if ($("#usersPhoto td").closest("tr").length >= 1 || $("#usersPhoto td").closest("tr").length <= 9) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
     function remove(photoId) {
-        // if (checkPhotoQuantity()) {
         $.post('removePhoto', {
             _token: $('meta[name="csrf-token"]').attr('content'),
             photo_id: photoId
@@ -205,14 +197,9 @@
                 getPhoto();
             }
         });
-        // } else {
-        //     alert('Photos quantity must be more than 1 and less than 9!')
-        // }
-
     }
 
     function updatePhoto() {
-        // if (checkPhotoQuantity()) {
         var formData = new FormData();
         var uploadFile = null;
         var file = document.getElementById('imgInput');
@@ -245,7 +232,6 @@
                 });
             }
         });
-        // }
     }
 
     function resetPreview() {

@@ -38,7 +38,12 @@ class ProfileController extends Controller
             ],
         ]);
         $profile = Profile::find($request['prf']);
-        $checkComplain = Complain::checkIfComplainExist(Auth::user()->profile_id, $profile->id);
+        if (Auth::check()){
+            $checkComplain = Complain::checkIfComplainExist(Auth::user()->profile_id, $profile->id);
+        } else {
+            $checkComplain = true;
+        }
+
         return view('viewProfile', $this->getData($profile), ['checkComplain' => $checkComplain]);
     }
 

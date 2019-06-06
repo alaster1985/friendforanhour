@@ -1,4 +1,3 @@
-{{--@include('layouts.app')--}}
 @include('layouts.header')
 @if(session()->has('message'))
     <div class="alert alert-success" align="center">
