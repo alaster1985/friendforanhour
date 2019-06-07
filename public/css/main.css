@@ -547,7 +547,7 @@ visibility: visible;
    margin-top: 20px;
    padding-top: 100px;
  }
-.links_header, {
+.links_header {
   padding-left: 0px;
 }
 .links_header div{
@@ -1119,4 +1119,5 @@ font-size: 14px;
 @media all and (max-width: 400px) {
 .new_people_servis{
 height: 115px;
+}
 }

@@ -1,7 +1,7 @@
 (function () {
     $(document).ready(function () {
         if (window.location.pathname === '/edit' || window.location.pathname === '/admin/editProfileUser') {
-        // if (window.location.pathname === '/demo/friendforanhour/public/edit' || window.location.pathname === '/demo/friendforanhour/public/admin/editProfileUser') {
+            // if (window.location.pathname === '/demo/friendforanhour/public/edit' || window.location.pathname === '/demo/friendforanhour/public/admin/editProfileUser') {
             getPhoto();
         }
 
@@ -20,7 +20,27 @@
 
         var i = 0;
         $('#new_service_as_sponsor').click(function () {
-            let lastRow = $('.services_as_sponsor tr:last').clone();
+            let lastRow;
+            if ($('.services_as_sponsor tr').length === 1) {
+                let newLastRow =
+                    '<tr>\n' +
+                    '    <td><input type="text" maxlength="14" name="service_name[1n0]" value=""></td>\n' +
+                    '    <td><input type="text" name="service_description[1n0]" value=""></td>\n' +
+                    '    <td><input type="number" min="0" max="100000" name="price[1n0]" value=""></td>\n' +
+                    '    <td><input type="checkbox" class="main_service_marker1" name="main_service_marker[1n0]"></td>\n' +
+                    '    <td>\n' +
+                    '        <select name="is_disabled[1n0]">\n' +
+                    '            <option value="0">Enabled</option>\n' +
+                    '            <option value="1">Disabled</option>\n' +
+                    '        </select>\n' +
+                    '    </td>\n' +
+                    '    <td><button id="cancelServiceButton0" type="button">cancel</button></td>\n' +
+                    '</tr>';
+                $('.services_as_sponsor').append(newLastRow);
+                lastRow = $('.services_as_sponsor tr:last');
+            } else {
+                lastRow = $('.services_as_sponsor tr:last').clone();
+            }
             lastRow.find(':input').each(function () {
                 let newMark = this.name.substring(
                     this.name.lastIndexOf("[") + 1,
@@ -36,13 +56,33 @@
             });
             lastRow.find('div').replaceWith('<button id="cancelServiceButton' + i + '" type="button">cancel</button>');
             lastRow.find('option').removeAttr("id");
-            // lastRow.find('select').detach();
             i++;
             lastRow.appendTo('.services_as_sponsor');
+
         });
         var j = 0;
         $('#new_service_as_friend').click(function () {
-            let lastRow = $('.services_as_friend tr:last').clone();
+            let lastRow;
+            if ($('.services_as_friend tr').length === 1) {
+                let newLastRow =
+                    '<tr>\n' +
+                    '    <td><input type="text" maxlength="14" name="service_name[2n0]" value=""></td>\n' +
+                    '    <td><input type="text" name="service_description[2n0]" value=""></td>\n' +
+                    '    <td><input type="number" min="0" max="100000" name="price[2n0]" value=""></td>\n' +
+                    '    <td><input type="checkbox" class="main_service_marker2" name="main_service_marker[2n0]"></td>\n' +
+                    '    <td>\n' +
+                    '        <select name="is_disabled[2n0]">\n' +
+                    '            <option value="0">Enabled</option>\n' +
+                    '            <option value="1">Disabled</option>\n' +
+                    '        </select>\n' +
+                    '    </td>\n' +
+                    '    <td><button id="cancelServiceButton0" type="button">cancel</button></td>\n' +
+                    '</tr>';
+                $('.services_as_friend').append(newLastRow);
+                lastRow = $('.services_as_friend tr:last');
+            } else {
+                lastRow = $('.services_as_friend tr:last').clone();
+            }
             lastRow.find(':input').each(function () {
                 let newMark = this.name.substring(
                     this.name.lastIndexOf("[") + 1,
@@ -58,7 +98,6 @@
             });
             lastRow.find('div').replaceWith('<button id="cancelServiceButton' + j + '" type="button">cancel</button>');
             lastRow.find('option').removeAttr("id");
-            // lastRow.find('select').detach();
             j++;
             lastRow.appendTo('.services_as_friend');
         });
@@ -132,14 +171,15 @@
                 }
 
                 $('#usersPhoto').append('<tr>' +
+                   // '<td><img height="10%" src="/demo/friendforanhour/public/' + val.photo_path + '"></td>' +
                     '<td><img height="10%" src="/' + val.photo_path + '"></td>' +
-                    '<td class="marker_chect">' + mark + '</td>' + removePhotoButton +
+                    '<td>' + mark + '</td>' + removePhotoButton +
                     '</tr>');
             });
             checkNumberOfPhotos();
         });
     }
-    
+
     function checkNumberOfPhotos() {
         if ($('#usersPhoto tr').length <= 9 ? true : false) {
             $('#addNewPhoto').show()
@@ -148,65 +188,50 @@
         }
     }
 
-    // function checkPhotoQuantity() {
-    //     if ($("#usersPhoto td").closest("tr").length >= 1 || $("#usersPhoto td").closest("tr").length <= 9) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
     function remove(photoId) {
-        // if (checkPhotoQuantity()) {
-            $.post('removePhoto', {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                photo_id: photoId
-            }, function (data, status) {
-                if (status === 'success') {
-                    getPhoto();
-                }
-            });
-        // } else {
-        //     alert('Photos quantity must be more than 1 and less than 9!')
-        // }
-
+        $.post('removePhoto', {
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            photo_id: photoId
+        }, function (data, status) {
+            if (status === 'success') {
+                getPhoto();
+            }
+        });
     }
 
     function updatePhoto() {
-        // if (checkPhotoQuantity()) {
-            var formData = new FormData();
-            var uploadFile = null;
-            var file = document.getElementById('imgInput');
-            var mainPhoto_id = $("#usersPhoto input[type='radio']:checked").val();
-            if (file.files && file.files[0]) {
-                uploadFile = file.files[0];
-                formData.append('file', uploadFile);
+        var formData = new FormData();
+        var uploadFile = null;
+        var file = document.getElementById('imgInput');
+        var mainPhoto_id = $("#usersPhoto input[type='radio']:checked").val();
+        if (file.files && file.files[0]) {
+            uploadFile = file.files[0];
+            formData.append('file', uploadFile);
+        }
+        formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+        formData.append('profileId', $("input[name=profile_id]").val() ? $("input[name=profile_id]").val() : null);
+        formData.append('count', $('#usersPhoto tr').length);
+        if (mainPhoto_id) {
+            formData.append('mainPhoto_id', mainPhoto_id);
+        }
+        $.ajax({
+            url: 'updatePhoto',
+            data: formData,
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                resetPreview();
+                getPhoto();
+            },
+            error: function (data) {
+                $.each(data.responseJSON.errors, function (key, value) {
+                    $('.alert-danger').show();
+                    $('.alert-danger').empty();
+                    $('.alert-danger').append('<p>' + value + '</p>');
+                });
             }
-            formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
-            formData.append('profileId', $("input[name=profile_id]").val() ? $("input[name=profile_id]").val() : null);
-            formData.append('count', $('#usersPhoto tr').length);
-            if (mainPhoto_id) {
-                formData.append('mainPhoto_id', mainPhoto_id);
-            }
-            $.ajax({
-                url: 'updatePhoto',
-                data: formData,
-                type: 'POST',
-                contentType: false,
-                processData: false,
-                success: function (data) {
-                    resetPreview();
-                    getPhoto();
-                },
-                error: function (data) {
-                    $.each(data.responseJSON.errors, function (key, value) {
-                        $('.alert-danger').show();
-                        $('.alert-danger').empty();
-                        $('.alert-danger').append('<p>' + value + '</p>');
-                    });
-                }
-            });
-        // }
+        });
     }
 
     function resetPreview() {

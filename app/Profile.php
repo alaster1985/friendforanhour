@@ -32,6 +32,17 @@ class Profile extends Model
         return $this->hasMany('App\ProfilePhoto');
     }
 
+    public function complainFrom()
+    {
+        return $this->hasMany('App\Complain', 'complain_from_profile_id');
+    }
+
+    public function complainAgainst()
+    {
+        return $this->hasMany('App\Complain', 'complain_against_profile_id');
+    }
+
+
     public function getAge($bdate)
     {
         return date_diff(date_create($bdate), date_create('today'))->y;
