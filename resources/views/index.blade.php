@@ -19,7 +19,7 @@
             @endforeach
         </ul>
     </div>
-    <div class="container">
+
         <div class="row">
             <div class="col-3 left-column">
                 @guest
@@ -75,8 +75,8 @@
                             </tr>
                             <tr class="col-7 row mar">
                                 <td class="user_description_cart col-12">
-                                    <span class="name_user_cart">{{$lProfile->first_name}}
-                                        ,<span> {{$lProfile->getAge($lProfile->date_of_birth)}}</span></span>
+                                    <a href="profile?prf={{$lProfile->id}}"><span class="name_user_cart">{{$lProfile->first_name}}
+                                        ,<span> {{$lProfile->getAge($lProfile->date_of_birth)}}</span></span></a>
                                     <span class="city_user_cart">{{$lProfile->profileAddress->city->city_name}}
                                         <br> <span>5км от вас</span></span>
                                     <span class="title_serwise">

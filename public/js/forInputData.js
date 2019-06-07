@@ -166,13 +166,13 @@
                 mark = val.main_photo_marker ? 'Основная' : '';
                 // if (window.location.pathname === '/demo/friendforanhour/public/edit' || window.location.pathname === '/demo/friendforanhour/public/admin/editProfileUser') {
                 if (window.location.pathname === '/edit' || window.location.pathname === '/admin/editProfileUser') {
-                    mark = '<input type="radio" name="marker" value="' + val.id + '"' + (val.main_photo_marker ? 'checked' : '') + '>';
-                    removePhotoButton = '<td><button type="button" id="removePhotoButton' + val.id + '" >remove</button></td>';
+                    mark = '<input type="radio" class="marker_chect" name="marker" value="' + val.id + '"' + (val.main_photo_marker ? 'checked' : '') + '>';
+                    removePhotoButton = '<td><button type="button" id="removePhotoButton' + val.id + '" >Удалить</button></td>';
                 }
 
                 $('#usersPhoto').append('<tr>' +
-                    '<td><img height="10%" src="/demo/friendforanhour/public/' + val.photo_path + '"></td>' +
-                    // '<td><img height="10%" src="/' + val.photo_path + '"></td>' +
+                   // '<td><img height="10%" src="/demo/friendforanhour/public/' + val.photo_path + '"></td>' +
+                    '<td><img height="10%" src="/' + val.photo_path + '"></td>' +
                     '<td>' + mark + '</td>' + removePhotoButton +
                     '</tr>');
             });
