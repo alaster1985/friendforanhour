@@ -19,6 +19,8 @@ class UloginController extends RegisterController
         $data = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
         $user = json_decode($data, true);
 
+        dd($user);
+
         // Find user in DB.
         $userData = User::where('email', $user['email'])
             ->orWhere('uid', $user['uid'])

@@ -16,6 +16,11 @@ class Complain extends Model
         return $this->belongsTo('App\Profile', 'complain_against_profile_id');
     }
 
+//    public function profile()
+//    {
+//        return $this->profileFrom()->merge($this->profileAgainst());
+//    }
+
     public static function addComplain($request)
     {
         if (!self::checkIfComplainExist($request['profileIdFrom'], $request['profileIdAgainst'])) {

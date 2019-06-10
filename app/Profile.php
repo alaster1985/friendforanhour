@@ -42,6 +42,36 @@ class Profile extends Model
         return $this->hasMany('App\Complain', 'complain_against_profile_id');
     }
 
+    public function friendsOfMine()
+    {
+        return $this->belongsToMany('App\Profile', 'friends', 'profile_id', 'friend_id')->get();
+    }
+
+    public function friendOf()
+    {
+        return $this->belongsToMany('App\Profile', 'friends', 'friend_id', 'profile_id')->get();
+    }
+
+    public function friends()
+    {
+        return $this->friendsOfMine()->merge($this->friendOf());
+    }
+
+//    public function friendsOfMine()
+//    {
+//        return $this->hasMany('App\Friend','profile_id', 'id');
+//    }
+//
+//    public function friendOf()
+//    {
+//        return $this->hasMany('App\Friend','friend_id', 'id');
+//    }
+//
+//    public function friends()
+//    {
+//        return $this->friendsOfMine()->merge($this->friendOf());
+//    }
+
 
     public function getAge($bdate)
     {

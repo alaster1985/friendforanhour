@@ -33,6 +33,10 @@ Route::middleware('role:user')->group(function () {
     Route::post('removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
     Route::post('updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
     Route::post('addComplain', 'ProfileController@addComplain')->name('addComplain');
+    Route::get('chat', 'ChatController@index')->name('indexChat');
+    Route::get('chat/{id}', 'ChatController@show')->name('showChat');
+    Route::post('chat/getChat/{id}', 'ChatController@getChat')->name('getChat');
+    Route::post('chat/sendChat', 'ChatController@sendChat')->name('sendChat');
 
 });
 
