@@ -171,8 +171,8 @@
                 }
 
                 $('#usersPhoto').append('<tr>' +
-                    '<td><img height="10%" src="/demo/friendforanhour/public/' + val.photo_path + '"></td>' +
-                    // '<td><img height="10%" src="/' + val.photo_path + '"></td>' +
+                    // '<td><img height="10%" src="/demo/friendforanhour/public/' + val.photo_path + '"></td>' +
+                    '<td><img height="10%" src="/' + val.photo_path + '"></td>' +
                     '<td>' + mark + '</td>' + removePhotoButton +
                     '</tr>');
             });

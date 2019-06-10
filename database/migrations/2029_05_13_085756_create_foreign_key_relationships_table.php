@@ -48,6 +48,14 @@ class CreateForeignKeyRelationshipsTable extends Migration
             $table->foreign('complain_from_profile_id')->references('id')->on('profiles');
             $table->foreign('complain_against_profile_id')->references('id')->on('profiles');
         });
+        Schema::table('friends', function (Blueprint $table) {
+            $table->foreign('profile_id')->references('id')->on('profiles');
+            $table->foreign('friend_id')->references('id')->on('profiles');
+        });
+        Schema::table('chats', function (Blueprint $table) {
+            $table->foreign('profile_id')->references('id')->on('profiles');
+            $table->foreign('friend_id')->references('id')->on('profiles');
+        });
     }
 
     /**

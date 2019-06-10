@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="profile_Id" content="{{Auth::check() ? Auth::user()->profile_id : null}}">
     <title>1-hf</title>
 
     <!-- Fonts -->
@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}"/>
+    <link rel="stylesheet" href="{{asset('font-awesome-4.2.0/css/font-awesome.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('css/fontawesome-free-5.6.3-web/css/all.css')}}" type="text/css"/>
 </head>
 <div class="header_background">
     <div class="container">
@@ -41,8 +43,8 @@
 
                     <div class="navbar-collapse col-lg-4 col-md-4 col-12" id="navbarSupportedContent">
                         @guest
-                            <div class="text-center margin-bottom-20" id="ulogin"
-                                 data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,country,city,bdate,sex;
+                            <div class="text-center margin-bottom-20" id="ulogin2"
+                                 data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,city,country,gorod,bdate,sex;
                              providers=facebook,vkontakte,odnoklassniki;hidden=;{{--verify=1;--}}
                                          redirect_uri={{ urlencode('http://' . $_SERVER['HTTP_HOST'])/* . '/demo/friendforanhour/public' */}}/ulogin;mobilebuttons=0;">
                             </div>
@@ -73,9 +75,12 @@
                                         @if(Auth::user()->hasRole('moderator|admin'))
                                             <a class="dropdown-item" href="admin/dashboard">dashboard</a>
                                         @else
-                                            <a class="dropdown-item" href="profile?prf={{Auth::user()->profile_id}}">view
+                                            <a class="dropdown-item"
+                                               href="{{Request::root() . '/profile?prf=' . Auth::user()->profile_id}}">view
                                                 own profile</a>
-                                            <a class="dropdown-item" href="edit">edit own profile</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/edit">edit own
+                                                profile</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/chat">chat</a>
                                         @endif
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                               style="display: none;">
@@ -101,6 +106,7 @@
 
     </div>
 </div>
+{{--<div id="app2">--}}
 
 
 
