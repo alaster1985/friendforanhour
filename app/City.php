@@ -41,8 +41,11 @@ class City extends Model
                 $newCity->country_id = $country;
             }
         } else {
-            $newCityName = $request['city'];
             $newCity->country_id = Country::checkCountryIfExistByName($request) ?? Country::createNewCountry($request);
+            if (!isset($request['city'])) {
+                return null;
+            }
+            $newCityName = $request['city'];
         }
         $newCity->city_name = $newCityName;
         $newCity->save();
@@ -51,6 +54,9 @@ class City extends Model
 
     public static function checkCityIfExistByName($request)
     {
+        if (!isset($request['city'])) {
+            return null;
+        }
         $cityName = $request['city'];
         $city = City::where('city_name', $cityName)->first();
         if (isset($city->id)) {

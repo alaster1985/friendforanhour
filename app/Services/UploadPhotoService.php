@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\ProfilePhoto;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
+use Mockery\Exception;
 
 class UploadPhotoService extends Controller
 {
@@ -32,17 +33,21 @@ class UploadPhotoService extends Controller
 
     }
 
-    public function uploadFirstPhotoFromSocial($photoUrl, $profileId)
+    public function uploadFirstPhotoFromSocial($photoUrl, $profile)
     {
+
+//        $photoUrl = substr(($photoUrl.'?'), 0, strpos(($photoUrl.'?'), "?"));
         $socialPhoto = Image::make($photoUrl);
+//        $socialPhoto = Image::make('profilepictures/' . $profile->gender_id . '.jpg');
         $socialPhoto->resize(640, 480)->encode('jpg');
-        $this->pathFile = 'profilepictures/' . $profileId . '/';
+        $this->pathFile = 'profilepictures/' . $profile->id . '/';
         $this->newFileName = self::getGUID()
             . '.jpg';
         if (!file_exists($this->pathFile)) {
             mkdir($this->pathFile, 0777, true);
         }
         $socialPhoto->save($this->pathFile . $this->newFileName);
+
     }
 
     public static function getGUID()

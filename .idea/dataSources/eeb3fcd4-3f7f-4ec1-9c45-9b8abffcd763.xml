@@ -1544,7 +1544,6 @@ user_type</ColNames>
     <column id="360" parent="259" name="city_id">
       <Position>5</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="361" parent="259" name="created_at">

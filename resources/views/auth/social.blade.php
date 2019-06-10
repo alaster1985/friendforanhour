@@ -5,7 +5,7 @@
 {{--</div>--}}
 
 <div class="text-center margin-bottom-20" id="uLogin"
-     data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,city,country,gorod,bdate,sex;
+     data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,city,country,bdate,sex;
                              providers=facebook,vkontakte,odnoklassniki;hidden=;
              redirect_uri={{ urlencode('http://' . $_SERVER['HTTP_HOST'])}}/ulogin;mobilebuttons=0;">
 </div>

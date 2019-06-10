@@ -89,7 +89,7 @@ class Profile extends Model
         $profile->profile_address_id = ProfileAddress::createNewProfileAddress($data);
         $profile->save();
         $photoFromSocial = $data['photo'] ?? null;
-        ProfilePhoto::createNewDefaultProfilePhoto($photoFromSocial, $profile->id);
+        ProfilePhoto::createNewDefaultProfilePhoto($photoFromSocial, $profile);
         return $profile;
     }
 

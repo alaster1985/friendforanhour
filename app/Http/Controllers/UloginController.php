@@ -19,7 +19,7 @@ class UloginController extends RegisterController
         $data = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
         $user = json_decode($data, true);
 
-        dd($user);
+//        dd($user);
 
         // Find user in DB.
         $userData = User::where('email', $user['email'])
@@ -38,7 +38,7 @@ class UloginController extends RegisterController
                 Session::flash('flash_message_error', trans('interface.AccountNotActive'));
             }
 
-            return Redirect::back();
+            return Redirect::route('index');
         } else {
 
             // Make registration new user.
@@ -51,7 +51,7 @@ class UloginController extends RegisterController
 
 //            \Session::flash('flash_message', trans('interface.ActivatedSuccess'));
 
-            return Redirect::route('home');
+            return Redirect::route('index');
         }
     }
 }

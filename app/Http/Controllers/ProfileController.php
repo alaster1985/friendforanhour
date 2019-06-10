@@ -50,8 +50,9 @@ class ProfileController extends Controller
     public function edit()
     {
         $user = Auth::user();
+        $user->profile->profileAddress->city_id ? $countryId = $user->profile->profileAddress->city->country->id : $countryId = null;
         $countries = Country::getAllCountries();
-        $cities = City::getAllCitiesByCountryId($user->profile->profileAddress->city->country->id);
+        $cities = City::getAllCitiesByCountryId($countryId);
         $genders = Gender::getAllGenders();
         $allData = array_merge($this->getData(Profile::find($user->profile_id)),
             ['countries' => $countries, 'cities' => $cities, 'genders' => $genders]);
@@ -59,6 +60,7 @@ class ProfileController extends Controller
     }
 
     public function update(ProfileStoreRequest $request)
+//    public function update(Request $request)
     {
         $user = Auth::user();
         Profile::updateProfile($request, $user);

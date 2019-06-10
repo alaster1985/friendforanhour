@@ -18,7 +18,7 @@ class CreateProfileAddressesTable extends Migration
             $table->string('address', 100);
             $table->float('latitude', 10, 6)->nullable();
             $table->float('longitude', 10, 6)->nullable();
-            $table->bigInteger('city_id')->unsigned();
+            $table->bigInteger('city_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

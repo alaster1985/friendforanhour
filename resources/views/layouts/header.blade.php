@@ -17,16 +17,14 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}"/>
-    <link rel="stylesheet" href="{{asset('font-awesome-4.2.0/css/font-awesome.css')}}" type="text/css"/>
-    <link rel="stylesheet" href="{{asset('css/fontawesome-free-5.6.3-web/css/all.css')}}" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('font-awesome-4.2.0/css/font-awesome.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/fontawesome-free-5.6.3-web/css/all.css')}}"/>
 </head>
 <div class="header_background">
     <div class="container">
         @if (Route::has('login'))
             <header class="justify-content-between row">
-
-            <!-- <a href="{{ url('/home') }}">HOME</a> -->
-                <a class="Logo col-lg-2 col-xl-2 col-md-6 col-sm-4 col-6" href="{{ url('/') }}">
+                <a class="Logo col-lg-2 col-xl-2 col-md-6 col-sm-4 col-6" href="{{ route('index') }}">
                     1-<span>hf</span>.com
                 </a>
                 <div class="mobile_autorization col-sm-6 col-6"></div>
@@ -43,10 +41,16 @@
 
                     <div class="navbar-collapse col-lg-4 col-md-4 col-12" id="navbarSupportedContent">
                         @guest
-                            <div class="text-center margin-bottom-20" id="ulogin2"
-                                 data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,city,country,gorod,bdate,sex;
-                             providers=facebook,vkontakte,odnoklassniki;hidden=;{{--verify=1;--}}
-                                         redirect_uri={{ urlencode('http://' . $_SERVER['HTTP_HOST'])/* . '/demo/friendforanhour/public' */}}/ulogin;mobilebuttons=0;">
+                            {{--<div class="text-center margin-bottom-20" id="uLogin2"--}}
+                            {{--data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,country,city,bdate,sex;--}}
+                            {{--providers=facebook,vkontakte,odnoklassniki;hidden=;verify=1;--}}
+                            {{--redirect_uri={{ urlencode('http://' . $_SERVER['HTTP_HOST']) . '/demo/friendforanhour/public' }}/ulogin;mobilebuttons=0;">--}}
+                            {{--</div>--}}
+
+                            <div class="text-center margin-bottom-20" id="uLogin2"
+                                 data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,city,country,bdate,sex;
+                             providers=facebook,vkontakte,odnoklassniki;hidden=;
+                             redirect_uri={{ urlencode('http://' . $_SERVER['HTTP_HOST'])}}/ulogin;mobilebuttons=0;">
                             </div>
                         @endguest
                         <ul class="navbar-nav ml-auto">
@@ -69,9 +73,11 @@
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                                         @if(Auth::user()->hasRole('moderator|admin'))
-                                            <a class="dropdown-item" href="admin/dashboard">Панель администратора   </a>
+                                            <a class="dropdown-item" href="admin/dashboard">Панель администратора </a>
                                         @else
-                                            <a class="dropdown-item" href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">Моя страница</a>
+                                            <a class="dropdown-item"
+                                               href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">Моя
+                                                страница</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
                                         @endif
@@ -82,7 +88,7 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            <!-- {{ __('Logout') }} -->
+                                        <!-- {{ __('Logout') }} -->
                                             Выйти
                                         </a>
                                     </div>
@@ -90,15 +96,13 @@
                             @endguest
                         </ul>
                     </div>
-                @else
-                    <!-- <div class="col-lg-4 col-xl-4 col-md-4 col-sm-12 change">
-                    <a class="autorization " href="{{ route('login') }}">Войти</a> 
-
-                     @if (Route::has('register'))
-                        <a class="registration " href="{{ route('register') }}">Регистрация</a>
-                    @endif
-                            </div> -->
-
+                    @else
+                        {{--<div class="col-lg-4 col-xl-4 col-md-4 col-sm-12 change">--}}
+                        {{--<a class="autorization " href="{{ route('login') }}">Войти</a>--}}
+                        {{--@if (Route::has('register'))--}}
+                        {{--<a class="registration " href="{{ route('register') }}">Регистрация</a>--}}
+                        {{--@endif--}}
+                        {{--</div>--}}
                 </div>
                 @endif
             </header>

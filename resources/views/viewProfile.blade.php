@@ -27,9 +27,11 @@
             <p class="character_user">Возраст: {{$profile->getAge($profile->date_of_birth)}}, рост {{$profile->height}}
                 см, вес
                 {{$profile->weight}} кг</p>
+            @if($profile->profileAddress->city_id)
             <p class="character_user">{{$profile->profileAddress->city->country->country_name}}
                 , {{$profile->profileAddress->city->city_name}}@auth, <span class="distance">2 км от вас </span>@endauth
             </p>
+            @endif
             @auth
                 @if(Auth::user()->profile_id != $profile->id && isset(Auth::user()->profile_id))
                     <div class="links_user">

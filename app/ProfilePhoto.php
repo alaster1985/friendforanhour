@@ -92,12 +92,12 @@ class ProfilePhoto extends Model
         });
     }
 
-    public static function createNewDefaultProfilePhoto($photoUrl, $profileId)
+    public static function createNewDefaultProfilePhoto($photoUrl, $profile)
     {
         $newProfilePhoto = new ProfilePhoto();
         $newPhoto = new UploadPhotoService();
-        $newPhoto->uploadFirstPhotoFromSocial($photoUrl, $profileId);
-        $newProfilePhoto->profile_id = $profileId;
+        $newPhoto->uploadFirstPhotoFromSocial($photoUrl, $profile);
+        $newProfilePhoto->profile_id = $profile->id;
         $newProfilePhoto->photo_path = $newPhoto->pathFile . $newPhoto->newFileName;
         $newProfilePhoto->main_photo_marker = true;
         $newProfilePhoto->is_deleted = false;

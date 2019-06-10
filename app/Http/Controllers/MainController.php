@@ -9,7 +9,6 @@ class MainController extends Controller
 {
     public function index(Request $request)
     {
-//        dd($request->ip());
         $newProfiles = Profile::getNewProfiles();
         $profilesForLowerBlocks = Profile::getSixProfilesForLowerBlocks();
         return view('index', [
