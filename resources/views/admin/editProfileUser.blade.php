@@ -110,16 +110,22 @@
                                         <div class="inline-form">
                                             <label class="c-label">City</label>
                                             <select name="city">
+                                                <option id="new_ct" value="new">Добавить другой город</option>
                                                 @foreach(City::all() as $city)
-                                                    <option id="ct{{$city->id}}"
-                                                            value="{{$city->id}}">{{$city->city_name}}</option>
-                                                    @if($city->id === $profile->profileAddress->city->id)
+                                                    <option id="ct{{$city->id}}" value="{{$city->id}}">{{$city->city_name}}</option>
+                                                    @if($profile->profileAddress->city_id && $city->id === $profile->profileAddress->city->id)
                                                         <script>document.getElementById("ct{{$city->id}}").selected = true</script>
+                                                    @elseif(!$profile->profileAddress->city_id)
+                                                        <script>document.getElementById("new_ct").selected = true</script>
                                                     @endif
+                                                    {{--<option id="ct{{$city->id}}"--}}
+                                                            {{--value="{{$city->id}}">{{$city->city_name}}</option>--}}
+                                                    {{--@if($city->id === $profile->profileAddress->city->id)--}}
+                                                        {{--<script>document.getElementById("ct{{$city->id}}").selected = true</script>--}}
+                                                    {{--@endif--}}
                                                 @endforeach
-                                                <option value="new">there is no city in this list</option>
                                             </select>
-                                            <div class="newCity" style="display: none">add new city
+                                            <div class="newCity" style="display: {{$profile->profileAddress->city_id ? 'none' : 'block'}}">add new city
                                                 <input class="input-style" type="text" name="newCity"
                                                        placeholder="city_name">
                                             </div>
@@ -129,22 +135,30 @@
                                         <div class="inline-form">
                                             <label class="c-label">Country</label>
                                             <select name="country">
+                                                <option id="new_cnt" value="new">Добавить другую страну</option>
                                                 @foreach(Country::all() as $country)
                                                     <option id="cnt{{$country->id}}"
                                                             value="{{$country->id}}">{{$country->country_name}}</option>
-                                                    @if($country->id === $profile->profileAddress->city->country->id)
+                                                    @if($profile->profileAddress->city_id && $country->id === $profile->profileAddress->city->country->id)
                                                         <script>document.getElementById("cnt{{$country->id}}").selected = true</script>
+                                                    @elseif(!$profile->profileAddress->city_id)
+                                                        <script>document.getElementById("new_cnt").selected = true</script>
                                                     @endif
+                                                    {{--<option id="cnt{{$country->id}}"--}}
+                                                            {{--value="{{$country->id}}">{{$country->country_name}}</option>--}}
+                                                    {{--@if($country->id === $profile->profileAddress->city->country->id)--}}
+                                                        {{--<script>document.getElementById("cnt{{$country->id}}").selected = true</script>--}}
+                                                    {{--@endif--}}
                                                 @endforeach
-                                                <option value="new">there is no country in this list</option>
                                             </select>
-                                            <div class="newCountry" style="display: none">add new Country
+                                            <div class="newCountry" style="display: {{$profile->profileAddress->city_id ? 'none' : 'block'}}">add new Country
                                                 <input type="text" name="newCountry" placeholder="Country_name">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <h3>Блок с Услугами</h3>
                                     <div>User wont pay for this services:</div>
                                     <table border="1" class="services_as_sponsor">
                                         <tr>
@@ -255,6 +269,7 @@
                                 <br>
                                 <br>
                                 <div class="row">
+                                    <h3>Блок с жалобами</h3>
                                     <div>All complains against this user. Total: {{count($complainsAgainst)}}</div>
                                     <table border="1">
                                         <tr>

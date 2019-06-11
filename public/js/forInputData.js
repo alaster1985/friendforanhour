@@ -236,6 +236,7 @@
 
     function resetPreview() {
         $('#preview').attr('src', '/images/preview.png');
+        // $('#preview').attr('src', '/demo/friendforanhour/public/images/preview.png');
         $('#imgInput').val('');
     }
 }());
