@@ -8,7 +8,7 @@
                 </div>
                 @forelse($friends as $friend)
                     <div>
-                        <a href="chat/{{$friend->id}}">
+                        <a href="{{Request::root()}}/chat/{{$friend->id}}">
                             <div>{{$friend->first_name . ' ' . $friend->second_name}}<online v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineUsers"></online></div>
 
                         </a>

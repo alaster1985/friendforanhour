@@ -6,6 +6,7 @@ use App\Friend;
 use App\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class FriendController extends Controller
 {
@@ -37,7 +38,19 @@ class FriendController extends Controller
      */
     public function store(Request $request)
     {
-        // TODO: validation, add, redirect
+        $request->validate([
+            'friend_id' => [
+                'required',
+                Rule::in(Profile::pluck('id')->all()),
+            ],
+        ]);
+        if(Friend::getAllFriendsByProfileId($request->friend_id)->isEmpty()){
+            Friend::create([
+                'profile_id' => Auth::user()->profile_id,
+                'friend_id' => $request->friend_id,
+            ]);
+        }
+        return redirect()->route('showChat', ['id' => $request->friend_id]);
     }
 
     /**

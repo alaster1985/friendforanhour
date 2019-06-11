@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Friend extends Model
 {
@@ -10,14 +11,12 @@ class Friend extends Model
         'profile_id', 'friend_id',
     ];
 
-//    public function profilesOfMine()
-//    {
-//        return $this->belongsToMany('App\Profile', 'friends', 'profile_id', 'friend_id');
-//    }
-//
-//    public function profileOf()
-//    {
-//        return $this->belongsToMany('App\Profile', 'friends', 'friend_id', 'profile_id');
-//    }
-
+    public static function getAllFriendsByProfileId($id)
+    {
+        return Friend::where(function ($query) use ($id) {
+            $query->where('profile_id', '=', Auth::user()->profile_id)->where('friend_id', '=', $id);
+        })->orWhere(function ($query) use ($id) {
+            $query->where('profile_id', '=', $id)->where('friend_id', '=', Auth::user()->profile_id);
+        })->get();
+    }
 }

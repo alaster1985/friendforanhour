@@ -37,6 +37,7 @@ Route::middleware('role:user')->group(function () {
     Route::get('chat/{id}', 'ChatController@show')->name('showChat');
     Route::post('chat/getChat/{id}', 'ChatController@getChat')->name('getChat');
     Route::post('chat/sendChat', 'ChatController@sendChat')->name('sendChat');
+    Route::post('addToFriends', 'FriendController@store')->name('addToFriends');
 
 });
 

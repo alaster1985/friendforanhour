@@ -8,6 +8,9 @@
     @if ($errors)
         <div style="display: block; color: red">{{($errors->first())}}</div>
     @endif
+        <div id="app2" style="display: none">
+            <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
+        </div>
     <form action="{{Route('updateProfile')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row edit_profile_general_block justify-content-between">

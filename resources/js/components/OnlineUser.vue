@@ -1,7 +1,9 @@
 <template>
     <div class="pull-right">
-        <i class="fa fa-circle green" v-if="checkUser()"></i>
-        <i class="fa fa-circle red" v-else></i>
+        <!--<i class="fa fa-circle green" v-if="checkUser()"></i>-->
+        <!--<i class="fa fa-circle red" v-else></i>-->
+        <span v-if="checkUser()" class="green"><img src="/images/monitor1.svg">Онлайн</span>
+        <span v-else class="red"><img src="/images/monitor0.svg">Офлайн</span>
     </div>
 </template>
 
@@ -18,6 +20,9 @@
 </script>
 
 <style scoped>
+    img {
+        height: 15px;
+    }
     .red {
     color: red;
     }

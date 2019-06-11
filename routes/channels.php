@@ -15,12 +15,8 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 });
 
 Broadcast::channel('Chat.{profile_id}.{friend_id}', function ($user, $profile_id, $friend_id) {
-    return $user->profile_id == $friend_id;
+    return (int) $user->profile_id === (int) $friend_id;
 });
-
-//Broadcast::channel('Online', function ($user) {
-//    return \App\Profile::find($user->profile_id);
-//});
 
 Broadcast::channel('Online', function ($user) {
     return $user;

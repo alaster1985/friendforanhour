@@ -15,13 +15,15 @@
         <div class="col-sm-9 col-12">
             <p class="name_user ">{{$profile->first_name}}
                 @auth
-                    {{--<span>--}}
+                    <span id="app2">
+                        <online v-bind:friend="{{ $profile }}"
+                                v-bind:onlineusers="onlineUsers"></online>
                     {{--<span class="offline_user">Была вчера в<span>19:59</span>--}}
                     {{--</span>--}}
                     {{--<span class="overview">--}}
-                    {{--<img src="{{ asset('images/user_icon.png') }}">--}}{{--38--}}
+                    {{--<img src="{{ asset('images/user_icon.png') }}">38--}}
                     {{--</span>--}}
-                    {{--</span>--}}
+                    </span>
                 @endauth
             </p>
             <p class="character_user">Возраст: {{$profile->getAge($profile->date_of_birth)}}, рост {{$profile->height}}
@@ -33,9 +35,14 @@
             </p>
             @endif
             @auth
-                @if(Auth::user()->profile_id != $profile->id && isset(Auth::user()->profile_id))
+                @if(isset(Auth::user()->profile_id) && Auth::user()->profile_id != $profile->id)
                     <div class="links_user">
-                        <button>Написать сообщение</button>
+                        <form method="POST" action="{{Route('addToFriends')}}" enctype="multipart/form-data">
+                            <input type="hidden" name="friend_id" value="{{$profile->id}}">
+                            @csrf
+                            <button type="submit">Написать сообщение</button>
+                        </form>
+
                         {{--<a href="">В избранное</a>--}}
                         @if(!$checkComplain)
                             <button id="complainButton" class="btn btn-info btn-lg" data-toggle="modal"
