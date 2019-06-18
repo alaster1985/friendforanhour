@@ -37,6 +37,7 @@
                         <a class="heder_link" href="javascript:void(0);">Услуги</a>
                         <a class="heder_link" href="javascript:void(0);">Заработать за час</a>
                         <a class="heder_link" href="javascript:void(0);">Отдохнуть</a>
+                        <a class="heder_link" href="contactToSupport">ТП</a>
                     </div>
 
                     <div class="navbar-collapse col-lg-4 col-md-4 col-12" id="navbarSupportedContent">
@@ -80,6 +81,7 @@
                                                 страница</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/mytickets">My support tickets</a>
                                         @endif
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                               style="display: none;">

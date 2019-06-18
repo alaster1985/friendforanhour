@@ -19,20 +19,20 @@
                         </ul>
                     </div>
                 </div>
-                {{--<div class="single-menu">--}}
-                    {{--<h2><a title=""><i class="fa fa-seedling"></i><span>Categories</span></a></h2>--}}
-                    {{--<div class="sub-menu">--}}
-                        {{--<ul>--}}
-                            {{--<li><a href="--}}{{--{{route('viewCategories')}}--}}{{--" title="">All Categories</a></li>--}}
-                        {{--</ul>--}}
+                <div class="single-menu">
+                    <h2><a title=""><i class="fa fa-seedling"></i><span>Tickets</span></a></h2>
+                    <div class="sub-menu">
+                        <ul>
+                            <li><a href="{{route('viewTickets')}}" title="">All Tickets</a></li>
+                        </ul>
                         {{--@if(\App\User::find(Auth::id())->role_id === 3)--}}
                         {{--@else--}}
                         {{--<ul>--}}
-                            {{--<li><a href="--}}{{--{{route('createCategory')}}--}}{{--" title="">Create Category</a></li>--}}
+                            {{--<li><a href="{{route('createCategory')}}" title="">Create Category</a></li>--}}
                         {{--</ul>--}}
                         {{--@endif--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+                    </div>
+                </div>
                 {{--<div class="single-menu">--}}
                     {{--<h2><a title=""><i class="fa fa-tags"></i><span>Lots</span></a></h2>--}}
                     {{--<div class="sub-menu">--}}

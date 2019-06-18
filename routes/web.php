@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'MainController@index')->name('index');
+Route::get('contactToSupport', 'TicketController@index')->name('contactToSupport');
+Route::post('sendTicket', 'TicketController@sendTicket')->name('sendTicket');
 Route::get('lara2', function () {return view('welcome2');});
 Auth::routes();
 
@@ -33,6 +35,7 @@ Route::middleware('role:user')->group(function () {
     Route::post('removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
     Route::post('updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
     Route::post('addComplain', 'ProfileController@addComplain')->name('addComplain');
+    Route::get('mytickets', 'TicketController@mytickets')->name('mytickets');
     Route::get('chat', 'ChatController@index')->name('indexChat');
     Route::get('chat/{id}', 'ChatController@show')->name('showChat');
     Route::post('chat/getChat/{id}', 'ChatController@getChat')->name('getChat');
@@ -59,4 +62,9 @@ Route::middleware('role:admin|moderator')->group(function () {
     Route::post('admin/getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
     Route::post('admin/removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
     Route::post('admin/updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
+
+    Route::get('admin/viewTickets', 'Admin\AdminController@viewTickets')->name('viewTickets');
+    Route::get('admin/editTicket', 'Admin\AdminController@editTicket')->name('editTicket');
+    Route::get('admin/acceptTicket', 'Admin\AdminController@acceptTicket')->name('acceptTicket');
+    Route::post('admin/updateTicket', 'Admin\AdminController@updateTicket')->name('updateTicket');
 });

@@ -35,6 +35,8 @@
                                     <th>Email</th>
                                     <th>Is banned?</th>
                                     <th>Is locked?</th>
+                                    <th>Subscription end date</th>
+                                    <th>Subscription valid?</th>
                                     <th>Created_at</th>
                                     <th>Updated_at</th>
                                     <th>Edit</th>
@@ -69,6 +71,12 @@
                                         </td>
                                         <td>
                                             {{$profile->is_locked ? 'LOCKED' : ''}}
+                                        </td>
+                                        <td>
+                                            {{gmdate("d M Y H:i:s", $profile->subscription_end_date)}}
+                                        </td>
+                                        <td>
+                                            {{$profile->subscription_end_date >= strtotime('now') ? 'All is OK!' : 'Subscription Invalid'}}
                                         </td>
                                         <td>
                                             {{$profile->created_at}}

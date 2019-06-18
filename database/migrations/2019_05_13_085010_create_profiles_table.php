@@ -27,6 +27,7 @@ class CreateProfilesTable extends Migration
             $table->boolean('is_deleted')->default(false)->nullable();
             $table->boolean('is_banned')->default(false)->nullable();
             $table->timestamp('ban_finish_time')->nullable()->default(null);
+            $table->integer('subscription_end_date')->unsigned();
             $table->boolean('is_locked')->default(false)->nullable();
             $table->timestamps();
         });

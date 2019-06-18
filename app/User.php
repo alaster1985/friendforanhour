@@ -56,6 +56,11 @@ class User extends Authenticatable
         return $this->belongsTo('App\Profile');
     }
 
+    public function ticket()
+    {
+        return $this->hasMany('App\Ticket');
+    }
+
     public static function generateSmsCode()
     {
         return rand(10000, 99999);

@@ -2,15 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb678a43-abe1-44ea-85dd-5bedea43ab05" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/profilepictures/8/{66CA7409-CE01-3590-F392-3F48F684C217}.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/profilepictures/9/{49B045AB-90E9-31A6-61FD-41334DFF69A1}.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/StoreTicketRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/SupportFormRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Ticket.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/TicketStatus.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_06_14_150314_create_ticket_statuses_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_06_14_150406_create_tickets_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/TicketStatusTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/editTicket.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/viewTickets.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/contactToSupport.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profileTickets.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/forInputData.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/forInputData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/profilepictures/23/{31B84CF9-7F9E-CA1C-73D0-D95A8EBC14E8}.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/profilepictures/23/{31B84CF9-7F9E-CA1C-73D0-D95A8EBC14E8}.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/profilepictures/7/{83422426-1CDC-7ACF-2E64-BA92B7AE7946}.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/profilepictures/7/{83422426-1CDC-7ACF-2E64-BA92B7AE7946}.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/profilepictures/8/{272E6736-F259-1E06-E266-A8B3457E7FD4}.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/profilepictures/8/{272E6736-F259-1E06-E266-A8B3457E7FD4}.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/profilepictures/9/{350618DD-24A7-CE4D-41B6-F83816E7C3C0}.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/profilepictures/9/{350618DD-24A7-CE4D-41B6-F83816E7C3C0}.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_13_085435_create_balances_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_13_085435_create_balances_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2029_05_13_085756_create_foreign_key_relationships_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2029_05_13_085756_create_foreign_key_relationships_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/editProfileUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/editProfileUser.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/viewProfileUsers.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/viewProfileUsers.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/viewProfile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/viewProfile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,27 +76,74 @@
         <item name="friendforanhour@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="friendforanhour: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="friends: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="friendforanhour@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="friendforanhour: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="profile_addresses: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="friendforanhour@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="friendforanhour: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="profiles: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="tickets: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TicketController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+              <folding>
+                <element signature="e#40#81#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewProfile.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/viewProfile.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="97" column="18" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="97" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profileTickets.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/profileTickets.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ticket.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Ticket.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+              <folding>
+                <element signature="e#23#62#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,7 +171,6 @@
       <find>create table</find>
       <find>migrations</find>
       <find>whereRol</find>
-      <find>where</find>
       <find>autocomplete</find>
       <find>chmo</find>
       <find>777</find>
@@ -116,6 +184,7 @@
       <find>authEndpoint</find>
       <find>/broadcasting/auth</find>
       <find>images/monitor1.svg</find>
+      <find>where</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -131,46 +200,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="chat_modify" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/ServiceList.php" />
-        <option value="$PROJECT_DIR$/database/factories/UserFactory.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_07_070146_create_friends_table.php" />
-        <option value="$PROJECT_DIR$/database/factories/FriendFactory.php" />
-        <option value="$PROJECT_DIR$/app/Complain.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_07_104421_create_chats_table.php" />
-        <option value="$PROJECT_DIR$/database/factories/ChatFactory.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/chat/index.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2029_05_13_085756_create_foreign_key_relationships_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/chat/chat.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/components/Chat.vue" />
-        <option value="$PROJECT_DIR$/resources/js/components/ChatComposer.vue" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" />
-        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Broadcasting/PrivateChannel.php" />
-        <option value="$PROJECT_DIR$/resources/js/bootstrap.js" />
-        <option value="$PROJECT_DIR$/app/Chat.php" />
-        <option value="$PROJECT_DIR$/app/Events/BroadcastChat.php" />
-        <option value="$PROJECT_DIR$/resources/views/chatShow.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
-        <option value="$PROJECT_DIR$/app/City.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_05_13_085310_create_profile_addresses_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UloginController.php" />
         <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/ProfileStoreRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome2.blade.php" />
-        <option value="$PROJECT_DIR$/app/Profile.php" />
         <option value="$PROJECT_DIR$/app/ProfilePhoto.php" />
         <option value="$PROJECT_DIR$/app/Services/UploadPhotoService.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Friend.php" />
         <option value="$PROJECT_DIR$/resources/views/indexChat.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FriendController.php" />
@@ -178,17 +219,45 @@
         <option value="$PROJECT_DIR$/public/images/monitor.svg" />
         <option value="$PROJECT_DIR$/public/images/monitor0.svg" />
         <option value="$PROJECT_DIR$/resources/js/components/OnlineUser.vue" />
-        <option value="$PROJECT_DIR$/resources/views/viewProfile.blade.php" />
-        <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/routes/channels.php" />
         <option value="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/editProfile.blade.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/social.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/editProfileUser.blade.php" />
         <option value="$PROJECT_DIR$/public/js/forInputData.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome2.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php" />
+        <option value="$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/viewProfileUsers.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/editProfileUser.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_14_150314_create_ticket_statuses_table.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/TicketStatusTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_05_13_085435_create_balances_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2029_05_13_085756_create_foreign_key_relationships_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layouts/menu.blade.php" />
+        <option value="$PROJECT_DIR$/app/TicketStatus.php" />
+        <option value="$PROJECT_DIR$/app/Profile.php" />
+        <option value="$PROJECT_DIR$/resources/views/contactToSupport.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_14_150406_create_tickets_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/SupportFormRequest.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/viewTickets.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/StoreTicketRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/editTicket.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/viewProfile.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/header.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
+        <option value="$PROJECT_DIR$/resources/views/profileTickets.blade.php" />
+        <option value="$PROJECT_DIR$/app/Ticket.php" />
       </list>
     </option>
   </component>
@@ -362,6 +431,14 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="friendforanhour" type="b2602c69:ProjectViewProjectNode" />
+              <item name="friendforanhour" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
               <item name="Auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -393,17 +470,18 @@
             <path>
               <item name="friendforanhour" type="b2602c69:ProjectViewProjectNode" />
               <item name="friendforanhour" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="friendforanhour" type="b2602c69:ProjectViewProjectNode" />
-              <item name="friendforanhour" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="friendforanhour" type="b2602c69:ProjectViewProjectNode" />
               <item name="friendforanhour" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="friendforanhour" type="b2602c69:ProjectViewProjectNode" />
+              <item name="friendforanhour" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="friendforanhour" type="b2602c69:ProjectViewProjectNode" />
@@ -452,6 +530,14 @@
               <item name="friendforanhour" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="friendforanhour" type="b2602c69:ProjectViewProjectNode" />
+              <item name="friendforanhour" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -482,19 +568,19 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.CoffeeScript" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views" />
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/resources/views/admin" />
+      <recent name="$PROJECT_DIR$/public/css" />
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/public/profilepictures" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/Http/Services" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/resources/views/admin" />
-      <recent name="$PROJECT_DIR$/public/css" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -548,6 +634,11 @@
       <workItem from="1559975172282" duration="26315000" />
       <workItem from="1560148442159" duration="9868000" />
       <workItem from="1560234927996" duration="14832000" />
+      <workItem from="1560320450067" duration="6495000" />
+      <workItem from="1560410269820" duration="3685000" />
+      <workItem from="1560493778714" duration="14686000" />
+      <workItem from="1560580129315" duration="12138000" />
+      <workItem from="1560839335128" duration="9441000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1556897042707</created>
@@ -626,48 +717,43 @@
       <option name="project" value="LOCAL" />
       <updated>1560253962422</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="small_fix">
+      <created>1560268069285</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1560268069285</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="557556000" />
+    <option name="totallyTimeSpent" value="604585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1030" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50160086" side_tool="true" weight="0.3207127" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5026681" side_tool="true" weight="0.24832962" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49839914" visible="true" weight="0.3207127" />
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info active="true" content_ui="combo" x="833" y="294" width="254" height="510" id="Project" order="0" sideWeight="0.4980315" visible="true" weight="0.15688367" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32962137" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49733192" visible="true" weight="0.24832962" />
+      <window_info active="true" content_ui="combo" x="833" y="294" width="254" height="510" id="Project" order="0" sideWeight="0.4980315" visible="true" weight="0.12646745" />
       <window_info anchor="bottom" id="Docker" order="7" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.114727855" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.101387404" />
       <window_info id="Structure" order="1" sideWeight="0.5019685" side_tool="true" weight="0.12646745" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" x="833" y="294" width="254" height="510" id="Project" order="0" sideWeight="0.4980315" visible="true" weight="0.15688367" />
-      <window_info id="Structure" order="1" sideWeight="0.5019685" side_tool="true" weight="0.12646745" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.114727855" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50160086" side_tool="true" weight="0.3207127" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32962137" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49839914" visible="true" weight="0.3207127" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,65 +776,13 @@
     <MESSAGE value="validation_edit_profile_start" />
     <MESSAGE value="index_start" />
     <MESSAGE value="adminI_start" />
-    <MESSAGE value="small_fix" />
     <MESSAGE value="onlone_marker_done" />
     <MESSAGE value="online_marker_done" />
-    <option name="LAST_COMMIT_MESSAGE" value="online_marker_done" />
+    <MESSAGE value="small_fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="small_fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>92</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>83</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>84</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>85</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>86</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>87</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>89</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>88</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>90</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Profile.php</url>
-          <line>91</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -811,76 +845,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/cities">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/countries">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/editAdminUser.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="33" selection-start-line="33" selection-end-line="38" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/ProfileStoreRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="36" column="66" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Friend.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/chats">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+        <state relative-caret-position="149">
+          <caret line="391" column="39" selection-start-line="391" selection-start-column="39" selection-end-line="391" selection-end-column="39" />
         </state>
       </provider>
     </entry>
@@ -891,24 +859,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/friends">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FriendController.php">
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="37" column="7" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="100" selection-start-line="100" selection-end-line="104" selection-end-column="11" />
+        <state relative-caret-position="450">
+          <caret line="51" column="46" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -919,223 +873,365 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/footer.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="95" column="48" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/ProfilesTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/ServiceTypesTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" selection-start-line="14" selection-end-line="20" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/TicketStatusTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_13_085435_create_balances_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" selection-start-line="28" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_14_150314_create_ticket_statuses_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2029_05_13_085756_create_foreign_key_relationships_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.SCHEMA:friendforanhour">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
+          <ID>DATABASE</ID>
+          <OriginalElement>eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.SCHEMA:friendforanhour</OriginalElement>
+          <nodes>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.ticket_statuses</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.profile_addresses</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.roles</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.permission_role</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.service_types</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.permissions</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.transaction_names</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.tickets</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.countries</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.chats</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.service_lists</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.genders</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.friends</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.complains</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.transactions</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.profiles</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.permission_user</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.migrations</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.profile_photos</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.cities</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.users</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.role_user</node>
+            <node x="" y="">eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.TABLE:friendforanhour.password_resets</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.2745792736935341" x="1133.0" y="1119.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/chatShow.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/indexChat.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="165" lean-forward="true" selection-start-line="11" selection-start-column="85" selection-end-line="11" selection-end-column="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/UploadPhotoService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/broadcasting.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/view.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/cache/services.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2787" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/cache/packages.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-762" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-912">
-          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="57" lean-forward="true" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/channels.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="3" lean-forward="true" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/OnlineUser.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Events/BroadcastChat.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-552" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/laravel-echo/src/channel/channel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/laravel-echo/src/channel/presence-channel.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/laravel-echo/dist/channel/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/laravel-echo/dist/echo.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-597">
-          <caret column="46" selection-start-column="46" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/lodash/lodash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7830">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/social.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/transaction_names">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
-          <caret selection-end-line="4" selection-end-column="14" />
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="54" column="37" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+        <state relative-caret-position="260">
+          <caret line="5" column="85932" lean-forward="true" selection-start-line="5" selection-start-column="85932" selection-end-line="5" selection-end-column="85932" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="55" column="55" lean-forward="true" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+        <state relative-caret-position="215">
+          <caret line="5" column="80556" selection-start-line="5" selection-start-column="80556" selection-end-line="5" selection-end-column="80556" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/viewProfileUsers.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/viewAdminUsers.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/viewProfile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-915">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        <state relative-caret-position="180">
+          <caret line="12" column="44" lean-forward="true" selection-end-line="80" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/editProfile.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/City.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="76" column="116" selection-start-line="76" selection-start-column="60" selection-end-line="76" selection-end-column="116" />
-          <folding>
-            <element signature="e#4047#4120#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/forInputData.js">
+    <entry file="file://$PROJECT_DIR$/app/TicketStatus.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="238" column="37" selection-start-line="238" selection-start-column="37" selection-end-line="238" selection-end-column="37" />
+        <state relative-caret-position="180">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/editProfileUser.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="271" column="55" selection-start-line="271" selection-start-column="55" selection-end-line="271" selection-end-column="55" />
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/editAdminUser.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="71" column="26" lean-forward="true" selection-end-line="83" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_14_150406_create_tickets_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="233" column="51" selection-start-line="233" selection-start-column="51" selection-end-line="233" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="32" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/editProfile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1215" />
+      </provider>
+    </entry>
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/ticket_statuses">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="955" column="13" selection-start-line="955" selection-start-column="13" selection-end-line="955" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/contactToSupport.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="73" lean-forward="true" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/viewTickets.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="65" column="40" lean-forward="true" selection-start-line="65" selection-start-column="40" selection-end-line="71" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/ProfileStoreRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/AdminUserStoreRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="40" selection-start-line="40" selection-end-line="57" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/ProfilePhotoStoreRequest.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/SupportFormRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="40" selection-start-line="40" selection-end-line="58" selection-end-column="5" />
           <folding>
-            <element signature="e#7812#7833#0#HTML" expanded="true" />
-            <element signature="e#9342#9363#0#HTML" expanded="true" />
+            <element signature="e#37#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="83" column="104" selection-start-line="83" selection-start-column="95" selection-end-line="83" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreTicketRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+          <folding>
+            <element signature="e#37#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="142" column="5" selection-start-line="142" selection-start-column="5" selection-end-line="142" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/editTicket.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/viewProfileUsers.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="75" column="65" selection-start-line="75" selection-start-column="54" selection-end-line="75" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/profileTickets.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/viewProfile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="97" column="18" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="97" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding>
+            <element signature="e#40#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/tickets">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Ticket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="34" column="56" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+          <folding>
+            <element signature="e#23#62#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -57,21 +57,10 @@ class Profile extends Model
         return $this->friendsOfMine()->merge($this->friendOf());
     }
 
-//    public function friendsOfMine()
-//    {
-//        return $this->hasMany('App\Friend','profile_id', 'id');
-//    }
-//
-//    public function friendOf()
-//    {
-//        return $this->hasMany('App\Friend','friend_id', 'id');
-//    }
-//
-//    public function friends()
-//    {
-//        return $this->friendsOfMine()->merge($this->friendOf());
-//    }
-
+    public function ticket()
+    {
+        return $this->hasMany('App\Ticket');
+    }
 
     public function getAge($bdate)
     {
@@ -87,6 +76,7 @@ class Profile extends Model
         $profile->phone = $data['phone'] ?? null;
         $profile->gender_id = $data['sex'] ?? null;
         $profile->profile_address_id = ProfileAddress::createNewProfileAddress($data);
+        $profile->subscription_end_date = strtotime("+3 day");
         $profile->save();
         $photoFromSocial = $data['photo'] ?? null;
         ProfilePhoto::createNewDefaultProfilePhoto($photoFromSocial, $profile);

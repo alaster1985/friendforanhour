@@ -11,15 +11,15 @@ class CreateBalancesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('balances', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('profile_id');
-            $table->decimal('balance', 10, 2)->unsigned()->default(0);
-            $table->timestamps();
-        });
-    }
+//    public function up()
+//    {
+//        Schema::create('balances', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->bigInteger('profile_id');
+//            $table->decimal('balance', 10, 2)->unsigned()->default(0);
+//            $table->timestamps();
+//        });
+//    }
 
     /**
      * Reverse the migrations.

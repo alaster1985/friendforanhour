@@ -231,6 +231,7 @@ return [
         'Gender' => \App\Gender::class,
         'City' => \App\City::class,
         'Country' => \App\Country::class,
+        'TicketStatus' => \App\TicketStatus::class,
     ],
 
 ];

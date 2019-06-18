@@ -6,13 +6,17 @@ use App\Complain;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminUserStoreRequest;
 use App\Http\Requests\ProfileStoreRequest;
+use App\Http\Requests\StoreTicketRequest;
+use App\Http\Requests\SupportFormRequest;
 use App\Profile;
 use App\Role;
 use App\ServiceList;
+use App\Ticket;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\Rule;
 
 class AdminController extends Controller
@@ -107,5 +111,41 @@ class AdminController extends Controller
            $currentProfile->save();
         });
         return redirect()->back()->with('message', 'DONE!');
+    }
+
+    public function viewTickets()
+    {
+        $tickets = Ticket::all();
+        return view('admin/viewTickets', ['tickets' => $tickets]);
+    }
+
+    public function editTicket(Request $request)
+    {
+        $request->validate([
+            'ticket' => [
+                'required',
+                Rule::in(Ticket::pluck('id')->all())
+            ]
+        ]);
+        return view('admin/editTicket', ['ticket' => Ticket::find($request->ticket)]);
+    }
+
+    public function acceptTicket(Request $request)
+    {
+        $ticket = Ticket::find($request->id);
+        $ticket->status_id = 2; //accept status
+        $ticket->moderator_id = Auth::id();
+        $ticket->save();
+        return redirect()->back()->with('message', 'You accept ticket_id' . $request->id);
+    }
+
+    public function updateTicket(StoreTicketRequest $request)
+    {
+        $ticket = Ticket::find($request->id);
+        $ticket->report = $request->report;
+        $request->status_id == 1 ? $ticket->status_id = 2 : $ticket->status_id = $request->status_id;
+        $ticket->moderator_id = Auth::id();
+        $ticket->save();
+        return redirect()->back()->with('message', 'done');
     }
 }

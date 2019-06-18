@@ -34,9 +34,9 @@ class CreateForeignKeyRelationshipsTable extends Migration
         Schema::table('transactions', function (Blueprint $table) {
             $table->foreign('transaction_id')->references('id')->on('transaction_names');
         });
-        Schema::table('balances', function (Blueprint $table) {
-            $table->foreign('profile_id')->references('id')->on('profiles');
-        });
+//        Schema::table('balances', function (Blueprint $table) {
+//            $table->foreign('profile_id')->references('id')->on('profiles');
+//        });
         Schema::table('profiles', function (Blueprint $table) {
             $table->foreign('gender_id')->references('id')->on('genders');
             $table->foreign('profile_address_id')->references('id')->on('profile_addresses');
@@ -55,6 +55,11 @@ class CreateForeignKeyRelationshipsTable extends Migration
         Schema::table('chats', function (Blueprint $table) {
             $table->foreign('profile_id')->references('id')->on('profiles');
             $table->foreign('friend_id')->references('id')->on('profiles');
+        });
+        Schema::table('tickets', function (Blueprint $table) {
+            $table->foreign('status_id')->references('id')->on('ticket_statuses');
+            $table->foreign('profile_id')->references('id')->on('profiles');
+            $table->foreign('moderator_id')->references('id')->on('users');
         });
     }
 

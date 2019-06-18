@@ -26,6 +26,7 @@
                     </span>
                 @endauth
             </p>
+
             <p class="character_user">Возраст: {{$profile->getAge($profile->date_of_birth)}}, рост {{$profile->height}}
                 см, вес
                 {{$profile->weight}} кг</p>

@@ -334,6 +334,18 @@
                                                    name="updated_at" value="{{$profile->updated_at}}"/>
                                         </div>
                                     </div>
+                                    <div class="col-md-2">
+                                        <div class="inline-form">
+                                            <label class="c-label">Subscription end date</label>
+                                            <p class="input-style">{{gmdate("d M Y H:i:s", $profile->subscription_end_date)}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="inline-form">
+                                            <label class="c-label">Subscription valid?</label>
+                                            <p class="input-style">{{$profile->subscription_end_date >= strtotime('now') ? 'All is OK!' : 'Subscription Invalid'}}</p>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-2">

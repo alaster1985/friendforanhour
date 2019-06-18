@@ -93,7 +93,7 @@ class ChatController extends Controller
             $query->where('profile_id', '=', Auth::user()->profile_id)->where('friend_id', '=', $id);
         })->orWhere(function ($query) use ($id) {
             $query->where('profile_id', '=', $id)->where('friend_id', '=', Auth::user()->profile_id);
-        })->get();
+        })->orderBy('created_at', 'ASC')->get();
     }
 
     public function sendChat(Request $request)
