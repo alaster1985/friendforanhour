@@ -35,7 +35,7 @@ class ProfilesTableSeeder extends Seeder
             $profile->profile_address_id = $human[5];
             $profile->is_deleted = $human[6];
             $profile->is_banned = $human[7];
-            $profile->ban_finish_time = $human[8];
+//            $profile->ban_finish_time = $human[8];
             $profile->subscription_end_date = strtotime("+30 days");
 //            $profile->sms_checked = $human[9];
             $profile->is_locked = $human[10];

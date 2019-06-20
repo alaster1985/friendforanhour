@@ -11,15 +11,15 @@ class CreateTransactionNamesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('transaction_names', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('transaction_name', 100);
-            $table->string('description',100);
-            $table->timestamps();
-        });
-    }
+//    public function up()
+//    {
+//        Schema::create('transaction_names', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->string('transaction_name', 100);
+//            $table->string('description',100);
+//            $table->timestamps();
+//        });
+//    }
 
     /**
      * Reverse the migrations.

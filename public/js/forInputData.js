@@ -221,6 +221,9 @@
             contentType: false,
             processData: false,
             success: function (data) {
+                if (data) {
+                    window.location = data
+                }
                 resetPreview();
                 getPhoto();
             },

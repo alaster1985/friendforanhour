@@ -106,8 +106,11 @@ class AdminController extends Controller
         DB::transaction(function () use ($request) {
            Profile::updateProfile($request, User::find($request->user_id));
            $currentProfile = Profile::find($request->profile_id);
-           $currentProfile->is_banned = $request->banned;
-           $currentProfile->is_locked = $request->locked;
+           if (Auth::user()->hasRole('admin')){
+               $currentProfile->is_banned = $request->banned;
+               $currentProfile->is_locked = $request->locked;
+           }
+//           $currentProfile->subscription_end_date = 4294967295;
            $currentProfile->save();
         });
         return redirect()->back()->with('message', 'DONE!');

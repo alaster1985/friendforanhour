@@ -62,6 +62,11 @@ class Profile extends Model
         return $this->hasMany('App\Ticket');
     }
 
+    public function ban()
+    {
+        return $this->hasMany('App\Ban');
+    }
+
     public function getAge($bdate)
     {
         return date_diff(date_create($bdate), date_create('today'))->y;
@@ -94,11 +99,6 @@ class Profile extends Model
 
     public static function updateProfile($request, $user)
     {
-//        dd($request);
-
-//        if (!self::adultCheck($request->date_of_birth)){
-//            return redirect()->back()->with('message', 'something went wrong');
-//        }
         DB::transaction(function () use ($request, $user) {
             $currentProfile = Profile::find($user->profile_id);
             $currentProfile->first_name = $request->first_name;
@@ -139,4 +139,5 @@ class Profile extends Model
             ->take(6)
             ->get();
     }
+
 }

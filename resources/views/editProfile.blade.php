@@ -8,9 +8,39 @@
     @if ($errors)
         <div style="display: block; color: red">{{($errors->first())}}</div>
     @endif
-        <div id="app2" style="display: none">
-            <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
+    <div id="app2" style="display: none">
+        <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
+    </div>
+    @if($profile->subscription_end_date >= strtotime('now'))
+        <h1>Subscription is valid for:</h1>
+        <p style="display: none" id="finish_time">{{$profile->subscription_end_date}}</p>
+        <div id="countdown">
+            <div>
+                <span class="days"></span>
+                <div>Days</div>
+            </div>
+            <div>
+                <span class="hours"></span>
+                <div>Hours</div>
+            </div>
+            <div>
+                <span class="minutes"></span>
+                <div>Minutes</div>
+            </div>
+            <div>
+                <span class="seconds"></span>
+                <div>Seconds</div>
+            </div>
         </div>
+        <script type="text/javascript" src="{{asset('js/countdown.js')}}" defer></script>
+    @else
+        <h1>Subscription is invalid</h1>
+    @endif
+    @if ($profile->is_locked)
+        <div>It is manual locked</div>
+        <div>You can contact to <a href="contactToSupport">support</a> or look to your <a
+                    href="{{Request::root()}}/mytickets">reports</a></div>
+    @endif
     <form action="{{Route('updateProfile')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row edit_profile_general_block justify-content-between">

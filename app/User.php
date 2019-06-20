@@ -61,6 +61,16 @@ class User extends Authenticatable
         return $this->hasMany('App\Ticket');
     }
 
+    public function banBeginner()
+    {
+        return $this->hasMany('App\Ban', 'moderator_id_beginner');
+    }
+
+    public function banAmnesty()
+    {
+        return $this->hasMany('App\Ban', 'moderator_id_amnesty');
+    }
+
     public static function generateSmsCode()
     {
         return rand(10000, 99999);

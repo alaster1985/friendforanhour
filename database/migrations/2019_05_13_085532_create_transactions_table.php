@@ -11,16 +11,16 @@ class CreateTransactionsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('transactions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('profile_id');
-            $table->bigInteger('transaction_id')->unsigned();
-            $table->decimal('ante', 10, 2)->unsigned();
-            $table->timestamps();
-        });
-    }
+//    public function up()
+//    {
+//        Schema::create('transactions', function (Blueprint $table) {
+//            $table->bigIncrements('id');
+//            $table->bigInteger('profile_id');
+//            $table->bigInteger('transaction_id')->unsigned();
+//            $table->decimal('ante', 10, 2)->unsigned();
+//            $table->timestamps();
+//        });
+//    }
 
     /**
      * Reverse the migrations.

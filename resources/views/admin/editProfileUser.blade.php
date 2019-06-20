@@ -112,20 +112,18 @@
                                             <select name="city">
                                                 <option id="new_ct" value="new">Добавить другой город</option>
                                                 @foreach(City::all() as $city)
-                                                    <option id="ct{{$city->id}}" value="{{$city->id}}">{{$city->city_name}}</option>
+                                                    <option id="ct{{$city->id}}"
+                                                            value="{{$city->id}}">{{$city->city_name}}</option>
                                                     @if($profile->profileAddress->city_id && $city->id === $profile->profileAddress->city->id)
                                                         <script>document.getElementById("ct{{$city->id}}").selected = true</script>
                                                     @elseif(!$profile->profileAddress->city_id)
                                                         <script>document.getElementById("new_ct").selected = true</script>
                                                     @endif
-                                                    {{--<option id="ct{{$city->id}}"--}}
-                                                            {{--value="{{$city->id}}">{{$city->city_name}}</option>--}}
-                                                    {{--@if($city->id === $profile->profileAddress->city->id)--}}
-                                                        {{--<script>document.getElementById("ct{{$city->id}}").selected = true</script>--}}
-                                                    {{--@endif--}}
                                                 @endforeach
                                             </select>
-                                            <div class="newCity" style="display: {{$profile->profileAddress->city_id ? 'none' : 'block'}}">add new city
+                                            <div class="newCity"
+                                                 style="display: {{$profile->profileAddress->city_id ? 'none' : 'block'}}">
+                                                add new city
                                                 <input class="input-style" type="text" name="newCity"
                                                        placeholder="city_name">
                                             </div>
@@ -144,14 +142,11 @@
                                                     @elseif(!$profile->profileAddress->city_id)
                                                         <script>document.getElementById("new_cnt").selected = true</script>
                                                     @endif
-                                                    {{--<option id="cnt{{$country->id}}"--}}
-                                                            {{--value="{{$country->id}}">{{$country->country_name}}</option>--}}
-                                                    {{--@if($country->id === $profile->profileAddress->city->country->id)--}}
-                                                        {{--<script>document.getElementById("cnt{{$country->id}}").selected = true</script>--}}
-                                                    {{--@endif--}}
                                                 @endforeach
                                             </select>
-                                            <div class="newCountry" style="display: {{$profile->profileAddress->city_id ? 'none' : 'block'}}">add new Country
+                                            <div class="newCountry"
+                                                 style="display: {{$profile->profileAddress->city_id ? 'none' : 'block'}}">
+                                                add new Country
                                                 <input type="text" name="newCountry" placeholder="Country_name">
                                             </div>
                                         </div>
@@ -304,7 +299,9 @@
                                         @foreach($complainsFrom as $complain)
                                             <tr>
                                                 <td>
-                                                    <a href="editProfileUser?prf={{$complain->profileAgainst->id}}">{{$complain->profileAgainst->first_name . ' ' . $complain->profileAgainst->second_name}}</a>
+                                                    <a href="editProfileUser?prf={{$complain->profileAgainst->id}}">
+                                                        {{$complain->profileAgainst->first_name . ' ' . $complain->profileAgainst->second_name}}
+                                                    </a>
                                                 </td>
                                                 <td>
                                                     {{$complain->description}}
@@ -319,6 +316,13 @@
                                 <br>
                                 <br>
                                 <br>
+                                <div class="row">
+                                    <a href="viewProfileBans?prf={{$profile->id}}">ban section</a>
+                                    <div>Was banned {{count(Ban::all()->where('profile_id', '=', $profile->id))}}
+                                        times{{(isset($profile->ban->first()->id) && $profile->ban->last()->ban_end_date > strtotime('now')) ? ', include now': ''}}
+                                        .
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-md-2">
                                         <div class="inline-form">
@@ -347,32 +351,38 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <div class="inline-form">
-                                            <label class="c-label">is banned?</label>
-                                            <select name="banned">
-                                                <option id="unbanned" value="0">unbanned</option>
-                                                <option id="banned" value="1">BANNED</option>
-                                                @if($profile->is_banned === 1)
-                                                    <script>document.getElementById('banned').selected = true</script>
-                                                @endif
-                                            </select>
+                                @if(Auth::user()->hasRole('admin'))
+                                    <div class="row" style="border: solid red 7px">
+                                        <h2>SECTION ONLY FOR ADMINS</h2>
+                                        <h4>manual ban and lock beyond <a
+                                                    href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE-%D0%B2%D1%80%D0%B5%D0%BC%D1%8F"
+                                                    target="_blank">time-space continuum</a></h4>
+                                        <div class="col-md-2">
+                                            <div class="inline-form">
+                                                <label class="c-label">is banned?</label>
+                                                <select name="banned">
+                                                    <option id="unbanned" value="0">unbanned</option>
+                                                    <option id="banned" value="1">BANNED</option>
+                                                    @if($profile->is_banned === 1)
+                                                        <script>document.getElementById('banned').selected = true</script>
+                                                    @endif
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="inline-form">
+                                                <label class="c-label">is locked?</label>
+                                                <select name="locked">
+                                                    <option id="unlocked" value="0">unlocked</option>
+                                                    <option id="locked" value="1">LOCKED</option>
+                                                    @if($profile->is_locked === 1)
+                                                        <script>document.getElementById('locked').selected = true</script>
+                                                    @endif
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="inline-form">
-                                            <label class="c-label">is locked?</label>
-                                            <select name="locked">
-                                                <option id="unlocked" value="0">unlocked</option>
-                                                <option id="locked" value="1">LOCKED</option>
-                                                @if($profile->is_locked === 1)
-                                                    <script>document.getElementById('locked').selected = true</script>
-                                                @endif
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endif
                             </div>
 
                             <div class="col-md-4">

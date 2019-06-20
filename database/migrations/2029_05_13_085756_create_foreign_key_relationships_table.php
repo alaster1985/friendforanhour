@@ -24,16 +24,15 @@ class CreateForeignKeyRelationshipsTable extends Migration
         });
         Schema::table('service_lists', function (Blueprint $table) {
             $table->foreign('service_type_id')->references('id')->on('service_types');
-
             $table->foreign('profile_id')->references('id')->on('profiles');
         });
 //        Schema::table('profile_service_lists', function (Blueprint $table) {
 //            $table->foreign('service_list_id')->references('id')->on('service_lists');
 //            $table->foreign('profile_id')->references('id')->on('profiles');
 //        });
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->foreign('transaction_id')->references('id')->on('transaction_names');
-        });
+//        Schema::table('transactions', function (Blueprint $table) {
+//            $table->foreign('transaction_id')->references('id')->on('transaction_names');
+//        });
 //        Schema::table('balances', function (Blueprint $table) {
 //            $table->foreign('profile_id')->references('id')->on('profiles');
 //        });
@@ -60,6 +59,11 @@ class CreateForeignKeyRelationshipsTable extends Migration
             $table->foreign('status_id')->references('id')->on('ticket_statuses');
             $table->foreign('profile_id')->references('id')->on('profiles');
             $table->foreign('moderator_id')->references('id')->on('users');
+        });
+        Schema::table('bans', function (Blueprint $table) {
+            $table->foreign('profile_id')->references('id')->on('profiles');
+            $table->foreign('moderator_id_beginner')->references('id')->on('users');
+            $table->foreign('moderator_id_amnesty')->references('id')->on('users');
         });
     }
 

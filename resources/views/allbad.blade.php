@@ -1,3 +1,3 @@
 @include('layouts.header')
-<p>lara2</p>
+<div style="background: #dd4b39">all bad</div>
 @include('layouts.footer')

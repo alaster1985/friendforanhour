@@ -14,7 +14,24 @@
 Route::get('/', 'MainController@index')->name('index');
 Route::get('contactToSupport', 'TicketController@index')->name('contactToSupport');
 Route::post('sendTicket', 'TicketController@sendTicket')->name('sendTicket');
-Route::get('lara2', function () {return view('welcome2');});
+
+
+Route::get('lara2', function () {
+    return view('welcome2');
+});
+
+
+Route::get('ok', function () {
+    return view('allok');
+})->name('ok');
+Route::get('bad', function () {
+    return view('allbad');
+})->name('bad');
+Route::get('wrong', function () {
+    return view('allwrong');
+})->name('wrong');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -28,19 +45,27 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('role:user')->group(function () {
 
+    Route::get('unpaid', 'MainController@unpaid')->name('unpaid');
+    Route::get('banned', 'MainController@banned')->name('banned');
+
     Route::get('edit', 'ProfileController@edit')->name('editProfile');
-    Route::post('update', 'ProfileController@update')->name('updateProfile');
-    Route::get('deleteService/{id}', 'ServiceListController@deleteService')->name('deleteService');
     Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
-    Route::post('removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
-    Route::post('updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
-    Route::post('addComplain', 'ProfileController@addComplain')->name('addComplain');
     Route::get('mytickets', 'TicketController@mytickets')->name('mytickets');
-    Route::get('chat', 'ChatController@index')->name('indexChat');
-    Route::get('chat/{id}', 'ChatController@show')->name('showChat');
-    Route::post('chat/getChat/{id}', 'ChatController@getChat')->name('getChat');
-    Route::post('chat/sendChat', 'ChatController@sendChat')->name('sendChat');
-    Route::post('addToFriends', 'FriendController@store')->name('addToFriends');
+
+    Route::middleware('subscription', 'ban')->group(function () {
+
+        Route::get('chat', 'ChatController@index')->name('indexChat');
+        Route::get('chat/{id}', 'ChatController@show')->name('showChat');
+        Route::post('chat/getChat/{id}', 'ChatController@getChat')->name('getChat');
+        Route::post('chat/sendChat', 'ChatController@sendChat')->name('sendChat');
+        Route::post('addToFriends', 'FriendController@store')->name('addToFriends');
+        Route::post('removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
+        Route::post('updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
+        Route::post('addComplain', 'ProfileController@addComplain')->name('addComplain');
+        Route::post('update', 'ProfileController@update')->name('updateProfile');
+        Route::get('deleteService/{id}', 'ServiceListController@deleteService')->name('deleteService');
+
+    });
 
 });
 
@@ -67,4 +92,11 @@ Route::middleware('role:admin|moderator')->group(function () {
     Route::get('admin/editTicket', 'Admin\AdminController@editTicket')->name('editTicket');
     Route::get('admin/acceptTicket', 'Admin\AdminController@acceptTicket')->name('acceptTicket');
     Route::post('admin/updateTicket', 'Admin\AdminController@updateTicket')->name('updateTicket');
+
+    Route::get('admin/viewProfileBans', 'Admin\BanController@viewProfileBans')->name('viewProfileBans');
+    Route::get('admin/viewBanList', 'Admin\BanController@viewBanList')->name('viewBanList');
+    Route::post('admin/addBan', 'Admin\BanController@addBan')->name('addBan');
+    Route::get('admin/editBan', 'Admin\BanController@editBan')->name('editBan');
+    Route::post('admin/updateBan', 'Admin\BanController@updateBan')->name('updateBan');
+
 });

@@ -31,15 +31,15 @@ class UsersTableSeeder extends Seeder
         //create user role
         $userRole = new Role();
         $userRole->name = 'user';
-        $userRole->display_name = 'regular user';
-        $userRole->description = 'regular user for friendship, RU own profile, CRUD own services, R other users profiles';
+        $userRole->display_name = 'regular paid user';
+        $userRole->description = 'regular paid user for friendship, RU own profile, CRUD own services, R other users profiles';
         $userRole->save();
 
-        //create guest role
+        //create guestUser (not paid user) role
 //        $guestRole = new Role();
-//        $guestRole->name = 'guest';
-//        $guestRole->display_name = 'unregistered user';
-//        $guestRole->description = 'limited reading other users profiles, just to get acquainted with the site';
+//        $guestRole->name = 'guestUser';
+//        $guestRole->display_name = 'guestUser';
+//        $guestRole->description = 'not paid user, limited reading other users profiles, just to get acquainted with the site';
 //        $guestRole->save();
 
         //permission to create moderators
