@@ -23,7 +23,6 @@ class CreateServiceListsTable extends Migration
             $table->boolean('main_service_marker')->default(false);
             $table->boolean('is_disabled')->default(false);
             $table->boolean('is_deleted')->default(false);
-
             $table->timestamps();
         });
     }

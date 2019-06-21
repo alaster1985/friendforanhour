@@ -67,6 +67,11 @@ class Profile extends Model
         return $this->hasMany('App\Ban');
     }
 
+    public function transaction()
+    {
+        return $this->hasMany('App\Transaction');
+    }
+
     public function getAge($bdate)
     {
         return date_diff(date_create($bdate), date_create('today'))->y;
@@ -138,6 +143,38 @@ class Profile extends Model
             ])
             ->take(6)
             ->get();
+    }
+
+    public static function setSubscriptionEndDate($profileId)
+    {
+        $currentProfile = Profile::find($profileId);
+        if ($currentProfile->subscription_end_date < strtotime('now')) {
+            $currentProfile->subscription_end_date = strtotime('+ 1 month');
+        } else {
+            $currentProfile->subscription_end_date = strtotime('+ 1 month', $currentProfile->subscription_end_date);
+        }
+        $currentProfile->save();
+    }
+
+    public static function getProfilesByParam($param)
+    {
+        switch ($param) {
+            case 'all':
+                return Profile::all()->sortByDesc('created_at');
+                break;
+            case 'current':
+                return Profile::all()->where('subscription_end_date', '>=', strtotime('now'))->sortByDesc('created_at');
+                break;
+            case 'expired':
+                return Profile::all()->where('subscription_end_date', '<', strtotime('now'))->sortByDesc('created_at');
+                break;
+//            case 'demo':
+//                return Profile::all()->where('subscribe_end_date', '>=', strtotime('now'))->sortByDesc('created_at');
+//                break;
+            default:
+                return Profile::all()->sortByDesc('created_at');
+                break;
+        }
     }
 
 }

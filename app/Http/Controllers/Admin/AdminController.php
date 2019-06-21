@@ -73,10 +73,17 @@ class AdminController extends Controller
         return redirect()->back()->with('message', 'DONE!');
     }
 
-    public function viewProfileUsers()
+    public function viewProfileUsers(Request $request)
     {
-        $allProfiles = Profile::all();
-        return view('admin/viewProfileUsers', ['profiles' => $allProfiles]);
+        $request->validate([
+            'param' => [
+                'required',
+                Rule::in(['all', 'current', 'expired', 'demo']),
+            ],
+        ]);
+
+        $profiles = Profile::getProfilesByParam($request->param);
+        return view('admin/viewProfileUsers', ['profiles' => $profiles]);
     }
 
     public function editProfileUser(Request $request)

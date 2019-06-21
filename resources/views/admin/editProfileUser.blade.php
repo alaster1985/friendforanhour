@@ -317,11 +317,15 @@
                                 <br>
                                 <br>
                                 <div class="row">
-                                    <a href="viewProfileBans?prf={{$profile->id}}">ban section</a>
-                                    <div>Was banned {{count(Ban::all()->where('profile_id', '=', $profile->id))}}
+                                    <div class="col-md-4"><a href="viewProfileBans?prf={{$profile->id}}">ban section</a>
+                                        Was banned {{count(Ban::all()->where('profile_id', '=', $profile->id))}}
                                         times{{(isset($profile->ban->first()->id) && $profile->ban->last()->ban_end_date > strtotime('now')) ? ', include now': ''}}
                                         .
                                     </div>
+                                    <div class="col-md-4"><a href="viewProfileTransactions?prf={{$profile->id}}">transaction section</a>
+                                        Was paid {{count(Transaction::all()->where('profile_id', '=', $profile->id))}} times.
+                                    </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="col-md-2">

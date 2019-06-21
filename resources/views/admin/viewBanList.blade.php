@@ -82,7 +82,7 @@
                                         @if(Auth::user()->hasRole('admin'))
                                         <td>
                                         {{ csrf_field()}}
-                                        <a href="{{route('deleteAdminUser',$user->id)}}"
+                                        <a href=""
                                         onclick="return confirm('Are you sure you want to delete this User?');">-</a>
                                         </td>
                                         @endif

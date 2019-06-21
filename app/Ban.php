@@ -67,21 +67,6 @@ class Ban extends Model
         $currentBan->save();
     }
 
-    public static function getAllBanList()
-    {
-        return Ban::all()->orderBy('created_at', 'DESC');
-    }
-
-    public static function getCurrentBanList()
-    {
-        return Ban::where('ban_end_time', '>=', strtotime('now'))->orderBy('created_at', 'DESC');
-    }
-
-    public static function getExpiredBanList()
-    {
-        return Ban::where('ban_end_time', '<', strtotime('now'))->orderBy('created_at', 'DESC');
-    }
-
     public static function getBanList($param)
     {
         switch ($param) {

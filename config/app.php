@@ -233,6 +233,7 @@ return [
         'Country' => \App\Country::class,
         'TicketStatus' => \App\TicketStatus::class,
         'Ban' => \App\Ban::class,
+        'Transaction' => \App\Transaction::class,
     ],
 
 ];

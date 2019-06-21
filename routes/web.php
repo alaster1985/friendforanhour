@@ -51,6 +51,7 @@ Route::middleware('role:user')->group(function () {
     Route::get('edit', 'ProfileController@edit')->name('editProfile');
     Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
     Route::get('mytickets', 'TicketController@mytickets')->name('mytickets');
+    Route::post('payment', 'TransactionController@payment')->name('payment');
 
     Route::middleware('subscription', 'ban')->group(function () {
 
@@ -98,5 +99,8 @@ Route::middleware('role:admin|moderator')->group(function () {
     Route::post('admin/addBan', 'Admin\BanController@addBan')->name('addBan');
     Route::get('admin/editBan', 'Admin\BanController@editBan')->name('editBan');
     Route::post('admin/updateBan', 'Admin\BanController@updateBan')->name('updateBan');
+
+    Route::get('admin/viewSubscriptionList', 'TransactionController@viewSubscriptionList')->name('viewSubscriptionList');
+    Route::get('admin/viewProfileTransactions', 'TransactionController@viewProfileTransactions')->name('viewProfileTransactions');
 
 });

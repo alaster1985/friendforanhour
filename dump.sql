@@ -16,31 +16,40 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `balances`
+-- Table structure for table `bans`
 --
 
-DROP TABLE IF EXISTS `balances`;
+DROP TABLE IF EXISTS `bans`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `balances` (
+CREATE TABLE `bans` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `profile_id` bigint(20) NOT NULL,
-  `balance` decimal(10,2) unsigned NOT NULL DEFAULT '0.00',
+  `reason` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `moderator_id_beginner` bigint(20) unsigned NOT NULL,
+  `duration` int(10) unsigned NOT NULL,
+  `ban_end_date` int(10) unsigned NOT NULL,
+  `moderator_id_amnesty` bigint(20) unsigned DEFAULT NULL,
+  `reason_amnesty` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `balances_profile_id_foreign` (`profile_id`),
-  CONSTRAINT `balances_profile_id_foreign` FOREIGN KEY (`profile_id`) REFERENCES `profiles` (`id`)
+  KEY `bans_profile_id_foreign` (`profile_id`),
+  KEY `bans_moderator_id_beginner_foreign` (`moderator_id_beginner`),
+  KEY `bans_moderator_id_amnesty_foreign` (`moderator_id_amnesty`),
+  CONSTRAINT `bans_moderator_id_amnesty_foreign` FOREIGN KEY (`moderator_id_amnesty`) REFERENCES `users` (`id`),
+  CONSTRAINT `bans_moderator_id_beginner_foreign` FOREIGN KEY (`moderator_id_beginner`) REFERENCES `users` (`id`),
+  CONSTRAINT `bans_profile_id_foreign` FOREIGN KEY (`profile_id`) REFERENCES `profiles` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `balances`
+-- Dumping data for table `bans`
 --
 
-LOCK TABLES `balances` WRITE;
-/*!40000 ALTER TABLE `balances` DISABLE KEYS */;
-/*!40000 ALTER TABLE `balances` ENABLE KEYS */;
+LOCK TABLES `bans` WRITE;
+/*!40000 ALTER TABLE `bans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bans` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -99,7 +108,7 @@ CREATE TABLE `cities` (
 
 LOCK TABLES `cities` WRITE;
 /*!40000 ALTER TABLE `cities` DISABLE KEYS */;
-INSERT INTO `cities` VALUES (1,'Волгоград',1,'2019-06-11 08:50:19','2019-06-11 08:50:19');
+INSERT INTO `cities` VALUES (1,'Волгоград',1,'2019-06-21 09:15:53','2019-06-21 09:15:53');
 /*!40000 ALTER TABLE `cities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,7 +165,7 @@ CREATE TABLE `countries` (
 
 LOCK TABLES `countries` WRITE;
 /*!40000 ALTER TABLE `countries` DISABLE KEYS */;
-INSERT INTO `countries` VALUES (1,'Россия','2019-06-11 08:50:19','2019-06-11 08:50:19');
+INSERT INTO `countries` VALUES (1,'Россия','2019-06-21 09:15:53','2019-06-21 09:15:53');
 /*!40000 ALTER TABLE `countries` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,7 +221,7 @@ CREATE TABLE `genders` (
 
 LOCK TABLES `genders` WRITE;
 /*!40000 ALTER TABLE `genders` DISABLE KEYS */;
-INSERT INTO `genders` VALUES (1,'female','2019-06-11 08:50:19','2019-06-11 08:50:19'),(2,'male','2019-06-11 08:50:19','2019-06-11 08:50:19');
+INSERT INTO `genders` VALUES (1,'female','2019-06-21 09:15:53','2019-06-21 09:15:53'),(2,'male','2019-06-21 09:15:53','2019-06-21 09:15:53');
 /*!40000 ALTER TABLE `genders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,7 +237,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,7 +246,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_05_13_085010_create_profiles_table',1),(4,'2019_05_13_085021_create_countries_table',1),(5,'2019_05_13_085053_create_cities_table',1),(6,'2019_05_13_085128_create_genders_table',1),(7,'2019_05_13_085158_create_service_types_table',1),(8,'2019_05_13_085241_create_service_lists_table',1),(9,'2019_05_13_085253_create_profile_service_lists_table',1),(10,'2019_05_13_085310_create_profile_addresses_table',1),(11,'2019_05_13_085335_create_profile_photos_table',1),(12,'2019_05_13_085435_create_balances_table',1),(13,'2019_05_13_085503_create_transaction_names_table',1),(14,'2019_05_13_085532_create_transactions_table',1),(15,'2019_05_13_144433_laratrust_setup_tables',1),(16,'2019_06_05_065511_create_complains_table',1),(17,'2019_06_07_070146_create_friends_table',1),(18,'2019_06_07_104421_create_chats_table',1),(19,'2029_05_13_085756_create_foreign_key_relationships_table',1);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_05_13_085010_create_profiles_table',1),(4,'2019_05_13_085021_create_countries_table',1),(5,'2019_05_13_085053_create_cities_table',1),(6,'2019_05_13_085128_create_genders_table',1),(7,'2019_05_13_085158_create_service_types_table',1),(8,'2019_05_13_085241_create_service_lists_table',1),(9,'2019_05_13_085310_create_profile_addresses_table',1),(10,'2019_05_13_085335_create_profile_photos_table',1),(11,'2019_05_13_085503_create_transaction_names_table',1),(12,'2019_05_13_085532_create_transactions_table',1),(13,'2019_05_13_144433_laratrust_setup_tables',1),(14,'2019_06_05_065511_create_complains_table',1),(15,'2019_06_07_070146_create_friends_table',1),(16,'2019_06_07_104421_create_chats_table',1),(17,'2019_06_14_150314_create_ticket_statuses_table',1),(18,'2019_06_14_150406_create_tickets_table',1),(19,'2019_06_19_134747_create_bans_table',1),(20,'2029_05_13_085756_create_foreign_key_relationships_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,7 +352,7 @@ CREATE TABLE `permissions` (
 
 LOCK TABLES `permissions` WRITE;
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
-INSERT INTO `permissions` VALUES (1,'create_moderators','create moderators','CRUD moderators','2019-06-11 08:50:18','2019-06-11 08:50:18'),(2,'RU_profiles','edit users profiles','edit (RU) users profiles','2019-06-11 08:50:18','2019-06-11 08:50:18'),(3,'edit_own_profile','RU own profile','RU own profile, CRUD own services, R other users profiles','2019-06-11 08:50:18','2019-06-11 08:50:18');
+INSERT INTO `permissions` VALUES (1,'create_moderators','create moderators','CRUD moderators','2019-06-21 09:15:52','2019-06-21 09:15:52'),(2,'RU_profiles','edit users profiles','edit (RU) users profiles','2019-06-21 09:15:52','2019-06-21 09:15:52'),(3,'edit_own_profile','RU own profile','RU own profile, CRUD own services, R other users profiles','2019-06-21 09:15:52','2019-06-21 09:15:52');
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -374,7 +383,7 @@ CREATE TABLE `profile_addresses` (
 
 LOCK TABLES `profile_addresses` WRITE;
 /*!40000 ALTER TABLE `profile_addresses` DISABLE KEYS */;
-INSERT INTO `profile_addresses` VALUES (1,'Адмирала Ушакова ул., 6',48.802045,44.619724,1,'2019-06-11 08:50:19','2019-06-11 08:50:19'),(2,'им Дзержинского ул., 49',48.806003,44.587780,1,'2019-06-11 08:50:19','2019-06-11 08:50:19'),(3,'им маршала Воронова ул., 14',48.646012,44.410983,1,'2019-06-11 08:50:19','2019-06-11 08:50:19'),(4,'им Грибанова ул., 13',48.662986,44.410534,1,'2019-06-11 08:50:19','2019-06-11 08:50:19'),(5,'им Солнечникова ул., 3',48.661177,44.419427,1,'2019-06-11 08:50:20','2019-06-11 08:50:20'),(6,'Костромской пер., 100',48.723082,44.495703,1,'2019-06-11 08:50:20','2019-06-11 08:50:20');
+INSERT INTO `profile_addresses` VALUES (1,'Адмирала Ушакова ул., 6',48.802045,44.619724,1,'2019-06-21 09:15:53','2019-06-21 09:15:53'),(2,'им Дзержинского ул., 49',48.806003,44.587780,1,'2019-06-21 09:15:53','2019-06-21 09:15:53'),(3,'им маршала Воронова ул., 14',48.646012,44.410983,1,'2019-06-21 09:15:53','2019-06-21 09:15:53'),(4,'им Грибанова ул., 13',48.662986,44.410534,1,'2019-06-21 09:15:53','2019-06-21 09:15:53'),(5,'им Солнечникова ул., 3',48.661177,44.419427,1,'2019-06-21 09:15:53','2019-06-21 09:15:53'),(6,'Костромской пер., 100',48.723082,44.495703,1,'2019-06-21 09:15:53','2019-06-21 09:15:53');
 /*!40000 ALTER TABLE `profile_addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -405,7 +414,7 @@ CREATE TABLE `profile_photos` (
 
 LOCK TABLES `profile_photos` WRITE;
 /*!40000 ALTER TABLE `profile_photos` DISABLE KEYS */;
-INSERT INTO `profile_photos` VALUES (1,'profilepictures/1/fennec1.jpg',1,1,0,'2019-06-11 08:50:20','2019-06-11 08:50:20'),(2,'profilepictures/1/fennec2.jpg',1,0,0,'2019-06-11 08:50:20','2019-06-11 08:50:20'),(3,'profilepictures/1/fennec3.jpg',1,0,0,'2019-06-11 08:50:20','2019-06-11 08:50:20'),(4,'profilepictures/1/fennec4.jpg',1,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(5,'profilepictures/2/hamster1.jpg',2,1,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(6,'profilepictures/2/hamster2.jpg',2,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(7,'profilepictures/2/hamster3.jpg',2,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(8,'profilepictures/2/hamster4.jpg',2,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(9,'profilepictures/3/hedgehog1.jpg',3,1,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(10,'profilepictures/3/hedgehog2.jpg',3,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(11,'profilepictures/3/hedgehog3.jpg',3,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(12,'profilepictures/3/hedgehog4.jpg',3,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(13,'profilepictures/4/meerkat1.jpg',4,1,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(14,'profilepictures/4/meerkat2.jpg',4,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(15,'profilepictures/4/meerkat3.jpg',4,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(16,'profilepictures/4/meerkat4.jpg',4,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(17,'profilepictures/5/mole1.jpg',5,1,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(18,'profilepictures/5/mole2.jpg',5,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(19,'profilepictures/5/mole3.jpg',5,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(20,'profilepictures/5/mole4.jpg',5,0,0,'2019-06-11 08:50:21','2019-06-11 08:50:21'),(21,'profilepictures/6/shark1.jpg',6,1,0,'2019-06-11 08:50:22','2019-06-11 08:50:22'),(22,'profilepictures/6/shark2.jpg',6,0,0,'2019-06-11 08:50:22','2019-06-11 08:50:22'),(23,'profilepictures/6/shark3.jpg',6,0,0,'2019-06-11 08:50:22','2019-06-11 08:50:22'),(24,'profilepictures/6/shark4.jpg',6,0,0,'2019-06-11 08:50:22','2019-06-11 08:50:22');
+INSERT INTO `profile_photos` VALUES (1,'profilepictures/1/fennec1.jpg',1,1,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(2,'profilepictures/1/fennec2.jpg',1,0,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(3,'profilepictures/1/fennec3.jpg',1,0,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(4,'profilepictures/1/fennec4.jpg',1,0,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(5,'profilepictures/2/hamster1.jpg',2,1,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(6,'profilepictures/2/hamster2.jpg',2,0,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(7,'profilepictures/2/hamster3.jpg',2,0,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(8,'profilepictures/2/hamster4.jpg',2,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(9,'profilepictures/3/hedgehog1.jpg',3,1,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(10,'profilepictures/3/hedgehog2.jpg',3,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(11,'profilepictures/3/hedgehog3.jpg',3,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(12,'profilepictures/3/hedgehog4.jpg',3,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(13,'profilepictures/4/meerkat1.jpg',4,1,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(14,'profilepictures/4/meerkat2.jpg',4,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(15,'profilepictures/4/meerkat3.jpg',4,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(16,'profilepictures/4/meerkat4.jpg',4,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(17,'profilepictures/5/mole1.jpg',5,1,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(18,'profilepictures/5/mole2.jpg',5,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(19,'profilepictures/5/mole3.jpg',5,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(20,'profilepictures/5/mole4.jpg',5,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(21,'profilepictures/6/shark1.jpg',6,1,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(22,'profilepictures/6/shark2.jpg',6,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(23,'profilepictures/6/shark3.jpg',6,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(24,'profilepictures/6/shark4.jpg',6,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55');
 /*!40000 ALTER TABLE `profile_photos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -429,7 +438,7 @@ CREATE TABLE `profiles` (
   `profile_address_id` bigint(20) unsigned DEFAULT NULL,
   `is_deleted` tinyint(1) DEFAULT '0',
   `is_banned` tinyint(1) DEFAULT '0',
-  `ban_finish_time` timestamp NULL DEFAULT NULL,
+  `subscription_end_date` int(10) unsigned NOT NULL,
   `is_locked` tinyint(1) DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -447,7 +456,7 @@ CREATE TABLE `profiles` (
 
 LOCK TABLES `profiles` WRITE;
 /*!40000 ALTER TABLE `profiles` DISABLE KEYS */;
-INSERT INTO `profiles` VALUES (1,'Спиридон','Лисицин','1999-12-01',155,87,'Я, Спиридон Лисицин, родился 1999-12-01. Тут может быть ваша реклама. Звоните по номеру: 88005553535',2,'88005553535',1,0,0,NULL,0,'2019-06-11 08:50:20','2019-06-11 08:50:20'),(2,'Гертруда','Хомякова','1999-12-02',152,61,'Я, Гертруда Хомякова, родился 1999-12-02. Тут может быть ваша реклама. Звоните по номеру: 88005553536',1,'88005553536',2,0,0,NULL,0,'2019-06-11 08:50:20','2019-06-11 08:50:20'),(3,'Берттрамфай','Йожькекъ','1999-12-03',189,63,'Я, Берттрамфай Йожькекъ, родился 1999-12-03. Тут может быть ваша реклама. Звоните по номеру: 88005553537',2,'88005553537',3,0,0,NULL,0,'2019-06-11 08:50:20','2019-06-11 08:50:20'),(4,'Карамболла','Суррикатинова','1999-12-04',168,53,'Я, Карамболла Суррикатинова, родился 1999-12-04. Тут может быть ваша реклама. Звоните по номеру: 88005553538',1,'88005553538',4,0,0,NULL,0,'2019-06-11 08:50:20','2019-06-11 08:50:20'),(5,'Серафим','Кротцкийн','1999-12-05',177,64,'Я, Серафим Кротцкийн, родился 1999-12-05. Тут может быть ваша реклама. Звоните по номеру: 88005553539',2,'88005553539',5,0,0,NULL,0,'2019-06-11 08:50:20','2019-06-11 08:50:20'),(6,'Ибрагимина','Акуловница','1999-12-06',167,66,'Я, Ибрагимина Акуловница, родился 1999-12-06. Тут может быть ваша реклама. Звоните по номеру: 88005553530',1,'88005553530',6,0,0,NULL,0,'2019-06-11 08:50:20','2019-06-11 08:50:20');
+INSERT INTO `profiles` VALUES (1,'Спиридон','Лисицин','1999-12-01',161,58,'Я, Спиридон Лисицин, родился 1999-12-01. Тут может быть ваша реклама. Звоните по номеру: 88005553535',2,'88005553535',1,0,0,1563711354,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(2,'Гертруда','Хомякова','1999-12-02',168,65,'Я, Гертруда Хомякова, родился 1999-12-02. Тут может быть ваша реклама. Звоните по номеру: 88005553536',1,'88005553536',2,0,0,1563711354,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(3,'Берттрамфай','Йожькекъ','1999-12-03',190,47,'Я, Берттрамфай Йожькекъ, родился 1999-12-03. Тут может быть ваша реклама. Звоните по номеру: 88005553537',2,'88005553537',3,0,0,1563711354,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(4,'Карамболла','Суррикатинова','1999-12-04',163,74,'Я, Карамболла Суррикатинова, родился 1999-12-04. Тут может быть ваша реклама. Звоните по номеру: 88005553538',1,'88005553538',4,0,0,1563711354,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(5,'Серафим','Кротцкийн','1999-12-05',165,80,'Я, Серафим Кротцкийн, родился 1999-12-05. Тут может быть ваша реклама. Звоните по номеру: 88005553539',2,'88005553539',5,0,0,1563711354,0,'2019-06-21 09:15:54','2019-06-21 09:15:54'),(6,'Ибрагимина','Акуловница','1999-12-06',158,66,'Я, Ибрагимина Акуловница, родился 1999-12-06. Тут может быть ваша реклама. Звоните по номеру: 88005553530',1,'88005553530',6,0,0,1563711354,0,'2019-06-21 09:15:54','2019-06-21 09:15:54');
 /*!40000 ALTER TABLE `profiles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -503,7 +512,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'admin','administrator','CRUD moderators','2019-06-11 08:50:17','2019-06-11 08:50:17'),(2,'moderator','moderator','RU other users profiles','2019-06-11 08:50:17','2019-06-11 08:50:17'),(3,'user','regular user','regular user for friendship, RU own profile, CRUD own services, R other users profiles','2019-06-11 08:50:18','2019-06-11 08:50:18');
+INSERT INTO `roles` VALUES (1,'admin','administrator','CRUD moderators','2019-06-21 09:15:52','2019-06-21 09:15:52'),(2,'moderator','moderator','RU other users profiles','2019-06-21 09:15:52','2019-06-21 09:15:52'),(3,'user','regular paid user','regular paid user for friendship, RU own profile, CRUD own services, R other users profiles','2019-06-21 09:15:52','2019-06-21 09:15:52');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -540,7 +549,7 @@ CREATE TABLE `service_lists` (
 
 LOCK TABLES `service_lists` WRITE;
 /*!40000 ALTER TABLE `service_lists` DISABLE KEYS */;
-INSERT INTO `service_lists` VALUES (1,'сделаю массаж1','сделаю расслабляющий массаж 1',750,2,1,1,0,0,'2019-06-11 08:50:22','2019-06-11 08:50:22'),(2,'сделаю массаж2','сделаю расслабляющий массаж 2',900,2,2,1,0,0,'2019-06-11 08:50:22','2019-06-11 08:50:22'),(3,'сделаю массаж3','сделаю расслабляющий массаж 3',900,2,3,1,0,0,'2019-06-11 08:50:22','2019-06-11 08:50:22'),(4,'сделаю массаж4','сделаю расслабляющий массаж 4',300,2,4,1,0,0,'2019-06-11 08:50:22','2019-06-11 08:50:22'),(5,'сделаю массаж5','сделаю расслабляющий массаж 5',450,2,5,1,0,0,'2019-06-11 08:50:22','2019-06-11 08:50:22'),(6,'сделаю массаж6','сделаю расслабляющий массаж 6',900,2,6,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(7,'хочу массаж1','хочу расслабляющий массаж 1',300,1,1,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(8,'хочу массаж2','хочу расслабляющий массаж 2',450,1,2,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(9,'хочу массаж3','хочу расслабляющий массаж 3',1350,1,3,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(10,'хочу массаж4','хочу расслабляющий массаж 4',1350,1,4,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(11,'хочу массаж5','хочу расслабляющий массаж 5',150,1,5,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(12,'хочу массаж6','хочу расслабляющий массаж 6',1050,1,6,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(13,'угощу пивом1','угощу пивасиком в баре 1',1500,2,1,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(14,'угощу пивом2','угощу пивасиком в баре 2',150,2,2,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(15,'угощу пивом3','угощу пивасиком в баре 3',1200,2,3,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(16,'угощу пивом4','угощу пивасиком в баре 4',1200,2,4,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(17,'угощу пивом5','угощу пивасиком в баре 5',1200,2,5,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(18,'угощу пивом6','угощу пивасиком в баре 6',1650,2,6,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(19,'угощусь пивом1','угощусь пивасиком в баре 1',900,1,1,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(20,'угощусь пивом2','угощусь пивасиком в баре 2',0,1,2,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(21,'угощусь пивом3','угощусь пивасиком в баре 3',300,1,3,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(22,'угощусь пивом4','угощусь пивасиком в баре 4',750,1,4,1,0,0,'2019-06-11 08:50:23','2019-06-11 08:50:23'),(23,'угощусь пивом5','угощусь пивасиком в баре 5',900,1,5,1,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(24,'угощусь пивом6','угощусь пивасиком в баре 6',300,1,6,1,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(25,'сделаю маник1','сделаю маникюр 1',450,2,1,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(26,'сделаю маник2','сделаю маникюр 2',1350,2,2,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(27,'сделаю маник3','сделаю маникюр 3',0,2,3,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(28,'сделаю маник4','сделаю маникюр 4',1050,2,4,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(29,'сделаю маник5','сделаю маникюр 5',0,2,5,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(30,'сделаю маник6','сделаю маникюр 6',1050,2,6,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(31,'хочу маник1','хочу маникюр 1',0,1,1,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(32,'хочу маник2','хочу маникюр 2',0,1,2,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(33,'хочу маник3','хочу маникюр 3',1350,1,3,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(34,'хочу маник4','хочу маникюр 4',1650,1,4,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(35,'хочу маник5','хочу маникюр 5',300,1,5,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(36,'хочу маник6','хочу маникюр 6',750,1,6,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(37,'схожу в магаз1','схожу в магазин за продуктами 1',600,2,1,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(38,'схожу в магаз2','схожу в магазин за продуктами 2',1500,2,2,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(39,'схожу в магаз3','схожу в магазин за продуктами 3',1200,2,3,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(40,'схожу в магаз4','схожу в магазин за продуктами 4',1050,2,4,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(41,'схожу в магаз5','схожу в магазин за продуктами 5',600,2,5,0,0,0,'2019-06-11 08:50:24','2019-06-11 08:50:24'),(42,'схожу в магаз6','схожу в магазин за продуктами 6',0,2,6,0,0,0,'2019-06-11 08:50:25','2019-06-11 08:50:25'),(43,'нужен курьер1','нужен курьер сходить в магазин за продуктами 1',0,1,1,0,0,0,'2019-06-11 08:50:25','2019-06-11 08:50:25'),(44,'нужен курьер2','нужен курьер сходить в магазин за продуктами 2',0,1,2,0,0,0,'2019-06-11 08:50:25','2019-06-11 08:50:25'),(45,'нужен курьер3','нужен курьер сходить в магазин за продуктами 3',750,1,3,0,0,0,'2019-06-11 08:50:25','2019-06-11 08:50:25'),(46,'нужен курьер4','нужен курьер сходить в магазин за продуктами 4',150,1,4,0,0,0,'2019-06-11 08:50:25','2019-06-11 08:50:25'),(47,'нужен курьер5','нужен курьер сходить в магазин за продуктами 5',300,1,5,0,0,0,'2019-06-11 08:50:25','2019-06-11 08:50:25'),(48,'нужен курьер6','нужен курьер сходить в магазин за продуктами 6',600,1,6,0,0,0,'2019-06-11 08:50:25','2019-06-11 08:50:25');
+INSERT INTO `service_lists` VALUES (1,'сделаю массаж1','сделаю расслабляющий массаж 1',600,2,1,1,0,0,'2019-06-21 09:15:55','2019-06-21 09:15:55'),(2,'сделаю массаж2','сделаю расслабляющий массаж 2',1200,2,2,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(3,'сделаю массаж3','сделаю расслабляющий массаж 3',1200,2,3,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(4,'сделаю массаж4','сделаю расслабляющий массаж 4',600,2,4,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(5,'сделаю массаж5','сделаю расслабляющий массаж 5',450,2,5,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(6,'сделаю массаж6','сделаю расслабляющий массаж 6',0,2,6,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(7,'хочу массаж1','хочу расслабляющий массаж 1',450,1,1,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(8,'хочу массаж2','хочу расслабляющий массаж 2',900,1,2,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(9,'хочу массаж3','хочу расслабляющий массаж 3',900,1,3,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(10,'хочу массаж4','хочу расслабляющий массаж 4',0,1,4,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(11,'хочу массаж5','хочу расслабляющий массаж 5',1200,1,5,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(12,'хочу массаж6','хочу расслабляющий массаж 6',600,1,6,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(13,'угощу пивом1','угощу пивасиком в баре 1',150,2,1,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(14,'угощу пивом2','угощу пивасиком в баре 2',750,2,2,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(15,'угощу пивом3','угощу пивасиком в баре 3',1500,2,3,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(16,'угощу пивом4','угощу пивасиком в баре 4',1500,2,4,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(17,'угощу пивом5','угощу пивасиком в баре 5',600,2,5,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(18,'угощу пивом6','угощу пивасиком в баре 6',1200,2,6,1,0,0,'2019-06-21 09:15:56','2019-06-21 09:15:56'),(19,'угощусь пивом1','угощусь пивасиком в баре 1',1200,1,1,1,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(20,'угощусь пивом2','угощусь пивасиком в баре 2',1200,1,2,1,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(21,'угощусь пивом3','угощусь пивасиком в баре 3',900,1,3,1,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(22,'угощусь пивом4','угощусь пивасиком в баре 4',1350,1,4,1,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(23,'угощусь пивом5','угощусь пивасиком в баре 5',1050,1,5,1,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(24,'угощусь пивом6','угощусь пивасиком в баре 6',450,1,6,1,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(25,'сделаю маник1','сделаю маникюр 1',600,2,1,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(26,'сделаю маник2','сделаю маникюр 2',1200,2,2,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(27,'сделаю маник3','сделаю маникюр 3',150,2,3,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(28,'сделаю маник4','сделаю маникюр 4',0,2,4,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(29,'сделаю маник5','сделаю маникюр 5',600,2,5,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(30,'сделаю маник6','сделаю маникюр 6',1350,2,6,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(31,'хочу маник1','хочу маникюр 1',750,1,1,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(32,'хочу маник2','хочу маникюр 2',1200,1,2,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(33,'хочу маник3','хочу маникюр 3',450,1,3,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(34,'хочу маник4','хочу маникюр 4',1350,1,4,0,0,0,'2019-06-21 09:15:57','2019-06-21 09:15:57'),(35,'хочу маник5','хочу маникюр 5',1350,1,5,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(36,'хочу маник6','хочу маникюр 6',900,1,6,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(37,'схожу в магаз1','схожу в магазин за продуктами 1',1500,2,1,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(38,'схожу в магаз2','схожу в магазин за продуктами 2',1200,2,2,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(39,'схожу в магаз3','схожу в магазин за продуктами 3',1200,2,3,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(40,'схожу в магаз4','схожу в магазин за продуктами 4',1350,2,4,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(41,'схожу в магаз5','схожу в магазин за продуктами 5',750,2,5,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(42,'схожу в магаз6','схожу в магазин за продуктами 6',0,2,6,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(43,'нужен курьер1','нужен курьер сходить в магазин за продуктами 1',600,1,1,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(44,'нужен курьер2','нужен курьер сходить в магазин за продуктами 2',1350,1,2,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(45,'нужен курьер3','нужен курьер сходить в магазин за продуктами 3',1200,1,3,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(46,'нужен курьер4','нужен курьер сходить в магазин за продуктами 4',1650,1,4,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(47,'нужен курьер5','нужен курьер сходить в магазин за продуктами 5',0,1,5,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(48,'нужен курьер6','нужен курьер сходить в магазин за продуктами 6',750,1,6,0,0,0,'2019-06-21 09:15:58','2019-06-21 09:15:58');
 /*!40000 ALTER TABLE `service_lists` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -566,8 +575,71 @@ CREATE TABLE `service_types` (
 
 LOCK TABLES `service_types` WRITE;
 /*!40000 ALTER TABLE `service_types` DISABLE KEYS */;
-INSERT INTO `service_types` VALUES (1,'спонсор','2019-06-11 08:50:20','2019-06-11 08:50:20'),(2,'друг','2019-06-11 08:50:20','2019-06-11 08:50:20');
+INSERT INTO `service_types` VALUES (1,'спонсор','2019-06-21 09:15:54','2019-06-21 09:15:54'),(2,'друг','2019-06-21 09:15:54','2019-06-21 09:15:54');
 /*!40000 ALTER TABLE `service_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ticket_statuses`
+--
+
+DROP TABLE IF EXISTS `ticket_statuses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ticket_statuses` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `status` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ticket_statuses`
+--
+
+LOCK TABLES `ticket_statuses` WRITE;
+/*!40000 ALTER TABLE `ticket_statuses` DISABLE KEYS */;
+INSERT INTO `ticket_statuses` VALUES (1,'Отправленно','2019-06-21 09:16:00','2019-06-21 09:16:00'),(2,'Принято к обработке','2019-06-21 09:16:00','2019-06-21 09:16:00'),(3,'На рассмотрении','2019-06-21 09:16:00','2019-06-21 09:16:00'),(4,'Обработано','2019-06-21 09:16:00','2019-06-21 09:16:00'),(5,'Закрыто','2019-06-21 09:16:00','2019-06-21 09:16:00');
+/*!40000 ALTER TABLE `ticket_statuses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tickets`
+--
+
+DROP TABLE IF EXISTS `tickets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tickets` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `profile_id` bigint(20) DEFAULT NULL,
+  `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_from` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status_id` bigint(20) unsigned NOT NULL DEFAULT '1',
+  `moderator_id` bigint(20) unsigned DEFAULT NULL,
+  `report` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `tickets_status_id_foreign` (`status_id`),
+  KEY `tickets_profile_id_foreign` (`profile_id`),
+  KEY `tickets_moderator_id_foreign` (`moderator_id`),
+  CONSTRAINT `tickets_moderator_id_foreign` FOREIGN KEY (`moderator_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `tickets_profile_id_foreign` FOREIGN KEY (`profile_id`) REFERENCES `profiles` (`id`),
+  CONSTRAINT `tickets_status_id_foreign` FOREIGN KEY (`status_id`) REFERENCES `ticket_statuses` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tickets`
+--
+
+LOCK TABLES `tickets` WRITE;
+/*!40000 ALTER TABLE `tickets` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tickets` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -581,10 +653,11 @@ CREATE TABLE `transaction_names` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `transaction_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` int(10) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -593,6 +666,7 @@ CREATE TABLE `transaction_names` (
 
 LOCK TABLES `transaction_names` WRITE;
 /*!40000 ALTER TABLE `transaction_names` DISABLE KEYS */;
+INSERT INTO `transaction_names` VALUES (1,'1 month','Subscription for 1 month',10000,'2019-06-21 09:16:00','2019-06-21 09:16:00');
 /*!40000 ALTER TABLE `transaction_names` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -606,13 +680,12 @@ DROP TABLE IF EXISTS `transactions`;
 CREATE TABLE `transactions` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `profile_id` bigint(20) NOT NULL,
-  `transaction_id` bigint(20) unsigned NOT NULL,
-  `ante` decimal(10,2) unsigned NOT NULL,
+  `transaction_name_id` bigint(20) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `transactions_transaction_id_foreign` (`transaction_id`),
-  CONSTRAINT `transactions_transaction_id_foreign` FOREIGN KEY (`transaction_id`) REFERENCES `transaction_names` (`id`)
+  KEY `transactions_transaction_name_id_foreign` (`transaction_name_id`),
+  CONSTRAINT `transactions_transaction_name_id_foreign` FOREIGN KEY (`transaction_name_id`) REFERENCES `transaction_names` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -662,7 +735,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin@gmail.com',NULL,'$2y$10$bY721b9.zN0CjwHu4xi73O0/UBusW4mUH2tXuGh6Wxsnk88xkVo3O',NULL,1,0,NULL,NULL,NULL,NULL,NULL,NULL,'2019-06-11 08:50:18','2019-06-11 08:50:18'),(2,'moderator','moderator@gmail.com',NULL,'$2y$10$eJYeyFaIsKS.6zp3EdpVjO9RxejOkq5lN/A431.aWZyom2TnaiK5m',NULL,1,0,NULL,NULL,NULL,NULL,NULL,NULL,'2019-06-11 08:50:19','2019-06-11 08:50:19'),(3,'user1','user1@gmail.com',NULL,'$2y$10$OFng6LSKJDrAPdE/MbDB3OFiosay6q/06zk9tdx7cyol9cgHpjEuS',NULL,1,0,NULL,NULL,NULL,NULL,1,NULL,'2019-06-11 08:50:25','2019-06-11 08:50:25'),(4,'user2','user2@gmail.com',NULL,'$2y$10$AD139gScxKkI8v8WOmw4uO3ykaLGUDvHNRhF3pizQmgHPQhBFSR4K',NULL,1,0,NULL,NULL,NULL,NULL,2,NULL,'2019-06-11 08:50:25','2019-06-11 08:50:25'),(5,'user3','user3@gmail.com',NULL,'$2y$10$wN/acRXQ.HHEZk9aRGGjoOauJa/wDWJpNltbJBH/Q9iWVlb7PDfQ2',NULL,1,0,NULL,NULL,NULL,NULL,3,NULL,'2019-06-11 08:50:25','2019-06-11 08:50:25'),(6,'user4','user4@gmail.com',NULL,'$2y$10$g4AkPXkHyJyz/LPPpUfvg.RnwRUBDXwqFpJ829p9sT2PxQFPPNUCO',NULL,1,0,NULL,NULL,NULL,NULL,4,NULL,'2019-06-11 08:50:26','2019-06-11 08:50:26'),(7,'user5','user5@gmail.com',NULL,'$2y$10$1QEJG/4A6dKxgWT0oPdztuTxugSlyBOIie.r0xlGES6sxSyGO15zq',NULL,1,0,NULL,NULL,NULL,NULL,5,NULL,'2019-06-11 08:50:26','2019-06-11 08:50:26'),(8,'user6','user6@gmail.com',NULL,'$2y$10$X5.xYYRyH8lEj.cpp1WVdewlTYgDsb50M1da/n5SGcd8eFN8Gg2Be',NULL,1,0,NULL,NULL,NULL,NULL,6,NULL,'2019-06-11 08:50:26','2019-06-11 08:50:26');
+INSERT INTO `users` VALUES (1,'admin','admin@gmail.com',NULL,'$2y$10$G0Cr06jcFFVEtAqrccCQUuJzeypxczn3aKLT6M2n3DKFMgXRDj6NC',NULL,1,0,NULL,NULL,NULL,NULL,NULL,NULL,'2019-06-21 09:15:52','2019-06-21 09:15:52'),(2,'moderator','moderator@gmail.com',NULL,'$2y$10$IMV5WyoeZGyjvJvhb8e9J.GWjUKL1K4Be43L5c32A/OS5ZE3FH4.S',NULL,1,0,NULL,NULL,NULL,NULL,NULL,NULL,'2019-06-21 09:15:53','2019-06-21 09:15:53'),(3,'user1','user1@gmail.com',NULL,'$2y$10$nn7kliGozU1omMSV/Nq.VuyOsvv8.18DGW1Gq3gxlff5h5y9c967G',NULL,1,0,NULL,NULL,NULL,NULL,1,NULL,'2019-06-21 09:15:58','2019-06-21 09:15:58'),(4,'user2','user2@gmail.com',NULL,'$2y$10$DpEBldvK5n3MgHERj6/T7ur3y0.JZTGQ3URCiuYODC1rFLvhQv2ny',NULL,1,0,NULL,NULL,NULL,NULL,2,NULL,'2019-06-21 09:15:59','2019-06-21 09:15:59'),(5,'user3','user3@gmail.com',NULL,'$2y$10$SxiwaN1P3rcdp7KNbj3f8efjGqgSh77OwxILs0Jt/Wcc4oMgorXz2',NULL,1,0,NULL,NULL,NULL,NULL,3,NULL,'2019-06-21 09:15:59','2019-06-21 09:15:59'),(6,'user4','user4@gmail.com',NULL,'$2y$10$znp5B5sOpTx1khfU5Obus.C2/E7V02y7OgfQuUkckx62S14t9WXfi',NULL,1,0,NULL,NULL,NULL,NULL,4,NULL,'2019-06-21 09:15:59','2019-06-21 09:15:59'),(7,'user5','user5@gmail.com',NULL,'$2y$10$RTE1HkwppsQxhdmgXPixuOAFxSHTd8rST3iq9qygBRfhbTB8k/XxW',NULL,1,0,NULL,NULL,NULL,NULL,5,NULL,'2019-06-21 09:15:59','2019-06-21 09:15:59'),(8,'user6','user6@gmail.com',NULL,'$2y$10$IPgMJaFqNEZxk6ck.5lBf.iGc0M4zCJeTK8U35i2MjuK6wAPiLVkm',NULL,1,0,NULL,NULL,NULL,NULL,6,NULL,'2019-06-21 09:15:59','2019-06-21 09:15:59');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -675,4 +748,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-11 14:50:32
+-- Dump completed on 2019-06-21 15:16:05

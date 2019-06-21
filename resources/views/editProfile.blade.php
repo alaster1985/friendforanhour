@@ -11,10 +11,18 @@
     <div id="app2" style="display: none">
         <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
     </div>
+    <div class="col-md-3" style="color: red; border: solid green 2px">
+        <form action="{{route('payment')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <input name="profile_id" type="hidden" value="{{$profile->id}}">
+            <input name="transaction_name_id" type="hidden" value="1">
+            <button id="payButton" type="submit">renew subscription</button>
+        </form>
+    </div>
     @if($profile->subscription_end_date >= strtotime('now'))
         <h1>Subscription is valid for:</h1>
         <p style="display: none" id="finish_time">{{$profile->subscription_end_date}}</p>
-        <div id="countdown">
+        <div id="countdown" class="col-md-6">
             <div>
                 <span class="days"></span>
                 <div>Days</div>
@@ -37,10 +45,11 @@
         <h1>Subscription is invalid</h1>
     @endif
     @if ($profile->is_locked)
-        <div>It is manual locked</div>
-        <div>You can contact to <a href="contactToSupport">support</a> or look to your <a
+        <div class="col-md-6">It is manual locked</div>
+        <div class="col-md-6">You can contact to <a href="contactToSupport">support</a> or look to your <a
                     href="{{Request::root()}}/mytickets">reports</a></div>
     @endif
+
     <form action="{{Route('updateProfile')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row edit_profile_general_block justify-content-between">

@@ -18,6 +18,10 @@
             }
         });
 
+        // $('#payButton').on('click', function () {
+        //     $(this).attr('disabled', 'disabled');
+        // });
+
         var i = 0;
         $('#new_service_as_sponsor').click(function () {
             let lastRow;
