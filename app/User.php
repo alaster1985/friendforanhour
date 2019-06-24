@@ -13,6 +13,7 @@ class User extends Authenticatable
 {
     use LaratrustUserTrait;
     use Notifiable;
+    use \HighIdeas\UsersOnline\Traits\UsersOnlineTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -120,4 +121,5 @@ class User extends Authenticatable
         $newUser->save();
         $newUser->attachRole(Role::find($request->role));
     }
+
 }

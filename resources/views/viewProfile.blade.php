@@ -27,7 +27,7 @@
                 @endauth
             </p>
 
-            <p class="character_user">Возраст: {{$profile->getAge($profile->date_of_birth)}}, рост {{$profile->height}}
+            <p class="character_user">Возраст: {{$profile->getAge()}}, рост {{$profile->height}}
                 см, вес
                 {{$profile->weight}} кг</p>
             @if($profile->profileAddress->city_id)

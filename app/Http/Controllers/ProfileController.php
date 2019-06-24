@@ -7,6 +7,7 @@ use App\Complain;
 use App\Country;
 use App\Gender;
 use App\Http\Requests\ProfileStoreRequest;
+use App\Http\Requests\SearchRequest;
 use App\Profile;
 use App\ProfilePhoto;
 use App\ServiceList;
@@ -69,5 +70,11 @@ class ProfileController extends Controller
     public function addComplain(Request $request)
     {
         Complain::addComplain($request);
+    }
+
+    public function filter(SearchRequest $request)
+    {
+        $a = Profile::getFilteredProfilesByParams($request->all());
+        dd($a);
     }
 }

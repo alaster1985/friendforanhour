@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class Ban extends Model
@@ -57,14 +58,28 @@ class Ban extends Model
 
     public static function updateBan($data)
     {
-        $currentBan = Ban::find($data->id);
-        $currentBan->reason = $data->reason;
-        if (isset($data->reason_amnesty)) {
-            $currentBan->moderator_id_amnesty = Auth::id();
-            $currentBan->reason_amnesty = $data->reason_amnesty;
-            $currentBan->ban_end_date = strtotime('now');
-        }
-        $currentBan->save();
+
+        DB::transaction(function () use ($data) {
+            $currentBan = Ban::find($data->id);
+            $currentBan->reason = $data->reason;
+            if (isset($data->reason_amnesty)) {
+//            $currentBan->moderator_id_amnesty = Auth::id();
+//            $currentBan->reason_amnesty = $data->reason_amnesty;
+//            $currentBan->ban_end_date = strtotime('now');
+                $existingBansOfCurrentProfile = Ban::where([
+                    ['ban_end_date', '>=', strtotime('now')],
+                    ['profile_id', '=', $currentBan->profile_id]
+                ])->get();
+                foreach ($existingBansOfCurrentProfile as $ban) {
+                    $ban->moderator_id_amnesty = Auth::id();
+                    $ban->reason_amnesty = $data->reason_amnesty;
+                    $ban->ban_end_date = strtotime('now');
+                    $ban->save();
+                }
+            }
+            $currentBan->save();
+        });
+
     }
 
     public static function getBanList($param)

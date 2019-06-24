@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class City extends Model
 {
@@ -65,5 +66,17 @@ class City extends Model
             return null;
         }
     }
+
+//    public static function getNum($id, $num)
+//    {
+//        return $num - City::find($id)->num1 * City::find($id)->num2;
+//    }
+
+//    public function getNum($num)
+//    {
+//        return $num - $this->num1 * $this->num2;
+//    }
+
+
 
 }

@@ -47,6 +47,7 @@ Route::middleware('role:user')->group(function () {
 
     Route::get('unpaid', 'MainController@unpaid')->name('unpaid');
     Route::get('banned', 'MainController@banned')->name('banned');
+    Route::get('search', 'MainController@search')->name('search');
 
     Route::get('edit', 'ProfileController@edit')->name('editProfile');
     Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
@@ -65,6 +66,7 @@ Route::middleware('role:user')->group(function () {
         Route::post('addComplain', 'ProfileController@addComplain')->name('addComplain');
         Route::post('update', 'ProfileController@update')->name('updateProfile');
         Route::get('deleteService/{id}', 'ServiceListController@deleteService')->name('deleteService');
+        Route::post('filter', 'ProfileController@filter')->name('filter');
 
     });
 

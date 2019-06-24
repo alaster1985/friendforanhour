@@ -33,4 +33,9 @@ class MainController extends Controller
         }
         return redirect()->route('index');
     }
+
+    public function search()
+    {
+        return view('search');
+    }
 }

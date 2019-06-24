@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Profile extends Model
@@ -72,9 +73,9 @@ class Profile extends Model
         return $this->hasMany('App\Transaction');
     }
 
-    public function getAge($bdate)
+    public function getAge()
     {
-        return date_diff(date_create($bdate), date_create('today'))->y;
+        return date_diff(date_create($this->date_of_birth), date_create('today'))->y;
     }
 
     public static function createNewDefaultProfile($data)
@@ -156,6 +157,11 @@ class Profile extends Model
         $currentProfile->save();
     }
 
+    /**
+     * method for admin dashboard
+     * @param $param = string
+     * @return Profile[]|\Illuminate\Database\Eloquent\Collection
+     */
     public static function getProfilesByParam($param)
     {
         switch ($param) {
@@ -175,6 +181,87 @@ class Profile extends Model
                 return Profile::all()->sortByDesc('created_at');
                 break;
         }
+    }
+
+    /**
+     * method for filter (search)
+     * @param $params
+     * @return Profile[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public static function getFilteredProfilesByParams($params)
+    {
+        $minAge = ($params['min_age'] ?? '18') + 1; // +1 for correct between date_of_birth
+        $maxAge = ($params['max_age'] ?? '123') + 1; // +1 for correct between date_of_birth
+        $latitude = $params['latitude'];
+        $longitude = $params['longitude'];
+        $radius = $params['radius'] ?? 25;
+        $serviceTypeId = $params['friend_type'];
+        $minPrice = $params['min_money'] ?? 0;
+        $maxPrice = $params['max_money'] ?? 10000;
+        $cityId = $params['city'];
+        $minHeight = $params['min_height'] ?? 130;
+        $maxHeight = $params['max_height'] ?? 220;
+        $minWeight = $params['min_weight'] ?? 30;
+        $maxWeight = $params['max_weight'] ?? 280;
+        $genderId = $params['gender'];
+
+//        $result = Profile::whereHas('gender', function($q){$q->where('gender','male');})->get();
+//        $result = Profile::with(['gender', 'profileAddress'])->whereHas('profileAddress.city', function ($q) {$q->where('country_id', 1);})->get();
+//        $result = Profile::whereBetween('date_of_birth', [date('Y-m-d', strtotime('-19 years')), date('Y-m-d', strtotime('-18 years'))])->get();
+//        $result = Profile::whereHas('profileAddress', function ($q) use ($params) {
+//            $q->whereRaw(DB::raw("(6371 * acos( cos( radians(" . $params['latitude'] . ") ) * cos( radians( latitude ) )  *
+//                          cos( radians( longitude ) - radians(" . $params['longitude'] . ") ) + sin( radians(" . $params['latitude'] . ") ) * sin(
+//                          radians( latitude ) ) ) ) < 1 "));
+//        })->get();
+//        $result = Profile::whereHas('serviceList', function($q) use ($params){$q->where([
+//            ['service_type_id', '=', $params['friend_type']],
+//            ['is_disabled', '=', 0],
+//            ['is_deleted', '=', 0],
+//            ['price', '<', 500],
+//        ]);})->get();
+
+        $result = Profile::with(['profileAddress', 'serviceList'])
+            ->where([
+                ['gender_id', '=', $genderId],
+                ['is_deleted', '=', 0],
+                ['is_locked', '=', 0],
+                ['is_banned', '=', 0],
+                ['subscription_end_date', '>=', strtotime('now')],
+            ])
+            ->whereBetween('height', [$minHeight, $maxHeight])
+            ->whereBetween('weight', [$minWeight, $maxWeight])
+            ->whereBetween('date_of_birth',
+                [
+                    date('Y-m-d', strtotime('-' . $maxAge . ' years')),
+                    date('Y-m-d', strtotime('-' . $minAge . ' years')),
+                ])
+            ->whereHas('profileAddress', function ($q) use ($cityId) {
+                $q->where('city_id', $cityId);
+            })
+            ->whereDoesntHave('ban', function ($q) {
+                $q->where('ban_end_date', '>', strtotime('now'));
+            })
+            ->whereHas('serviceList', function ($q) use ($serviceTypeId, $maxPrice, $minPrice) {
+                $q->where(
+                    [
+                        ['service_type_id', '=', $serviceTypeId],
+                        ['is_disabled', '=', 0],
+                        ['is_deleted', '=', 0],
+                    ])
+                    ->whereBetween('price', [$minPrice, $maxPrice]);
+            })
+            ->where(function ($query) use ($latitude, $longitude, $radius) {
+                if (isset($latitude) && isset($longitude)) {
+                    $query->whereHas('profileAddress', function ($q) use ($latitude, $longitude, $radius) {
+                        $q->whereRaw(DB::raw("(6371 * acos( cos( radians(" . $latitude . ") ) * cos( radians( latitude ) )  *
+                          cos( radians( longitude ) - radians(" . $longitude . ") ) + sin( radians(" . $latitude . ") ) * sin(
+                          radians( latitude ) ) ) ) < " . $radius));
+                    });
+                }
+            })
+            ->get();
+//        return $result;
+        return json_encode($result);
     }
 
 }

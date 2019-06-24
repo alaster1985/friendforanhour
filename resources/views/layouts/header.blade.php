@@ -82,6 +82,7 @@
                                             <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/mytickets">My support tickets</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/search">search</a>
                                         @endif
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                               style="display: none;">
