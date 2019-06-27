@@ -7,7 +7,9 @@
                     <div class="sub-menu">
                         <ul>
                             <li><a href="{{route('viewAdminUsers')}}" title="">All Admin Users</a></li>
-                            <li><a href="{{route('createAdminUser')}}" title="">Create Admin User</a></li>
+                            @if(Auth::user()->hasRole('admin'))
+                                <li><a href="{{route('createAdminUser')}}" title="">Create Admin User</a></li>
+                            @endif
                         </ul>
                     </div>
                 </div>

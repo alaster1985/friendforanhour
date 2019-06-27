@@ -11,14 +11,7 @@
     <div id="app2" style="display: none">
         <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
     </div>
-    <div class="col-md-3" style="color: red; border: solid green 2px">
-        <form action="{{route('payment')}}" method="post" enctype="multipart/form-data">
-            @csrf
-            <input name="profile_id" type="hidden" value="{{$profile->id}}">
-            <input name="transaction_name_id" type="hidden" value="1">
-            <button id="payButton" type="submit">renew subscription</button>
-        </form>
-    </div>
+    @include('layouts.robokassaPayForm')
     @if($profile->subscription_end_date >= strtotime('now'))
         <h1>Subscription is valid for:</h1>
         <p style="display: none" id="finish_time">{{$profile->subscription_end_date}}</p>

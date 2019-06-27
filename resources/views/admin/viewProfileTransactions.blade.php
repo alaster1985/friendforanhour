@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="main-title">
-                        <h4 class="StepTitle">All bans for: <a
+                        <h4 class="StepTitle">All transactions for: <a
                                     href="{{Request::root()}}/profile?prf={{$profile->id}}">{{$profile->first_name . ' ' . $profile->second_name}}</a>
                         </h4>
                     </div>
@@ -33,7 +33,12 @@
                                     <th>Profile</th>
                                     <th>Transaction description</th>
                                     <th>Amount (rub)</th>
+                                    <th>InvId</th>
+                                    <th>Accepted status</th>
+                                    <th>Type of record</th>
                                     <th>Created_at</th>
+                                    <th>Updated_at</th>
+                                    <th>Detail</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -52,7 +57,22 @@
                                             {{$transaction->getMoneyFormat()}}
                                         </td>
                                         <td>
+                                            {{$transaction->inv_id}}
+                                        </td>
+                                        <td>
+                                            {{$transaction->accepted ? 'ACCEPTED' : 'REJECTED'}}
+                                        </td>
+                                        <td>
+                                            {{$transaction->manual_access_reason ? 'MANUAL' : 'AUTO'}}
+                                        </td>
+                                        <td>
                                             {{$transaction->created_at}}
+                                        </td>
+                                        <td>
+                                        {{$transaction->updated_at}}
+                                        </td>
+                                        <td>
+                                            <a href="detailTransaction?trn={{$transaction->id}}">details</a>
                                         </td>
                                     </tr>
                                 @endforeach

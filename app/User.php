@@ -72,6 +72,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Ban', 'moderator_id_amnesty');
     }
 
+    public function givingAccessModer()
+    {
+        return $this->hasMany('App\Transaction', 'giving_access_moderator_id');
+    }
+
     public static function generateSmsCode()
     {
         return rand(10000, 99999);

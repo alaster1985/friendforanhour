@@ -26,7 +26,7 @@
                     <div class="widget-area">
                         <div class="streaming-table">
                             <span id="found" class="label label-info"></span>
-                            <button type="button">TO BAN</button>
+                            <button type="button">ADD BAN</button>
                             <form style="display: none" action="{{Route('addBan')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="profile_id" value="{{$profile->id}}">

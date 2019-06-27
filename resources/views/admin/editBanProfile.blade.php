@@ -20,7 +20,7 @@
                     <div class="col-md-12">
                         <div class="widget-area">
                             <div class="wizard-form-h">
-                                <h2 class="StepTitle">admin user</h2>
+                                <h2 class="StepTitle">Ban</h2>
                                 @if ($errors)
                                     <div class="error" style="display: block">{{($errors->first())}}</div>
                                 @endif
@@ -40,8 +40,8 @@
                                     </div>
                                 </div>
                                 @if($ban->id === $ban->profile->ban->last()->id)
-                                <div type="button">amnesty</div>
-                                <div id="amnesty" style="display: none" class="col-md-9">
+                                <div id="amnesty" type="button">amnesty</div>
+                                <div id="amnesty_input" style="display: none" class="col-md-9">
                                     <div class="inline-form">
                                         <label class="c-label">Reason for amnesty</label>
                                         <textarea class="input-style"

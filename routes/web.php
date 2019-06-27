@@ -20,16 +20,13 @@ Route::get('lara2', function () {
     return view('welcome2');
 });
 
+Route::get('ok', 'MainController@ok')->name('ok');
+Route::get('bad', 'MainController@bad')->name('bad');
+Route::get('payment', 'TransactionController@payment')->name('payment');
 
-Route::get('ok', function () {
-    return view('allok');
-})->name('ok');
-Route::get('bad', function () {
-    return view('allbad');
-})->name('bad');
-Route::get('wrong', function () {
-    return view('allwrong');
-})->name('wrong');
+//Route::get('ok', function () {return view('allok');})->name('ok');
+//Route::get('bad', function () {return view('allbad');})->name('bad');
+Route::get('wrong', function () {return view('allwrong');})->name('wrong');
 
 
 Auth::routes();
@@ -52,7 +49,7 @@ Route::middleware('role:user')->group(function () {
     Route::get('edit', 'ProfileController@edit')->name('editProfile');
     Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
     Route::get('mytickets', 'TicketController@mytickets')->name('mytickets');
-    Route::post('payment', 'TransactionController@payment')->name('payment');
+//    Route::post('payment', 'TransactionController@payment')->name('payment');
 
     Route::middleware('subscription', 'ban')->group(function () {
 
@@ -104,5 +101,7 @@ Route::middleware('role:admin|moderator')->group(function () {
 
     Route::get('admin/viewSubscriptionList', 'TransactionController@viewSubscriptionList')->name('viewSubscriptionList');
     Route::get('admin/viewProfileTransactions', 'TransactionController@viewProfileTransactions')->name('viewProfileTransactions');
+    Route::get('admin/detailTransaction', 'TransactionController@detailTransaction')->name('detailTransaction');
+    Route::post('admin/addTransaction', 'TransactionController@addTransaction')->name('addTransaction');
 
 });

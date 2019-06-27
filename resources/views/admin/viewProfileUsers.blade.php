@@ -33,8 +33,10 @@
                                     <th>DOB</th>
                                     <th>Phone</th>
                                     <th>Email</th>
-                                    <th>Is banned?</th>
-                                    <th>Is locked?</th>
+                                    @if(Auth::user()->hasRole('admin'))
+                                        <th>Is banned?</th>
+                                        <th>Is locked?</th>
+                                    @endif
                                     <th>Subscription end date</th>
                                     <th>Subscription valid?</th>
                                     <th>Created_at</th>
@@ -66,12 +68,14 @@
                                         <td>
                                             {{$profile->user()->where('profile_id','=', $profile->id)->first()->email}}
                                         </td>
-                                        <td>
-                                            {{$profile->is_banned ? 'BAN' : ''}}
-                                        </td>
-                                        <td>
-                                            {{$profile->is_locked ? 'LOCKED' : ''}}
-                                        </td>
+                                        @if(Auth::user()->hasRole('admin'))
+                                            <td>
+                                                {{$profile->is_banned ? 'BAN' : ''}}
+                                            </td>
+                                            <td>
+                                                {{$profile->is_locked ? 'LOCKED' : ''}}
+                                            </td>
+                                        @endif
                                         <td>
                                             {{gmdate("d M Y H:i:s", $profile->subscription_end_date)}}
                                         </td>

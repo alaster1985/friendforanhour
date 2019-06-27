@@ -32,9 +32,11 @@
                                     {{--<th>Transaction  name</th>--}}
                                     <th>Transaction description</th>
                                     <th>Amount (rub)</th>
+                                    <th>InvId</th>
+                                    <th>Accepted status</th>
+                                    <th>Type of record</th>
                                     <th>Created_at</th>
-                                    {{--<th>Updated_at</th>--}}
-                                    {{--<th>Edit</th>--}}
+                                    <th>Edit</th>
                                     {{--@if(Auth::user()->hasRole('admin'))--}}
                                     {{--<th>Delete</th>--}}
                                     {{--@endif--}}
@@ -47,7 +49,7 @@
                                             {{$transaction->id}}
                                         </td>
                                         <td>
-                                            <a href="editProfileUser?prf={{$transaction->profile_id}}">{{$transaction->profile->first_name . ' ' . $transaction->profile->second_name}}</a>
+                                            <a href="detailProfileUser?prf={{$transaction->profile_id}}">{{$transaction->profile->first_name . ' ' . $transaction->profile->second_name}}</a>
                                         </td>
                                         {{--<td>--}}
                                             {{--{{$transaction->transaction->transaction_name}}--}}
@@ -59,14 +61,20 @@
                                             {{$transaction->getMoneyFormat()}}
                                         </td>
                                         <td>
+                                            {{$transaction->inv_id}}
+                                        </td>
+                                        <td>
+                                            {{$transaction->accepted ? 'ACCEPTED' : 'REJECTED'}}
+                                        </td>
+                                        <td>
+                                            {{$transaction->manual_access_reason ? 'MANUAL' : 'AUTO'}}
+                                        </td>
+                                        <td>
                                             {{$transaction->created_at}}
                                         </td>
-                                        {{--<td>--}}
-                                            {{--{{$transaction->updated_at}}--}}
-                                        {{--</td>--}}
-                                        {{--<td>--}}
-                                            {{--<a href="editBan?ban={{$transaction->id}}">+</a>--}}
-                                        {{--</td>--}}
+                                        <td>
+                                            <a href="detailTransaction?trn={{$transaction->id}}">details</a>
+                                        </td>
                                         {{--@if(Auth::user()->hasRole('admin'))--}}
                                             {{--<td>--}}
                                                 {{--{{ csrf_field()}}--}}

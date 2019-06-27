@@ -28,6 +28,8 @@ class CreateForeignKeyRelationshipsTable extends Migration
         });
         Schema::table('transactions', function (Blueprint $table) {
             $table->foreign('transaction_name_id')->references('id')->on('transaction_names');
+            $table->foreign('profile_id')->references('id')->on('profiles');
+            $table->foreign('giving_access_moderator_id')->references('id')->on('users');
         });
         Schema::table('profiles', function (Blueprint $table) {
             $table->foreign('gender_id')->references('id')->on('genders');
