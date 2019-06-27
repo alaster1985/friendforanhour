@@ -54,7 +54,8 @@ class MainController extends Controller
         $transaction = Transaction::where([
             ['profile_id', '=', $shp_ProfileId],
             ['inv_id', '=', $inv_id],
-        ])->get();
+            ['accepted', '=', true],
+        ])->first();
         if (isset($transaction->id)){
             $messageOk = "Success! InvoiceID: $inv_id Sum: $out_sum Completed! Internal transaction ID $transaction->id.";
         } else {

@@ -38,13 +38,14 @@ Route::get('profile', 'ProfileController@index')->name('viewProfile');
 
 Route::middleware('auth')->group(function () {
     Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+    Route::get('search', 'MainController@search')->name('search');
 });
 
 Route::middleware('role:user')->group(function () {
 
     Route::get('unpaid', 'MainController@unpaid')->name('unpaid');
     Route::get('banned', 'MainController@banned')->name('banned');
-    Route::get('search', 'MainController@search')->name('search');
+//    Route::get('search', 'MainController@search')->name('search');
 
     Route::get('edit', 'ProfileController@edit')->name('editProfile');
     Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');

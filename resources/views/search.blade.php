@@ -1,5 +1,5 @@
 @include('layouts.header')
-<p>lara2</p>
+
 @if ($errors)
     <div style="display: block; color: red">{{($errors->first())}}</div>
 @endif
@@ -14,11 +14,15 @@
             <input name="min_age" type="number" min="18" max="123" value="{{old('min_age')}}">
             <p>max age</p>
             <input name="max_age" type="number" min="18" max="123" value="{{old('max_age')}}">
-            <p>chords</p>
-            <p>longitude</p>
-            <input name="longitude" type="number" step="0.000001" min="-180" max="180" value="{{Auth::user()->profile->profileAddress->longitude}}">
-            <p>latitude</p>
-            <input name="latitude" type="number" step="0.000001" min="-90" max="90" value="{{Auth::user()->profile->profileAddress->latitude}}">
+            @if(Auth::user()->hasRole('user'))
+                <p>chords</p>
+                <p>longitude</p>
+                <input name="longitude" type="number" step="0.000001" min="-180" max="180"
+                       value="{{Auth::user()->profile->profileAddress->longitude}}">
+                <p>latitude</p>
+                <input name="latitude" type="number" step="0.000001" min="-90" max="90"
+                       value="{{Auth::user()->profile->profileAddress->latitude}}">
+            @endif
             <p>sponsor or friend</p>
             <select name="friend_type">
                 <option value="2">friend</option>
@@ -55,4 +59,9 @@
         </div>
     </div>
 </form>
+@if(session()->has('message'))
+    <div class="alert alert-success" align="center">
+        {{ session()->get('message') }}
+    </div>
+@endif
 @include('layouts.footer')

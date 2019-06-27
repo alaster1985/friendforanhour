@@ -38,6 +38,9 @@
                         <a class="heder_link" href="javascript:void(0);">Заработать за час</a>
                         <a class="heder_link" href="javascript:void(0);">Отдохнуть</a>
                         <a class="heder_link" href="contactToSupport">ТП</a>
+                        @auth
+                        <a class="heder_link" href="{{Request::root()}}/search">search</a>
+                        @endauth
                     </div>
 
                     <div class="navbar-collapse col-lg-4 col-md-4 col-12" id="navbarSupportedContent">

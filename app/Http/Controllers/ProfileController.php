@@ -74,7 +74,8 @@ class ProfileController extends Controller
 
     public function filter(SearchRequest $request)
     {
-        $a = Profile::getFilteredProfilesByParams($request->all());
-        dd($a);
+        $result = Profile::getFilteredProfilesByParams($request->all());
+//        return $result;
+        return redirect()->back()->with('message', $result);
     }
 }

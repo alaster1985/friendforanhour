@@ -20,7 +20,7 @@ class TransactionController extends Controller
         $shp_ProfileId = $request->Shp_ProfileId;
         $shp_TransactionNameId = $request->Shp_TransactionNameId;
         $crc = strtoupper($request->SignatureValue);
-        $my_crc = strtoupper(md5($out_summ . ':' . $inv_id . ':' . $mrh_pass2 . ':Shp_ProfileId=:' . $shp_ProfileId . ':Shp_TransactionNameId=' . $shp_TransactionNameId));
+        $my_crc = strtoupper(md5($out_summ . ":" . $inv_id . ":" . $mrh_pass2 . ":Shp_ProfileId=" . $shp_ProfileId . ":Shp_TransactionNameId=" . $shp_TransactionNameId));
 
         Transaction::create([
             'profile_id' => $shp_ProfileId,
@@ -73,8 +73,7 @@ class TransactionController extends Controller
 
     public function addTransaction(Add1MOAccessRequest $request)
     {
-        DB::transaction(function () use ($request)
-        {
+        DB::transaction(function () use ($request) {
             Transaction::create([
                 'profile_id' => $request->profile_id,
                 'transaction_name_id' => 1, // 1/MO access
