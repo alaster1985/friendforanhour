@@ -18,11 +18,6 @@
                     <span id="app2">
                         <online v-bind:friend="{{ $profile }}"
                                 v-bind:onlineusers="onlineUsers"></online>
-                    {{--<span class="offline_user">Была вчера в<span>19:59</span>--}}
-                    {{--</span>--}}
-                    {{--<span class="overview">--}}
-                    {{--<img src="{{ asset('images/user_icon.png') }}">38--}}
-                    {{--</span>--}}
                     </span>
                 @endauth
             </p>
@@ -43,17 +38,17 @@
                             @csrf
                             <button type="submit">Написать сообщение</button>
                         </form>
-
-                        {{--<a href="">В избранное</a>--}}
                         @if(!$checkComplain)
                             <button id="complainButton" class="btn btn-info btn-lg" data-toggle="modal"
                                     data-target="#myModal">Пожаловаться
                             </button>
                         @endif
-                        {{--<a href="">В черный список</a>--}}
                     </div>
                 @endif
             @endauth
+            @guest
+                <a class="forChat" href="javascript:void(0);">Написать</a>
+            @endguest
             <div class="row  service service_close">
                 <div class="col-lg-8 col-12 ">
                     <table class="col-12 table_for_me">

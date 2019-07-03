@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class Profile extends Model
@@ -137,13 +138,14 @@ class Profile extends Model
 
     public static function getSixProfilesForLowerBlocks()
     {
-        return Profile::orderBy('created_at', 'asc')
+        $r =  Profile::orderBy('created_at', 'asc')
             ->where([
                 ['is_deleted', '=', 0],
                 ['is_locked', '=', 0],
             ])
             ->take(6)
             ->get();
+        return $r;
     }
 
     public static function setSubscriptionEndDate($profileId)
@@ -192,8 +194,8 @@ class Profile extends Model
     {
         $minAge = ($params['min_age'] ?? '18') + 1; // +1 for correct between date_of_birth
         $maxAge = ($params['max_age'] ?? '123') + 1; // +1 for correct between date_of_birth
-        $latitude = $params['latitude'];
-        $longitude = $params['longitude'];
+        $latitude = $params['latitude'] ?? null;
+        $longitude = $params['longitude'] ?? null;
         $radius = $params['radius'] ?? 25;
         $serviceTypeId = $params['friend_type'];
         $minPrice = $params['min_money'] ?? 0;
@@ -259,9 +261,15 @@ class Profile extends Model
                     });
                 }
             })
-            ->get();
+            ->get()->filter->profileOnline();
+        dd($result);
 //        return $result;
         return json_encode($result);
+    }
+
+    public function profileOnline()
+    {
+        return Cache::has('profile-in-online-' . $this->id);
     }
 
 }

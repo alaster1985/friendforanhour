@@ -28,6 +28,7 @@
         </table>
         <button class="table_paid_open"><span class="open_table">More</span><span
                     class="close_table">Less</span></button>
+        <a href="contactToSupport">new ticket</a>
     </div>
 </div>
 @include('layouts.footer')

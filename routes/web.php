@@ -27,7 +27,8 @@ Route::get('payment', 'TransactionController@payment')->name('payment');
 //Route::get('ok', function () {return view('allok');})->name('ok');
 //Route::get('bad', function () {return view('allbad');})->name('bad');
 Route::get('wrong', function () {return view('allwrong');})->name('wrong');
-
+Route::get('search', 'MainController@search')->name('search');
+Route::post('filter', 'ProfileController@filter')->name('filter');
 
 Auth::routes();
 
@@ -38,7 +39,7 @@ Route::get('profile', 'ProfileController@index')->name('viewProfile');
 
 Route::middleware('auth')->group(function () {
     Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-    Route::get('search', 'MainController@search')->name('search');
+//    Route::get('search', 'MainController@search')->name('search');
 });
 
 Route::middleware('role:user')->group(function () {
@@ -64,7 +65,7 @@ Route::middleware('role:user')->group(function () {
         Route::post('addComplain', 'ProfileController@addComplain')->name('addComplain');
         Route::post('update', 'ProfileController@update')->name('updateProfile');
         Route::get('deleteService/{id}', 'ServiceListController@deleteService')->name('deleteService');
-        Route::post('filter', 'ProfileController@filter')->name('filter');
+//        Route::post('filter', 'ProfileController@filter')->name('filter');
 
     });
 

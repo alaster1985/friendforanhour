@@ -55,6 +55,16 @@ $(document).ready(function () {
         $('.table_for_me_open .close_table').toggleClass('active_table');
     });
 
+    $('.forChat').on("click", function (ev) {
+        ev.preventDefault();
+        $(".modal-error").css("display", "block");
+    });
+
+    $(".modal-error__close-btn").on("click", function (ev) {
+        ev.preventDefault();
+        $(".modal-error").css("display", "none");
+    });
+
 function fancybox(event) {
     $(".fancybox").fancybox({});
 }

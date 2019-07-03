@@ -14,7 +14,7 @@
             <input name="min_age" type="number" min="18" max="123" value="{{old('min_age')}}">
             <p>max age</p>
             <input name="max_age" type="number" min="18" max="123" value="{{old('max_age')}}">
-            @if(Auth::user()->hasRole('user'))
+            @if(Auth::check() && Auth::user()->hasRole('user'))
                 <p>chords</p>
                 <p>longitude</p>
                 <input name="longitude" type="number" step="0.000001" min="-180" max="180"

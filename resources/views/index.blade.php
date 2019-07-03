@@ -101,7 +101,6 @@
                                         .($service->price ?'р':'')}}</span>
                                     </span>
                                 @endforeach
-                                @auth
                                     <span class="name_serwise_cart name_serwise_cart_link">
                                         @if(isset(Auth::user()->profile_id) && Auth::user()->profile_id != $lProfile->id)
                                             <form method="POST" action="{{Route('addToFriends')}}"
@@ -114,7 +113,14 @@
                                         <online v-bind:friend="{{ $lProfile }}"
                                                 v-bind:onlineusers="onlineUsers"></online>
                                     </span>
-                                @endauth
+                                @guest
+                                @if($lProfile->profileOnline())
+                                    <span><img style="height: 15px;" src="/images/monitor1.svg">Онлайн</span>
+                                    @else
+                                    <span><img style="height: 15px;" src="/images/monitor0.svg">Офлайн</span>
+                                @endif
+                                    <a class="forChat" href="javascript:void(0);">Написать</a>
+                                @endguest
                             </td>
                         </tr>
                         </tbody>

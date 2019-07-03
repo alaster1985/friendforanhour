@@ -1121,3 +1121,41 @@ font-size: 14px;
 height: 115px;
 }
 }
+
+/* modal section start */
+
+.modal-error {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    position: fixed;
+    display: none;
+    top: 320px;
+    left: 30%;
+    width: 40%;
+    padding: 5% 5%;
+    z-index: 2;
+    text-align: center;
+    background-color: #2D5c92;
+    border: 2px solid #f89911;
+}
+
+.modal-error__close-btn {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    font-size: 20px;
+    background-color: #2D5c92;
+    border-radius: 25px;
+    color: #fff;
+    display: inline-block;
+    line-height: 30px;
+}
+.modal-error__close-btn:hover,
+.modal-error__close-btn:focus{
+    opacity: 0.8;
+}
+/* modal section end */

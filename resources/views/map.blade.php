@@ -8,7 +8,7 @@
 
 </div>
 
-<script async defer
-    src="{{$c.$a.$b.$d}}">
-    </script>
-<script src="{{ asset('js/map.js') }}"></script>
+{{--<script async defer--}}
+    {{--src="{{$c.$a.$b.$d}}">--}}
+    {{--</script>--}}
+{{--<script src="{{ asset('js/map.js') }}"></script>--}}
