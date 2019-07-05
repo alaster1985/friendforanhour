@@ -13,6 +13,13 @@
         max-height: 600px;
         overflow-x: auto;
     }
+    .chat span {
+        font-size: 8px;
+    }
+
+    .chat p {
+        margin-bottom: -1px;
+    }
 
     .chat .chat-right, .chat .chat-left {
         max-width: 70%;
@@ -37,13 +44,16 @@
 </style>
 <template>
     <div class="panel-block">
-        <div class="chat" v-if="chats.length > 0">
+        <div id="chatt" class="chat" v-if="chats.length > 0">
             <div v-for="chat in chats" style="overflow: auto">
                 <div class="chat-right" v-if="chat.profile_id === profileid">
-                    {{chat.chat}}
+                    <p>{{chat.chat}}</p>
+                    <span>{{chat.created_at}}</span>
                 </div>
+
                 <div class="chat-left" v-else>
-                    {{chat.chat}}
+                    <p>{{chat.chat}}</p>
+                    <span>{{chat.created_at}}</span>
                 </div>
             </div>
         </div>

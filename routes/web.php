@@ -16,17 +16,14 @@ Route::get('contactToSupport', 'TicketController@index')->name('contactToSupport
 Route::post('sendTicket', 'TicketController@sendTicket')->name('sendTicket');
 
 
-Route::get('lara2', function () {
-    return view('welcome2');
-});
+Route::get('lara2', function () { return view('welcome2');});
 
 Route::get('ok', 'MainController@ok')->name('ok');
 Route::get('bad', 'MainController@bad')->name('bad');
 Route::get('payment', 'TransactionController@payment')->name('payment');
 
-//Route::get('ok', function () {return view('allok');})->name('ok');
-//Route::get('bad', function () {return view('allbad');})->name('bad');
 Route::get('wrong', function () {return view('allwrong');})->name('wrong');
+
 Route::get('search', 'MainController@search')->name('search');
 Route::post('filter', 'ProfileController@filter')->name('filter');
 
@@ -39,19 +36,16 @@ Route::get('profile', 'ProfileController@index')->name('viewProfile');
 
 Route::middleware('auth')->group(function () {
     Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-//    Route::get('search', 'MainController@search')->name('search');
 });
 
 Route::middleware('role:user')->group(function () {
 
     Route::get('unpaid', 'MainController@unpaid')->name('unpaid');
     Route::get('banned', 'MainController@banned')->name('banned');
-//    Route::get('search', 'MainController@search')->name('search');
 
     Route::get('edit', 'ProfileController@edit')->name('editProfile');
     Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
     Route::get('mytickets', 'TicketController@mytickets')->name('mytickets');
-//    Route::post('payment', 'TransactionController@payment')->name('payment');
 
     Route::middleware('subscription', 'ban')->group(function () {
 
@@ -59,13 +53,15 @@ Route::middleware('role:user')->group(function () {
         Route::get('chat/{id}', 'ChatController@show')->name('showChat');
         Route::post('chat/getChat/{id}', 'ChatController@getChat')->name('getChat');
         Route::post('chat/sendChat', 'ChatController@sendChat')->name('sendChat');
+        Route::get('chat/setReadMark/{id}', 'ChatController@setReadMark')->name('setReadMark');
+        Route::get('checkUnreadMessagesFromFriend/{id}', 'ChatController@checkUnreadMessagesFromFriend')->name('checkUnreadMessagesFromFriend');
+        Route::get('checkMyUnreadMessagesByFriend/{id}', 'ChatController@checkMyUnreadMessagesByFriend')->name('checkMyUnreadMessagesByFriend');
         Route::post('addToFriends', 'FriendController@store')->name('addToFriends');
         Route::post('removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
         Route::post('updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
         Route::post('addComplain', 'ProfileController@addComplain')->name('addComplain');
         Route::post('update', 'ProfileController@update')->name('updateProfile');
         Route::get('deleteService/{id}', 'ServiceListController@deleteService')->name('deleteService');
-//        Route::post('filter', 'ProfileController@filter')->name('filter');
 
     });
 

@@ -2,25 +2,14 @@
 <div style="background: #1da1f2">YOU are BANNED</div>
 <div>reason {{Auth::user()->profile->ban->last()->reason}}</div>
 @if(Auth::user()->profile->ban->last()->ban_end_date >= strtotime('now'))
-    <h1>Countdown ban time finish</h1>
+    <div>
+    <h2>Countdown ban time finish</h2>
     <p style="display: none" id="finish_time">{{Auth::user()->profile->ban->last()->ban_end_date}}</p>
-    <div id="countdown">
-        <div>
-            <span class="days"></span>
-            <div>Days</div>
-        </div>
-        <div>
-            <span class="hours"></span>
-            <div>Hours</div>
-        </div>
-        <div>
-            <span class="minutes"></span>
-            <div>Minutes</div>
-        </div>
-        <div>
-            <span class="seconds"></span>
-            <div>Seconds</div>
-        </div>
+    <div id="countdown" class="col-md-6" style="display: inline-flex">
+        <div>Days: <span class="days"></span></div>
+        <div>Hours: <span class="hours"></span></div>
+        <div>Minutes: <span class="minutes"></span></div>
+        <div>Seconds: <span class="seconds"></span></div>
     </div>
     <script type="text/javascript" src="{{asset('js/countdown.js')}}" defer></script>
 @endif

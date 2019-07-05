@@ -25,10 +25,14 @@
                         chat: this.chat,
                         friend_id: this.friendid,
                         profile_id: this.profileid,
+                        created_at: (new Date()).toISOString().split('T')[0] +' '+ (new Date()).toISOString().split('T')[1].split('.')[0],
                     };
                     this.chat = '';
                     axios.post('sendChat', data).then((response) => {
-                        this.chats.push(data)
+                        this.chats.push(data);
+                        setTimeout(() => {
+                            var chatt = document.getElementById('chatt');
+                            chatt.scrollTop = chatt.scrollHeight}, 100)
                     })
                 }
             }

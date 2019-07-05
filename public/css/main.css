@@ -176,16 +176,16 @@ template {
      background-color: #fff;
     text-align: center;
     color: #000;
-   
+
  }
  .registration{
     background-color: #007bff;
     color: #fff;
-    
+
  }
  .autorization:hover, .registration:hover{
     text-decoration: none;
-    
+
 }
 .autorization:hover{
     color: #000;
@@ -201,15 +201,15 @@ template {
 }
 .Logo{
     font-size: 24px;
-    color:#fff; 
-    text-decoration: none    
+    color:#fff;
+    text-decoration: none
 }
 .Logo span{
    color: #f89911;
 }
 .Logo:hover{
     color: #f89911;
-    text-decoration: none    
+    text-decoration: none
 }
 .header_title{
     color: #f89911;
@@ -276,7 +276,7 @@ template {
   background-color: #FFF;
   border-bottom: 1px solid #D3D7DC;
   height: 150px;
-  
+
 }
 .new_people_servis{
   padding: 10px 0px;
@@ -334,13 +334,13 @@ template {
   list-style: none;
   padding: 0px;
   margin: 0px;
- 
+
 }
 .new_people_servis ul li{
   height: 100%;
   position: relative;
   padding-right: 0px;
-  
+
 }
 .new_people_servis ul li a img{
   width: 100%;
@@ -359,9 +359,9 @@ template {
     border-radius: 10px;
 }
 .new_people_servis ul li a div:before {
-  content: ""; 
+  content: "";
   border: solid transparent;
-  position: absolute; 
+  position: absolute;
   bottom: 100%;
   right: 50%;
   transform: translateX(50%);
@@ -413,7 +413,7 @@ visibility: visible;
 .card_user_prev{
   padding: 10px;
   background-color: #fff;
-  margin:  0px; 
+  margin:  0px;
 }
 .card_user_prev div{
  margin-top: 20px;
@@ -426,7 +426,7 @@ visibility: visible;
 .User_image{
   object-fit: cover;
   width: 100%;
-  
+
   padding: 0px;
 }
 .card_user_prev td, .card_user_prev tr{
@@ -571,7 +571,7 @@ visibility: visible;
    text-align: center;
    border-radius: 10px;
    background-color: #fff;
-  
+
    color: #000;
  }
 .header_background{
@@ -583,7 +583,7 @@ visibility: visible;
  .information_user{
   background-color: #fff;
   padding: 15px 0px;;
-  
+
 }
 .photo_user div{
   text-align: center;
@@ -638,7 +638,7 @@ visibility: visible;
   width: 15px;
   position: relative;
   top: -2px;
-  margin-right:5px; 
+  margin-right:5px;
 }
 .distance{
   color: #68C42B;
@@ -711,12 +711,12 @@ visibility: visible;
 }
  .active_table {
   display: block;
-} 
+}
 .dissable_block{
   display: none;
 }
-.table_paid_open, 
-.table_paid_open:active, 
+.table_paid_open,
+.table_paid_open:active,
 .table_paid_open:focus {
     outline: none;
 }
@@ -731,7 +731,7 @@ visibility: visible;
 }
  /* end  view profile people */
  /* map */
- 
+
  /* end map */
 
 
@@ -771,9 +771,9 @@ visibility: visible;
   .newCity,.newCountry{
     margin-top: 10px;
   }
-  
+
   .services_as_sponsor{
-   
+
     width: 100%;
   }
   .table_services_as_sponsor{
@@ -819,7 +819,7 @@ visibility: visible;
     color: #FF2F2F;
   }
   .delete_service a{
-  
+
     color: #FF2F2F;
   }
   .prise_service{
@@ -908,17 +908,17 @@ color: #fff;
 }
  /* end edit profile */
  @media all and (max-width: 1200px) {
-  
+
   .header_title, .links_header{
     font-size: 14px;
   }
 .heder_link{
-  margin-right:5px; 
+  margin-right:5px;
 }
 .autorization, .registration{
   padding: 3px 5px;
 }
-} 
+}
 @media all and (max-width: 991px) {
 .left-column{
   display: none;
@@ -1098,7 +1098,7 @@ width: 100%;
   align-items: end;
 }
 .name_user span {
-  margin-left:10px; 
+  margin-left:10px;
   width: 100%;
 }
 .service div{

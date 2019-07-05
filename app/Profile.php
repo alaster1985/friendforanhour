@@ -138,14 +138,13 @@ class Profile extends Model
 
     public static function getSixProfilesForLowerBlocks()
     {
-        $r =  Profile::orderBy('created_at', 'asc')
+        return Profile::orderBy('created_at', 'desc')
             ->where([
                 ['is_deleted', '=', 0],
                 ['is_locked', '=', 0],
             ])
             ->take(6)
-            ->get();
-        return $r;
+            ->get()->filter->profileOnline(false);
     }
 
     public static function setSubscriptionEndDate($profileId)
@@ -206,6 +205,7 @@ class Profile extends Model
         $minWeight = $params['min_weight'] ?? 30;
         $maxWeight = $params['max_weight'] ?? 280;
         $genderId = $params['gender'];
+        $online = $params['online'];
 
 //        $result = Profile::whereHas('gender', function($q){$q->where('gender','male');})->get();
 //        $result = Profile::with(['gender', 'profileAddress'])->whereHas('profileAddress.city', function ($q) {$q->where('country_id', 1);})->get();
@@ -261,15 +261,18 @@ class Profile extends Model
                     });
                 }
             })
-            ->get()->filter->profileOnline();
-        dd($result);
-//        return $result;
+            ->get()->filter->profileOnline($online);
         return json_encode($result);
     }
 
-    public function profileOnline()
+    public function profileOnline($param = true)
     {
-        return Cache::has('profile-in-online-' . $this->id);
+        if ($param) {
+            return Cache::has('profile-in-online-' . $this->id);
+        } else {
+            return true;
+
+        }
     }
 
 }

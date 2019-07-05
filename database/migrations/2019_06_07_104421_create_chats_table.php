@@ -17,6 +17,7 @@ class CreateChatsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('profile_id');
             $table->bigInteger('friend_id');
+            $table->boolean('read_mark')->default(false);
             $table->text('chat');
             $table->timestamps();
         });

@@ -28,7 +28,7 @@ class AdminUserStoreRequest extends FormRequest
         $rolesId = Role::getNotAdminAndNotUserRoles()->pluck('id')->all();
         return [
             'name' => 'required|max:100|min:3',
-            'email' => 'required|email|max:100',
+            'email' => 'required|email|max:100|unique:users,email',
             'role' => [
                 'required',
                 Rule::in($rolesId),
@@ -47,6 +47,7 @@ class AdminUserStoreRequest extends FormRequest
             'email.required' => 'Please, set your email',
             'email.regex' => 'Please, follow to the format email',
             'email.max' => 'Shorter please, max 100 characters',
+            'email.unique' => 'Such email is already taken',
             'role.required' => 'Please, select the role for this user',
             'role.in' => 'Nice try BRO ;) But set role from this select',
             'password.required_without' => 'Please, set users password',

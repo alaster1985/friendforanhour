@@ -22,7 +22,6 @@
                     <td>{{$ticket->status->status}}</td>
                     <td>{{$ticket->created_at}}</td>
                     <td>{{$ticket->created_at}}</td>
-
                 </tr>
             @endforeach
         </table>

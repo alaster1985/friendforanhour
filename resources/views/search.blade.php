@@ -15,13 +15,14 @@
             <p>max age</p>
             <input name="max_age" type="number" min="18" max="123" value="{{old('max_age')}}">
             @if(Auth::check() && Auth::user()->hasRole('user'))
-                <p>chords</p>
-                <p>longitude</p>
-                <input name="longitude" type="number" step="0.000001" min="-180" max="180"
-                       value="{{Auth::user()->profile->profileAddress->longitude}}">
-                <p>latitude</p>
-                <input name="latitude" type="number" step="0.000001" min="-90" max="90"
-                       value="{{Auth::user()->profile->profileAddress->latitude}}">
+                <div style="display: none">
+                    <p>longitude</p>
+                    <input name="longitude" type="number" step="0.000001" min="-180" max="180"
+                           value="{{Auth::user()->profile->profileAddress->longitude}}">
+                    <p>latitude</p>
+                    <input name="latitude" type="number" step="0.000001" min="-90" max="90"
+                           value="{{Auth::user()->profile->profileAddress->latitude}}">
+                </div>
             @endif
             <p>sponsor or friend</p>
             <select name="friend_type">
@@ -32,6 +33,11 @@
             <input name="min_money" type="number" min="0" max="10000" value="{{old('min_money')}}">
             <p>max $</p>
             <input name="max_money" type="number" min="0" max="10000" value="{{old('max_money')}}">
+            <p>online profiles</p>
+            <select name="online">
+                <option value="0">all profiles</option>
+                <option value="1">online</option>
+            </select>
         </div>
         <div class="col-md-5">
             <p>RADIUS, km</p>

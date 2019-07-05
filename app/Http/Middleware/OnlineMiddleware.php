@@ -19,7 +19,7 @@ class OnlineMiddleware
     public function handle($request, Closure $next)
     {
         if (Auth::check() && Auth::user()->profile_id){
-            $expiresAt = Carbon::now()->addMinutes(5);
+            $expiresAt = Carbon::now()->addMinutes(2);
             Cache::put('profile-in-online-' . Auth::user()->profile_id, true, $expiresAt);
         }
         return $next($request);

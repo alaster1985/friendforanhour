@@ -1,9 +1,10 @@
 <template>
     <div class="pull-right">
-        <!--<i class="fa fa-circle green" v-if="checkUser()"></i>-->
-        <!--<i class="fa fa-circle red" v-else></i>-->
         <span v-if="checkUser()" class="green"><img src="/images/monitor1.svg">Онлайн</span>
         <span v-else class="red"><img src="/images/monitor0.svg">Офлайн</span>
+
+        <!--<span v-if="checkUnreadMessages()" class="blue">You have new messages</span>-->
+        <!--<span v-else></span>-->
     </div>
 </template>
 
@@ -14,9 +15,21 @@
         methods: {
             checkUser: function () {
                 return _.find(this.onlineusers, {profile_id: this.friend.id})
-            }
+            },
+            // checkUnreadMessages: function () {
+            //     return check(this.friend.id);
+            // }
         }
     }
+    // function check(id) {
+    //     $.get('checkUnreadMessages/' + id, function (data) {
+    //         if (data != null){
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    //     })
+    // }
 </script>
 
 <style scoped>
@@ -29,4 +42,7 @@
     .green {
         color: green;
     }
+    /*.blue {*/
+        /*color: dodgerblue;*/
+    /*}*/
 </style>

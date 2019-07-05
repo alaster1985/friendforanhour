@@ -39,7 +39,7 @@
                                         <input type="hidden" class="input-style" name="duration" value="{{$ban->duration}}"/>
                                     </div>
                                 </div>
-                                @if($ban->id === $ban->profile->ban->last()->id)
+                                @if($ban->id === $ban->profile->ban->last()->id && $ban->ban_end_date > strtotime('now'))
                                 <div id="amnesty" type="button">amnesty</div>
                                 <div id="amnesty_input" style="display: none" class="col-md-9">
                                     <div class="inline-form">
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="inline-form">
-                                        <button type="submit" {{--disabled--}} class="btn btn-success">SAVE</button>
+                                        <button type="submit" {{$ban->ban_end_date < strtotime('now') ? 'disabled' : ''}} class="btn btn-success">SAVE</button>
                                     </div>
                                 </div>
                             </div>

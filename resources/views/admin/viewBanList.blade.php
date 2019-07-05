@@ -38,9 +38,6 @@
                                     <th>Created_at</th>
                                     <th>Updated_at</th>
                                     <th>Edit</th>
-                                    {{--@if(Auth::user()->hasRole('admin'))--}}
-                                    {{--<th>Delete</th>--}}
-                                    {{--@endif--}}
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -79,13 +76,6 @@
                                         <td>
                                             <a href="editBan?ban={{$ban->id}}">+</a>
                                         </td>
-                                        @if(Auth::user()->hasRole('admin'))
-                                        <td>
-                                        {{ csrf_field()}}
-                                        <a href=""
-                                        onclick="return confirm('Are you sure you want to delete this User?');">-</a>
-                                        </td>
-                                        @endif
                                     </tr>
                                 @endforeach
                                 </tbody>

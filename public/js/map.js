@@ -125,22 +125,22 @@ function initMap() {
 
 
 
-    var myEl = document.getElementById('i_am_here');
-
-    myEl.addEventListener('click', function () {
-        var geocoder = new google.maps.Geocoder();
-        var address = 'London, UK';
-        if (geocoder) {
-            geocoder.geocode({ 'address': address }, function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    console.log(results[0].geometry.location.lng());
-                }
-                else {
-                    console.log("Geocoding failed: " + status);
-                }
-            });
-        }
-    }, false);
+    // var myEl = document.getElementById('i_am_here');
+    //
+    // myEl.addEventListener('click', function () {
+    //     var geocoder = new google.maps.Geocoder();
+    //     var address = 'London, UK';
+    //     if (geocoder) {
+    //         geocoder.geocode({ 'address': address }, function (results, status) {
+    //             if (status == google.maps.GeocoderStatus.OK) {
+    //                 console.log(results[0].geometry.location.lng());
+    //             }
+    //             else {
+    //                 console.log("Geocoding failed: " + status);
+    //             }
+    //         });
+    //     }
+    // }, false);
 
     // еще один вариант проверки текущего места положения при клике \
     // navigator.geolocation.getCurrentPosition(
@@ -154,29 +154,29 @@ function initMap() {
 
 
 
-    var marker_coursore;
-
-    google.maps.event.addListener(map, 'click', function (event) {
-
-        placeMarker(event.latLng);
-
-    });
-
-    function placeMarker(location) {
-
-        if (marker_coursore == null) {
-            marker_coursore = new google.maps.Marker({
-                position: location,
-                map: map
-            });
-        } else { marker_coursore.setPosition(location); }
-    }
-    var myEls = document.getElementById('i_am_here_mouse');
-    myEls.addEventListener('click', function () {
-
-        console.log(marker_coursore.position.lng());
-
-    });
+    // var marker_coursore;
+    //
+    // google.maps.event.addListener(map, 'click', function (event) {
+    //
+    //     placeMarker(event.latLng);
+    //
+    // });
+    //
+    // function placeMarker(location) {
+    //
+    //     if (marker_coursore == null) {
+    //         marker_coursore = new google.maps.Marker({
+    //             position: location,
+    //             map: map
+    //         });
+    //     } else { marker_coursore.setPosition(location); }
+    // }
+    // var myEls = document.getElementById('i_am_here_mouse');
+    // myEls.addEventListener('click', function () {
+    //
+    //     console.log(marker_coursore.position.lng());
+    //
+    // });
 }
 
 

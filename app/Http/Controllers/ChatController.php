@@ -9,86 +9,23 @@ use Illuminate\Support\Facades\Auth;
 
 class ChatController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $friends = Profile::find(Auth::user()->profile_id)->friends();
         return view('indexChat', ['friends' => $friends]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Chat $chat
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $friend = Profile::find($id);
         return view('chatShow', ['friend' => $friend]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Chat $chat
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Chat $chat)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Chat $chat
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Chat $chat)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Chat $chat
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Chat $chat)
-    {
-        //
-    }
-
     public function getChat($id)
     {
+        $this->setReadMark($id);
         return Chat::where(function ($query) use ($id) {
             $query->where('profile_id', '=', Auth::user()->profile_id)->where('friend_id', '=', $id);
         })->orWhere(function ($query) use ($id) {
@@ -103,5 +40,43 @@ class ChatController extends Controller
             'friend_id' => $request->friend_id,
             'chat' => $request->chat,
         ]);
+    }
+
+    public function setReadMark($id)
+    {
+        $unReadMessages = Chat::where([
+            ['friend_id', '=', Auth::user()->profile_id],
+            ['profile_id', '=', $id],
+            ['read_mark', '=', false]
+        ])->get();
+        foreach ($unReadMessages as $uMessage) {
+            $uMessage->read_mark = true;
+            $uMessage->save();
+        }
+    }
+
+    public function checkUnreadMessagesFromFriend($id)
+    {
+        if (Auth::user()->profile_id != $id){
+            return json_encode(Chat::where([
+                ['friend_id', '=', Auth::user()->profile_id],
+                ['profile_id', '=', $id],
+                ['read_mark', '=', false]
+            ])->first());
+        } else {
+            return null;
+        }
+    }
+    public function checkMyUnreadMessagesByFriend($id)
+    {
+        if (Auth::user()->profile_id != $id){
+            return json_encode(Chat::where([
+                ['profile_id', '=', Auth::user()->profile_id],
+                ['friend_id', '=', $id],
+                ['read_mark', '=', false]
+            ])->first());
+        } else {
+            return null;
+        }
     }
 }

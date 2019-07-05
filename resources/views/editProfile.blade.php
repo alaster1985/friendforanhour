@@ -12,31 +12,21 @@
         <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
     </div>
     @include('layouts.robokassaPayForm')
-    @if($profile->subscription_end_date >= strtotime('now'))
-        <h1>Subscription is valid for:</h1>
-        <p style="display: none" id="finish_time">{{$profile->subscription_end_date}}</p>
-        <div id="countdown" class="col-md-6">
-            <div>
-                <span class="days"></span>
-                <div>Days</div>
+    <div class="row">
+        @if($profile->subscription_end_date >= strtotime('now'))
+            <h2>Subscription is valid for:</h2>
+            <p style="display: none" id="finish_time">{{$profile->subscription_end_date}}</p>
+            <div id="countdown" class="col-md-6" style="display: inline-flex">
+                <div>Days: <span class="days"></span></div>
+                <div>Hours: <span class="hours"></span></div>
+                <div>Minutes: <span class="minutes"></span></div>
+                <div>Seconds: <span class="seconds"></span></div>
             </div>
-            <div>
-                <span class="hours"></span>
-                <div>Hours</div>
-            </div>
-            <div>
-                <span class="minutes"></span>
-                <div>Minutes</div>
-            </div>
-            <div>
-                <span class="seconds"></span>
-                <div>Seconds</div>
-            </div>
-        </div>
-        <script type="text/javascript" src="{{asset('js/countdown.js')}}" defer></script>
-    @else
-        <h1>Subscription is invalid</h1>
-    @endif
+            <script type="text/javascript" src="{{asset('js/countdown.js')}}" defer></script>
+        @else
+            <h2>Subscription is invalid</h2>
+        @endif
+    </div>
     @if ($profile->is_locked)
         <div class="col-md-6">It is manual locked</div>
         <div class="col-md-6">You can contact to <a href="contactToSupport">support</a> or look to your <a

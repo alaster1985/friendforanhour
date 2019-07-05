@@ -3,7 +3,7 @@
     <div class="error" style="display: block; color: red">{{($errors->first())}}</div>
 @endif
 <form method="POST" enctype="multipart/form-data" action="{{Route('sendTicket')}}">
-@csrf
+    @csrf
     <p>Title</p>
     <input name="title" type="text" value="{{old('title')}}">
     <p>Description</p>

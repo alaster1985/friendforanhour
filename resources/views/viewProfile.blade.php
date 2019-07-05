@@ -110,69 +110,6 @@
         </div>
 
     </div>
-
-    {{--<a href="edit">edit own profile</a>--}}
-
-    {{--<div>nickname = {{$profile->user()->where('profile_id','=', $profile->id)->first()->name}}</div>--}}
-    {{--<div>first name = {{$profile->first_name}}</div>--}}
-    {{--<div>second name = {{$profile->second_name}}</div>--}}
-    {{--<div>date of birth = {{$profile->date_of_birth}}</div>--}}
-    {{--<div>age = {{$profile->getAge($profile->date_of_birth)}}</div>--}}
-    {{--<div>about me = {{$profile->about}}</div>--}}
-    {{--<div>gender = {{$profile->gender->gender}}</div>--}}
-    {{--<div>phone = {{$profile->phone}}</div>--}}
-    {{--<div>address = {{$profile->profileAddress->address}}</div>--}}
-    {{--<div>latitude = {{$profile->profileAddress->latitude}}</div>--}}
-    {{--<div>longitude = {{$profile->profileAddress->longitude}}</div>--}}
-    {{--<div>city = {{$profile->profileAddress->city->city_name}}</div>--}}
-    {{--<div>country = {{$profile->profileAddress->city->country->country_name}}</div>--}}
-    {{--<br>--}}
-    {{--<div>I wont pay for:</div>--}}
-    {{--<table border="1">--}}
-    {{--<tr>--}}
-    {{--<th>short service name</th>--}}
-    {{--<th>description service</th>--}}
-    {{--<th>price</th>--}}
-    {{--<th>main marker</th>--}}
-    {{--</tr>--}}
-    {{--@foreach($friendsServices as $list)--}}
-    {{--<tr>--}}
-    {{--<td>{{$list->service_name}}</td>--}}
-    {{--<td>{{$list->service_description}}</td>--}}
-    {{--<td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>--}}
-    {{--<td>{{$list->main_service_marker ? 'основная' : ''}}</td>--}}
-    {{--</tr>--}}
-    {{--@endforeach--}}
-    {{--</table>--}}
-    {{--<br>--}}
-    {{--<div>I wont give it to you for money:</div>--}}
-    {{--<table border="1">--}}
-    {{--<tr>--}}
-    {{--<th>short service name</th>--}}
-    {{--<th>description service</th>--}}
-    {{--<th>price</th>--}}
-    {{--<th>main marker</th>--}}
-    {{--</tr>--}}
-    {{--@foreach($sponsorsServices as $list)--}}
-    {{--<tr>--}}
-    {{--<td>{{$list->service_name}}</td>--}}
-    {{--<td>{{$list->service_description}}</td>--}}
-    {{--<td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>--}}
-    {{--<td>{{$list->main_service_marker ? 'основная' : ''}}</td>--}}
-    {{--</tr>--}}
-    {{--@endforeach--}}
-    {{--</table>--}}
-    {{--<br>--}}
-    {{--<div>My photo</div>--}}
-
-    {{--<table border="1" id="usersPhoto">--}}
-    {{--<tr>--}}
-    {{--<th>Photo</th>--}}
-    {{--<th>main marker</th>--}}
-    {{--</tr>--}}
-    {{--</table>--}}
-    {{--<br>--}}
-    {{--<br>--}}
     @auth
         <div class="container">
         {{--<h2>Modal Example</h2>--}}

@@ -12,6 +12,6 @@ class Chat extends Model
     ];
 
     protected $fillable = [
-        'profile_id', 'friend_id', 'chat',
+        'profile_id', 'friend_id', 'chat', 'read_mark',
     ];
 }

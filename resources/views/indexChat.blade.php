@@ -9,7 +9,11 @@
                 @forelse($friends as $friend)
                     <div>
                         <a href="{{Request::root()}}/chat/{{$friend->id}}">
-                            <div>{{$friend->first_name . ' ' . $friend->second_name}}<online v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineUsers"></online></div>
+                            <div>{{$friend->first_name . ' ' . $friend->second_name}}
+                                <online v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineUsers"></online>
+                                <span id="fromFrId_{{$friend->id}}"></span>
+                                <span id="toFrId_{{$friend->id}}"></span>
+                            </div>
 
                         </a>
                     </div>
@@ -22,4 +26,5 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="{{ asset('js/unreadMsg.js') }}" defer></script>
 @include('layouts.footer')

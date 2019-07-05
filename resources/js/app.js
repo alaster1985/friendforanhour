@@ -42,14 +42,21 @@ if ($('#app2').length) {
             const friendId = $('meta[name="friendId"]').attr('content');
 
             if (friendId != undefined) {
-                axios.post('getChat/' + friendId).then((response) => {
+                axios.post('getChat/' + friendId).then((response) => { // open chat ev
                     this.chats = response.data;
+                    setTimeout(() => {
+                        var chatt = document.getElementById('chatt');
+                        chatt.scrollTop = chatt.scrollHeight}, 100)
                 });
 
                 Echo.private('Chat.' + friendId + '.' + profile_Id)
                     .listen('BroadcastChat', (e) => {
-                        document.getElementById('chatAudio').play();
+                        document.getElementById('chatAudio').play(); // receive ev
                         this.chats.push(e.chat);
+                        $.get('setReadMark/'+ e.chat.profile_id, ()=>{});
+                        setTimeout(() => {
+                            var chatt = document.getElementById('chatt');
+                            chatt.scrollTop = chatt.scrollHeight}, 100)
                     });
             }
             if (profile_Id != null) {

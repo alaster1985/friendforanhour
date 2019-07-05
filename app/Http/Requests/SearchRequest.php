@@ -51,6 +51,7 @@ class SearchRequest extends FormRequest
             'max_height' => 'nullable|integer|min:130|max:220',
             'min_weight' => 'nullable|integer|lte:max_weight|min:30|max:280',
             'max_weight' => 'nullable|integer|min:30|max:280',
+            'online' => 'required|boolean',
         ];
     }
 
@@ -101,6 +102,8 @@ class SearchRequest extends FormRequest
             'max_weight.integer' => 'Use only numbers for max weight',
             'max_weight.min' => 'not less than 30 kg for max weight',
             'max_weight.max' => 'I think it\'s to much. Any way there are no such users here (for max weight field)',
+            'online.required' => 'you must choose who you are looking for: online or you don\'t care',
+            'online.boolean' => 'nice try bro ;) but you must use only this select for online parameter. Tnx!',
         ];
     }
 }

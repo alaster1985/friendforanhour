@@ -34,6 +34,7 @@ class BanController extends Controller
             'duration' => $request->duration,
             'ban_end_date' => Ban::setBanTimeByProfileId($request->duration, $request->profile_id),
         ]);
+//        MailController::sendBanEmail($request->all());
         return redirect()->back()->with('message', 'DONE!');
     }
 

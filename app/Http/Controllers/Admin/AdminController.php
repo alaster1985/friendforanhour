@@ -70,6 +70,7 @@ class AdminController extends Controller
     public function addAdminUser(AdminUserStoreRequest $request)
     {
         User::addUser($request);
+//        MailController::sendMailForNewModerator($request->all());
         return redirect()->back()->with('message', 'DONE!');
     }
 
