@@ -5,7 +5,6 @@ html {
 }
 body {
   margin: 0;
-  background-color: #F4F7F9;
 }
 main {
   display: block;
@@ -13,6 +12,12 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+}
+a {
+  background-color: transparent;
+}
+b, strong {
+  font-weight: bolder;
 }
 hr {
   box-sizing: content-box; /* 1 */
@@ -23,16 +28,10 @@ pre {
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
-a {
-  background-color: transparent;
-}
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
   text-decoration: underline dotted; /* 2 */
-}
-b, strong {
-  font-weight: bolder;
 }
 code,
 kbd,
@@ -145,83 +144,111 @@ template {
 [hidden] {
   display: none;
 }
- header{
-     background-color: #2D5c92;
-     width: 100%;
-     display: flex;
-     align-items: center;
-     padding: 10px 0px;
-     margin: 0px 0px 0px 0px!important;
 
- }
- .heder_link{
-    display: inline-block;
-    color: #FFF;
-    line-height: 58px;
-    margin-right: 10px;
-    opacity: 0.8;
- }
- .heder_link:hover{
-     opacity: 1;
-     color: #FFF;
-     text-decoration: none;
- }
- .links_header div:nth-child(2){
-   margin-bottom: auto;
-   margin-top: auto;
- }
- .autorization, .registration{
-     padding:5px 10px;
-     border-radius: 10px;
-     background-color: #fff;
-    text-align: center;
-    color: #000;
+/* HEADER Section
+_______________________________________________________ */
 
- }
- .registration{
-    background-color: #007bff;
-    color: #fff;
+.header_background{
+  background-color: #2387CF;
+  width: 100%;
+}
 
- }
- .autorization:hover, .registration:hover{
-    text-decoration: none;
+header {
+  background-color: #2387CF;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  margin: 0 !important
+}
 
+header .heder_link {
+  display: inline-block;
+  color: #FFF;
+  line-height: 58px;
+  margin-right: 10px;
+  opacity: 0.8
 }
-.autorization:hover{
-    color: #000;
-    box-shadow: inset 0 0 10px rgb(4, 44, 87, 0.8);
+
+header .heder_link:hover{
+  opacity: 1;
+  color: #FFF;
+  text-decoration: none
 }
-.registration:hover{
-    color: #fff;
-    box-shadow: inset 0 0 10px rgb(4, 44, 87, 0.5);
+
+header .links_header {
+  padding-left: 0px
 }
-.Logo{
-    font-size: 24px;
-    color:#fff;
+
+header .links_header div{
+  padding: 0px
 }
-.Logo{
-    font-size: 24px;
-    color:#fff;
-    text-decoration: none
+
+header .links_header div:nth-child(2){
+  margin-bottom: auto;
+  margin-top: auto
 }
-.Logo span{
-   color: #f89911;
+
+header .autorization, .registration{
+  padding:5px 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+  color: #000
 }
-.Logo:hover{
-    color: #f89911;
-    text-decoration: none
+header .registration{
+  background-color: #007bff;
+  color: #fff
 }
-.header_title{
-    color: #f89911;
-    font-weight: 600;
-    font-size: 16px;
-    text-transform: uppercase;
-    padding: 0px;
+ 
+header .autorization:hover, .registration:hover{
+  text-decoration: none
 }
-.header_title span{
-    color: #fff;
+
+header .autorization:hover{
+  color: #000;
+  box-shadow: inset 0 0 10px rgb(4, 44, 87, 0.8)
 }
-.card-body{
+header .registration:hover{
+  color: #fff;
+  box-shadow: inset 0 0 10px rgb(4, 44, 87, 0.5)
+}
+
+header .Logo{
+  font-size: 24px;
+  color:#fff
+}
+
+header .Logo{
+  font-size: 24px;
+  color:#fff;
+  text-decoration: none
+}
+
+header .Logo span{
+  color: #f89911
+}
+
+header .Logo:hover{
+  color: #f89911;
+  text-decoration: none
+}
+header .header_title{
+  color: #f89911;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 0px;
+}
+
+header .header_title span{
+  color: #fff
+}
+
+/* VUE CARD Section
+_______________________________________________________ */
+
+.card-body {
   padding: 15px;
   border:1px solid #D3D7DC;
   margin-top: 20px;
@@ -231,77 +258,85 @@ template {
   margin: 0 auto;
   text-align: center
 }
-.card-body h5{
+.card-body h5 {
   text-align: center;
   margin-bottom: 20px;
   color: #465160;
 }
-.card-body h5 span:first-child{
+.card-body h5 span:first-child {
   color: #f89911;
 }
-.card-body h5 span:last-child{
+.card-body h5 span:last-child {
   color: #000;
 }
-.block_news{
+
+/* VUE CARD Section
+_______________________________________________________ */
+
+#main-page-aside-news .block_news {
   background-color: #FFF;
   border:1px solid #D3D7DC;
 }
-.block_news{
+#main-page-aside-news .block_news {
   margin-top: 20px;
   padding: 15px ;
 }
-.block_news h5{
+#main-page-aside-news .block_news h5 {
   color: #2C5C92;
 }
-.block_news a p{
+#main-page-aside-news .block_news a p {
   margin: 0px;
 }
-.block_news a p:nth-child(1){
+#main-page-aside-news .block_news a p:nth-child(1) {
   color: #999DA4;
 }
-.block_news a p:nth-child(2){
+#main-page-aside-news .block_news a p:nth-child(2) {
   color: #465160;
   border-bottom:1px solid #D3D7DC;
   padding-bottom: 20px;
 }
-.block_news a:hover p{
+#main-page-aside-news .block_news a:hover p {
   text-decoration: none;
   color: #f89911;
 }
-.block_news a:hover {
+#main-page-aside-news .block_news a:hover {
   text-decoration: none;
 
 }
-.new_people_servis{
+
+/* NEW PEOPLE Section
+_______________________________________________________ */
+
+#new_people_servis .new_people_servis_block {
   background-color: #FFF;
   border-bottom: 1px solid #D3D7DC;
   height: 150px;
 
 }
-.new_people_servis{
+#new_people_servis .new_people_servis_block {
   padding: 10px 0px;
   margin: 0px;
 }
-.new_people_servis ul{
+#new_people_servis ul{
   display: flex;
   justify-content: space-between;
   flex-direction: row
 }
-.new_people_servis ul li{
+#new_people_servis ul li{
  padding-left: 3px;
 }
-.new_people_servis ul li a img{
+#new_people_servis ul li a img{
   border-radius: 10px;
  }
-.label_new_people {
+ #new_people_servis .label_new_people {
   background: #f89911;
   position: relative;
   height: 100%;
   border-radius: 20px;
   padding: 0px;
  }
- .label_new_people::after {
-  content: '';
+ #new_people_servis .label_new_people::after {
+    content: '';
     position: absolute;
     right: -61px;
     top: 50%;
@@ -311,7 +346,7 @@ template {
     border-radius: 10px;
     z-index: 20;
  }
- .label_new_people p{
+ #new_people_servis .label_new_people p{
   text-align: center;
   vertical-align: middle;
   font-size: 16px;
@@ -321,33 +356,33 @@ template {
   top: 50%;
   transform: translateY(-50%);
  }
- .gallery_list{
+ #new_people_servis .gallery_list{
    display: flex;
    flex-direction: row;
    list-style: none;
  }
- .content{
+ #new_people_servis .content{
    margin-top: 20px;
  }
-.new_people_servis ul{
+#new_people_servis ul{
   height: 100%;
   list-style: none;
   padding: 0px;
   margin: 0px;
 
 }
-.new_people_servis ul li{
+#new_people_servis ul li{
   height: 100%;
   position: relative;
   padding-right: 0px;
 
 }
-.new_people_servis ul li a img{
+#new_people_servis ul li a img{
   width: 100%;
   height: 100%;
   position: relative;
 }
-.new_people_servis ul li a div{
+#new_people_servis ul li a div{
   position: absolute;
     bottom:-85%;
     z-index: 10;
@@ -358,7 +393,7 @@ template {
     /* transition: 0.1s; */
     border-radius: 10px;
 }
-.new_people_servis ul li a div:before {
+#new_people_servis ul li a div:before {
   content: "";
   border: solid transparent;
   position: absolute;
@@ -369,13 +404,13 @@ template {
   border-width: 9px;
   margin-right: -1px;
 }
-.new_people_servis ul li a:hover{
+#new_people_servis ul li a:hover{
 text-decoration: none
 }
-.new_people_servis ul li a:hover >div{
+#new_people_servis ul li a:hover>div{
 visibility: visible;
 }
-.new_people_servis ul li a{
+#new_people_servis ul li a{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -383,12 +418,16 @@ visibility: visible;
   height: 100%;
 
 }
-.new_people_servis ul li a div p, .new_people_servis ul li a div span{
+#new_people_servis ul li a div p, 
+#new_people_servis ul li a div span{
   margin: 0px;
   font-size: 12px;
   color: #fff;
 }
-.prew_card_titl{
+
+/* Dont see where used this classes */
+
+/* .prew_card_titl{
   color: #FF2F2F!important;
   font-weight: bold;
 }
@@ -398,8 +437,12 @@ visibility: visible;
 }
 .prew_card_city{
   float: right;
-}
-.map_container{
+} */
+
+/* MAP Section
+_______________________________________________________ */
+
+#map-section .map_container{
   width: 100%;
   margin-top:20px;
   padding: 15px;
@@ -410,118 +453,140 @@ visibility: visible;
   height: 450px;
   width: 100%;
 }
-.card_user_prev{
+
+
+/* LAST ACTIVE USERS Section
+_______________________________________________________ */
+
+#last-active-users .card_user_prev {
   padding: 10px;
   background-color: #fff;
-  margin:  0px;
+  margin:  0px
 }
-.card_user_prev div{
- margin-top: 20px;
+
+#last-active-users .card_user_prev div {
+ margin-top: 20px
 }
-#tablePreview tbody{
+
+#last-active-users #tablePreview tbody {
   margin: 0px;
   padding: 10px;
-  height: 210px;
+  height: 210px
 }
-.User_image{
+
+#last-active-users .User_image {
   object-fit: cover;
   width: 100%;
+  padding: 0px
+}
 
-  padding: 0px;
+#last-active-users .card_user_prev td, 
+#last-active-users .card_user_prev tr {
+  padding: 0px
 }
-.card_user_prev td, .card_user_prev tr{
-  padding: 0px;
+
+#last-active-users #tablePreview tr:nth-child(2) {
+  padding-left: 15px
 }
-#tablePreview tr:nth-child(2){
-  padding-left: 15px;
-}
-.users_prew_block div{
+
+#last-active-users .users_prew_block div {
   margin-left: -15px;
-  margin-right: -15px;
-}
-.block_image{
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-right: -15px
 }
 
-.name_user_cart span{
-  color:#000;
+#last-active-users .block_image {
+  margin-top: auto;
+  margin-bottom: auto
 }
-.city_user_cart{
-  color:#68C42B;
+
+#last-active-users .name_user_cart span {
+  color:#000
 }
-.city_user_cart span{
- border-bottom: 1px dashed;
+
+#last-active-users .city_user_cart {
+  color:#68C42B
 }
-.city_user_cart {
+#last-active-users .city_user_cart span {
+ border-bottom: 1px dashed
+}
+
+#last-active-users .city_user_cart {
   display: block;
-  line-height: 14px;
+  line-height: 14px
  }
-.user_description_cart span{
+
+ #last-active-users .user_description_cart span{
   margin: 0px;
-  font-size: 12px;
+  font-size: 12px
 }
-.user_description_cart {
-  display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-.title_serwise{
-  color:#FF2F2F;
-}
-.name_serwise_cart{
+
+#last-active-users .user_description_cart {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column
+}
 
+#last-active-users .title_serwise {
+  color:#FF2F2F
 }
-.mar{
-  margin: 0px;
+
+#last-active-users .name_serwise_cart{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row
 }
-.name_serwise span:nth-child(2) {
-  color:#F68727;
+
+#last-active-users .name_serwise span:nth-child(2) {
+  color:#F68727
 }
-.name_serwise_cart_link a{
+
+#last-active-users .name_serwise_cart_link a {
   background-color:#F7F7F7 ;
   border: 1px solid #D7D7D7;
   border-radius: 2px;
   padding: 5px;
   color: #000;
   font-weight: bold;
-  transition: 0.3s;
+  transition: 0.3s
 }
-.name_serwise_cart_link a:hover{
+
+#last-active-users .name_serwise_cart_link a:hover {
   text-decoration: none;
   background-color: #77D134;
-  color: #fff;
-
+  color: #fff
 }
-.name_serwise_cart_link span{
+
+#last-active-users .name_serwise_cart_link span{
   color: #77D134;
   margin-top: auto;
   margin-bottom: auto;
-  position: relative;
+  position: relative
 }
-.name_serwise_cart_link img{
+
+#last-active-users .name_serwise_cart_link img{
   height: 15px;
   width: 15px;
   position: absolute;
   left: -20px;
-  top: 2px;
+  top: 2px
 }
-.name_user_cart{
+
+#last-active-users .name_user_cart{
   color:#3697D4;
-  font-size: 16px !important;
+  font-size: 16px !important
 }
-.card_user_prev {
-  margin-top: 20px;
- }
- .block_image td a {
+
+#last-active-users .card_user_prev {
+  margin-top: 20px
+}
+
+#last-active-users .block_image td a {
   position: relative;
   height: 100%;
   display: block;
- }
- .block_image td a span{
+}
+
+#last-active-users .block_image td a span {
   position: absolute;
   right: 3px;
   bottom: 3px;
@@ -531,33 +596,29 @@ visibility: visible;
   padding: 0px 10px;
   text-align: right;
   border-radius: 20px;
-  color: #fff;
+  color: #fff
 }
- .block_image td a span img{
-   height: 15px;
-   width: 15px;
-   margin-right: 5px;
-   margin-top: auto;
-   margin-bottom: auto;
- }
- footer{
-   background-color: #2D5c92;
 
-   width: 100%;
-   margin-top: 20px;
-   padding-top: 100px;
- }
-.links_header {
-  padding-left: 0px;
+#last-active-users .block_image td a span img {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+  margin-top: auto;
+  margin-bottom: auto
 }
-.links_header div{
-  padding: 0px;
- }
+
+footer{
+  background-color: #2D5c92;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 100px;
+}
+
  .mobile_autorization{
   display: none;
 }
-.new_people_servis ul li{
-  width: 10%;
+#new_people_servis ul li{
+  width: auto;
 }
 #navbarSupportedContent ul{
  display: flex;
@@ -574,52 +635,364 @@ visibility: visible;
 
    color: #000;
  }
-.header_background{
-  background-color: #2D5c92;;
-  width: 100%;
+
+ /* VIEW PROFILE Section
+_______________________________________________________ */
+
+#view-profile .information_user {
+  margin: 20px 0px;
+  padding: 15px 0px
 }
 
- /* view profile people */
- .information_user{
-  background-color: #fff;
-  padding: 15px 0px;;
+#view-profile .photo_user div {
+  text-align: center
+}
 
+#view-profile .user_avatar img {
+  width: 100%
 }
-.photo_user div{
-  text-align: center;
 
-}
-.slick-slide{
-  padding: 5px;
-}
-.user_avatar img{
-  width: 100%;
-}
-.information_user{
-  margin: 20px 0px;;
-}
-.name_user{
+#view-profile .name_user {
   display: flex;
   justify-content: space-between;
   font-size: 22px;
-  margin: 0px;
+  margin: 0px
 }
-.name_user span{
-  font-size: 16px;
+
+#view-profile .name_user span {
+  font-size: 16px
 }
-.character_user{
+
+#view-profile .character_user {
   color: #999DA4;
+  margin: 0px
+}
+
+#view-profile .service {
+  margin-top: 20px
+}
+
+#view-profile .distance {
+  color: #68C42B;
+  border-bottom: #68C42B 1px dashed
+}
+
+#view-profile .links_user {
+  margin-top: 15px
+}
+
+#view-profile .links_user button {
+  text-shadow: -1px -1px 0 #0D79BD;
+  border: solid 1px #037BC6;
+  border-bottom-color: #07598D;
+  border-top-color: #0285D8;
+  background-color: #009CFF;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 5px 15px
+}
+
+#view-profile .links_user a {
+  color: #999DA4;
+  margin-left: 15px
+}
+
+#view-profile .about_user_block p {
+  color: #2D5c92;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 15px
+}
+
+#view-profile .about_user_block div {
+  background-color:#F4F7F9;
+  padding: 10px;
+  border-radius: 10px;
+  height: calc(100% - 25px);
+  border: 1px solid #999DA4
+}
+
+#view-profile .service table tr th:first-child {
+  width: 80%
+}
+
+#view-profile .service table tr td::first-letter {
+  text-transform: uppercase
+}
+
+#view-profile .service table tr td:last-child {
+  text-align: center
+}
+
+#view-profile .table_title_service{
+  color: #F68727;
+  font-weight: 600
+}
+
+#view-profile .service table:last-child {
+  margin-top: 15px
+}
+
+#view-profile .table_paid {
+  margin-top: 20px
+}
+
+#view-profile .service table {
+ font-weight: 600;
+}
+
+#view-profile .service button {
+  border: none;
+  background: #FFF;
+  padding: 0px;
+  color: #465160;
+  border-bottom: 1px dashed #465160
+}
+
+#view-profile .close_table {
+  display: none
+}
+
+#view-profile .active_table {
+  display: block
+}
+
+#view-profile .dissable_block {
+  display: none
+}
+
+#view-profile .table_paid_open,
+#view-profile .table_paid_open:active,
+#view-profile .table_paid_open:focus {
+  outline: none
+}
+
+#view-profile .user_content {
+  margin-top: 15px
+}
+
+#view-profile .photo_user a img {
+  width: 100%
+}
+
+#view-profile .user_description_cart a {
+  text-decoration: none
+}
+
+ /* EDIT PROFILE Section
+_______________________________________________________ */
+
+#edit-profile .gender_select select {
+  width: 100%;  
+  border-radius: 5px;
+  border: 1px solid #999DA4;
+  padding: 10px 15px
+}
+
+#edit-profile .edit_profile_general_block {
   margin: 0px;
+  margin-top: 20px
 }
-.service{
-  margin-top: 20px;
+
+#edit-profile .about_user_block_edit p {
+  padding-left: 15px
 }
-.offline_user{
+
+#edit-profile .about_user_block_edit textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px 15px;
+  height: 91%
+}
+
+#edit-profile .about_user_block_edit {
+  padding-right: 0px
+}
+
+#edit-profile .about_edit_input div {
+  padding-left: 0px
+}
+
+#edit-profile .about_edit_input input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border:1px solid #999DA4
+}
+
+#edit-profile .newCity,
+#edit-profile .newCountry {
+  margin-top: 10px
+}
+
+#edit-profile .services_as_sponsor {
+  width: 100%
+}
+
+#edit-profile .table_services_as_sponsor {
+  margin: 0px;
+  margin-top: 20px
+}
+
+#edit-profile .table_services_as_sponsor input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 5px
+}
+
+#edit-profile .table_services_as_sponsor td {
+  padding: 0px
+}
+
+#edit-profile .table_services_as_sponsor th {
+  padding: 5px;
+  color: #F68727;
+  font-weight: 600;
+  text-align: center
+}
+
+#edit-profile .services_as_friend {
+  width: 100%
+}
+
+#edit-profile .table_services_as_sponsor button {
+  margin-left: auto;
+  margin-top: 15px
+}
+
+#edit-profile .main_service_marker1, 
+#edit-profile .main_service_marker2 {
+  height: 20px!important;
+  vertical-align: middle;
+}
+
+#edit-profile .select_status_service {
+  padding: 0px!important
+}
+
+#edit-profile .select_status_service select {
+  width: 100%;
+  height: 31px
+}
+
+#edit-profile .delete_service {
+  text-align: center;
+  color: #FF2F2F
+}
+
+#edit-profile .delete_service a {
+  color: #FF2F2F
+}
+
+#edit-profile .prise_service {
+  text-align: center
+}
+
+#edit-profile .edit_profile_general_block label {
+  color: #2D5c92;
+  font-weight: 600;
+  margin-bottom: 5px;
+  margin-top: 15px
+}
+
+#edit-profile .table_services_as_sponsor p {
+  color: #2D5c92;
+  font-weight: 600;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  font-size: 18px
+}
+
+#edit-profile #new_service_as_sponsor, 
+#edit-profile #new_service_as_friend {
+  padding:5px 15px;
+  color: #fff;
+  background: #2D5c92;
+  border: none;
+  border-radius: 5px
+}
+
+#edit-profile #updatePhotoForm table tr:first-child {
+  display: none!important
+}
+
+#edit-profile #updatePhotoForm table tbody {
+  display: inline-flex
+}
+
+#edit-profile #updatePhotoForm table tbody tr {
+  display: inline-flex;
+  flex-direction: column;
+  width: 20%
+}
+
+#edit-profile #updatePhotoForm table tbody tr td img {
+  width: 100%
+}
+
+#edit-profile #usersPhoto {
+  border: none
+}
+
+#edit-profile #usersPhoto button {
+  border: none;
+  width:100%;
+  background: #FF2F2F;
+  color: #fff;
+  padding: 5px
+}
+
+#edit-profile #addNewPhoto button {
+  color: #fff;
+  background: #FF2F2F;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 15px
+}
+
+#edit-profile .button_save {
+  color: #fff;
+  background-color: #f89911;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 25px
+}
+
+/* CONTROLS Section
+_______________________________________________________ */
+
+.slick-slide {
+  padding: 5px
+}
+
+#cancelServiceButton0 {
+  margin: 0px;
+  padding:5px 15px;
+  height:31px;
+  width: 100%;
+  background: #FF2F2F;
+  border: none;
+  color: #fff
+}
+
+.marker_chect {
+  margin: auto;
+  width: 100%
+}
+
+/* OFLINE USER Section
+_______________________________________________________ */
+
+.offline_user {
   color:#D65DBC;
   position: relative;
-  margin-right: 20px;
+  margin-right: 20px
 }
-.offline_user::before{
+
+.offline_user::before {
   content: '';
   position: absolute;
   height: 15px;
@@ -628,534 +1001,342 @@ visibility: visible;
   border: 1px solid #F68727;
   border-radius: 50%;
   left:-20px;
-  top:3px;
+  top:3px
 }
-.overview{
-  color: #999DA4;
+
+.overview {
+  color: #999DA4
 }
-.overview img{
+
+.overview img {
   height: 15px;
   width: 15px;
   position: relative;
   top: -2px;
-  margin-right:5px;
-}
-.distance{
-  color: #68C42B;
-  border-bottom: #68C42B 1px dashed;
-}
-.links_user{
-  margin-top: 15px;
-}
-.links_user button{
-  text-shadow: -1px -1px 0 #0D79BD;
-    border: solid 1px #037BC6;
-    border-bottom-color: #07598D;
-    border-top-color: #0285D8;
-    background-color: #009CFF;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 10px;
-    padding: 5px 15px;
-}
-.links_user a{
-  color: #999DA4;
-  margin-left: 15px;
-}
-.about_user_block p{
-  color: #F68727;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-.about_user_block div{
-  background-color:#F4F7F9;
-  padding: 10px;
-  border-radius: 10px;
-  height: calc(100% - 25px);
-  border: 1px solid #999DA4;
-}
-.service table tr th:first-child{
-  width: 80%;
-}
-.service table tr td::first-letter{
-  text-transform: uppercase;
-}
-.service table tr td:last-child{
-  text-align: center;
-}
-/* .service table tr td:first-child{
-  padding: 5px 0px;
-} */
-.table_title_service{
-  color: #F68727;
-  font-weight: 600;
-}
-.service table:last-child{
-  margin-top: 15px;
-}
-.table_paid{
-  margin-top: 20px;
-}
-.service table {
- font-weight: 600;
-}
-.service button{
-  border: none;
-  background: #FFF;
-  padding: 0px;
-  color: #465160;
-  border-bottom: 1px dashed #465160;
-}
-.close_table{
-  display: none;
-}
- .active_table {
-  display: block;
-}
-.dissable_block{
-  display: none;
-}
-.table_paid_open,
-.table_paid_open:active,
-.table_paid_open:focus {
-    outline: none;
-}
-.user_content{
-  margin-top: 15px;
-}
-.photo_user a img{
-  width: 100%;
-}
-.user_description_cart a{
-  text-decoration: none;
-}
- /* end  view profile people */
- /* map */
-
- /* end map */
-
-
-
-  /*edit profile */
-  .edit_profile_general_block{
-    margin: 0px;
-    margin-top: 20px;
-
-  }
-  .about_user_block_edit p{
-    padding-left: 15px;
-  }
-  .about_user_block_edit textarea{
-    width: 100%;
-    border-radius: 15px;
-    padding: 15px;
-    height: 93%;
-  }
-  .about_user_block_edit{
-    padding-right: 0px;
-  }
-  .about_edit_input div{
-    padding-left: 0px;
-  }
-  .about_edit_input input{
-    width: 100%;
-    padding: 5px;
-    border-radius: 10px;
-    border:1px solid #999DA4;
-  }
-  .gender_select select{
-    width: 100%;
-    padding: 5px;
-    border-radius: 10px;
-  }
-  .newCity,.newCountry{
-    margin-top: 10px;
-  }
-
-  .services_as_sponsor{
-
-    width: 100%;
-  }
-  .table_services_as_sponsor{
-    margin: 0px;
-    margin-top: 20px;
-  }
-  .table_services_as_sponsor input{
-    width: 100%;
-    height: 100%;
-    border: none;
-    padding: 5px;
-  }
-  .table_services_as_sponsor td{
-    padding: 0px;
-  }
-  .table_services_as_sponsor th{
-    padding: 5px;
-    color: #F68727;
-    font-weight: 600;
-    text-align: center;
-  }
-  .services_as_friend{
-    width: 100%;
-  }
-  .table_services_as_sponsor button{
-    margin-left: auto;
-    margin-top: 15px;
-  }
-  .main_service_marker1, .main_service_marker2{
-    height: 20px!important;
-    /* width: 35px!important; */
-    vertical-align: middle;
-  }
-  .select_status_service{
-    padding: 0px!important;
-  }
-  .select_status_service select{
-   width: 100%;
-   height: 31px;
-  }
-  .delete_service{
-    text-align: center;
-    color: #FF2F2F;
-  }
-  .delete_service a{
-
-    color: #FF2F2F;
-  }
-  .prise_service{
-    text-align: center;
-  }
-  .edit_profile_general_block label{
-    color: #2D5c92;
-    font-weight: 600;
-    margin-bottom: 5px;
-    padding-left: 15px;
-    margin-top: 15px;
-  }
-  .table_services_as_sponsor p{
-    color: #2D5c92;
-    font-weight: 600;
-    margin-bottom: 5px;
-    padding-left: 15px;
-    font-size: 18px;
-  }
-  #new_service_as_sponsor, #new_service_as_friend{
-    padding:5px 15px;
-    color: #fff;
-    background: #2D5c92;
-    border: none;
-    border-radius: 5px;
-  }
-  #cancelServiceButton0{
-    margin: 0px;
-    padding:5px 15px;
-    height:31px;
-width: 100%;
-background: #FF2F2F;
-border: none;
-color: #fff;
-}
-/* #usersPhoto1 div{
-  display: inline-flex;
-  width: 25%;
-  padding: 15px;
-}
-#usersPhoto1 img{
-  width: 100%;
-} */
-#updatePhotoForm table tr:first-child{
-  display: none!important;
-}
-#updatePhotoForm table tbody{
-  display: inline-flex;
-}
-#updatePhotoForm table tbody tr{
-  display: inline-flex;
-  flex-direction: column;
-  width: 20%;
-}
-#updatePhotoForm table tbody tr td img{
-  width: 100%;
-}
-#usersPhoto{
-  border: none;
-}
-#usersPhoto button{
-  border: none;
-  width:100%;
-  background: #FF2F2F;
-  color: #fff;
-  padding: 5px;
-}
-.marker_chect{
-  margin: auto;
-  width: 100%;
-}
-#addNewPhoto button{
-  color: #fff;
-  background: #FF2F2F;
- border-radius: 5px;
-  border: none;
-  padding: 5px 15px;
-}
-.button_save{
-  color: #fff;
-  background-color: #f89911;
-  border: none;
-  padding: 5px 15px;
-  border-radius: 5px;
-  margin-bottom: 25px;
-}
- /* end edit profile */
- @media all and (max-width: 1200px) {
-
-  .header_title, .links_header{
-    font-size: 14px;
-  }
-.heder_link{
-  margin-right:5px;
-}
-.autorization, .registration{
-  padding: 3px 5px;
-}
-}
-@media all and (max-width: 991px) {
-.left-column{
-  display: none;
-}
-.header_title{
-  text-align: right;
-  padding-right: 15px;
-}
-.links_header{
-  margin: 0px;
-}
-.links_header div:nth-child(2) a{
-  float: right;
-}
-.autorization {
-  margin-left: 15px;
-}
-.heder_link{
-  margin-right: 15px;
-}
-.header_title, .links_header {
-  font-size: 16px;
-}
-.mobile_vi{
-  display: none;
-}
-.new_people_servis ul li {
-  width: 15%;
-}
-.links_user button{
-  display: block;
-}
-.links_user a{
-  display: inline-block;
-  margin: 10px 10px 0px 0px;
-}
-.about_user_block{
-  order:-1;
-  margin-bottom:15px;
-}
-.edit_profile_general_block{
-  flex-direction: row-reverse!important;
-}
-.about_user_block_edit{
-  height: 300px;;
-}
-.edit_profile_general_block label{
-  margin-top: 5px;
-}
-}
-@media all and (max-width: 767px) {
-  .mobile_autorization{
-    display: block;
-  }
-  .header_title {
-    display: none;
-  }
-  .links_header{
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  .change{
-    display: flex;
-    justify-content: flex-end;
-    padding: 0px;
-  }
-  .registration{
-    margin-left: 15px;
-  }
-  .links_header div{
-    display: flex;
-    justify-content: space-between;
-    margin: 0px;
-  }
-  .mobile_vi2{
-    display: none;
-  }
-  .new_people_servis ul li{
-    width: 20%;
-  }
-.users_prew_block div{
-  margin: 0px;
-  padding: 0px;
-}
-.links_user a{
-  display: inline-block;
-  margin: 10px 5px 0px 0px;
-}
-.name_user {
-  display: flex;
-    align-items: center;
-}
-.table_services_as_sponsor, .services_as_friend, #usersPhoto {
-  overflow: auto;
-}
-.about_user_block_edit{
-  padding-left: 0px;
-  order: 0;
-}
-.about_edit_input div{
-  padding: 0px;
-
-}
-.about_edit_input {
-  margin: 0px;
+  margin-right:5px
 }
 
-.edit_profile_general_block label {
-  margin-bottom: 5px;
-  padding-left: 0px;
-  margin-top: 5px;
-}
-
-}
-@media all and (max-width: 576px) {
-.label_new_people:after {
-  display: none;
-}
-#usersPhoto tbody{
-  flex-direction: column;
-  width: 100%;
-}
-#usersPhoto tbody tr{
-  width: 100% !important;
-}
-.label_new_people{
- height: 25%;
- border-radius: 0;
-}
-.label_new_people p{
-text-align: center;
-width: 100%;
-}
-.new_people_servis{
-  padding: 0px;
-}
-.new_people_servis ul{
-  height: 75%;
-}
-.mobile_vi3{
-  display: block;
-}
-.links_header div{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-.links_header div a{
-  margin: 0px;
-}
-.heder_link{
-  line-height: 28px;
-}
-#navbarSupportedContent ul{
-  flex-direction: column
-}
-#navbarSupportedContent{
-  padding: 0px;
-}
-.autorization, .registration{
-  margin: 0px;
-}
-.registration{
-  margin-top: 5px;
-}
-.Logo{
-  font-size: 28px;
-}
-.links_header{
-  margin-top: 25px;
-}
-#map{
-  height: 420px;
-}
-.name_user{
-  flex-direction: column-reverse;
-  align-items: end;
-}
-.name_user span {
-  margin-left:10px;
-  width: 100%;
-}
-.service div{
-padding: 10px;
-font-size: 14px;
-}
-.information_user{
-  margin-top: 0px;
-}
-.user_avatar {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.user_avatar img{
-  width: 50%;
-}
-}
-@media all and (max-width: 400px) {
-.new_people_servis{
-height: 115px;
-}
-}
-
-/* modal section start */
+/* MODAL Section
+_______________________________________________________ */
 
 .modal-error {
-    position: relative;
-    color: #fff;
-    font-size: 20px;
-    position: fixed;
-    display: none;
-    top: 320px;
-    left: 30%;
-    width: 40%;
-    padding: 5% 5%;
-    z-index: 2;
-    text-align: center;
-    background-color: #2D5c92;
-    border: 2px solid #f89911;
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  position: fixed;
+  display: none;
+  top: 320px;
+  left: 30%;
+  width: 40%;
+  padding: 5% 5%;
+  z-index: 2;
+  text-align: center;
+  background-color: #2D5c92;
+  border: 2px solid #f89911
 }
 
 .modal-error__close-btn {
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    font-size: 20px;
-    background-color: #2D5c92;
-    border-radius: 25px;
-    color: #fff;
-    display: inline-block;
-    line-height: 30px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  font-size: 20px;
+  background-color: #2D5c92;
+  border-radius: 25px;
+  color: #fff;
+  display: inline-block;
+  line-height: 30px
 }
+
 .modal-error__close-btn:hover,
-.modal-error__close-btn:focus{
-    opacity: 0.8;
+.modal-error__close-btn:focus {
+  opacity: 0.8
 }
-/* modal section end */
+
+/* @MEDIA Section
+_______________________________________________________ */
+
+@media all and (max-width: 1200px) {
+
+  .header_title, 
+  .links_header {
+    font-size: 14px
+  }
+
+  .heder_link {
+    margin-right:5px
+  }
+
+  .autorization, 
+  .registration {
+    padding: 3px 5px
+  }
+
+}
+
+@media all and (max-width: 991px) {
+  .left-column {
+    display: none
+  }
+
+  .header_title {
+    text-align: right;
+    padding-right: 15px
+  }
+
+  .links_header {
+    margin: 0px
+  }
+
+  .links_header div:nth-child(2) a {
+    float: right
+  }
+
+  .autorization {
+    margin-left: 15px
+  }
+
+  .heder_link {
+    margin-right: 15px
+  }
+
+  .header_title, 
+  .links_header {
+    font-size: 16px
+  }
+
+  .mobile_vi {
+    display: none
+  }
+
+  #new_people_servis ul li {
+    width: 15%
+  }
+
+  .links_user button {
+    display: block
+  }
+
+  .links_user a {
+    display: inline-block;
+    margin: 10px 10px 0px 0px
+  }
+
+  .about_user_block {
+    order:-1;
+    margin-bottom:15px
+  }
+
+  .edit_profile_general_block {
+    flex-direction: row-reverse !important
+  }
+
+  .about_user_block_edit {
+    height: 300px
+  }
+
+  .edit_profile_general_block label {
+    margin-top: 5px
+  }
+
+}
+
+@media all and (max-width: 767px) {
+
+  .mobile_autorization {
+    display: block
+  }
+
+  .header_title {
+    display: none;
+  }
+
+  .links_header {
+    display: flex;
+    flex-direction: row-reverse
+  }
+
+  .change {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px
+  }
+
+  .registration {
+    margin-left: 15px
+  }
+
+  .links_header div {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px
+  }
+
+  .mobile_vi2 {
+    display: none
+  }
+
+  #new_people_servis ul li {
+    width: 20%
+  }
+
+  .users_prew_block div {
+    margin: 0px;
+    padding: 0px
+  }
+
+  .links_user a {
+    display: inline-block;
+    margin: 10px 5px 0px 0px
+  }
+
+  .name_user {
+    display: flex;
+    align-items: center
+  }
+
+  .table_services_as_sponsor, 
+  .services_as_friend, 
+  #usersPhoto {
+    overflow: auto;
+  }
+
+  .about_user_block_edit {
+    padding-left: 0px;
+    order: 0
+  }
+
+  .about_edit_input div {
+    padding: 0px
+  }
+
+  .about_edit_input {
+    margin: 0px
+  }
+
+  .edit_profile_general_block label {
+    margin-bottom: 5px;
+    padding-left: 0px;
+    margin-top: 5px
+  }
+
+}
+
+@media all and (max-width: 576px) {
+
+  .label_new_people:after {
+    display: none
+  }
+
+  #usersPhoto tbody {
+    flex-direction: column;
+    width: 100%
+  }
+
+  #usersPhoto tbody tr {
+    width: 100% !important
+  }
+
+  .label_new_people {
+    height: 25%;
+    border-radius: 0
+  }
+
+  .label_new_people p {
+    text-align: center;
+    width: 100%
+  }
+
+  #new_people_servis {
+    padding: 0px;
+  }
+
+  #new_people_servis ul {
+    height: 75%
+  }
+
+  .mobile_vi3 {
+    display: block
+  }
+
+  .links_header div {
+    display: flex;
+    flex-direction: column;
+    text-align: center
+  }
+
+  .links_header div a {
+    margin: 0px
+  }
+
+  .heder_link {
+    line-height: 28px
+  }
+
+  #navbarSupportedContent ul {
+    flex-direction: column
+  }
+
+  #navbarSupportedContent {
+    padding: 0px
+  }
+
+  .autorization, 
+  .registration {
+    margin: 0px
+  }
+
+  .registration {
+    margin-top: 5px
+  }
+
+  .Logo {
+    font-size: 28px
+  }
+
+  .links_header {
+    margin-top: 25px
+  }
+
+  #map {
+    height: 420px
+  }
+
+  .name_user {
+    flex-direction: column-reverse;
+    align-items: end
+  }
+
+  .name_user span {
+    margin-left:10px;
+    width: 100%
+  }
+
+  .service div {
+    padding: 10px;
+    font-size: 14px
+  }
+
+  .information_user {
+    margin-top: 0px
+  }
+
+  .user_avatar {
+    text-align: center;
+    margin-bottom: 20px
+  }
+
+  .user_avatar img {
+    width: 50%
+  }
+}
+
+@media all and (max-width: 400px) {
+
+  #new_people_servis {
+    height: 115px
+  }
+
+}
