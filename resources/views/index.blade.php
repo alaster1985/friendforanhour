@@ -1,9 +1,9 @@
 @include('layouts.header')
 
 <body>
-    
 
-    
+
+
 <div class="container">
 
     <section id="new_people_servis">
@@ -25,7 +25,7 @@
             </ul>
         </div>
     </section>
-    
+
     <div class="row">
         <div class="col-3 left-column">
             @guest
@@ -34,24 +34,12 @@
             <aside id="main-page-aside-news">
                 <div class="block_news">
                     <h5>Новости</h5>
-                    <a href="" target="_blank">
-                        <p>30 апреля</p>
-                        <p>Всемирный дефицит женщин: ученые бьют тревогу</p>
-                    </a>
-                    @auth
-                        <a href="" target="_blank">
-                            <p>30 апреля</p>
-                            <p>Всемирный дефицит женщин: ученые бьют тревогу</p>
+                    @foreach($news as $val)
+                        <a href="newsView?nws={{$val->id}}" target="_blank">
+                            <p>{{$val->getDate()}}</p>
+                            <p>{{$val->title}}</p>
                         </a>
-                        <a href="" target="_blank">
-                            <p>30 апреля</p>
-                            <p>Всемирный дефицит женщин: ученые бьют тревогу</p>
-                        </a>
-                        <a href="" target="_blank">
-                            <p>30 апреля</p>
-                            <p>Всемирный дефицит женщин!</p>
-                        </a>
-                    @endauth
+                    @endforeach
                 </div>
             </aside>
         </div>
@@ -63,7 +51,7 @@
                 </div>
             </section>
         </div>
-    </div>    
+    </div>
 
     <section id="last-active-users">
         <div class="container">
@@ -142,6 +130,8 @@
         </div>
     </section>
 </div>
+</div>
+
 
 <!--Load the API from the specified URL
 * The async attribute allows the browser to render the page while the API loads

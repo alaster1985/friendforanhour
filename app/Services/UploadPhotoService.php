@@ -18,9 +18,6 @@ class UploadPhotoService extends Controller
     {
         $image = $request->file;
         $image_resize = Image::make($image->getRealPath());
-//        $path = ProfilePhoto::getMainProfilePhotoByProfileId(Auth::user()->profile_id)->photo_path;
-//        $path = explode('/', ProfilePhoto::getMainProfilePhotoByProfileId(Auth::user()->profile_id)->photo_path);
-//        $this->pathFile = substr($path,0,strrpos($path,'/')) . '/';
         $this->pathFile = 'profilepictures/' . (Auth::user()->profile_id ?? $request->profileId) . '/';
         $image_resize->resize(640, 480);
 
@@ -33,12 +30,19 @@ class UploadPhotoService extends Controller
 
     }
 
+    public function uploadNewsPhoto($photo)
+    {
+        $image_resize = Image::make($photo->getRealPath());
+        $this->pathFile = 'images/news/';
+        $image_resize->resize(640, 480);
+        $this->newFileName = self::getGUID()
+            . '.' . $photo->getClientOriginalExtension();
+        $image_resize->save($this->pathFile . $this->newFileName);
+    }
+
     public function uploadFirstPhotoFromSocial($photoUrl, $profile)
     {
-
-//        $photoUrl = substr(($photoUrl.'?'), 0, strpos(($photoUrl.'?'), "?"));
         $socialPhoto = Image::make($photoUrl);
-//        $socialPhoto = Image::make('profilepictures/' . $profile->gender_id . '.jpg');
         $socialPhoto->resize(640, 480)->encode('jpg');
         $this->pathFile = 'profilepictures/' . $profile->id . '/';
         $this->newFileName = self::getGUID()

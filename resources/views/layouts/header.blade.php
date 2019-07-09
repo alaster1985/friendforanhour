@@ -21,7 +21,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}"/>
-        
+
     </head>
 
     <div class="header_background">
@@ -34,10 +34,13 @@
                     <span>Friend</span> | Друг на час</span>
                     <div class="col-lg-7 col-xl-7 col-md-12 row links_header">
                         <div class="col-lg-8 col-xl-8 col-md-8 col-sm-12">
-                            <a class="heder_link" href="javascript:void(0);">Знакомства</a>
-                            <a class="heder_link" href="javascript:void(0);">Услуги</a>
-                            <a class="heder_link" href="javascript:void(0);">Заработать за час</a>
-                            <a class="heder_link" href="javascript:void(0);">Отдохнуть</a>
+                            @foreach(ArticleCategory::all() as $category)
+                                <a class="heder_link" href="articles?ctg={{$category->category_name}}">{{$category->display_name}}</a>
+                            @endforeach
+                            {{--<a class="heder_link" href="javascript:void(0);">Знакомства</a>--}}
+                            {{--<a class="heder_link" href="javascript:void(0);">Услуги</a>--}}
+                            {{--<a class="heder_link" href="javascript:void(0);">Заработать за час</a>--}}
+                            {{--<a class="heder_link" href="javascript:void(0);">Отдохнуть</a>--}}
                             <a class="heder_link" href="contactToSupport">ТП</a>
                             <a class="heder_link" href="{{Request::root()}}/search">search</a>
                             @include('layouts.robokassaPayForm')

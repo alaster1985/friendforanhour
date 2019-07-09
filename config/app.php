@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -234,6 +234,7 @@ return [
         'TicketStatus' => \App\TicketStatus::class,
         'Ban' => \App\Ban::class,
         'Transaction' => \App\Transaction::class,
+        'ArticleCategory' => \App\ArticleCategory::class,
     ],
 
 ];
