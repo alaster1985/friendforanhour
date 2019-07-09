@@ -11,6 +11,8 @@ class Ticket extends Model
         'profile_id',
         'title',
         'description',
+        'name_from',
+        'email',
         'status_id',
         'moderator_id',
         'report'
