@@ -27,6 +27,11 @@ Route::get('wrong', function () {return view('allwrong');})->name('wrong');
 Route::get('search', 'MainController@search')->name('search');
 Route::post('filter', 'ProfileController@filter')->name('filter');
 
+Route::get('news', 'MainController@newsIndex')->name('news');
+Route::get('newsView', 'NewsController@newsView')->name('newsView');
+Route::get('articles', 'MainController@articlesIndex')->name('articles');
+Route::get('articlesView', 'ArticlesController@articlesView')->name('articlesView');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -101,5 +106,17 @@ Route::middleware('role:admin|moderator')->group(function () {
     Route::get('admin/viewProfileTransactions', 'TransactionController@viewProfileTransactions')->name('viewProfileTransactions');
     Route::get('admin/detailTransaction', 'TransactionController@detailTransaction')->name('detailTransaction');
     Route::post('admin/addTransaction', 'TransactionController@addTransaction')->name('addTransaction');
+
+    Route::get('admin/viewNews', 'NewsController@viewNews')->name('viewNews');
+    Route::get('admin/editNews', 'NewsController@editNews')->name('editNews');
+    Route::get('admin/createNews', 'NewsController@createNews')->name('createNews');
+    Route::post('admin/updateNews', 'NewsController@updateNews')->name('updateNews');
+    Route::post('admin/addNews', 'NewsController@addNews')->name('addNews');
+
+    Route::get('admin/viewArticles', 'ArticleController@viewArticles')->name('viewArticles');
+    Route::get('admin/editArticles', 'ArticleController@editArticles')->name('editArticles');
+    Route::get('admin/createArticles', 'ArticleController@createArticles')->name('createArticles');
+    Route::post('admin/updateArticles', 'ArticleController@updateArticles')->name('updateArticles');
+    Route::post('admin/addArticles', 'ArticleController@addArticles')->name('addArticles');
 
 });

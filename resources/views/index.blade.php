@@ -27,24 +27,12 @@
             @endguest
             <div class="block_news">
                 <h5>Новости</h5>
-                <a href="" target="_blank">
-                    <p>30 апреля</p>
-                    <p>Всемирный дефицит женщин: ученые бьют тревогу</p>
+                @foreach($news as $val)
+                <a href="newsView?nws={{$val->id}}" target="_blank">
+                    <p>{{$val->getDate()}}</p>
+                    <p>{{$val->title}}</p>
                 </a>
-                @auth
-                    <a href="" target="_blank">
-                        <p>30 апреля</p>
-                        <p>Всемирный дефицит женщин: ученые бьют тревогу</p>
-                    </a>
-                    <a href="" target="_blank">
-                        <p>30 апреля</p>
-                        <p>Всемирный дефицит женщин: ученые бьют тревогу</p>
-                    </a>
-                    <a href="" target="_blank">
-                        <p>30 апреля</p>
-                        <p>Всемирный дефицит женщин!</p>
-                    </a>
-                @endauth
+                @endforeach
             </div>
         </div>
         <div class="col-lg-9 col-12">

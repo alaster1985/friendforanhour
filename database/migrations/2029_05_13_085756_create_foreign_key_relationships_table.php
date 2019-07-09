@@ -60,6 +60,9 @@ class CreateForeignKeyRelationshipsTable extends Migration
             $table->foreign('moderator_id_beginner')->references('id')->on('users');
             $table->foreign('moderator_id_amnesty')->references('id')->on('users');
         });
+        Schema::table('articles', function (Blueprint $table) {
+            $table->foreign('category_id')->references('id')->on('article_categories');
+        });
     }
 
     /**
