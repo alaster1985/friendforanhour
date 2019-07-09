@@ -30,7 +30,7 @@ Route::post('filter', 'ProfileController@filter')->name('filter');
 Route::get('news', 'MainController@newsIndex')->name('news');
 Route::get('newsView', 'NewsController@newsView')->name('newsView');
 Route::get('articles', 'MainController@articlesIndex')->name('articles');
-Route::get('articlesView', 'ArticlesController@articlesView')->name('articlesView');
+Route::get('articlesView', 'ArticleController@articlesView')->name('articlesView');
 
 Auth::routes();
 

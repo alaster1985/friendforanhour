@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
+use App\ArticleCategory;
 use App\News;
 use App\Profile;
 use App\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class MainController extends Controller
 {
@@ -14,7 +17,7 @@ class MainController extends Controller
     {
         $newProfiles = Profile::getNewProfiles();
         $profilesForLowerBlocks = Profile::getSixProfilesForLowerBlocks();
-        $limit = Auth::check() ? 4 : 1;
+        $limit = Auth::check() ? 4 : 1; // count of news for index page
         return view('index', [
             'newProfiles' => $newProfiles,
             'profilesForLowerBlocks' => $profilesForLowerBlocks,
@@ -85,8 +88,17 @@ class MainController extends Controller
         return view('indexNews', ['news' => $news]);
     }
 
-    public function articlesIndex()
+    public function articlesIndex(Request $request)
     {
-        return view('indexArticles');
+        $categories = ArticleCategory::pluck('category_name')->all();
+        array_push($categories, 'all');
+        $request->validate([
+            'ctg' => [
+                'required',
+                Rule::in($categories),
+            ],
+        ]);
+        $articles = Article::getArticleList($request->ctg);
+        return view('indexArticles', ['articles' => $articles]);
     }
 }

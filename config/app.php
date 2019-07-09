@@ -234,7 +234,7 @@ return [
         'TicketStatus' => \App\TicketStatus::class,
         'Ban' => \App\Ban::class,
         'Transaction' => \App\Transaction::class,
-        'News' => \App\News::class,
+        'ArticleCategory' => \App\ArticleCategory::class,
     ],
 
 ];
