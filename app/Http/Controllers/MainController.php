@@ -98,7 +98,7 @@ class MainController extends Controller
                 Rule::in($categories),
             ],
         ]);
-        $articles = Article::getArticleList($request->ctg);
+        $articles = Article::getArticleList($request->ctg)->whereDisabled(false)->paginate(6)->appends(request()->except('page'));;
         return view('indexArticles', ['articles' => $articles]);
     }
 }

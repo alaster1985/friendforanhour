@@ -61,6 +61,6 @@ class News extends Model
 
     public static function getLastNews($limit)
     {
-        return News::orderBy('created_at', 'DESC')->take($limit)->get();;
+        return News::orderBy('created_at', 'DESC')->where('disabled', false)->take($limit)->get();
     }
 }

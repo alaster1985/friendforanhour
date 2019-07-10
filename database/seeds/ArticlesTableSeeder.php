@@ -18,13 +18,20 @@ class ArticlesTableSeeder extends Seeder
             'images/articles/{6F8067DE-2837-E8A1-85E0-0F98164C6F42}.jpg',
         ];
 
-        for ($i = 0; $i <= 5; $i++) {
-            for ($j = 1; $j <=4; $j++) {
+        $categories = [
+            'dating',
+            'services',
+            'earn',
+            'relax',
+        ];
+
+        for ($i = 0; $i <= 3; $i++) {
+            foreach ($categories as $key => $ctg) {
                 $article = new Article();
-                $article->title = '#' . $j . '-' . $i . '. ' . $articles[0];
-                $article->content = '#' . $j . '-' . $i . '. ' . $articles[1];
+                $article->title = '#' . $ctg . '-' . $i . '. ' . $articles[0];
+                $article->content = '#' . $ctg . '-' . $i . '. ' . $articles[1];
                 $article->photo = $articles[2];
-                $article->category_id = $j;
+                $article->category_id = $key + 1;
                 $article->save();
             }
         }

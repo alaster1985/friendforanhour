@@ -16,6 +16,12 @@ class NewsController extends Controller
 
     public function editNews(Request $request)
     {
+        $request->validate([
+            'id' => [
+                'required',
+                Rule::in(News::pluck('id')->all()),
+            ],
+        ]);
         return view('admin/editNews', ['news' => News::find($request->id)]);
     }
 

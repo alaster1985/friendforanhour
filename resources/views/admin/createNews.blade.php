@@ -38,7 +38,7 @@
                                         <label class="c-label">News content</label>
                                         <textarea rows="4" class="input-style"
                                                   name="content"
-                                                  placeholder="Post Description"
+                                                  placeholder="News Description"
                                         >{{old('content')}}</textarea>
                                     </div>
                                 </div>

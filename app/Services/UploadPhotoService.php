@@ -40,6 +40,16 @@ class UploadPhotoService extends Controller
         $image_resize->save($this->pathFile . $this->newFileName);
     }
 
+    public function uploadArticlePhoto($photo)
+    {
+        $image_resize = Image::make($photo->getRealPath());
+        $this->pathFile = 'images/articles/';
+        $image_resize->resize(640, 480);
+        $this->newFileName = self::getGUID()
+            . '.' . $photo->getClientOriginalExtension();
+        $image_resize->save($this->pathFile . $this->newFileName);
+    }
+
     public function uploadFirstPhotoFromSocial($photoUrl, $profile)
     {
         $socialPhoto = Image::make($photoUrl);

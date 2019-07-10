@@ -35,7 +35,7 @@
                 <div class="block_news">
                     <h5>Новости</h5>
                     @foreach($news as $val)
-                        <a href="newsView?nws={{$val->id}}" target="_blank">
+                        <a href="newsView?nws={{$val->id}}">
                             <p>{{$val->getDate()}}</p>
                             <p>{{$val->title}}</p>
                         </a>
