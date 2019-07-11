@@ -15,7 +15,7 @@ class ArticleCategoryTableSeeder extends Seeder
         $categories = [
             'dating' => 'Знакомства',
             'services' => 'Услуги',
-            'earn' => 'Заработать за час',
+            'earn' => 'Заработать',
             'relax' => 'Отдохнуть',
         ];
 
