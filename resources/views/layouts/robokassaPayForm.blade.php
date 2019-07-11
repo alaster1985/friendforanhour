@@ -1,5 +1,4 @@
 @if(Auth::check() && Auth::user()->hasRole('user'))
-<div class="col-md-3" style="color: red; border: solid green 2px">
     <form action="https://merchant.roboxchange.com/Index.aspx" method="POST" enctype="multipart/form-data">
         @csrf
         <div style="display: none">
@@ -13,12 +12,11 @@
         <input name="Shp_ProfileId" type="hidden" value="{{Auth::user()->profile_id}}">
         <input name="Shp_TransactionNameId" type="hidden" value="1">
         <input name="SignatureValue" type="hidden"
-               value="{{md5(env('ROBOKASSA_MERCHANTLOGIN') . ":"
-               . env('ROBOKASSA_OUTSUM') . ":". $invId .":"
-               . env('ROBOKASSA_TEST_PASS1')
-               . ":Shp_ProfileId=" . Auth::user()->profile_id
-               . ":Shp_TransactionNameId=1")}}">
-        <button id="payButton" type="submit">renew subscription</button>
+                value="{{md5(env('ROBOKASSA_MERCHANTLOGIN') . ":"
+                . env('ROBOKASSA_OUTSUM') . ":". $invId .":"
+                . env('ROBOKASSA_TEST_PASS1')
+                . ":Shp_ProfileId=" . Auth::user()->profile_id
+                . ":Shp_TransactionNameId=1")}}">
+        <button id="payButton" class="btn btn-outline-light" type="submit">Обновить подписку</button>
     </form>
-</div>
 @endif
