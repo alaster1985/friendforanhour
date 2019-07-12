@@ -31,7 +31,6 @@
                 @endguest
                 <aside id="main-page-aside-news">
                     <div class="block_news">
-                        <h5>Новости</h5>
                         @foreach($news as $val)
 
 
@@ -39,7 +38,7 @@
                             <a href="newsView?nws={{$val->id}}">
                                 {{-- <div class="card-header">Header</div> --}}
                                 <div class="card-body">
-                                    <h5 class="card-title">{{$val->title}}</h5>
+                                    <h6 class="card-title">{{$val->title}}</h6>
                                     <p class="card-text">{{$val->getDate()}}</p>
                                 </div>
                             </a>
@@ -60,7 +59,6 @@
             <div class="col-lg-9 col-12">
                 <section id="map-section">
                     <div class="map_container">
-                        <h6>Карта друзей, услуг и людей, у которых можно заработать деньги на 1-HF.com</h6>
                         @include('map')
                     </div>
                 </section>
@@ -106,11 +104,13 @@
                                     </span>                                    
                                 @guest
                                 @if($lProfile->profileOnline())
-                                    <span><img style="height: 15px;" src="/images/monitor1.svg">Онлайн</span>
+                                    <span class="online-color"><img style="height: 15px;margin: auto 2%;" src="/images/monitor1.svg">Онлайн</span>
                                 @else
-                                    <span><img style="height: 15px;" src="/images/monitor0.svg">Офлайн</span>
+                                    <span class="offline-color"><img style="height: 15px;margin: auto 2%;" src="/images/monitor0.svg">Офлайн</span>
                                 @endif
-                                    <a class="forChat" href="javascript:void(0);">Написать</a>
+                                    <button class="btn btn-primary btn-lg btn-block offline-write-btn" type="submit">
+                                        <a class="forChat" href="javascript:void(0);">Написать</a>
+                                    </button>
                                 @endguest
                             </div>
                         </div>
