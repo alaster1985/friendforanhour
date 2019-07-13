@@ -1,71 +1,91 @@
 @include('layouts.header')
 <section id="edit-profile">
     <div class="container">
-        @if(session()->has('message'))
-            <div class="alert alert-success" align="center">
-                {{ session()->get('message') }}
-            </div>
-        @endif
-        @if ($errors)
-            <div style="display: block; color: red">{{($errors->first())}}</div>
-        @endif
-        <div id="app2" style="display: none">
-            <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
-        </div>
-        @include('layouts.robokassaPayForm')
-        <div class="row">
-            @if($profile->subscription_end_date >= strtotime('now'))
-                <h2>Subscription is valid for:</h2>
-                <p style="display: none" id="finish_time">{{$profile->subscription_end_date}}</p>
-                <div id="countdown" class="col-md-6" style="display: inline-flex">
-                    <div>Days: <span class="days"></span></div>
-                    <div>Hours: <span class="hours"></span></div>
-                    <div>Minutes: <span class="minutes"></span></div>
-                    <div>Seconds: <span class="seconds"></span></div>
+        <div class="subscription">
+            <div class="row justify-content-center">
+                @if(session()->has('message'))
+                    <div class="alert alert-success" align="center">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+                @if ($errors)
+                    <div style="display: block; color: red">{{($errors->first())}}</div>
+                @endif
+                <div id="app2" style="display: none">
+                    <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
                 </div>
-                <script type="text/javascript" src="{{asset('js/countdown.js')}}" defer></script>
-            @else
-                <h2>Subscription is invalid</h2>
-            @endif
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <div class="row justify-content-center">
+                        @if($profile->subscription_end_date >= strtotime('now'))
+                            <label>Подписка действительна:&nbsp;</label>
+                            <p style="display: none" id="finish_time">{{$profile->subscription_end_date}}</p>
+                            <div id="countdown" style="display: inline-flex">
+                                <div>&nbsp;Дней:&nbsp;<span class="days"></span></div>
+                                <div>&nbsp;Часов:&nbsp;<span class="hours"></span></div>
+                                <div>&nbsp;Минут:&nbsp;<span class="minutes"></span></div>
+                                <div>&nbsp;Секунд:&nbsp;<span class="seconds"></span></div>
+                            </div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <script type="text/javascript" src="{{asset('js/countdown.js')}}" defer></script>
+                        @else
+                            <label><strong>Обновите подписку!</strong></label>
+                        @endif
+                    </div>
+                </div>
+                @if ($profile->is_locked)
+                    <div class="col-md-6">It is manual locked</div>
+                    <div class="col-md-6">You can contact to <a href="contactToSupport">support</a> or look to your <a
+                                href="{{Request::root()}}/mytickets">reports</a></div>
+                @endif
+            </div>
         </div>
-        @if ($profile->is_locked)
-            <div class="col-md-6">It is manual locked</div>
-            <div class="col-md-6">You can contact to <a href="contactToSupport">support</a> or look to your <a
-                        href="{{Request::root()}}/mytickets">reports</a></div>
-        @endif
-        
         <form action="{{Route('updateProfile')}}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="row edit_profile_general_block justify-content-between">
-                <div class=" row col-md-6 about_edit_input ">
-                    <div class="col-lg-12">
-                        <label>Nickname</label>
-                        <input type="text" name="nickname" value="{{$profile->user()->where('profile_id','=', $profile->id)->first()->name}}">
-                        {{--  --}}
+            <div class="row edit_profile_general_block">
+                <div class="row">
+
+                    {{-- Nickname Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
+                        <label>Никнейм</label>
+                        <input class="form-control form-control-lg" type="text" name="nickname" value="{{$profile->user()->where('profile_id','=', $profile->id)->first()->name}}">
                     </div>
-                    <div class="col-lg-6">
+
+                    {{-- First Name Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
                         <label>Имя</label>
-                        <input type="text" name="first_name" value="{{$profile->first_name}}">
+                        <input class="form-control form-control-lg" type="text" name="first_name" value="{{$profile->first_name}}">
                     </div>
-                    <div class="col-lg-6">
+
+                    {{-- Second Name Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
                         <label>Фамилия</label>
-                        <input type="text" name="second_name" value="{{$profile->second_name}}">
+                        <input class="form-control form-control-lg" type="text" name="second_name" value="{{$profile->second_name}}">
                     </div>
-                    <div class="col-lg-4">
-                        <label>Высота</label>
-                        <input type="number" min="130" max="220" name="height" value="{{$profile->height}}">
+
+                    {{-- Height Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
+                        <label>Рост</label>
+                        <input class="form-control form-control-lg" type="number" min="130" max="220" name="height" value="{{$profile->height}}">
                     </div>
-                    <div class="col-lg-3 col-xl-4">
+
+                    {{-- Weight Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
                         <label>Вес</label>
-                        <input type="number" min="30" max="280" name="weight" value="{{$profile->weight}}">
+                        <input class="form-control form-control-lg" type="number" min="30" max="280" name="weight" value="{{$profile->weight}}">
                     </div>
-                    <div class="col-lg-5 col-xl-4">
+
+                    {{-- Birth Date Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
                         <label>Дата рождения</label>
-                        <input type="date" max="{{ date('Y-m-d', strtotime('- 18 years'))}}" min="{{ date('Y-m-d', strtotime('- 123 years'))}}" name="bdate" value="{{$profile->date_of_birth}}">
+                        <input class="form-control form-control-lg" type="date" max="{{ date('Y-m-d', strtotime('- 18 years'))}}" min="{{ date('Y-m-d', strtotime('- 123 years'))}}" name="bdate" value="{{$profile->date_of_birth}}">
                     </div>
-                    <div class="col-lg-6 gender_select">
+
+                    {{-- Genge Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
                         <label>Пол</label>
-                        <select name="gender">
+                        <select class="form-control form-control-lg" name="gender">
                             @foreach($genders as $gender)
                                 <option id="g{{$gender->id}}" value="{{$gender->id}}">{{$gender->gender}}</option>
                                 @if($gender->id === $profile->gender->id)
@@ -74,14 +94,18 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-lg-6">
+
+                    {{-- Phone Number Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
                         <label>Номер телефона</label>
-                        <input id="phone" type="tel" placeholder="+_(___)___-____" maxlength="13" name="phone"
+                        <input id="phone" class="form-control form-control-lg" type="tel" placeholder="+_(___)___-____" maxlength="13" name="phone"
                             value="{{$profile->phone}}">
                     </div>
-                    <div class="col-lg-6 gender_select">
+
+                    {{-- Contry Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
                         <label>Страна</label>
-                        <select name="country">
+                        <select class="form-control form-control-lg" name="country">
                             <option id="new_cnt" value="new">Добавить другую страну</option>
                             @foreach($countries as $country)
                                 <option id="cnt{{$country->id}}"
@@ -97,9 +121,11 @@
                             <input type="text" name="newCountry" placeholder="Другая страна">
                         </div>
                     </div>
-                    <div class="col-lg-6 gender_select">
+
+                    {{-- City Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
                         <label>Город</label>
-                        <select name="city">
+                        <select class="form-control form-control-lg" name="city">
                             <option id="new_ct" value="new">Добавить другой город</option>
                             @foreach($cities as $city)
                                 <option id="ct{{$city->id}}" value="{{$city->id}}">{{$city->city_name}}</option>
@@ -111,51 +137,57 @@
                             @endforeach
                         </select>
                         <div class="newCity" style="display: {{$profile->profileAddress->city_id ? 'none' : 'block'}}">
-                            <input type="text" name="newCity" placeholder="Другой город">
+                            <input class="form-control form-control-lg" type="text" name="newCity" placeholder="Другой город">
                         </div>
                     </div>
-                    <div class="col-lg-12">
+
+                    {{-- Address Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
                         <label>Адрес</label>
-                        <input type="text" name="address" value="{{$profile->profileAddress->address}}">
+                        <input class="form-control form-control-lg" type="text" name="address" value="{{$profile->profileAddress->address}}">
                     </div>
+
+                    {{-- About Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
+                            <label>Немного о себе</label>
+                        <textarea class="form-control form-control-lg" name="about" rows="10">{{$profile->about}}</textarea>
+                    </div>
+
                 </div>
-                <div class="col-lg-6 col-md-6  about_user_block about_user_block_edit">
-                    <p>Немного о себе</p>
-                    <textarea name="about" rows="10">{{$profile->about}}</textarea>
-                </div>
+                
             </div>
             <div class="table_services_as_sponsor row">
-                <p>Я заплачу за</p>
+                <h2>Я заплачу за:</h2>
                 <table border="1" class="services_as_sponsor col-lg-12">
                     <tr>
-                        <th>Краткое описание</th>
-                        <th>Описание услуги</th>
-                        <th>Цена</th>
-                        <th>Главная услуга</th>
-                        <th>Активная</th>
-                        <th>Удалить</th>
+                        <th><label>Краткое описание</label></th>
+                        <th><label>Описание услуги</label></th>
+                        <th><label>Цена</label></th>
+                        <th><label>Главная услуга</label></th>
+                        <th><label>Активная</label></th>
+                        <th><label></label></th>
                     </tr>
                     @foreach($friendsServices as $list)
                         <tr>
                             <td>
-                                <input type="text" maxlength="14" name="service_name[1c{{$list->id}}]"
+                                <input class="form-control form-control-lg" type="text" maxlength="14" name="service_name[1c{{$list->id}}]"
                                     value="{{$list->service_name}}">
                             </td>
                             <td>
-                                <input type="text" name="service_description[1c{{$list->id}}]"
+                                <input class="form-control form-control-lg" type="text" name="service_description[1c{{$list->id}}]"
                                     value="{{$list->service_description}}">
                             </td>
                             <td>
-                                <input class="prise_service" type="number" min="0" max="100000"
+                                <input class="form-control form-control-lg prise_service" type="number" min="0" max="100000"
                                     name="price[1c{{$list->id}}]" value="{{$list->price}}">
                             </td>
                             <td>
-                                <input type="checkbox" class="main_service_marker1"
+                                <input class="form-control form-control-lg main_service_marker1" type="checkbox"
                                     name="main_service_marker[1c{{$list->id}}]"
                                         {{$list->main_service_marker ? 'checked' : ''}}>
                             </td>
                             <td class="select_status_service">
-                                <select name="is_disabled[1c{{$list->id}}]">
+                                <select class="form-control form-control-lg" name="is_disabled[1c{{$list->id}}]">
                                     <option id="enabled{{$list->id}}" value="0">Активная</option>
                                     <option id="disabled{{$list->id}}" value="1">Отключить</option>
                                     @if($list->is_disabled === 1)
@@ -165,49 +197,46 @@
                             </td>
                             <td class="delete_service">
                                 <div>
-                                    {{ csrf_field()}}
-                                    <a href="{{route('deleteService',$list->id)}}"
-                                    onclick="return confirm('Are you sure you want to delete this service?');">Удалить</a>
-                                    {{ csrf_field()}}
+                                    <a class="btn btn-primary btn-lg btn-block shadow-none delete-btn" href="{{route('deleteService',$list->id)}}" onclick="return confirm('Are you sure you want to delete this service?');">Удалить</a>
                                 </div>
                             </td>
                         </tr>
                     @endforeach
                 </table>
-                <button type="button" id="new_service_as_sponsor">Добавить услугу</button>
+                <button id="new_service_as_sponsor" class="btn btn-primary btn-lg btn-block" type="button">Добавить услугу</button>
             </div>
             <div class="table_services_as_sponsor row">
-                <p>Я сделаю за деньги</p>
+                <h2>Я сделаю за деньги:</h2>
                 <table border="1" class="services_as_friend">
                     <tr>
-                        <th>Краткое описание</th>
-                        <th>Описание услуги</th>
-                        <th>Цена</th>
-                        <th>Главная услуга</th>
-                        <th>Активная</th>
-                        <th>Удалить</th>
+                        <th><label>Краткое описание</label></th>
+                        <th><label>Описание услуги</label></th>
+                        <th><label>Цена</label></th>
+                        <th><label>Главная услуга</label></th>
+                        <th><label>Активная</label></th>
+                        <th><label></label></th>
                     </tr>
                     @foreach($sponsorsServices as $list)
                         <tr>
                             <td>
-                                <input type="text" maxlength="14" name="service_name[2c{{$list->id}}]"
+                                <input class="form-control form-control-lg" type="text" maxlength="14" name="service_name[2c{{$list->id}}]"
                                     value="{{$list->service_name}}">
                             </td>
                             <td>
-                                <input type="text" name="service_description[2c{{$list->id}}]"
+                                <input class="form-control form-control-lg" type="text" name="service_description[2c{{$list->id}}]"
                                     value="{{$list->service_description}}">
                             </td>
                             <td>
-                                <input class="prise_service" type="number" min="0" max="100000"
+                                <input class="form-control form-control-lg prise_service" type="number" min="0" max="100000"
                                     name="price[2c{{$list->id}}]" value="{{$list->price}}">
                             </td>
                             <td>
-                                <input type="checkbox" class="main_service_marker2"
+                                <input type="checkbox" class="form-control form-control-lg main_service_marker2"
                                     name="main_service_marker[2c{{$list->id}}]"
                                         {{$list->main_service_marker ? 'checked' : ''}}>
                             </td>
                             <td class="select_status_service">
-                                <select name="is_disabled[2c{{$list->id}}]">
+                                <select class="form-control form-control-lg" name="is_disabled[2c{{$list->id}}]">
                                     <option id="enabled{{$list->id}}" value="0">Активная</option>
                                     <option id="disabled{{$list->id}}" value="1">Не активная</option>
                                     @if($list->is_disabled === 1)
@@ -217,18 +246,15 @@
                             </td>
                             <td class="delete_service">
                                 <div>
-                                    {{ csrf_field()}}
-                                    <a href="{{route('deleteService',$list->id)}}"
-                                    onclick="return confirm('Are you sure you want to delete this service?');">Удалить</a>
-                                    {{ csrf_field()}}
+                                    <a class="btn btn-primary btn-lg btn-block shadow-none delete-btn" href="{{route('deleteService',$list->id)}}" onclick="return confirm('Are you sure you want to delete this service?');">Удалить</a>
                                 </div>
                             </td>
                         </tr>
                     @endforeach
                 </table>
-                <button type="button" id="new_service_as_friend">Добавить услугу</button>
+                <button id="new_service_as_friend" class="btn btn-primary btn-lg btn-block" type="button">Добавить услугу</button>
             </div>
-            <button class="button_save" type="submit">Сохранить</button>
+            <button class="btn btn-primary btn-lg btn-block shadow-none btn-save" type="submit">Сохранить настройки</button>
         </form>
         <form id="updatePhotoForm">
             <table border="1" id="usersPhoto">
@@ -238,16 +264,20 @@
                     <th>remove</th>
                 </tr>
             </table>
-            <div id="usersPhoto1">
-
+            <div id="usersPhoto1"></div>
+            <div id="addNewPhoto" style="display: block;text-align:center;">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="imgInput">
+                    <label class="custom-file-label" for="customFile">Выберите изображение</label>
+                </div>
+                <div class="preview-img-upload">
+                    <img id="preview" height="300px" src="{{asset('images/preview.png')}}" alt="your new photo">
+                </div>
+                <div class="cancel-img-upload">
+                    <button class="btn btn-primary btn-lg btn-block" id="cancelPreview" type="button">Отмена</button>
+                </div>                
             </div>
-            <div id="addNewPhoto" style="display: block">
-                <input type='file' id="imgInput">
-                <button id="cancelPreview" type="button">Отмена</button>
-                <img id="preview" height="100px" src="{{asset('images/preview.png')}}" alt="your new photo">
-            </div>
-
-            <button class="button_save" type="submit">Сохранить</button>
+            <button class="btn btn-primary btn-lg btn-block shadow-none btn-save" type="submit">Сохранить галерею</button>
         </form>
     </div>
 </section>
