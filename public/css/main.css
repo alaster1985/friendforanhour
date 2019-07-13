@@ -174,6 +174,18 @@ template {
   display: none
 }
 
+table {
+  border-collapse: separate;
+  width: 100%;
+  border-spacing: 0.75rem
+}
+
+table,
+th,
+td {
+  border: none
+}
+
 [hidden] {
   display: none
 }
@@ -254,8 +266,10 @@ header .navbar-nav .nav-item {
 }
 
 header #payButton {
+  font-size: 1rem;
   font-weight: 600;
-  border: none
+  border: none;
+  background: none
 }
 
 header #payButton:hover {
@@ -839,21 +853,6 @@ _______________________________________________________ */
   margin-left: 15px
 }
 
-#view-profile .about_user_block p {
-  color: #2D5c92;
-  font-weight: 600;
-  margin-bottom: 5px;
-  margin-top: 15px
-}
-
-#view-profile .about_user_block div {
-  background-color:#F4F7F9;
-  padding: 10px;
-  border-radius: 10px;
-  height: calc(100% - 25px);
-  border: 1px solid #999DA4
-}
-
 #view-profile .service table tr th:first-child {
   width: 80%
 }
@@ -924,42 +923,51 @@ _______________________________________________________ */
  /* EDIT PROFILE Section
 _______________________________________________________ */
 
-#edit-profile .gender_select select {
-  width: 100%;  
-  border-radius: 5px;
-  border: 1px solid #999DA4;
-  padding: 10px 15px
-}
-
 #edit-profile .edit_profile_general_block {
-  margin: 0px;
-  margin-top: 20px
+  margin: 0px
 }
 
-#edit-profile .about_user_block_edit p {
-  padding-left: 15px
+#edit-profile .subscription {
+  margin: 2rem 0 0 0
 }
 
-#edit-profile .about_user_block_edit textarea {
-  width: 100%;
-  border-radius: 5px;
-  padding: 10px 15px;
-  height: 91%
+#edit-profile .subscription .close {
+  line-height: 0.9
 }
 
-#edit-profile .about_user_block_edit {
-  padding-right: 0px
+#edit-profile .alert-warning {
+  width: 98%;
+  font-weight: 500;
+  color: #2387CF;
+  border: none;
+  margin: 0 0 2rem 0;
+  -webkit-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75)
 }
 
-#edit-profile .about_edit_input div {
-  padding-left: 0px
+#edit-profile .alert-warning label {
+  margin: 0
 }
 
-#edit-profile .about_edit_input input {
-  width: 100%;
-  padding: 10px 15px;
-  border-radius: 5px;
-  border:1px solid #999DA4
+#edit-profile .acc-settings-textfield {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0
+}
+
+#edit-profile .acc-settings-textfield label {
+  width: 20%
+}
+
+#edit-profile .acc-settings-textfield  input,
+#edit-profile .acc-settings-textfield select,
+#edit-profile .acc-settings-textfield textarea {
+  width: 40%;
+  border: none;
+  -webkit-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75)
 }
 
 #edit-profile .newCity,
@@ -976,20 +984,32 @@ _______________________________________________________ */
   margin-top: 20px
 }
 
-#edit-profile .table_services_as_sponsor input {
-  width: 100%;
-  height: 100%;
+#edit-profile .table_services_as_sponsor input,
+#edit-profile .select_status_service select,
+#edit-profile #imgInput {
   border: none;
-  padding: 5px
+  -webkit-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75)
 }
 
-#edit-profile .table_services_as_sponsor td {
-  padding: 0px
+
+#edit-profile #addNewPhoto .custom-file .custom-file-label::after {
+  content: "Выбрать"
+}
+
+#edit-profile #addNewPhoto .custom-file {
+  width: 30%;
+  margin: 3% auto
+}
+
+#edit-profile #cancelPreview {
+  width: 20%;
+  margin: 0 auto
 }
 
 #edit-profile .table_services_as_sponsor th {
-  padding: 5px;
-  color: #F68727;
+  color: #D73D3A;
   font-weight: 600;
   text-align: center
 }
@@ -999,8 +1019,7 @@ _______________________________________________________ */
 }
 
 #edit-profile .table_services_as_sponsor button {
-  margin-left: auto;
-  margin-top: 15px
+  margin: 3% auto
 }
 
 #edit-profile .main_service_marker1, 
@@ -1013,17 +1032,8 @@ _______________________________________________________ */
   padding: 0px!important
 }
 
-#edit-profile .select_status_service select {
-  width: 100%;
-  height: 31px
-}
-
 #edit-profile .delete_service {
   text-align: center;
-  color: #FF2F2F
-}
-
-#edit-profile .delete_service a {
   color: #FF2F2F
 }
 
@@ -1032,45 +1042,44 @@ _______________________________________________________ */
 }
 
 #edit-profile .edit_profile_general_block label {
-  color: #2D5c92;
+  color: #2387CF;
   font-weight: 600;
   margin-bottom: 5px;
   margin-top: 15px
 }
 
-#edit-profile .table_services_as_sponsor p {
-  color: #2D5c92;
+#edit-profile .table_services_as_sponsor h2 {
+  color: #2387CF;
   font-weight: 600;
-  margin-bottom: 5px;
-  padding-left: 15px;
-  font-size: 18px
+  margin: 6% auto
 }
 
 #edit-profile #new_service_as_sponsor, 
 #edit-profile #new_service_as_friend {
-  padding:5px 15px;
+  width: 20%;
   color: #fff;
-  background: #2D5c92;
+  background: #2387CF;
   border: none;
-  border-radius: 5px
 }
 
 #edit-profile #updatePhotoForm table tr:first-child {
   display: none!important
 }
 
-#edit-profile #updatePhotoForm table tbody {
+/* #edit-profile #updatePhotoForm table tbody {
   display: inline-flex
-}
+} */
 
 #edit-profile #updatePhotoForm table tbody tr {
   display: inline-flex;
   flex-direction: column;
-  width: 20%
+  width: 18%;
+  margin: 0 1% 1% 1%
 }
 
 #edit-profile #updatePhotoForm table tbody tr td img {
-  width: 100%
+  width: 100%;
+  border-radius: 0.3rem
 }
 
 #edit-profile #usersPhoto {
@@ -1093,13 +1102,21 @@ _______________________________________________________ */
   padding: 5px 15px
 }
 
-#edit-profile .button_save {
-  color: #fff;
-  background-color: #f89911;
+#edit-profile .btn-save {
+  width: 30%;
+  background-color: #57CF23;
+  color: #fff;  
   border: none;
-  padding: 5px 15px;
-  border-radius: 5px;
-  margin-bottom: 25px
+  margin: 1.75rem auto 1.75rem auto
+}
+
+#edit-profile .preview-img-upload {
+  text-align: center;
+  margin: 3% 0
+}
+
+#edit-profile .custom-file-label {
+  text-align: start
 }
 
 /* CONTROLS Section
@@ -1109,7 +1126,7 @@ _______________________________________________________ */
   padding: 5px
 }
 
-#cancelServiceButton0 {
+/* #cancelServiceButton0 {
   margin: 0px;
   padding:5px 15px;
   height:31px;
@@ -1117,11 +1134,23 @@ _______________________________________________________ */
   background: #FF2F2F;
   border: none;
   color: #fff
-}
+} */
 
 .marker_chect {
   margin: auto;
   width: 100%
+}
+
+.delete-btn,
+.delete-btn:hover,
+.delete-btn:focus,
+.delete-btn:active {
+  background-color: #D73D3A;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
 }
 
 /* OFLINE USER Section
@@ -1237,7 +1266,7 @@ _______________________________________________________ */
   }
 
   header #payButton {
-    padding: .375rem 0;
+    padding: .375rem 0
   }
 
   .left-column {
@@ -1266,17 +1295,8 @@ _______________________________________________________ */
     margin: 10px 10px 0px 0px
   }
 
-  .about_user_block {
-    order:-1;
-    margin-bottom:15px
-  }
-
   .edit_profile_general_block {
     flex-direction: row-reverse !important
-  }
-
-  .about_user_block_edit {
-    height: 300px
   }
 
   .edit_profile_general_block label {
@@ -1328,19 +1348,6 @@ _______________________________________________________ */
   .services_as_friend, 
   #usersPhoto {
     overflow: auto;
-  }
-
-  .about_user_block_edit {
-    padding-left: 0px;
-    order: 0
-  }
-
-  .about_edit_input div {
-    padding: 0px
-  }
-
-  .about_edit_input {
-    margin: 0px
   }
 
   .edit_profile_general_block label {
