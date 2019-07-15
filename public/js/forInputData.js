@@ -38,7 +38,7 @@
                     '            <option value="1">Disabled</option>\n' +
                     '        </select>\n' +
                     '    </td>\n' +
-                    '    <td><button class="btn btn-primary btn-lg btn-block shadow-none delete-btn" id="cancelServiceButton0" type="button">Отмена</button></td>\n' +
+                    '    <td><button class="btn btn-primary btn-md btn-block shadow-none delete-btn" id="cancelServiceButton0" type="button">Отмена</button></td>\n' +
                     '</tr>';
                 $('.services_as_sponsor').append(newLastRow);
                 lastRow = $('.services_as_sponsor tr:last');
@@ -58,7 +58,7 @@
                     this.checked = '';
                 }
             });
-            lastRow.find('div').replaceWith('<button class="btn btn-primary btn-lg btn-block shadow-none delete-btn" id="cancelServiceButton' + i + '" type="button">Отмена</button>');
+            lastRow.find('div').replaceWith('<button class="btn btn-primary btn-md btn-block shadow-none delete-btn" id="cancelServiceButton' + i + '" type="button">Отмена</button>');
             lastRow.find('option').removeAttr("id");
             i++;
             lastRow.appendTo('.services_as_sponsor');
@@ -80,7 +80,7 @@
                     '            <option value="1">Disabled</option>\n' +
                     '        </select>\n' +
                     '    </td>\n' +
-                    '    <td><button class="btn btn-primary btn-lg btn-block shadow-none delete-btn" id="cancelServiceButton0" type="button">Отмена</button></td>\n' +
+                    '    <td><button class="btn btn-primary btn-md btn-block shadow-none delete-btn" id="cancelServiceButton0" type="button">Отмена</button></td>\n' +
                     '</tr>';
                 $('.services_as_friend').append(newLastRow);
                 lastRow = $('.services_as_friend tr:last');
@@ -100,7 +100,7 @@
                     this.checked = '';
                 }
             });
-            lastRow.find('div').replaceWith('<button class="btn btn-primary btn-lg btn-block shadow-none delete-btn" id="cancelServiceButton' + j + '" type="button">Отмена</button>');
+            lastRow.find('div').replaceWith('<button class="btn btn-primary btn-md btn-block shadow-none delete-btn" id="cancelServiceButton' + j + '" type="button">Отмена</button>');
             lastRow.find('option').removeAttr("id");
             j++;
             lastRow.appendTo('.services_as_friend');
@@ -172,7 +172,7 @@
                 // if (window.location.pathname === '/demo/friendforanhour/public/edit' || window.location.pathname === '/demo/friendforanhour/public/admin/editProfileUser') {
                 if (window.location.pathname === '/edit' || window.location.pathname === '/admin/editProfileUser') {
                     mark = '<input type="radio" class="marker_chect" name="marker" value="' + val.id + '"' + (val.main_photo_marker ? 'checked' : '') + '>';
-                    removePhotoButton = '<td><button class="btn btn-primary btn-lg btn-block shadow-none delete-btn" type="button" id="removePhotoButton' + val.id + '" >Удалить</button></td>';
+                    removePhotoButton = '<td><button class="btn btn-primary btn-md btn-block shadow-none delete-btn" type="button" id="removePhotoButton' + val.id + '" >Удалить</button></td>';
                 }
 
                 $('#usersPhoto').append('<tr>' +

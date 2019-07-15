@@ -1004,7 +1004,7 @@ _______________________________________________________ */
 }
 
 #edit-profile #cancelPreview {
-  width: 20%;
+  width: 10%;
   margin: 0 auto
 }
 
@@ -1019,7 +1019,7 @@ _______________________________________________________ */
 }
 
 #edit-profile .table_services_as_sponsor button {
-  margin: 3% auto
+  margin: 1% auto 3% auto
 }
 
 #edit-profile .main_service_marker1, 
@@ -1044,19 +1044,19 @@ _______________________________________________________ */
 #edit-profile .edit_profile_general_block label {
   color: #2387CF;
   font-weight: 600;
-  margin-bottom: 5px;
-  margin-top: 15px
+  margin: auto 0
 }
 
 #edit-profile .table_services_as_sponsor h2 {
   color: #2387CF;
-  font-weight: 600;
-  margin: 6% auto
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 3% auto
 }
 
 #edit-profile #new_service_as_sponsor, 
 #edit-profile #new_service_as_friend {
-  width: 20%;
+  width: 15%;
   color: #fff;
   background: #2387CF;
   border: none;
@@ -1103,7 +1103,7 @@ _______________________________________________________ */
 }
 
 #edit-profile .btn-save {
-  width: 30%;
+  width: 20%;
   background-color: #57CF23;
   color: #fff;  
   border: none;
