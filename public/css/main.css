@@ -62,7 +62,7 @@ sup {
 }
 
 sub {
-  bottom: -0.25em
+  bottom: -.25em
 }
 
 sup {
@@ -329,6 +329,7 @@ _______________________________________________________ */
 }
 
 #main-page-aside-news .block_news .card-body {
+  border-radius: .25rem;
   -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
@@ -389,7 +390,7 @@ _______________________________________________________ */
 }
 
 #new_people_servis ul li a img {
-  border-radius: 10px
+  border-radius: .25rem
 }
 
 #new_people_servis .label_new_people {
@@ -573,10 +574,10 @@ _______________________________________________________ */
 }
 
 #last-active-users .card {
-  border-radius: 0.75rem;
+  border-radius: .25rem;
   overflow: hidden;
   border: none;
-  margin: 5% 0 0;
+  margin: 3% 0 0;
   -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
@@ -777,7 +778,7 @@ _______________________________________________________ */
 }
 
 footer {
-  background-color: #2D5c92;
+  background-color: #2387CF;
   width: 100%;
   margin-top: 20px;
   padding-top: 100px
@@ -1142,6 +1143,71 @@ _______________________________________________________ */
 
 #edit-profile .custom-file-label {
   text-align: start
+}
+
+/* ARTICLE PAGE SECTION
+_______________________________________________________ */
+
+#article-page {
+  margin: 3% 0
+}
+
+#article-page h1 {
+  text-align: center;
+  color: #2387CF
+}
+
+#article-page .article-card {
+  background: #fff;
+  border-radius: .25rem;
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  margin: 1% 0  
+}
+
+#article-page .article-page-title h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 3% 0
+}
+
+#article-page .article-page-title h2 a {
+  color: #2387CF
+}
+
+#article-page .article-page-img img {
+  width: 100%
+}
+
+#article-page .article-page-txt p {
+  margin: 3% 0
+}
+
+/* SINGLE ARTICLE PAGE SECTION
+_______________________________________________________ */
+
+#single-article-page .single-article-card {
+  background: #fff;
+  border-radius: .25rem;
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  margin: 1% 0;
+  padding: 3%
+}
+
+#single-article-page .single-article-page-title h2 {
+  color: #2387CF;
+}
+
+#single-article-page .single-article-page-img {
+  text-align: center;
+  margin: 5% 0
+}
+
+#single-article-page .single-article-page-img img {
+  width: 100%
 }
 
 /* CONTROLS Section

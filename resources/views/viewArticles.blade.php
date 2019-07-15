@@ -1,15 +1,21 @@
 @include('layouts.header')
-<div class="row">
-    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-        <div class="col-sm-6">
-            <p>{{$article->title}}</p> <a href="articles?ctg=all">all of articles</a>
-        </div>
-        <div class="col-sm-6">
-            <img src="{{asset($article->photo)}}" alt="">
-        </div>
-        <div class="col-sm-6">
-            <p>{{$article->content}}</p>
+
+<section id="single-article-page">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 single-article-card">
+                <div class="single-article-page-title">
+                    <h2>{{$article->title}}</h2>
+                </div>
+                <div class="single-article-page-img">
+                    <img src="{{asset($article->photo)}}" alt="">
+                </div>
+                <div class="single-article-page-txt">
+                    <p>{{$article->content}}</p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
 @include('layouts.footer')
