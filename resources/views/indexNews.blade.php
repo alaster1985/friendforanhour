@@ -1,19 +1,24 @@
 @include('layouts.header')
-@forelse($news as $post)
-    <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-            <div class="col-sm-6">
-                <a href="newsView?nws={{$post->id}}">{{$post->title}}</a>
+<section id="all-news-section">
+    <div class="container">
+        <h1>Новости:</h1>
+        @forelse($news as $post)
+            <div class="row justify-content-center">
+                <div class="col-lg-8 all-news-card">
+                    <div class="all-news-title">
+                        <h2><a href="newsView?nws={{$post->id}}">{{$post->title}}</a></h2>
+                    </div>
+                    <div class="article-page-img">
+                        <img src="{{asset($post->photo)}}" alt="">
+                    </div>
+                    <div class="article-page-txt">
+                        <p>{{$post->getExcerpt()}}</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6">
-                <img style="width: 200px" src="{{asset($post->photo)}}" alt="">
-            </div>
-            <div class="col-sm-6">
-                <p>{{$post->getExcerpt()}}</p>
-            </div>
-        </div>
+        @empty
+            <p>there are no news here yet</p>
+        @endforelse
     </div>
-@empty
-    <p>there are no news here yet</p>
-@endforelse
+</section>
 @include('layouts.footer')
