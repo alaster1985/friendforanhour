@@ -329,9 +329,9 @@ _______________________________________________________ */
 }
 
 #main-page-aside-news .block_news .card-body {
-  -webkit-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75)
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 #main-page-aside-news .block_news h5 {
@@ -505,9 +505,9 @@ _______________________________________________________ */
   background-color: #fff;
   background-clip: border-box;
   border-radius: .25rem;
-  -webkit-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   margin: 1rem 0 0 0
 }
 
@@ -577,9 +577,9 @@ _______________________________________________________ */
   overflow: hidden;
   border: none;
   margin: 5% 0 0;
-  -webkit-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75)
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 #last-active-users .profile-img-link {
@@ -920,6 +920,31 @@ _______________________________________________________ */
   text-decoration: none
 }
 
+ /* SEARCH Section
+_______________________________________________________ */
+
+#search-section {
+  margin: 3% 0
+}
+
+#search-section .form-control {
+  border: none;
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+}
+
+#search-section label {
+  font-weight: 600;
+  color: #2387CF;
+  margin: .75rem 0 .34em 0
+}
+
+#search-section .find-btn button {
+  width: 10%;
+  margin: 1.75rem auto
+}
+
  /* EDIT PROFILE Section
 _______________________________________________________ */
 
@@ -941,9 +966,9 @@ _______________________________________________________ */
   color: #2387CF;
   border: none;
   margin: 0 0 2rem 0;
-  -webkit-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75)
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 #edit-profile .alert-warning label {
@@ -965,9 +990,9 @@ _______________________________________________________ */
 #edit-profile .acc-settings-textfield textarea {
   width: 40%;
   border: none;
-  -webkit-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75)
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 #edit-profile .newCity,
@@ -988,9 +1013,9 @@ _______________________________________________________ */
 #edit-profile .select_status_service select,
 #edit-profile #imgInput {
   border: none;
-  -webkit-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 23px -23px rgba(0,0,0,0.75)
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 
