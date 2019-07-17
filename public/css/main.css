@@ -314,6 +314,7 @@ header .header_title {
   color: #fff;
   font-weight: 600;
   font-size: 24px;
+  line-height: 30px;
   padding: 0px
 }
 
@@ -540,7 +541,6 @@ _______________________________________________________ */
 #map-section .map_container {
   width: 100%;
   margin-top: 1rem;
-  background: #f9f9f9;
   color: #2387CF
 }
 
@@ -637,15 +637,11 @@ _______________________________________________________ */
   font-weight: 600
 }
 
-#last-active-users .name_user_cart span {
-  color:#999
-}
-
 #last-active-users .city_user_cart {
   display: block;
   font-size: 18px;
-  font-weight: 300;
-  color: #666;
+  font-weight: 400;
+  color: #b3b3b3;
   text-align: center;
   padding: 3% 0 0
 }
@@ -795,28 +791,47 @@ footer {
  /* VIEW PROFILE Section
 _______________________________________________________ */
 
-#view-profile .information_user {
-  margin: 20px 0px;
-  padding: 15px 0px
+#view-profile .view-profile-card {
+  background: #fff;
+  border-radius: .25rem;
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  padding: 1.75rem 1rem;
+  margin: 3% 0
+}
+
+#view-profile .view-profile-photo a img {
+  width: 100%
+}
+
+#view-profile .about_user_block {
+  margin: 5% 0 0
+}
+
+#view-profile .about_user_block h4 {
+  color: #2387CF;
+  font-weight: 500
 }
 
 #view-profile .photo_user div {
   text-align: center
 }
 
-#view-profile .user_avatar img {
-  width: 100%
-}
-
 #view-profile .name_user {
   display: flex;
   justify-content: space-between;
-  font-size: 22px;
-  margin: 0px
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2387CF
 }
 
 #view-profile .name_user span {
   font-size: 16px
+}
+
+#view-profile .name_user span img {
+  margin: 0 .5rem 0
 }
 
 #view-profile .character_user {
@@ -825,7 +840,7 @@ _______________________________________________________ */
 }
 
 #view-profile .service {
-  margin-top: 20px
+  margin-top: 5%
 }
 
 #view-profile .distance {
@@ -875,10 +890,6 @@ _______________________________________________________ */
   margin-top: 15px
 }
 
-#view-profile .table_paid {
-  margin-top: 20px
-}
-
 #view-profile .service table {
  font-weight: 600;
 }
@@ -887,8 +898,18 @@ _______________________________________________________ */
   border: none;
   background: #FFF;
   padding: 0px;
-  color: #465160;
-  border-bottom: 1px dashed #465160
+  color: #2387CF
+}
+
+#view-profile .service button:hover,
+#view-profile .service button:active,
+#view-profile .service button:focus {
+  outline: none;
+  border: none
+}
+
+#view-profile .service button span i {
+  margin: 0 .5rem 0
 }
 
 #view-profile .close_table {
@@ -904,13 +925,12 @@ _______________________________________________________ */
 }
 
 #view-profile .table_paid_open,
-#view-profile .table_paid_open:active,
-#view-profile .table_paid_open:focus {
-  outline: none
+#view-profile .table_for_me_open {
+  margin: 0 .75rem
 }
 
 #view-profile .user_content {
-  margin-top: 15px
+  margin: 5% 0
 }
 
 #view-profile .photo_user a img {
@@ -919,6 +939,12 @@ _______________________________________________________ */
 
 #view-profile .user_description_cart a {
   text-decoration: none
+}
+
+#view-profile .map_container h2 {
+  margin: 3% 0;
+  text-align: center;
+  font-weight: 400
 }
 
  /* SEARCH Section
@@ -1598,18 +1624,18 @@ _______________________________________________________ */
     font-size: 14px
   }
 
-  .information_user {
-    margin-top: 0px
+}
+
+@media all and (min-width: 576px) {
+
+  #view-profile .slick-track {
+    width: 100% !important
+  }
+  
+  #view-profile .slick-track .slick-slide {
+    width: 25% !important
   }
 
-  .user_avatar {
-    text-align: center;
-    margin-bottom: 20px
-  }
-
-  .user_avatar img {
-    width: 50%
-  }
 }
 
 @media all and (max-width: 400px) {
