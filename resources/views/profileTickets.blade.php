@@ -1,33 +1,34 @@
 @include('layouts.header')
-<div class="row  service service_close">
-    <div class="col-lg-8 col-12 ">
-        <table class="col-12 table_paid">
-            <tr>
-                <th class="table_title_service">My tickets to support</th>
-                <th></th>
-            </tr>
-            <td>ID</td>
-            <td>Title</td>
-            <td>Description</td>
-            <td>Report</td>
-            <td>Status</td>
-            <td>Created_at</td>
-            <td>Updated_at</td>
-            @foreach($tickets as $ticket)
-                <tr>
-                    <td>{{$ticket->id}}</td>
-                    <td>{{$ticket->title}}</td>
-                    <td>{{$ticket->description}}</td>
-                    <td>{{$ticket->report}}</td>
-                    <td>{{$ticket->status->status}}</td>
-                    <td>{{$ticket->created_at}}</td>
-                    <td>{{$ticket->created_at}}</td>
-                </tr>
-            @endforeach
-        </table>
-        <button class="table_paid_open"><span class="open_table">More</span><span
-                    class="close_table">Less</span></button>
-        <a href="contactToSupport">new ticket</a>
+<section id="support-tickets">
+    <div class="container">
+        <div class="row  service service_close">
+            <h2>Мои Вопросы:</h2>
+            <table class="col-lg-12 table_paid">
+                <td><label>ID:</label></td>
+                <td><label>Заголовок:</label></td>
+                <td><label>Описание:</label></td>
+                <td><label>Ответ:</label></td>
+                <td><label>Статус:</label></td>
+                <td><label>Создано:</label></td>
+                <td><label>Обновлено:</label></td>
+                @foreach($tickets as $ticket)
+                    <tr class="support-tickets-content">
+                        <td>{{$ticket->id}}</td>
+                        <td>{{$ticket->title}}</td>
+                        <td>{{$ticket->description}}</td>
+                        <td>{{$ticket->report}}</td>
+                        <td>{{$ticket->status->status}}</td>
+                        <td>{{$ticket->created_at}}</td>
+                        <td>{{$ticket->created_at}}</td>
+                    </tr>
+                @endforeach
+            </table>
+            <div class="col-lg-12 new-support-tickets">
+                <button class="btn btn-primary btn-md btn-block" type="button">
+                    <a href="contactToSupport">Новое сообщение</a>
+                </button>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 @include('layouts.footer')
