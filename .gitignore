@@ -6,6 +6,7 @@
 dump.sql
 .env
 .htaccess
+.idea
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
