@@ -34,9 +34,6 @@
                     <p class="character_user">
                         {{$profile->profileAddress->city->country->country_name}}, 
                         {{$profile->profileAddress->city->city_name}}
-                        @auth, 
-                            <span class="distance">2 км от вас </span>
-                        @endauth
                     </p>
                     <div class="about_user_block">
                         <h4>Немного о себе:</h4>

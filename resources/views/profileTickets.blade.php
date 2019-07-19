@@ -9,8 +9,6 @@
                 <td><label>Описание:</label></td>
                 <td><label>Ответ:</label></td>
                 <td><label>Статус:</label></td>
-                <td><label>Создано:</label></td>
-                <td><label>Обновлено:</label></td>
                 @foreach($tickets as $ticket)
                     <tr class="support-tickets-content">
                         <td>{{$ticket->id}}</td>
@@ -18,8 +16,6 @@
                         <td>{{$ticket->description}}</td>
                         <td>{{$ticket->report}}</td>
                         <td>{{$ticket->status->status}}</td>
-                        <td>{{$ticket->created_at}}</td>
-                        <td>{{$ticket->created_at}}</td>
                     </tr>
                 @endforeach
             </table>
