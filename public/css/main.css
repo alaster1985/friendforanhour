@@ -1,6 +1,7 @@
 * {
   margin: 0;
-  padding: 0
+  padding: 0;
+  outline: none
 }
 
 html {
@@ -549,12 +550,12 @@ _______________________________________________________ */
 
 #map-section .map_container {
   width: 100%;
-  margin-top: 1rem;
+  padding: 1rem 0;
   color: #2387CF
 }
 
 #map {
-  height: 450px;
+  height: 100%;
   width: 100%
 }
 
@@ -583,17 +584,14 @@ _______________________________________________________ */
 }
 
 #last-active-users .card {
+  width: 32%;
   border-radius: .25rem;
   overflow: hidden;
   border: none;
-  margin: 3% 0 0;
+  margin: 1% 0;
   -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
-}
-
-#last-active-users .profile-img-link {
-  height: 100%
 }
 
 #last-active-users .card_user_prev {
@@ -612,12 +610,6 @@ _______________________________________________________ */
   height: 210px
 }
 
-#last-active-users .User_image {
-  object-fit: cover;
-  width: 100%;
-  padding: 0px
-}
-
 #last-active-users .card_user_prev td, 
 #last-active-users .card_user_prev tr {
   padding: 0px
@@ -632,26 +624,29 @@ _______________________________________________________ */
   margin-bottom: auto
 }
 
+#last-active-users .user_image {
+  height: 100%;
+  width: 100%;
+  border-radius: 0
+}
+
+#last-active-users .card-body {
+  font-size: 12px;
+  padding: 0 5% 3% 5%
+}
+
 #last-active-users .card-title {
-  text-align: center;
-  margin: 0;
-  border-bottom: 1px solid #d8d8d8;
-  padding: 0 0 9%
+  margin: 0
 }
 
 #last-active-users .name_user_cart {
   color:#2387CF;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 600
 }
 
 #last-active-users .city_user_cart {
-  display: block;
-  font-size: 18px;
-  font-weight: 400;
-  color: #b3b3b3;
-  text-align: center;
-  padding: 3% 0 0
+  color: #b3b3b3
 }
 
 #last-active-users .city_user_cart span {
@@ -671,16 +666,12 @@ _______________________________________________________ */
 
 #last-active-users .title_serwise {
   display: block;
-  color: #D73D3A;
   font-weight: 600;
-  font-size: 16px;
-  margin: 1rem 0 0
 }
 
 #last-active-users .name_serwise_cart{
   display: flex;
-  justify-content: space-between;
-  flex-direction: row
+  justify-content: space-between
 }
 
 #last-active-users .name_serwise span:nth-child(1) {
@@ -691,23 +682,14 @@ _______________________________________________________ */
   color:#555
 }
 
-#last-active-users .bottom-card-section {
-  justify-content: center;
-  margin: 1.25rem 0 0 0
-}
-
-#last-active-users .bottom-card-section form {
-  width: 100%
-}
-
 #last-active-users img[data-v-9e1ff7a6] {
-  height: 20px;
-  margin: auto 3% 0 0  
+  height: 13px;
+  margin: auto 3px 0 0  
 }
 
 #last-active-users .green[data-v-9e1ff7a6],
 #last-active-users .red[data-v-9e1ff7a6] {
-  font-size: 1.1rem
+  font-size: 13px
 }
 
 #last-active-users .name_serwise_cart_link a {
@@ -728,7 +710,9 @@ _______________________________________________________ */
 
 #last-active-users .btn-primary {
   color: #fff;
-  background: #2387CF
+  background: #2387CF;
+  font-size: 12px;
+  padding: 0 6px
 }
 
 #last-active-users .name_serwise_cart_link span {
@@ -776,9 +760,12 @@ _______________________________________________________ */
   margin-bottom: auto
 }
 
-#last-active-users .on-off-line-user {
-  margin: 1.75rem 0 0;
-  text-align: center
+#last-active-users .users_prew_block {
+  justify-content: space-between
+}
+
+#last-active-users .last-active-users-about {
+  margin: 0 0 4% 0
 }
 
 footer {
@@ -1557,10 +1544,6 @@ _______________________________________________________ */
     padding: .375rem 0
   }
 
-  .left-column {
-    display: none
-  }
-
   .autorization {
     margin-left: 15px
   }
@@ -1695,10 +1678,6 @@ _______________________________________________________ */
 
   .links_header {
     margin-top: 25px
-  }
-
-  #map {
-    height: 420px
   }
 
   .name_user {
