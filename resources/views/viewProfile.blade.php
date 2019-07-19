@@ -131,6 +131,9 @@
             
 
         </div>
+
+        {# MODAL #}
+
         @auth
             <div class="container">
             {{--<h2>Modal Example</h2>--}}
@@ -144,20 +147,21 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
+                                
+                                <h2 class="modal-title">Пожаловаться</h2>
+                                <button type="button" class="close" data-dismiss="modal"><i class="fas fa-times"></i></button>
                             </div>
                             <div class="modal-body">
                                 <input id="profileIdAgainst" value="{{$profile->id}}"
                                     disabled style="display: none">
                                 <input id="profileIdFrom" value="{{Auth::user()->profile_id}}"
                                     disabled style="display: none">
-                                <textarea id="complain"></textarea>
+                                <textarea id="complain" class="form-control form-control-md"></textarea>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" id="sendComplain" class="btn btn-default" data-dismiss="modal">Send
+                                <button type="button" id="sendComplain" class="btn btn-default btn btn-primary btn-md" data-dismiss="modal">Отправить жалобу
                                 </button>
+                                <button type="button" class="btn btn-default btn btn-primary btn-md" data-dismiss="modal">Закрыть</button>
                             </div>
                         </div>
 
@@ -166,6 +170,9 @@
 
             </div>
         @endauth
+
+        {# END MODAL #}
+
     </div>
 </section>
 @include('layouts.footer')

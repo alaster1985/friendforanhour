@@ -1474,43 +1474,91 @@ _______________________________________________________ */
   margin-right:5px
 }
 
-/* MODAL Section
+/* FOOTER-MODAL Section
 _______________________________________________________ */
 
 .modal-error {
-  position: relative;
-  color: #fff;
+  color: #000;
   font-size: 20px;
   position: fixed;
   display: none;
   top: 320px;
   left: 30%;
   width: 40%;
-  padding: 5% 5%;
-  z-index: 2;
+  padding: 3%;
+  z-index: 30;
   text-align: center;
-  background-color: #2D5c92;
-  border: 2px solid #f89911
+  background-color: #fff;
+  border-radius: .25rem;
+}
+.modal-darkening{
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  background:#000;
+  opacity: .5;
+}
+.modal-error h2 {
+  color: #2387CF;
+  margin: 0 auto 3%;
 }
 
 .modal-error__close-btn {
   cursor: pointer;
-  height: 30px;
-  width: 30px;
+  height: 28px;
+  width: 28px;
   position: absolute;
-  top: -40px;
-  right: -40px;
+  top: 5%;
+  right: 2%;
   font-size: 20px;
   background-color: #2D5c92;
   border-radius: 25px;
   color: #fff;
   display: inline-block;
-  line-height: 30px
+  line-height: 30px;
 }
 
 .modal-error__close-btn:hover,
 .modal-error__close-btn:focus {
   opacity: 0.8
+}
+
+/* VIEV PROFILE MODAL
+_______________________________________________________ */
+#myModal .modal-dialog{
+  margin: 20% auto 0 auto;
+}
+
+#myModal .modal-header{
+  border-bottom: none;
+}
+#myModal .modal-footer{
+  border-top: none;
+}
+#myModal .modal-header h2 {
+  color: #2387CF;
+  margin: 5% 0 0 28%;
+}
+#myModal .modal-header .close {
+  padding: 0 0 .04rem 0;
+  margin: 0;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background:  #007bff;
+  opacity: 1;
+  text-align: center;
+}
+#myModal .modal-header .close i{
+  color: #fff;
+  font-size: 1.25rem
+}
+#myModal .modal-body {
+  padding: 1rem;
 }
 
 /* Dont see where used this classes
