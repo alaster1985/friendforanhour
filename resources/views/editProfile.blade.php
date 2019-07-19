@@ -48,43 +48,43 @@
 
                     {{-- Nickname Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Никнейм</label>
+                        <label>Никнейм:</label>
                         <input class="form-control form-control-md" type="text" name="nickname" value="{{$profile->user()->where('profile_id','=', $profile->id)->first()->name}}">
                     </div>
 
                     {{-- First Name Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Имя</label>
+                        <label>Имя:</label>
                         <input class="form-control form-control-md" type="text" name="first_name" value="{{$profile->first_name}}">
                     </div>
 
                     {{-- Second Name Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Фамилия</label>
+                        <label>Фамилия:</label>
                         <input class="form-control form-control-md" type="text" name="second_name" value="{{$profile->second_name}}">
                     </div>
 
                     {{-- Height Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Рост</label>
+                        <label>Рост:</label>
                         <input class="form-control form-control-md" type="number" min="130" max="220" name="height" value="{{$profile->height}}">
                     </div>
 
                     {{-- Weight Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Вес</label>
+                        <label>Вес:</label>
                         <input class="form-control form-control-md" type="number" min="30" max="280" name="weight" value="{{$profile->weight}}">
                     </div>
 
                     {{-- Birth Date Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Дата рождения</label>
+                        <label>Дата рождения:</label>
                         <input class="form-control form-control-md" type="date" max="{{ date('Y-m-d', strtotime('- 18 years'))}}" min="{{ date('Y-m-d', strtotime('- 123 years'))}}" name="bdate" value="{{$profile->date_of_birth}}">
                     </div>
 
                     {{-- Genge Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Пол</label>
+                        <label>Пол:</label>
                         <select class="form-control form-control-md" name="gender">
                             @foreach($genders as $gender)
                                 <option id="g{{$gender->id}}" value="{{$gender->id}}">{{$gender->gender}}</option>
@@ -97,14 +97,14 @@
 
                     {{-- Phone Number Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Номер телефона</label>
+                        <label>Номер телефона:</label>
                         <input id="phone" class="form-control form-control-md" type="tel" placeholder="+_(___)___-____" maxlength="13" name="phone"
                             value="{{$profile->phone}}">
                     </div>
 
                     {{-- Contry Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Страна</label>
+                        <label>Страна:</label>
                         <select class="form-control form-control-md" name="country">
                             <option id="new_cnt" value="new">Добавить другую страну</option>
                             @foreach($countries as $country)
@@ -124,7 +124,7 @@
 
                     {{-- City Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Город</label>
+                        <label>Город:</label>
                         <select class="form-control form-control-md" name="city">
                             <option id="new_ct" value="new">Добавить другой город</option>
                             @foreach($cities as $city)
@@ -143,13 +143,13 @@
 
                     {{-- Address Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                        <label>Адрес</label>
+                        <label>Адрес:</label>
                         <input class="form-control form-control-md" type="text" name="address" value="{{$profile->profileAddress->address}}">
                     </div>
 
                     {{-- About Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
-                            <label>Немного о себе</label>
+                            <label>Немного о себе:</label>
                         <textarea class="form-control form-control-md" name="about" rows="10">{{$profile->about}}</textarea>
                     </div>
 
@@ -160,11 +160,11 @@
                 <h2>Заплачу за:</h2>
                 <table border="1" class="services_as_sponsor col-lg-12">
                     <tr>
-                        <th><label>Краткое описание</label></th>
-                        <th><label>Описание услуги</label></th>
-                        <th><label>Цена</label></th>
-                        <th><label>Главная услуга</label></th>
-                        <th><label>Активная</label></th>
+                        <th><label>Краткое описание:</label></th>
+                        <th><label>Описание услуги:</label></th>
+                        <th><label>Цена:</label></th>
+                        <th><label>Главная услуга:</label></th>
+                        <th><label>Активная:</label></th>
                         <th><label></label></th>
                     </tr>
                     @foreach($friendsServices as $list)
@@ -209,11 +209,11 @@
                 <h2>Сделаю за деньги:</h2>
                 <table border="1" class="services_as_friend col-lg-12">
                     <tr>
-                        <th><label>Краткое описание</label></th>
-                        <th><label>Описание услуги</label></th>
-                        <th><label>Цена</label></th>
-                        <th><label>Главная услуга</label></th>
-                        <th><label>Активная</label></th>
+                        <th><label>Краткое описание:</label></th>
+                        <th><label>Описание услуги:</label></th>
+                        <th><label>Цена:</label></th>
+                        <th><label>Главная услуга:</label></th>
+                        <th><label>Активная:</label></th>
                         <th><label></label></th>
                     </tr>
                     @foreach($sponsorsServices as $list)
