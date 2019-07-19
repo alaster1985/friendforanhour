@@ -13,7 +13,7 @@
                     <img src="{{asset($news->photo)}}" alt="">
                 </div>
                 <div class="">
-                    <p>{{$news->content}}</p>
+                    <p>{!! nl2br($news->content) !!}</p>
                 </div>
             </div>
         </div>
