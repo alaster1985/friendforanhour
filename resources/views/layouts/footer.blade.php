@@ -1,3 +1,4 @@
+</main>
 <div class="modal-error">Please, register first
     <div class="text-center margin-bottom-20" id="uLogin3"
          data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,city,country,bdate,sex;

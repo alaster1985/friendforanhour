@@ -11,7 +11,7 @@
                     <img src="{{asset($article->photo)}}" alt="">
                 </div>
                 <div class="single-article-page-txt">
-                    <p>{!!$article->content!!}</p>
+                    <p>{!! nl2br($article->content) !!}</p>
                 </div>
             </div>
         </div>
