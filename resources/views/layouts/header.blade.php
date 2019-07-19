@@ -49,7 +49,7 @@
                                 {{--<a class="nav-item nav-link" href="javascript:void(0);">Заработать</a>--}}
                                 {{--<a class="nav-item nav-link" href="javascript:void(0);">Отдохнуть</a>--}}                                
                                 <a class="nav-item nav-link" href="{{Request::root()}}/search">Найти друга</a>
-                                @include('layouts.robokassaPayForm')                            
+                                @include('layouts.robokassaPayForm')
                         </div>                        
                     </div>
                 </nav>
