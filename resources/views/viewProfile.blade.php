@@ -1,7 +1,6 @@
 @include('layouts.header')
 <section id="view-profile">
     <div class="container">
-
         <div class="row view-profile-card">
 
             <div class="col-lg-6 view-profile-photo">
@@ -106,7 +105,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-lg-12 user_content">
+            <div class="user_content col-lg-12">
                 <div class="photo_user">
                     @foreach($photos as $photo)
                         <a data-fancybox="images" rel="group" href="{{ asset($photo->photo_path) }}">
@@ -122,12 +121,9 @@
                     </div>
                 </section>
             </div>
+
         </div>
-
-
-
-        
-
+            
         @auth
             <div class="container">
             {{--<h2>Modal Example</h2>--}}
