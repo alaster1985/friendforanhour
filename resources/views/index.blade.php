@@ -46,8 +46,8 @@
                 </aside>
             </div>
             <div class="col-lg-9">
-                <section id="map-section" style="height: 100%">
-                    <div class="map_container" style="height: 100%">
+                <section id="map-section">
+                    <div class="map_container">
                         @include('map')
                     </div>
                 </section>

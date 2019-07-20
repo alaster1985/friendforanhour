@@ -548,9 +548,21 @@ _______________________________________________________ */
 /* MAP Section
 _______________________________________________________ */
 
+#map-section {
+  height: 100%;
+  width: 100%
+}
+
 #map-section .map_container {
+  height: 100%;
   width: 100%;
   padding: 1rem 0;
+  color: #2387CF
+}
+
+#map-section .view_profile_map_container {
+  height: 30rem;
+  width: 100%;
   color: #2387CF
 }
 
@@ -711,7 +723,7 @@ _______________________________________________________ */
 #last-active-users .btn-primary {
   color: #fff;
   background: #2387CF;
-  font-size: 12px;
+  font-size: 11px;
   padding: 0 6px
 }
 
@@ -794,7 +806,7 @@ _______________________________________________________ */
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   padding: 1.75rem 1rem;
-  margin: 3% 0
+  margin: 3% 0 0
 }
 
 #view-profile .view-profile-photo a img {
@@ -926,7 +938,7 @@ _______________________________________________________ */
 }
 
 #view-profile .user_content {
-  margin: 5% 0
+  margin: 3% 0
 }
 
 #view-profile .photo_user a img {
