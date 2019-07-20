@@ -117,8 +117,7 @@
                 </div>
                 <div class="col-lg-12" style="margin: 0 auto;">
                     <section id="map-section">
-                        <div class="map_container">
-                            <h2>Карта друзей, услуг и людей, у которых можно заработать деньги.</h2>
+                        <div class="view_profile_map_container">
                             @include('map')
                         </div>
                     </section>
