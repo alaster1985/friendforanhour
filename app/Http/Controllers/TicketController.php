@@ -22,7 +22,7 @@ class TicketController extends Controller
 
     public function myTickets()
     {
-        $profileTickets = Ticket::where('profile_id', Auth::user()->profile_id)->get();
+        $profileTickets = Ticket::where('profile_id', Auth::user()->profile_id)->orderBy('created_at', 'DESC')->get();
         return view('profileTickets', ['tickets' => $profileTickets]);
     }
 }

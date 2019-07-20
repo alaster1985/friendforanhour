@@ -58,11 +58,13 @@ $(document).ready(function () {
     $('.forChat').on("click", function (ev) {
         ev.preventDefault();
         $(".modal-error").css("display", "block");
+        $(".modal-darkening").css("display","block");
     });
 
     $(".modal-error__close-btn").on("click", function (ev) {
         ev.preventDefault();
         $(".modal-error").css("display", "none");
+        $(".modal-darkening").css("display","none");
     });
 
 function fancybox(event) {
