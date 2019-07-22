@@ -6,8 +6,8 @@
     {{$d = '&callback=initMap'}}
 </div>
 
-<script type="text/javascript" src="{{$c.$a.$b.$d}}" async defer></script>
 <script type="text/javascript" src="{{ asset('js/map.js') }}"></script>
+<script type="text/javascript" src="{{$c.$a.$b.$d}}" async defer></script>
 
 
 
