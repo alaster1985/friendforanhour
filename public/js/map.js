@@ -16,37 +16,24 @@ function initMap() {
         strokeWeight: 1,
     };
 
-    var Markers = [
-        {
-            info: "вот что я умею",
-            coordinates: { lat: 55.7, lng: 37.536 },
-            position: map.getCenter(),
-            image: goldStar,
-            map: map,
-        }, {
-            coordinates: { lat: 55.75, lng: 37.538 },
-            position: map.getCenter(),
-            image: goldStar,
-            map: map,
-            info: "вот что я хочу уметь",
-        }
-    ];
+    var contentString = 
+        '<div id="profile_map_marker">'+
+        '<p>Some sample text here</p>' +
+        '</div>';
 
-    for (var i = 0; i < Markers.length; i++) {
-        addMarker(Markers[i])
-    };
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
 
-    function addMarker(properties) {
-        var marker = new google.maps.Marker({
-            position: properties.coordinates,
-            map: map,
-        });
-        if (properties.image) {marker.setIcon(properties.image)};
-        if (properties.info) {
-            var InfoWindow = new google.maps.InfoWindow({content: properties.info});
-            marker.addListener('click', function () {
-                InfoWindow.open(map, marker);
-            });
-        }
-    }
+    var marker = new google.maps.Marker({
+        coordinates: { lat: 55.7, lng: 37.536 },
+        position: map.getCenter(),
+        icon: goldStar,
+        map: map,
+    });
+
+    marker.addListener('click', function() {
+        infowindow.open(map, marker);
+    });
+
 }

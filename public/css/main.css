@@ -211,7 +211,7 @@ _______________________________________________________ */
 header {
   background-color: #2387CF;
   width: 100%;  
-  height: 20vh;
+  height: 10vh;
   display: flex;
   align-items: center;
   padding: 10px 0px;
@@ -265,8 +265,8 @@ header #navbarSupportedContent ul li a.dropdown-toggle {
   -ms-user-select: none;
   user-select: none;
   background-color: #fff;
-  padding: .375rem 1rem;
-  font-size: 1.1rem;
+  padding: .375rem .75rem;
+  font-size: 1rem;
   line-height: 1.5;
   border-radius: .25rem;
 }
@@ -380,14 +380,20 @@ _______________________________________________________ */
 /* NEW PEOPLE Section
 _______________________________________________________ */
 
+#new_people_servis {
+  background: #fff;
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+}
+
 #new_people_servis .new_people_servis_block {
-  background-color: #f9f9f9;
   height: 150px
 }
 
 #new_people_servis .new_people_servis_block {
   padding: 1% 0;
-  margin: 1% 0 0 0
+  margin: 0
 }
 
 #new_people_servis ul {
@@ -591,10 +597,6 @@ _______________________________________________________ */
   color: #fff
 }
 
-#last-active-users .offline-write-btn {
-  margin: 1rem 0 0 0
-}
-
 #last-active-users .card {
   width: 32%;
   border-radius: .25rem;
@@ -696,7 +698,7 @@ _______________________________________________________ */
 
 #last-active-users img[data-v-9e1ff7a6] {
   height: 13px;
-  margin: auto 3px 0 0  
+  margin: 0 3px 0 0  
 }
 
 #last-active-users .green[data-v-9e1ff7a6],
@@ -778,14 +780,6 @@ _______________________________________________________ */
 
 #last-active-users .last-active-users-about {
   margin: 0 0 4% 0
-}
-
-footer {
-  width: 100%;
-  flex: 0 0 auto;
-  background-color: #2387CF;
-  margin: 3% 0 0;
-  padding-top: 100px
 }
 
 .mobile_autorization {
@@ -1406,8 +1400,80 @@ _______________________________________________________ */
   width: 100%
 }
 
+/* FOOTER Section
+_______________________________________________________ */
+
+footer {
+  width: 100%;
+  flex: 0 0 auto;
+  background-color: #2387CF;
+  margin: 3% 0 0;
+  padding: 1vh 0
+}
+
+footer .footer-nav-container {
+  text-align: center;
+  color: #fff
+}
+
+footer .footer-nav-container nav {
+  text-align: center;
+  color: #fff
+}
+
+footer .navbar-nav {
+  width: 100%
+}
+
+footer #payButton {
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  background: none
+}
+
+footer .navbar-dark .navbar-nav .nav-link {
+  color: #fff
+}
+
 /* CONTROLS Section
 _______________________________________________________ */
+
+.btn, 
+.btn-primary, 
+.btn-sm, 
+.btn-block {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none
+}
+
+.btn, 
+.btn-primary, 
+.btn-sm, 
+.btn-block {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none
+}
+
+.btn:focus, 
+.btn-primary:focus, 
+.btn-sm:focus, 
+.btn-block:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none
+}
+
+.btn:active, 
+.btn-primary:active, 
+.btn-sm:active, 
+.btn-block:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none
+}
 
 .slick-slide {
   padding: 5px
@@ -1579,10 +1645,6 @@ _______________________________________________________ */
 _______________________________________________________ */
 
 @media all and (min-width: 1200px) {
-
-  header .header_title {
-    font-size: 34px;
-  }
 
 }
 
