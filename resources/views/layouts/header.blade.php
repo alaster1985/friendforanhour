@@ -32,7 +32,10 @@
             <div class="header-nav-container">
 
                 <nav class="navbar navbar-expand-lg navbar-dark">
-                    <a class="navbar-brand logotype" href="{{ route('index') }}"><span class="header_title">One Hour <span>Friend</span></span></a>
+                    <a class="navbar-brand logotype" href="{{ route('index') }}">
+                        <i class="fas fa-user-friends"></i>
+                        <span class="header_title">One Hour Friend</span>
+                    </a>
                     <div class="mobile_autorization"></div> 
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,8 +50,9 @@
                                 {{--<a class="nav-item nav-link" href="javascript:void(0);">Знакомства</a>--}}
                                 {{--<a class="nav-item nav-link" href="javascript:void(0);">Услуги</a>--}}
                                 {{--<a class="nav-item nav-link" href="javascript:void(0);">Заработать</a>--}}
-                                {{--<a class="nav-item nav-link" href="javascript:void(0);">Отдохнуть</a>--}}                                
+                                {{--<a class="nav-item nav-link" href="javascript:void(0);">Отдохнуть</a>--}}                                                       
                                 <a class="nav-item nav-link" href="{{Request::root()}}/search">Найти друга</a>
+                                <a class="nav-item nav-link" href="{{Request::root()}}/contactToSupport">Тех Потдержка</a>
                                 @include('layouts.robokassaPayForm')                            
                         </div>                        
                     </div>
@@ -61,12 +65,14 @@
                         @guest
                             @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }} <span class="caret"></span></a>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <i class="fas fa-user-circle"></i>
+                                    </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         @if(Auth::user()->hasRole('moderator|admin'))
                                             <a class="dropdown-item" href="admin/dashboard">Панель администратора</a>
                                         @else
-                                            <a class="dropdown-item" href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">Моя страница</a>
+                                            <a class="dropdown-item" href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">{{ Auth::user()->name }}</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/mytickets">My support tickets</a>

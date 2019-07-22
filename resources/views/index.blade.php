@@ -1,7 +1,7 @@
 @include('layouts.header')
 
-    <div class="container">
-        <section id="new_people_servis">
+    <section id="new_people_servis">
+        <div class="container">
             <div class="row new_people_servis_block">
                 <div class="label_new_people col-sm-2 col-md-1">
                     <p>Новые друзья</p>
@@ -19,7 +19,10 @@
                     @endforeach
                 </ul>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <div class="container">
         <div class="row">
             <div class="col-lg-3">
                 @guest
@@ -107,9 +110,9 @@
                                     @guest
                                         <div class="row" style="justify-content: space-between;margin:0;">
                                             @if($lProfile->profileOnline())
-                                                <span class="online-color"><img style="height: 15px;margin: auto 2%;" src="/images/monitor1.svg">Онлайн</span>
+                                                <span class="online-color"><img style="height:13px;margin:auto 3px auto 0;" src="/images/monitor1.svg">Онлайн</span>
                                             @else
-                                                <span class="offline-color"><img style="height: 15px;margin: auto 2%;" src="/images/monitor0.svg">Офлайн</span>
+                                                <span class="offline-color"><img style="height:13px;margin:auto 3px auto 0;" src="/images/monitor0.svg">Офлайн</span>
                                             @endif
                                                 <div class="bottom-card-section">
                                                     <button class="btn btn-primary btn-md btn-block offline-write-btn" type="submit">

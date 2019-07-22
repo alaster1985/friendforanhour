@@ -5,7 +5,7 @@
         @if ($errors)
             <div style="display: block; color: red">{{($errors->first())}}</div>
         @endif
-        <form action="{{route('filter')}}" method="post" enctype="multipart/form-data">
+        <form id="user_search" action="" method="post" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-lg-6">
