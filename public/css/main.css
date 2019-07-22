@@ -579,6 +579,12 @@ _______________________________________________________ */
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
+#map-section .map-card p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
 #map-section .view_profile_map_container {
   height: 30rem;
   width: 100%;
@@ -586,8 +592,37 @@ _______________________________________________________ */
 }
 
 #map {
-  height: 94%;
+  height: 93%;
   width: 100%
+}
+
+.gm-style-iw-d {
+  width: 200px;
+  height: 310px;
+}
+
+.gm-style .gm-style-iw-c {
+  padding: 15px
+}
+
+#profile_map_marker .title_serwise {
+  color: #f89911
+}
+
+#profile_map_marker .serwise_cart_price {
+  float: right
+}
+
+#profile_map_marker .card-body {
+  padding: 0
+}
+
+#profile_map_marker .card-title {
+  margin: .25rem 0
+}
+
+#profile_map_marker .card {
+  border: none
 }
 
 
@@ -1511,6 +1546,10 @@ _______________________________________________________ */
   text-decoration: none;
   outline: none;
   box-shadow: none;
+}
+
+.fancybox-toolbar {
+  display: none
 }
 
 /* OFLINE USER Section
