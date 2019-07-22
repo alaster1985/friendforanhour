@@ -51,7 +51,10 @@
             <div class="col-lg-9">
                 <section id="map-section">
                     <div class="map_container">
-                        @include('map')
+                        <div class="map-card">
+                            <p>Карта друзей, услуг и людей, у которых можно заработать деньги на 1-HF.com</p>
+                            @include('map')
+                        </div>
                     </div>
                 </section>
             </div>

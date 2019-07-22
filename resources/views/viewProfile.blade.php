@@ -128,7 +128,7 @@
 
         </div>
 
-        {# MODAL #}
+        {{-- MODAL --}}
 
         @auth
             <div class="container">
@@ -167,7 +167,7 @@
             </div>
         @endauth
 
-        {# END MODAL #}
+        {{-- END MODAL --}}
 
     </div>
 </section>
