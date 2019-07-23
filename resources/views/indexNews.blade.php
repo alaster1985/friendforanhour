@@ -1,7 +1,7 @@
 @include('layouts.header')
 <section id="all-news-section">
     <div class="container">
-        <h1>Новости:</h1>
+        <h2>Новости:</h2>
         @forelse($news as $post)
             <div class="row justify-content-center">
                 <div class="col-lg-8 all-news-card">
