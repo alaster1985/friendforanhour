@@ -586,6 +586,12 @@ _______________________________________________________ */
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
+#map-section .map-card p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
 #map-section .view_profile_map_container {
   height: 30rem;
   width: 100%;
