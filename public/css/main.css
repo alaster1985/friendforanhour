@@ -210,8 +210,7 @@ _______________________________________________________ */
 
 header {
   background-color: #2387CF;
-  width: 100%;  
-  height: 10vh;
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 10px 0px;
@@ -227,13 +226,18 @@ header .navbar-brand {
   padding: 0
 }
 
+header .navbar-toggler {
+  margin: auto 3% auto auto
+}
+
 header .header-nav-container {
   display: flex
 }
 
 header .navbar-nav {
   width: 100%;
-  justify-content: space-around
+  justify-content: space-around;
+  text-align: center
 }
 
 header .navbar-nav form {
@@ -245,7 +249,7 @@ header .navbar-dark .navbar-nav .nav-link {
 }
 
 header #navbarSupportedContent {
-  margin: auto 0
+  margin: 0 0 auto auto
 }
 
 header #navbarSupportedContent ul {
@@ -557,6 +561,7 @@ _______________________________________________________ */
 /* MAP Section
 _______________________________________________________ */
 
+#map,
 #map-section {
   height: 100%;
   width: 100%
@@ -570,6 +575,8 @@ _______________________________________________________ */
 }
 
 #map-section .map-card {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   background: #fff;
   padding: 1rem;
@@ -579,17 +586,17 @@ _______________________________________________________ */
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
+#map-section .map-card p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
 #map-section .view_profile_map_container {
   height: 30rem;
   width: 100%;
   color: #2387CF
 }
-
-#map {
-  height: 94%;
-  width: 100%
-}
-
 
 /* LAST ACTIVE USERS Section
 _______________________________________________________ */
@@ -825,8 +832,10 @@ _______________________________________________________ */
 }
 
 #view-profile .about_user_block h4 {
-  color: #2387CF;
-  font-weight: 500
+  font-size: 1.17rem;
+  font-weight: 500;
+  color: #2387CF
+  
 }
 
 #view-profile .photo_user div {
@@ -884,29 +893,22 @@ _______________________________________________________ */
   margin-left: 15px
 }
 
-#view-profile .service table tr th:first-child {
-  width: 80%
-}
-
 #view-profile .service table tr td::first-letter {
   text-transform: uppercase
 }
 
 #view-profile .service table tr td:last-child {
-  text-align: center
+  text-align: right
 }
 
-#view-profile .table_title_service{
-  color: #F68727;
-  font-weight: 600
+#view-profile .table_title_service h4 {
+  font-size: 1.17rem;
+  font-weight: 600;
+  color: #F68727  
 }
 
 #view-profile .service table:last-child {
   margin-top: 15px
-}
-
-#view-profile .service table {
- font-weight: 600;
 }
 
 #view-profile .service button {
@@ -924,7 +926,7 @@ _______________________________________________________ */
 }
 
 #view-profile .service button span i {
-  margin: 0 .5rem 0
+  margin: 0 .5rem 0 0
 }
 
 #view-profile .close_table {
@@ -983,7 +985,6 @@ _______________________________________________________ */
 }
 
 #search-section .find-btn button {
-  width: 10%;
   margin: 1.75rem auto
 }
 
@@ -1249,7 +1250,6 @@ _______________________________________________________ */
 }
 
 #technical-support form button {
-  width: 20%;
   margin: 3% auto
 }
 
@@ -1443,6 +1443,16 @@ footer .navbar-dark .navbar-nav .nav-link {
   color: #fff
 }
 
+footer .copyright a {
+  color: #fff;
+  text-decoration: none
+}
+
+footer .navbar-brand {
+  width: 100%;
+  margin: 0
+}
+
 /* CONTROLS Section
 _______________________________________________________ */
 
@@ -1511,6 +1521,33 @@ _______________________________________________________ */
   text-decoration: none;
   outline: none;
   box-shadow: none;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  background-image: none
+}
+
+
+.fancybox-button--zoom,
+.fancybox-button--play,
+.fancybox-button--thumbs {
+  display: none !important
+}
+
+.fancybox-button {
+  height: 60px;
+  width: 60px;
+  padding: 20%
+}
+
+.fancybox-navigation .fancybox-button {
+  height: 120px;
+  width: 90px
+}
+
+.fancybox-infobar {
+  font-size: 1rem
 }
 
 /* OFLINE USER Section
@@ -1657,14 +1694,16 @@ _______________________________________________________ */
 
 @media all and (max-width: 1200px) {
 
+  header #payButton,
   header .navbar-dark .navbar-nav .nav-link {
-    font-size: 14px;
-  }
+    font-size: 12px;
+  } 
 
 }
 
 @media all and (max-width: 991px) {
 
+  header #payButton,
   header .navbar-dark .navbar-nav .nav-link {
     font-size: 16px;
   }
@@ -1701,6 +1740,15 @@ _______________________________________________________ */
 
   .edit_profile_general_block label {
     margin-top: 5px
+  }
+
+  #view-profile .view-profile-character {
+    margin: 5% 0 0 0
+  }
+
+  #view-profile .table_mobile {
+    padding: 0;
+    margin: 0px -10px
   }
 
 }
@@ -1760,6 +1808,16 @@ _______________________________________________________ */
 
 @media all and (max-width: 576px) {
 
+  #view-profile .view-profile-card {
+    margin: 0
+  }
+
+  .mobile_shadow_off {
+    -webkit-box-shadow: 13px 13px 18px -18px rgba(255,255,255,255) !important;
+    -moz-box-shadow: 13px 13px 18px -18px rgba(255,255,255,255) !important;
+    box-shadow: 13px 13px 18px -18px rgba(255,255,255,255) !important
+  }
+
   .label_new_people:after {
     display: none
   }
@@ -1787,10 +1845,6 @@ _______________________________________________________ */
     padding: 0px;
   }
 
-  #new_people_servis ul {
-    height: 75%
-  }
-
   .mobile_vi3 {
     display: block
   }
@@ -1809,19 +1863,25 @@ _______________________________________________________ */
     margin-top: 25px
   }
 
-  .name_user {
-    flex-direction: column-reverse;
-    align-items: end
-  }
-
-  .name_user span {
-    margin-left:10px;
-    width: 100%
-  }
-
   .service div {
     padding: 10px;
     font-size: 14px
+  }
+
+  #map-section .map_container {
+    height: 40rem
+  }
+
+  #last-active-users .card {
+    width: 49%
+  }
+
+  #view-profile .table_title_service h5 {
+    font-size: 1rem
+  }
+
+  #view-profile .service button span {
+    font-size: .75rem
   }
 
 }
@@ -1835,13 +1895,24 @@ _______________________________________________________ */
   #view-profile .slick-track .slick-slide {
     width: 25% !important
   }
-
 }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 459px) {
 
-  #new_people_servis {
-    height: 115px
+  #last-active-users .card {
+    width: 100%
   }
 
+  #view-profile .service table {
+    font-size: 0.75rem
+  }
+  
+}
+
+@media all and (max-width: 380px) {
+
+  header .header_title {
+    display: none
+  }
+  
 }

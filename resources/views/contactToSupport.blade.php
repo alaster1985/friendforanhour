@@ -21,7 +21,7 @@
                 @auth
                     <input class="form-control form-control-md" type="hidden" name="profile_id" value="{{Auth::user()->profile_id}}">
                 @endauth
-                <button class="btn btn-primary btn-md btn-block" type="submit">Отправить</button>
+                <button class="col-lg-2 btn btn-primary btn-md btn-block" type="submit">Отправить</button>
             </form>
         </div>
         @if(session()->has('message'))

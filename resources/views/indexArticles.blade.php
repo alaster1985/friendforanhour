@@ -5,7 +5,7 @@
         <div class="single-article">
             @forelse($articles as $article)
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 justify-content-center article-card">
+                    <div class="col-lg-8 col-md-12 col-sm-12 col-12 justify-content-center article-card">
                         <div class="article-page-title">
                             <h2>
                                 <a href="articlesView?art={{$article->id}}">{{$article->title}}</a>
