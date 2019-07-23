@@ -31,7 +31,7 @@
                 <aside id="main-page-aside-news">
                     <div class="block_news">
                         @foreach($news as $val)
-                        <div class="card border-light">
+                        <div class="card border-light mb-3">
                             <a href="newsView?nws={{$val->id}}">
                                 {{-- <div class="card-header">Header</div> --}}
                                 <div class="card-body">

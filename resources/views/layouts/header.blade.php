@@ -72,13 +72,13 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                             @if(Auth::user()->hasRole('moderator|admin'))
-                                                <a class="dropdown-item" href="admin/dashboard">Панель администратора</a>
+                                                <a class="dropdown-item" href="admin/dashboard">Админ Панель</a>
                                             @else
                                                 <a class="dropdown-item" href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">{{ Auth::user()->name }}</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
-                                                <a class="dropdown-item" href="{{Request::root()}}/mytickets">My support tickets</a>
-                                                <a class="dropdown-item" href="{{Request::root()}}/contactToSupport">Тех потдержка</a>
+                                                <a class="dropdown-item" href="{{Request::root()}}/mytickets">Мои Вопросы</a>
+                                                <a class="dropdown-item" href="{{Request::root()}}/contactToSupport">Тех Потдержка</a>
                                             @endif
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
