@@ -66,27 +66,27 @@
                         <ul class="navbar-nav ml-auto">
                             @guest
                                 @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            <i class="fas fa-user-circle"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            @if(Auth::user()->hasRole('moderator|admin'))
-                                                <a class="dropdown-item" href="admin/dashboard">Админ Панель</a>
-                                            @else
-                                                <a class="dropdown-item" href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">{{ Auth::user()->name }}</a>
-                                                <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
-                                                <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
-                                                <a class="dropdown-item" href="{{Request::root()}}/mytickets">Мои Вопросы</a>
-                                                <a class="dropdown-item" href="{{Request::root()}}/contactToSupport">Тех Потдержка</a>
-                                            @endif
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
-                                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><!-- {{ __('Logout') }} -->Выйти</a>
-                                        </div>
-                                    </li>
-                                @endguest
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <i class="fas fa-user-circle"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        @if(Auth::user()->hasRole('moderator|admin'))
+                                            <a class="dropdown-item" href="admin/dashboard">Админ Панель</a>
+                                        @else
+                                            <a class="dropdown-item" href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">{{ Auth::user()->name }}</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/mytickets">Мои Вопросы</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/contactToSupport">Тех Потдержка</a>
+                                        @endif
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><!-- {{ __('Logout') }} -->Выйти</a>
+                                    </div>
+                                </li>
+                        @endguest
                         </ul>
                     </div>
                 

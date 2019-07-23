@@ -227,7 +227,7 @@ header .navbar-brand {
 }
 
 header .navbar-toggler {
-  margin: auto 3% auto auto
+  margin: auto 5% auto auto
 }
 
 header .header-nav-container {
@@ -275,13 +275,8 @@ header #navbarSupportedContent ul li a.dropdown-toggle {
   border-radius: .25rem;
 }
 
-header .navbar-nav .nav-item {
-  font-weight: 600
-}
-
 header #payButton {
   font-size: 1rem;
-  font-weight: 600;
   border: none;
   background: none
 }
@@ -813,14 +808,20 @@ _______________________________________________________ */
  /* VIEW PROFILE Section
 _______________________________________________________ */
 
+#view-profile h2 {
+  color: #2387CF;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin: 5% auto
+}
+
 #view-profile .view-profile-card {
   background: #fff;
   border-radius: .25rem;
   -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  padding: 1.75rem 1rem;
-  margin: 3% 0 0
+  padding: 1.75rem 1rem
 }
 
 #view-profile .view-profile-photo a img {
@@ -836,10 +837,6 @@ _______________________________________________________ */
   font-weight: 500;
   color: #2387CF
   
-}
-
-#view-profile .photo_user div {
-  text-align: center
 }
 
 #view-profile .name_user {
@@ -947,7 +944,7 @@ _______________________________________________________ */
 }
 
 #view-profile .user_content {
-  margin: 3% 0
+  margin: 5% 0
 }
 
 #view-profile .photo_user a img {
@@ -1253,9 +1250,9 @@ _______________________________________________________ */
 #technical-support .form-control {
   border: none;
   background: #fff;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75) !important;
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75) !important;
   margin: 1% 0 3%
 }
 
@@ -1308,11 +1305,10 @@ _______________________________________________________ */
 
 #support-tickets .new-support-tickets {
   text-align: center;
-  margin: 3% 0
+  margin: 3% auto
 }
 
 #support-tickets .new-support-tickets button {
-  width: 20%;
   background: #2387CF;
   border: none;
   margin: 0 auto
@@ -1356,7 +1352,7 @@ _______________________________________________________ */
   color: #2387CF;
   font-size: 1.7rem;
   font-weight: 400;
-  margin: 5% auto;F
+  margin: 5% auto;
 }
 
 #all-news-section .all-news-card {
@@ -1365,17 +1361,22 @@ _______________________________________________________ */
   -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  margin: 1% 0  
+  margin: 1% 0;
+  padding: 3%  
 }
 
 #all-news-section .all-news-title h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 3% 0
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin: 0
 }
 
 #all-news-section .all-news-title h2 a {
-  color: #2387CF
+  color: #2387CF  
+}
+
+#all-news-section .article-page-img {
+  margin: 3% 0
 }
 
 #all-news-section .article-page-img img {
@@ -1592,6 +1593,10 @@ _______________________________________________________ */
   font-size: 1rem
 }
 
+header .navbar-toggler {
+  padding: .375rem .75rem
+}
+
 /* OFLINE USER Section
 _______________________________________________________ */
 
@@ -1741,6 +1746,10 @@ _______________________________________________________ */
     font-size: 12px;
   } 
 
+  #map-section .map-card p {
+    display: none
+  }
+
 }
 
 @media all and (max-width: 991px) {
@@ -1792,6 +1801,20 @@ _______________________________________________________ */
     padding: 0;
     margin: 0px -10px
   }
+
+  header .navbar-brand i,
+  footer .navbar-brand i,
+  header #navbarSupportedContent ul li a.dropdown-toggle i {
+    font-size: 1.5rem
+  }
+
+  header #navbarSupportedContent ul li a.dropdown-toggle {
+    padding: .5rem .75rem
+  }
+
+  #technical-support form button {
+    margin: 10% auto
+  } 
 
 }
 
@@ -1982,17 +2005,42 @@ _______________________________________________________ */
     font-size: 0.75rem
   }
 
-  #article-page .article-page-title h2 {
+  #article-page .article-page-title h2,
+  #single-article-page .single-article-page-title h2 {
     font-size: 1rem;
     font-weight: 600
+  }
+
+  
+  
+}
+
+@media all and (max-width: 400px) {
+
+  header .header_title {
+    display: none
   }
   
 }
 
-@media all and (max-width: 380px) {
+@media all and (max-width: 320px) {
 
-  header .header_title {
-    display: none
+  #view-profile .about_user_block div,
+  #view-profile .character_user {
+    font-size: .9rem
+  }
+
+  #view-profile .about_user_block h4,
+  #view-profile .table_title_service h4 {
+    font-size: 1rem
+  }
+
+  #view-profile .view-profile-photo,
+  #view-profile .view-profile-character,
+  #view-profile .service,
+  #view-profile .user_content,
+  #view-profile .map_mobile_padding {
+    padding: 0
   }
   
 }

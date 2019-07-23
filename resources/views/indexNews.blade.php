@@ -4,7 +4,7 @@
         <h2>Новости:</h2>
         @forelse($news as $post)
             <div class="row justify-content-center">
-                <div class="col-lg-8 all-news-card">
+                <div class="col-lg-10 col-md-10 col-sm-10 col-10 all-news-card">
                     <div class="all-news-title">
                         <h2><a href="newsView?nws={{$post->id}}">{{$post->title}}</a></h2>
                     </div>

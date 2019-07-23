@@ -1,8 +1,9 @@
 @include('layouts.header')
 <section id="view-profile">
     <div class="container">
-        <div class="row">
-            <div class="row col-lg-12 view-profile-card mobile_shadow_off justify-content-center">
+        <h2>Анкета:</h2>
+        <div class="row justify-content-center">
+            <div class="row col-lg-10 col-md-10 col-sm-10 col-11 view-profile-card mobile_shadow_off justify-content-center">
 
                 <div class="col-lg-6 view-profile-photo">
                     <a data-fancybox="images" rel="group" href="{{asset($profile->profilePhoto()
@@ -115,19 +116,16 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-lg-12" style="margin: 0 auto;">
+                <div class="col-lg-12 map_mobile_padding" style="margin: 0 auto;">
                     <section id="map-section">
                         <div class="view_profile_map_container">
                             @include('map')
                         </div>
                     </section>
                 </div>
-
             </div>
-            
-
         </div>
-
+    </div>
         {{-- MODAL --}}
 
         @auth
