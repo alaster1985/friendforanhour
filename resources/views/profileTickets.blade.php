@@ -19,7 +19,7 @@
                     </tr>
                 @endforeach
             </table>
-            <div class="col-lg-12 new-support-tickets">
+            <div class="new-support-tickets">
                 <button class="btn btn-primary btn-md btn-block" type="button">
                     <a href="contactToSupport">Новое сообщение</a>
                 </button>
