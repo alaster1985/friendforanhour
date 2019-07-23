@@ -2,7 +2,7 @@
 <section id="view-profile">
     <div class="container">
         <div class="row">
-            <div class="row col-lg-12 view-profile-card">
+            <div class="row col-lg-12 view-profile-card mobile_shadow_off justify-content-center">
 
                 <div class="col-lg-6 view-profile-photo">
                     <a data-fancybox="images" rel="group" href="{{asset($profile->profilePhoto()
@@ -64,13 +64,13 @@
                 </div>
 
                 
-                <div class="row row col-lg-12 service service_close">
+                <div class="row col-lg-12 service service_close">
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 table_mobile">
                         <table class="table_for_me">
                             <tr>
                                 <th class="table_title_service">
-                                    <h5>Сделаю за деньги:</h5>
+                                    <h4>Сделаю за деньги:</h4>
                                 </th>
                             </tr>
                             @foreach($friendsServices as $list)
@@ -86,11 +86,11 @@
                         </button>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 table_mobile">
                         <table class="table_paid">
                             <tr>
                                 <th class="table_title_service">
-                                    <h5>Заплачу за:</h5>
+                                    <h4>Заплачу за:</h4>
                                 </th>
                             </tr>
                             @foreach($sponsorsServices as $list)

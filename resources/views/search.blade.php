@@ -7,7 +7,7 @@
         @endif
         <form id="user_search" action="" method="post" enctype="multipart/form-data">
             @csrf
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <label>Мин. Возраст</label>
                     <input class="form-control form-control-md" name="min_age" type="number" min="18" max="123" value="{{old('min_age')}}">
@@ -62,7 +62,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-lg-12 find-btn">
+                <div class="col-lg-2 find-btn">
                     <button class="btn btn-primary btn-md btn-block" type="submit">Искать</button>
                 </div>
             </div>

@@ -22,11 +22,11 @@
             <div class="container">
                 <div class="footer-nav-container">
                     <nav class="navbar navbar-expand-lg navbar-dark">
-                        <a class="navbar-brand logotype" href="{{ route('index') }}">
+                        <a class="col-lg-3 navbar-brand logotype" href="{{ route('index') }}">
                             <i class="fas fa-user-friends"></i>
                             <span class="header_title">One Hour Friend</span>
                         </a>                       
-                        <div class="collapse navbar-collapse links_header" id="navbarNavAltMarkup">
+                        <div class="col-lg-9 collapse navbar-collapse links_header" id="navbarNavAltMarkup">
                             <div class="navbar-nav justify-content-between">
                                 @foreach(ArticleCategory::all() as $category)
                                     <a class="nav-item nav-link" href="articles?ctg={{$category->category_name}}">{{$category->display_name}}</a>
@@ -36,13 +36,12 @@
                                     {{--<a class="nav-item nav-link" href="javascript:void(0);">Заработать</a>--}}
                                     {{--<a class="nav-item nav-link" href="javascript:void(0);">Отдохнуть</a>--}}                                                       
                                     <a class="nav-item nav-link" href="{{Request::root()}}/search">Найти друга</a>
-                                    <a class="nav-item nav-link" href="{{Request::root()}}/contactToSupport">Тех Потдержка</a>
-                                    @include('layouts.robokassaPayForm')                            
+                                    <a class="nav-item nav-link" href="{{Request::root()}}/contactToSupport">Тех Потдержка</a>                         
                             </div>                        
                         </div>
                     </nav>
                     <div class="copyright">
-                        <p>&copy 20019-2019 «1-hf.com».</p>
+                        <a href="http://1-hf.com/"><p>&copy 20019-2019 «1-hf.com».</p></a>
                     </div>
                     @else
                 </div>

@@ -3,10 +3,10 @@
     <section id="new_people_servis">
         <div class="container">
             <div class="row new_people_servis_block">
-                <div class="label_new_people col-sm-2 col-md-1">
+                <div class="label_new_people col-lg-1 col-md-1 col-sm-2 col-2">
                     <p>Новые друзья</p>
                 </div>                
-                <ul class="col-sm-10 col-md-11">
+                <ul class="col-lg-11 col-md-11 col-sm-10 col-10">
                     @foreach($newProfiles as $profile)
                         <li>
                             <a href="profile?prf={{$profile->id}}">
@@ -24,14 +24,14 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-5 col-sm-5">
                 @guest
                     @include('auth.loginTest')
                 @endguest
                 <aside id="main-page-aside-news">
                     <div class="block_news">
                         @foreach($news as $val)
-                        <div class="card border-light mb-3" style="max-width: 18rem;">
+                        <div class="card border-light">
                             <a href="newsView?nws={{$val->id}}">
                                 {{-- <div class="card-header">Header</div> --}}
                                 <div class="card-body">
@@ -48,7 +48,7 @@
                     </div>
                 </aside>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-md-7 col-sm-7">
                 <section id="map-section">
                     <div class="map_container">
                         <div class="map-card">
