@@ -1,10 +1,10 @@
 <template>
     <div>
         <div>
-            <input type="text" v-on:keyup.enter="sendChat" v-model="chat">
+            <textarea cols="68" rows="3" v-on:keyup.enter="sendChat" v-model="chat"></textarea>
         </div>
-        <div>
-            <input type="submit" class="button" value="SEND" v-on:click="sendChat">
+        <div style="text-align: right;">
+            <input type="submit" class="btn btn-primary" value="Отправить" v-on:click="sendChat" >
         </div>
     </div>
 </template>
@@ -41,5 +41,27 @@
 </script>
 
 <style scoped>
+textarea {
 
+    margin: 20px 0;
+        width: 100%;
+    color: #465160;
+    padding: 3px 9px 8px;
+    border: none;
+/*    border: solid 1px #D5D5D5;
+    border-bottom-color: #DEDEDE;
+    border-top-color: #C0C0C0;*/
+    border-radius: .25rem;
+    background: #FFF;
+    /*box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);*/
+    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+}
+.button {
+    text-shadow: -1px -1px 0 #0D79BD;
+    border: solid 1px #037BC6;
+    border-bottom-color: #07598D;
+    border-top-color: #0285D8;
+    background-color: #009CFF !important;
+    background: linear-gradient(to bottom, #009cff 0%,#0d79bd 75%,#019cfe 100%);
+}
 </style>

@@ -6,7 +6,7 @@
         function checkUnreadMessagesFromFriend(id, el) {
             $.get('checkUnreadMessagesFromFriend/' + id, function (data) {
                 if (data != 'null') {
-                    el.text('You have new messages');
+                    el.text('У вас есть новые сообщения');
                 }
             })
         }
@@ -14,9 +14,9 @@
         function checkMyUnreadMessagesByFriend(id, el) {
             $.get('checkMyUnreadMessagesByFriend/' + id, function (data) {
                 if (data != 'null') {
-                    el.text('Your messages are not read')
+                    el.text('Ваши сообщения не прочитаны')
                 } else {
-                    el.text('Your messages have been read');
+                    el.text('Ваши сообщения были прочитаны');
                 }
             })
         }
