@@ -11,7 +11,7 @@
             <div class="col-lg-10 col-md-10 col-sm-10 col-10 single-news-card">
                 
                 <div class="single-news-title">
-                    <h2>{{$news->title}}</h2>
+                    <h3>{{$news->title}}</h3>
                 </div>
                 <div class="single-news-img">
                     <img src="{{asset($news->photo)}}" alt="">

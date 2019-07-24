@@ -7,9 +7,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10 col-md-10 col-sm-10 col-11 justify-content-center article-card">
                         <div class="article-page-title">
-                            <h2>
+                            <h3>
                                 <a href="articlesView?art={{$article->id}}">{{$article->title}}</a>
-                            </h2>
+                            </h3>
                         </div>
                         <div class="article-page-img">
                             <img src="{{asset($article->photo)}}" alt="">

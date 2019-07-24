@@ -6,7 +6,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-10 all-news-card">
                     <div class="all-news-title">
-                        <h2><a href="newsView?nws={{$post->id}}">{{$post->title}}</a></h2>
+                        <h3><a href="newsView?nws={{$post->id}}">{{$post->title}}</a></h3>
                     </div>
                     <div class="article-page-img">
                         <img src="{{asset($post->photo)}}" alt="">

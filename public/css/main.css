@@ -401,10 +401,6 @@ _______________________________________________________ */
   flex-direction: row
 }
 
-#new_people_servis ul li {
- padding-left: 3px
-}
-
 #new_people_servis ul li a img {
   border-radius: .25rem
 }
@@ -413,23 +409,11 @@ _______________________________________________________ */
   background: #f89911;
   position: relative;
   height: 100%;
-  border-radius: 20px;
+  border-radius: .25rem;
   padding: 0px;
   -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-}
-
-#new_people_servis .label_new_people::after {
-  content: '';
-  position: absolute;
-  right: -61px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 50px solid transparent;
-  border-left: 12px solid #f89911;
-  border-radius: 10px;
-  z-index: 20
 }
 
 #new_people_servis .label_new_people p {
@@ -440,7 +424,8 @@ _______________________________________________________ */
   color: #FFF;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
+  padding: 10%
 }
 
 #new_people_servis .gallery_list {
@@ -463,7 +448,7 @@ _______________________________________________________ */
 #new_people_servis ul li {
   height: 100%;
   position: relative;
-  padding-right: 0px
+  padding-left: 1%
 }
 
 #new_people_servis ul li a img {
@@ -808,13 +793,6 @@ _______________________________________________________ */
  /* VIEW PROFILE Section
 _______________________________________________________ */
 
-#view-profile h2 {
-  color: #2387CF;
-  font-size: 1.7rem;
-  font-weight: 400;
-  margin: 5% auto
-}
-
 #view-profile .view-profile-card {
   background: #fff;
   border-radius: .25rem;
@@ -963,13 +941,6 @@ _______________________________________________________ */
 
  /* SEARCH Section
 _______________________________________________________ */
-
-#search-section h2 {
-  color: #2387CF;
-  font-size: 1.7rem;
-  font-weight: 400;
-  margin: 5% auto;
-}
 
 #search-section .form-control {
   border: none;
@@ -1198,13 +1169,6 @@ _______________________________________________________ */
 /* ARTICLE PAGE SECTION
 _______________________________________________________ */
 
-#article-page h2 {
-  color: #2387CF;
-  font-size: 1.7rem;
-  font-weight: 400;
-  margin: 5% auto;
-}
-
 #article-page .article-card {
   width: 50%;
   background: #fff;
@@ -1213,16 +1177,6 @@ _______________________________________________________ */
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   margin: 1% 0  
-}
-
-#article-page .article-page-title h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 3% 0
-}
-
-#article-page .article-page-title h2 a {
-  color: #2387CF
 }
 
 #article-page .article-page-img img {
@@ -1235,13 +1189,6 @@ _______________________________________________________ */
 
 /* TECHNICAL SUPPORT SECTION
 _______________________________________________________ */
-
-#technical-support h2 {
-  color: #2387CF;
-  font-size: 1.7rem;
-  font-weight: 400;
-  margin: 5% auto
-}
 
 #technical-support .technical-support-contact-form {
   margin: 3% auto
@@ -1267,13 +1214,6 @@ _______________________________________________________ */
 
 /* SUPPORT TICKETS SECTION
 _______________________________________________________ */
-
-#support-tickets h2 {
-  color: #2387CF;
-  font-size: 1.7rem;
-  font-weight: 400;
-  margin: 5% auto
-}
 
 #support-tickets .service_close {
   margin: 5% 0
@@ -1328,11 +1268,11 @@ _______________________________________________________ */
   -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  margin: 1% 0;
+  margin: 5% 0 0;
   padding: 3%
 }
 
-#single-article-page .single-article-page-title h2 {
+#single-article-page .single-article-page-title h3 {
   color: #2387CF;
 }
 
@@ -1348,13 +1288,6 @@ _______________________________________________________ */
 /* ALL NEWS PAGE SECTION
 _______________________________________________________ */
 
-#all-news-section h2 {
-  color: #2387CF;
-  font-size: 1.7rem;
-  font-weight: 400;
-  margin: 5% auto;
-}
-
 #all-news-section .all-news-card {
   background: #fff;
   border-radius: .25rem;
@@ -1363,16 +1296,6 @@ _______________________________________________________ */
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   margin: 1% 0;
   padding: 3%  
-}
-
-#all-news-section .all-news-title h2 {
-  font-size: 1.7rem;
-  font-weight: 400;
-  margin: 0
-}
-
-#all-news-section .all-news-title h2 a {
-  color: #2387CF  
 }
 
 #all-news-section .article-page-img {
@@ -1393,17 +1316,6 @@ _______________________________________________________ */
 #single-news-section .page-title {
   display: inline-flex;
   width: 100%
-}
-
-#single-news-section .page-title h2 {
-  width: 50%
-}
-
-#single-news-section h2 {
-  color: #2387CF;
-  font-size: 1.7rem;
-  font-weight: 400;
-  margin: 5% auto
 }
 
 #single-news-section .all-news-link {
@@ -1433,17 +1345,12 @@ _______________________________________________________ */
   -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
   margin: 1% 0;
-  padding: 3%
-}
-
-#single-news-section .single-news-title h2 {
-  color: #2387CF;
-  margin: 0
+  padding: 0 3%
 }
 
 #single-news-section .single-news-img {
   text-align: center;
-  margin: 3% 0
+  margin: 0 0 3% 0
 }
 
 #single-news-section .single-news-img img {
@@ -1596,6 +1503,46 @@ _______________________________________________________ */
 header .navbar-toggler {
   padding: .375rem .75rem
 }
+
+/* REPEAT ELEMENTS
+_______________________________________________________ */
+
+#single-news-section h2,
+#view-profile h2,
+#all-news-section h2,
+#support-tickets h2,
+#technical-support h2,
+#search-section h2,
+#article-page h2 {
+  color: #2387CF;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin: 5% auto 5% 0;
+  padding: 1%;
+  background: #fff;
+  width: 20%;
+  border-radius: .25rem;
+  line-height: 1;
+  text-align: center;
+  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+}
+
+#all-news-section .all-news-title h3 a,
+#article-page .article-page-title h3 a {
+  color: #2387CF;
+}
+
+#single-news-section .single-news-title h3,
+#article-page .article-page-title h3,
+#all-news-section .all-news-title h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2387CF;
+  margin: 3% 0
+}
+
 
 /* OFLINE USER Section
 _______________________________________________________ */
@@ -1750,6 +1697,20 @@ _______________________________________________________ */
     display: none
   }
 
+  #new_people_servis .new_people_servis_block ul li:nth-child(6n) {
+    display: none
+  }
+
+  #single-news-section h2, 
+  #view-profile h2, 
+  #all-news-section h2, 
+  #support-tickets h2, 
+  #technical-support h2, 
+  #search-section h2, 
+  #article-page h2 {
+    padding: 2%
+  }
+
 }
 
 @media all and (max-width: 991px) {
@@ -1772,8 +1733,8 @@ _______________________________________________________ */
     display: none
   }
 
-  #new_people_servis ul li {
-    width: 15%
+  #new_people_servis .new_people_servis_block ul li:nth-child(5n) {
+    display: none
   }
 
   .links_user button {
@@ -1816,6 +1777,24 @@ _______________________________________________________ */
     margin: 10% auto
   } 
 
+  #new_people_servis .new_people_servis_block {
+    margin: 1% 0
+  }
+
+  #new_people_servis ul li {
+    padding-left: 2%
+  }
+
+  #single-news-section h2, 
+  #view-profile h2, 
+  #all-news-section h2, 
+  #support-tickets h2, 
+  #technical-support h2, 
+  #search-section h2, 
+  #article-page h2 {
+    width: 30%
+  }
+
 }
 
 @media all and (max-width: 767px) {
@@ -1838,8 +1817,8 @@ _______________________________________________________ */
     display: none
   }
 
-  #new_people_servis ul li {
-    width: 20%
+  #new_people_servis .new_people_servis_block ul li:nth-child(4n) {
+    display: none
   }
 
   .users_prew_block div {
@@ -1890,6 +1869,29 @@ _______________________________________________________ */
 
   #edit-profile #updatePhotoForm table tbody tr {
     width: 48%
+  }
+
+  #new_people_servis .new_people_servis_block ul li:nth-child(3n) {
+    display: none;
+  }
+
+  #new_people_servis .new_people_servis_block {
+    margin: 2% 0
+  }
+
+  #new_people_servis ul li {
+    padding-left: 3%
+  }
+
+  #single-news-section h2, 
+  #view-profile h2, 
+  #all-news-section h2, 
+  #support-tickets h2, 
+  #technical-support h2, 
+  #search-section h2, 
+  #article-page h2 {
+    width: 40%;
+    padding: 3%
   }
 
 }
@@ -1961,7 +1963,8 @@ _______________________________________________________ */
   }
 
   #last-active-users .card {
-    width: 49%
+    width: 49%;
+    margin: 2% 0
   }
 
   #view-profile .table_title_service h5 {
@@ -1977,6 +1980,7 @@ _______________________________________________________ */
     font-size: 0.75rem
   }
 
+  #all-news-section .all-news-title h2,
   #single-news-section .single-news-title h2 {
     font-size: 1.25rem;
     font-weight: 500
@@ -1984,34 +1988,55 @@ _______________________________________________________ */
 
 }
 
-@media all and (min-width: 576px) {
+@media all and (max-width: 576px) {
 
-  /* #view-profile .slick-track {
-    width: 100% !important
+  #new_people_servis ul li {
+    padding-left: 4%
   }
-  
-  #view-profile .slick-track .slick-slide {
-    width: 25% !important
-  } */
+
 }
 
 @media all and (max-width: 459px) {
 
   #last-active-users .card {
-    width: 100%
+    width: 100%;
+    margin: 3% 0
   }
 
   #view-profile .service table {
     font-size: 0.75rem
   }
 
-  #article-page .article-page-title h2,
-  #single-article-page .single-article-page-title h2 {
+  #article-page .article-page-title h3,
+  #single-article-page .single-article-page-title h3 {
     font-size: 1rem;
     font-weight: 600
   }
 
-  
+  #new_people_servis .new_people_servis_block ul li:nth-child(2n) {
+    display: none
+  }
+
+  #new_people_servis .new_people_servis_block {
+    margin: 3% 0
+  }
+
+  #single-news-section h2, 
+  #view-profile h2, 
+  #all-news-section h2, 
+  #support-tickets h2, 
+  #technical-support h2, 
+  #search-section h2, 
+  #article-page h2 {
+    width: 50%
+  }
+
+  #single-news-section .single-news-title h3, 
+  #article-page .article-page-title h3, 
+  #all-news-section .all-news-title h3 {
+    font-size: 1rem;
+    font-weight: 600
+  }
   
 }
 
@@ -2019,6 +2044,28 @@ _______________________________________________________ */
 
   header .header_title {
     display: none
+  }
+
+  #new_people_servis .new_people_servis_block {
+    margin: 4% 0;
+  }
+
+  #new_people_servis ul li {
+    padding-left: 5%
+  }
+
+  #single-news-section h2, 
+  #view-profile h2, 
+  #all-news-section h2, 
+  #support-tickets h2, 
+  #technical-support h2, 
+  #search-section h2, 
+  #article-page h2 {
+    width: 60%
+  }
+
+  #all-news-section h2 {
+    width: 55%
   }
   
 }
@@ -2041,6 +2088,24 @@ _______________________________________________________ */
   #view-profile .user_content,
   #view-profile .map_mobile_padding {
     padding: 0
+  }
+
+  #new_people_servis .new_people_servis_block {
+    margin: 5% 0;
+  }
+
+  #single-news-section h2, 
+  #view-profile h2, 
+  #all-news-section h2, 
+  #support-tickets h2, 
+  #technical-support h2, 
+  #search-section h2, 
+  #article-page h2 {
+    width: 100%
+  }
+
+  #single-news-section h2 {
+    width: 60%
   }
   
 }
