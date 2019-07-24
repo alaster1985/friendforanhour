@@ -40,12 +40,12 @@
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
-                    </button>
+                    </button>                    
                     
-                    <div class="collapse navbar-collapse links_header" id="navbarNavAltMarkup">
+                    <div class="collapse navbar-collapse links_header " id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             @foreach(ArticleCategory::all() as $category)
-                                <a class="nav-item nav-link" href="articles?ctg={{$category->category_name}}">{{$category->display_name}}</a>
+                                <a class="nav-item nav-link" href="{{Request::root()}}/articles?ctg={{$category->category_name}}">{{$category->display_name}}</a>
                             @endforeach
                                 {{--<a class="nav-item nav-link" href="javascript:void(0);">Знакомства</a>--}}
                                 {{--<a class="nav-item nav-link" href="javascript:void(0);">Услуги</a>--}}
@@ -55,28 +55,30 @@
                                 <a class="nav-item nav-link" href="{{Request::root()}}/contactToSupport">Тех Потдержка</a>
                                 @include('layouts.robokassaPayForm')                            
                         </div>                        
-                    </div>
+                    </div>                    
                 </nav>
-                <div id="navbarSupportedContent">
-                    @guest
-                        {{--  --}}
-                    @endguest
-                    <ul class="navbar-nav ml-auto">
+
+                {{-- Drobdown Account Menu --}}
+                <div id="navbarSupportedContent" class="flex-lg-row">
                         @guest
-                            @else
+                            {{--  --}}
+                        @endguest
+                        <ul class="navbar-nav ml-auto">
+                            @guest
+                                @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         <i class="fas fa-user-circle"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         @if(Auth::user()->hasRole('moderator|admin'))
-                                            <a class="dropdown-item" href="admin/dashboard">Панель администратора</a>
+                                            <a class="dropdown-item" href="admin/dashboard">Админ Панель</a>
                                         @else
                                             <a class="dropdown-item" href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">{{ Auth::user()->name }}</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
                                             <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
-                                            <a class="dropdown-item" href="{{Request::root()}}/mytickets">My support tickets</a>
-                                            <a class="dropdown-item" href="{{Request::root()}}/contactToSupport">Тех потдержка</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/mytickets">Мои Вопросы</a>
+                                            <a class="dropdown-item" href="{{Request::root()}}/contactToSupport">Тех Потдержка</a>
                                         @endif
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf
@@ -84,9 +86,10 @@
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><!-- {{ __('Logout') }} -->Выйти</a>
                                     </div>
                                 </li>
-                            @endguest
-                    </ul>
-                </div>
+                        @endguest
+                        </ul>
+                    </div>
+                
                 @else
                 {{--<div class="change">--}}
                 {{--<a class="autorization " href="{{ route('login') }}">Войти</a>--}}

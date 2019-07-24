@@ -1,11 +1,11 @@
 @include('layouts.header')
 <section id="technical-support">
     <div class="container">
-        <h2>Написать в Потдержку:</h2>
+        <h2>Потдержка:</h2>
         @if ($errors)
             <div class="error" style="display: block; color: red">{{($errors->first())}}</div>
         @endif
-        <div class="col-lg-8 justify-content-center technical-support-contact-form">
+        <div class="col-lg-12 justify-content-center technical-support-contact-form">
             <form method="POST" enctype="multipart/form-data" action="{{Route('sendTicket')}}">
                 @csrf
                     <label>Заголовок:</label>
@@ -21,7 +21,7 @@
                 @auth
                     <input class="form-control form-control-md" type="hidden" name="profile_id" value="{{Auth::user()->profile_id}}">
                 @endauth
-                <button class="btn btn-primary btn-md btn-block" type="submit">Отправить</button>
+                <button class="col-lg-2 btn btn-primary btn-md btn-block" type="submit">Отправить</button>
             </form>
         </div>
         @if(session()->has('message'))

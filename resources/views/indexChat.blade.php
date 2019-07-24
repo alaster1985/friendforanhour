@@ -7,7 +7,7 @@
                     Список ваших Друзей:
                 </div>
                 @forelse($friends as $friend)
-                    <div>
+                <div style="background: #fff">
                         <a href="{{Request::root()}}/chat/{{$friend->id}}">
                             <div style="font-weight: 500;">{{$friend->first_name . ' ' . $friend->second_name}}
                                 <online v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineUsers"></online>
