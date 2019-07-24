@@ -3,10 +3,10 @@
     <section id="new_people_servis">
         <div class="container">
             <div class="row new_people_servis_block">
-                <div class="label_new_people col-lg-1 col-md-1 col-sm-2 col-2">
+                <div class="label_new_people col-lg-1 col-md-2 col-sm-2 col-4">
                     <p>Новые друзья</p>
                 </div>                
-                <ul class="col-lg-11 col-md-11 col-sm-10 col-10">
+                <ul class="col-lg-11 col-md-10 col-sm-10 col-8">
                     @foreach($newProfiles as $profile)
                         <li>
                             <a href="profile?prf={{$profile->id}}">
