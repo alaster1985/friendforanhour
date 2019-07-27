@@ -38,6 +38,15 @@ class ProfileAddress extends Model
         return $profileAddress->id;
     }
 
+    public static function updateProfileLocationByProfileId($profileId, $longitude, $latitude)
+    {
+        $profileAddress = self::getProfileAddressByProfileId($profileId);
+        $profileAddress->longitude = $longitude;
+        $profileAddress->latitude = $latitude;
+        $profileAddress->save();
+        return $profileAddress->id;
+    }
+
     public static function createNewProfileAddress($data)
     {
         $newProfileAddress = new ProfileAddress();

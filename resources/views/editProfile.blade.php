@@ -41,6 +41,8 @@
                 @endif
             </div>
         </div>
+        <p>set my location</p>
+        <div class="alert-danger" style="display:none; color: red;"></div>
         <form action="{{Route('updateProfile')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row edit_profile_general_block">
@@ -279,6 +281,7 @@
             </div>
             <button class="col-lg-3 btn btn-primary btn-md btn-block shadow-none btn-save" type="submit">Сохранить галерею</button>
         </form>
+        <div class="alert-danger" style="display:none; color: red;"></div>
     </div>
 </section>
 @include('layouts.footer')

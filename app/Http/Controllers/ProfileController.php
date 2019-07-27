@@ -6,6 +6,7 @@ use App\City;
 use App\Complain;
 use App\Country;
 use App\Gender;
+use App\Http\Requests\LocationStoreRequest;
 use App\Http\Requests\ProfileStoreRequest;
 use App\Http\Requests\SearchRequest;
 use App\Profile;
@@ -77,5 +78,16 @@ class ProfileController extends Controller
         $result = Profile::getFilteredProfilesByParams($request->all());
         return $result;
         // return redirect()->back()->with('message', $result);
+    }
+
+    public function setProfileLocation(LocationStoreRequest $request)
+    {
+        $profile = Profile::find(Auth::user()->profile_id);
+        Profile::setLocation($profile, $request->longitude, $request->latitude);
+        $newLocation = [
+            'longitude' => $profile->profileAddress->longitude,
+            'latitude' => $profile->profileAddress->latitude,
+        ];
+        return json_encode($newLocation);
     }
 }

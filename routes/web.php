@@ -49,6 +49,7 @@ Route::middleware('role:user')->group(function () {
     Route::get('banned', 'MainController@banned')->name('banned');
 
     Route::get('edit', 'ProfileController@edit')->name('editProfile');
+    Route::post('setProfileLocation', 'ProfileController@setProfileLocation')->name('setProfileLocation');
     Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
     Route::get('mytickets', 'TicketController@mytickets')->name('mytickets');
 
