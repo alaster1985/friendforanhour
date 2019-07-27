@@ -69,7 +69,7 @@ class MainController extends Controller
         if (isset($transaction->id)) {
             $messageOk = "Success! InvoiceID: $inv_id Sum: $out_sum Completed! Internal transaction ID $transaction->id.";
         } else {
-            $messageOk = "Something went wrong! Please, contact to support with your InvoiceID: $inv_id";
+            $messageOk = "Что-то пошло не так! Пожалуйста, обратитесь в службу поддержки с вашим Инвойсом №: $inv_id";
         }
         return view('allok', ['messageOk' => $messageOk]);
     }
@@ -82,7 +82,7 @@ class MainController extends Controller
         ]);
         $out_sum = $request->OutSum;
         $inv_id = $request->InvId;
-        $messageOk = "You have refused payment InvoiceID: $inv_id Sum: $out_sum";
+        $messageOk = "Вы отказались от оплаты Инвойс №: $inv_id Сумма: $out_sum";
         return view('allbad', ['messageOk' => $messageOk]);
     }
 
