@@ -15,8 +15,12 @@ class MainController extends Controller
 {
     public function index()
     {
-        $newProfiles = Profile::getNewProfiles();
-        $profilesForLowerBlocks = Profile::getSixProfilesForLowerBlocks();
+        $typeOfSort = 'desc';
+        $isOnline = false;
+        $count = 10;
+        $newProfiles = Profile::getSomeProfilesByParam($count, $typeOfSort, $isOnline);
+        $count = 6;
+        $profilesForLowerBlocks = Profile::getSomeProfilesByParam($count, $typeOfSort, $isOnline);
         $limit = Auth::check() ? 4 : 1; // count of news for index page
         return view('index', [
             'newProfiles' => $newProfiles,
@@ -27,7 +31,7 @@ class MainController extends Controller
 
     public function banned()
     {
-        if (Auth::user()->profile->ban->last()->ban_end_date > strtotime('now') || Auth::user()->profile->is_banned) {
+        if (Auth::user()->profile->is_banned || (isset(Auth::user()->profile->ban->first()->id) && Auth::user()->profile->ban->last()->ban_end_date > strtotime('now'))) {
             return view('banned');
         }
         return redirect()->route('index');
@@ -35,7 +39,7 @@ class MainController extends Controller
 
     public function unpaid()
     {
-        if (Auth::user()->profile->subscription_end_date < strtotime('now') || Auth::user()->profile->is_locked) {
+        if (Auth::user()->profile->is_locked || Auth::user()->profile->subscription_end_date < strtotime('now')) {
             return view('unpaid');
         }
         return redirect()->route('index');
