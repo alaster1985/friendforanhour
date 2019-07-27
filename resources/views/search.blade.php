@@ -79,8 +79,55 @@
 </section>
 
 <section id="user_search_result" class="none">
-        
-    
+
+    <div class="stage">
+        <div id="stacked-cards-block" class="stackedcards stackedcards--animatable init">
+            <div class="stackedcards-container">
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-image"><img src="https://image.ibb.co/gQsq07/Adventure_and_Outdoor.png" width="100%" height="100%"/></div>
+                        <div class="card-titles">
+                            <h1>Username, Age</h1>
+                            <h3>City</h3>
+                        </div>  
+                    </div>
+                    <div class="card-footer">
+                        <div class="popular-destinations-text">Short <br/> Information</div>
+                        <div class="popular-destinations-images">
+                            <p>Sample text.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-image"><img src="https://image.ibb.co/bXTXV7/Far_and_Away_2x.png" width="100%" height="100%"/></div>
+                        <div class="card-titles">
+                            <h1>Username, Age</h1>
+                            <h3>City</h3>
+                        </div>  
+                    </div>
+                    <div class="card-footer">
+                        <div class="popular-destinations-text">Short <br/> Information</div>
+                        <div class="popular-destinations-images">
+                            <p>Sample text.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="stackedcards--animatable stackedcards-overlay top"><i class="fas fa-user"></i></div>
+            <div class="stackedcards--animatable stackedcards-overlay right"><i class="fas fa-angle-right"></i></div>
+            <div class="stackedcards--animatable stackedcards-overlay left"><i class="fas fa-angle-left"></i></div>
+        </div>
+        <div class="global-actions">
+            <div class="left-action"><i class="fas fa-angle-left"></i></div>
+            <div class="top-action"><i class="fas fa-user"></i></div>
+            <div class="right-action"><i class="fas fa-angle-right"></i></div>
+        </div>
+    </div>
+              
 </section>
 
 @include('layouts.footer')

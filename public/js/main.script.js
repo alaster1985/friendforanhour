@@ -12,14 +12,6 @@ $(document).ready(function () {
                 $('#search-section h2').hide('slow');
                 $('#user_search_result').removeClass('none');
                 console.log(JSON.parse(msg));
-
-                $.getJSON(msg, function(data){
-                    $.each(data.items, function(key, val) {
-                   
-                    
-                   
-                    });
-                });
             }
         );
         return false;
