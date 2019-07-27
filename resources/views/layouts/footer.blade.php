@@ -14,7 +14,7 @@
     </div>
     @auth
         @if(Auth::user()->profile_id)
-            <span id="app2" style="display: none">
+            <span id="chat-vue" style="display: none">
                 <online v-bind:friend="{{ Auth::user()->profile }}"
                         v-bind:onlineusers="onlineUsers"></online>
             </span>
@@ -45,7 +45,7 @@
                         </div>
                     </nav>
                     <div class="copyright">
-                        <a href="http://1-hf.com/"><p>&copy 20019-2019 «1-hf.com».</p></a>
+                        <a href="http://1-hf.com/"><p>&copy 2019 «1-hf.com».</p></a>
                     </div>
                     @else
                 </div>

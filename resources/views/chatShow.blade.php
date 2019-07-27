@@ -1,5 +1,5 @@
 @include('layouts.header')
-<div id="app2">
+<div id="chat-vue">
     <audio id="chatAudio">
         <source src="{{asset('sounds/sms_chat1.mp3')}}">
     </audio>
@@ -9,7 +9,7 @@
         <div class="col-lg-12">
             <div class="panel">
                 <div class="panel-heading">
-                    {{$friend->first_name . ' ' . $friend->second_name}}
+                    <h3>{{$friend->first_name . ' ' . $friend->second_name}}</h3>
                 </div>
                 <chat v-bind:chats="chats" v-bind:profileid="{{Auth::user()->profile_id}}" v-bind:friendid="{{$friend->id}}"></chat>
             </div>

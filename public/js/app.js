@@ -60380,9 +60380,9 @@ Vue.component('online', __webpack_require__(/*! ./components/OnlineUser.vue */ "
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-if ($('#app2').length) {
+if ($('#chat-vue').length) {
   var app = new Vue({
-    el: '#app2',
+    el: '#chat-vue',
     data: {
       chats: '',
       onlineUsers: ''

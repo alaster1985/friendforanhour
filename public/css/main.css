@@ -1345,6 +1345,74 @@ _______________________________________________________ */
 /* VUE APP Section
 _______________________________________________________ */
 
+  /* VUE APP Section
+  _______________________________________________________ */  
+
+  #chat-vue {
+    margin: 3% 0
+  }
+
+  #chat-vue .panel {
+    border-bottom: 1px solid #e0e0e0
+  }
+
+  #chat-vue div[data-v-77176efa] {
+    margin-bottom: 3%
+  }
+
+  #chat-vue textarea[data-v-77176efa] {
+    margin: 3% 0 0;
+    width: 100%;
+    color: #465160;
+    padding: 1%;
+    border: none;
+    border-radius: .25rem;
+    background: #FFF;
+    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+  }
+
+  #chat-vue .panel-heading {
+    background:#2387CF;
+    color:#fff;
+    border-radius: .25rem .25rem 0 0;
+    padding: .75rem
+  }
+
+  #chat-vue .panel-heading h3 {
+    margin: 0;
+    padding: 0 1%
+  }
+
+  #chat-vue .panel-contact {
+    background: #fff;
+    border-radius: .25rem;
+    padding: 1% 2%;
+    margin: 3% 0;
+    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+  }
+
+  #chat-vue .massage-status {
+    font-weight: 400;
+    color :#999DA4;
+    font-size: 1rem;
+    margin-right: 3%;
+    float: right
+  }
+
+  #chat-vue .panel-contact-username {
+    font-weight: 500;
+    color:#2387CF
+  }
+
+  #chat-vue img[data-v-9b425b2e] {
+    margin: auto 5px auto 0
+  }
+
+
 /* FOOTER Section
 _______________________________________________________ */
 
@@ -1857,54 +1925,54 @@ _______________________________________________________ */
 
 @media all and (max-width: 767px) {
 
-    .mobile_autorization {
-        display: block
-    }
+  .mobile_autorization {
+    display: block
+  }
 
-    .change {
-        display: flex;
-        justify-content: flex-end;
-        padding: 0px
-    }
+  .change {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px
+  }
 
-    .registration {
-        margin-left: 15px
-    }
+  .registration {
+    margin-left: 15px
+  }
 
-    .mobile_vi2 {
-        display: none
-    }
+  .mobile_vi2 {
+    display: none
+  }
 
-    #new_people_servis .new_people_servis_block ul li:nth-child(4n) {
-        display: none
-    }
+  #new_people_servis .new_people_servis_block ul li:nth-child(4n) {
+    display: none
+  }
 
-    .users_prew_block div {
-        margin: 0px;
-        padding: 0px
-    }
+  .users_prew_block div {
+    margin: 0px;
+    padding: 0px
+  }
 
-    .links_user a {
-        display: inline-block;
-        margin: 10px 5px 0px 0px
-    }
+  .links_user a {
+    display: inline-block;
+    margin: 10px 5px 0px 0px
+  }
 
-    .name_user {
-        display: flex;
-        align-items: center
-    }
+  .name_user {
+    display: flex;
+    align-items: center
+  }
 
-    .table_services_as_sponsor, 
-    .services_as_friend, 
-    #usersPhoto {
-        overflow: auto;
-    }
+  .table_services_as_sponsor, 
+  .services_as_friend, 
+  #usersPhoto {
+    overflow: auto;
+  }
 
-    .edit_profile_general_block label {
-        margin-bottom: 5px;
-        padding-left: 0px;
-        margin-top: 5px
-    }
+  .edit_profile_general_block label {
+    margin-bottom: 5px;
+    padding-left: 0px;
+    margin-top: 5px
+  }
 
   #edit-profile .acc-settings-textfield  input, 
   #edit-profile .acc-settings-textfield select, 
@@ -1950,6 +2018,10 @@ _______________________________________________________ */
   #article-page h2 {
     width: 40%;
     padding: 3%
+  }
+
+  #chat-vue #toFrId_2 {
+    display: none
   }
 
 }
@@ -2096,31 +2168,35 @@ _______________________________________________________ */
 
 @media all and (max-width: 400px) {
 
-    header .header_title {
-        display: none
-    }
+  header .header_title {
+    display: none
+  }
 
-    #new_people_servis .new_people_servis_block {
-        margin: 4% 0;
-    }
+  #new_people_servis .new_people_servis_block {
+    margin: 4% 0;
+  }
 
-    #new_people_servis ul li {
-        padding-left: 5%
-    }
+  #new_people_servis ul li {
+    padding-left: 5%
+  }
 
-    #single-news-section h2, 
-    #view-profile h2, 
-    #all-news-section h2, 
-    #support-tickets h2, 
-    #technical-support h2, 
-    #search-section h2, 
-    #article-page h2 {
-        width: 60%
-    }
+  #single-news-section h2, 
+  #view-profile h2, 
+  #all-news-section h2, 
+  #support-tickets h2, 
+  #technical-support h2, 
+  #search-section h2, 
+  #article-page h2 {
+    width: 60%
+  }
 
-    #all-news-section h2 {
-        width: 55%
-    }
+  #all-news-section h2 {
+    width: 55%
+  }
+
+  #chat-vue .panel-heading h3 {
+    font-size: 1.25rem
+  }
   
 }
 
@@ -2180,6 +2256,19 @@ _______________________________________________________ */
 
   #search-section label {
     font-size: 1rem
+  }
+
+  #chat-vue .red[data-v-9b425b2e] {
+    font-size: .75rem
+  }
+
+  #chat-vue img[data-v-9b425b2e] {
+    height: 11px
+  }
+
+  #chat-vue .panel-contact {
+    padding: 3% 3%;
+    margin: 5% 0
   }
   
 }

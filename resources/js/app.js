@@ -30,9 +30,9 @@ Vue.component('online', require('./components/OnlineUser.vue').default);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-if ($('#app2').length) {
+if ($('#chat-vue').length) {
     var app = new Vue({
-        el: '#app2',
+        el: '#chat-vue',
         data: {
             chats: '',
             onlineUsers: ''

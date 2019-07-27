@@ -62,7 +62,7 @@
 
         <section id="last-active-users">
             <div class="container">
-                <div id="{{Auth::check() ? 'app2' : ''}}" class="row users_prew_block">
+                <div id="{{Auth::check() ? 'chat-vue' : ''}}" class="row users_prew_block">
                     @foreach($profilesForLowerBlocks as $lProfile)                    
                     <div class="card">
                         <div class="row no-gutters" style="height: 100%;">

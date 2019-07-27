@@ -1,23 +1,18 @@
 @include('layouts.header')
-<div id="app2">
+<div id="chat-vue">
     <div class="container">
         <div class="col-lg-12">
             <div class="panel">
-                <div class="panel-heading" style="background: #9fcdff">
-                    Список ваших Друзей:
+                <div class="panel-heading">
+                    <h3>Список ваших друзей:</h3>
                 </div>
                 @forelse($friends as $friend)
-                <div style="background: #fff;  
-        box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-        border-radius: .25rem;
-        background: #f9f9f9;
-        padding: 8px;
-        margin: 4px;">
+                <div class="panel-contact">
                         <a href="{{Request::root()}}/chat/{{$friend->id}}">
-                            <div style="font-weight: 500;">{{$friend->first_name . ' ' . $friend->second_name}}
+                            <div class="panel-contact-username">{{$friend->first_name . ' ' . $friend->second_name}}
                                 <online v-bind:friend="{{ $friend }}" v-bind:onlineusers="onlineUsers"></online>
                                 <span id="fromFrId_{{$friend->id}}"></span>
-                                <span style="font-weight: 400; color: gray; font-size: 14px; margin-left: 30px" id="toFrId_{{$friend->id}}"></span>
+                                <span class="massage-status" id="toFrId_{{$friend->id}}"></span>
                             </div>
 
                         </a>
