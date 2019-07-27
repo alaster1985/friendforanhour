@@ -1,15 +1,25 @@
 
+
 $(document).ready(function () {
 
     $('#user_search').submit(function(){
         $.post(
-            'filter', // адрес обработчика
-             $("#user_search").serialize(), // отправляемые данные          
+            'filter',
+            $("#user_search").serialize(),        
             
-            function(msg) { // получен ответ сервера  
+            function(msg) { 
                 $('#user_search').hide('slow');
+                $('#search-section h2').hide('slow');
+                $('#user_search_result').removeClass('none');
                 console.log(JSON.parse(msg));
-                // $('#my_message').html(msg);
+
+                $.getJSON(msg, function(data){
+                    $.each(data.items, function(key, val) {
+                   
+                    
+                   
+                    });
+                });
             }
         );
         return false;

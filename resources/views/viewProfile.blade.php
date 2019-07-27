@@ -82,8 +82,8 @@
                             @endforeach
                         </table>
                         <button class="table_for_me_open">
-                            <span class="open_table"><i class="fas fa-chevron-down"></i>Подробнее</span>
-                            <span class="close_table"><i class="fas fa-chevron-up"></i>Свернуть</span>
+                            <span class="open_table">Подробнее<i class="fas fa-chevron-down"></i></span>
+                            <span class="close_table">Свернуть<i class="fas fa-chevron-up"></i></span>
                         </button>
                     </div>
 
@@ -102,8 +102,8 @@
                             @endforeach
                         </table>
                         <button class="table_paid_open">
-                            <span class="open_table"><i class="fas fa-chevron-down"></i>Подробнее</span>
-                            <span class="close_table"><i class="fas fa-chevron-up"></i>Свернуть</span>
+                            <span class="open_table">Подробнее<i class="fas fa-chevron-down"></i></span>
+                            <span class="close_table">Свернуть<i class="fas fa-chevron-up"></i></span>
                         </button>
                     </div>
                 </div>
