@@ -31,7 +31,7 @@ class MainController extends Controller
 
     public function banned()
     {
-        if (Auth::user()->profile->is_banned || Auth::user()->profile->ban->last()->ban_end_date > strtotime('now')) {
+        if (Auth::user()->profile->is_banned || (isset(Auth::user()->profile->ban->first()->id) && Auth::user()->profile->ban->last()->ban_end_date > strtotime('now'))) {
             return view('banned');
         }
         return redirect()->route('index');
