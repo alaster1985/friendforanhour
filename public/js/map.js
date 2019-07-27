@@ -20,11 +20,11 @@ function initMap() {
         '<div id="profile_map_marker">'+
             '<div class="card">' +
                 '<div class="column no-gutters" style="height: 100%;">' +
-                    // '<div class="col-lg-12" style="overflow: hidden;">' +
-                    //     '<a href="profile?prf=1" class="profile-img-link">' +
-                    //         '<img src="http://fap-fap/profilepictures/1/fennec1.jpg" class="user_image card-img">' +
-                    //     '</a>' +
-                    // '</div>' + 
+                    '<div class="col-lg-12" style="overflow: hidden;">' +
+                        '<a href="profile?prf=1" class="profile-img-link">' +
+                            '<img src="http://friendforanhour/profilepictures/1/fennec1.jpg" class="user_image card-img">' +
+                        '</a>' +
+                    '</div>' + 
                     '<div class="col-lg-12">' +
                         '<div class="card-body">' +
                             '<div class="last-active-users-about">' +
