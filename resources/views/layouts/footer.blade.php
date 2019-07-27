@@ -1,12 +1,16 @@
     </main>
 
-    <div class="modal-error">Please, register first
-        <div class="text-center margin-bottom-20" id="uLogin3"
-            data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,city,country,bdate,sex;
-                                providers=facebook,vkontakte,odnoklassniki;hidden=;
-                                redirect_uri={{ urlencode('http://' . $_SERVER['HTTP_HOST'])}}/ulogin;mobilebuttons=0;">
+    
+    <div class="modal-error">
+        <div class="modal-card">
+            <h2>Авторизация:</h2>
+            <div class="text-center margin-bottom-20" id="uLogin3"
+                data-ulogin="display=panel;theme=classic;fields=first_name,last_name,email,nickname,photo,city,country,bdate,sex;
+                                    providers=facebook,vkontakte,odnoklassniki;hidden=;
+                                    redirect_uri={{ urlencode('http://' . $_SERVER['HTTP_HOST'])}}/ulogin;mobilebuttons=0;">
+            </div>
+            <span class="modal-error__close-btn fa fa-times"></span>
         </div>
-        <span class="modal-error__close-btn fa fa-times"></span>
     </div>
     @auth
         @if(Auth::user()->profile_id)
@@ -52,7 +56,7 @@
 
     <script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js')}}"></script>
     @guest
-        <script type="text/javascript" src="http://ulogin.ru/js/ulogin.js"></script>
+    <script type="text/javascript" src="http://ulogin.ru/js/ulogin.js"></script>
     @endguest
     <script type="text/javascript" src="{{ asset('js/forInputData.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/forComplain.js')}}"></script>

@@ -18,7 +18,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100%
 }
 
 h1 {
@@ -578,6 +578,24 @@ _______________________________________________________ */
   color: #2387CF
 }
 
+#map #profile_map_marker .card {
+  border: none
+}
+
+#map #profile_map_marker .name_serwise_cart {
+  display: flex;
+  justify-content: space-between
+}
+
+#map #profile_map_marker .card-body {
+  padding: .25rem
+}
+
+#map .gm-style .gm-style-iw {
+  font-weight: 400;
+  font-size: 12px
+}
+
 /* LAST ACTIVE USERS Section
 _______________________________________________________ */
 
@@ -839,7 +857,10 @@ _______________________________________________________ */
 }
 
 #view-profile .service {
-  margin-top: 5%
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 35px 15px;
+  margin-top: 7%;
 }
 
 #view-profile .distance {
@@ -887,10 +908,11 @@ _______________________________________________________ */
 }
 
 #view-profile .service button {
+  font-size: 1rem;
+  color: #2387CF;
   border: none;
   background: #FFF;
-  padding: 0px;
-  color: #2387CF
+  padding: 0px  
 }
 
 #view-profile .service button:hover,
@@ -901,7 +923,8 @@ _______________________________________________________ */
 }
 
 #view-profile .service button span i {
-  margin: 0 .5rem 0 0
+  margin: auto .75rem;
+  font-size: .75rem
 }
 
 #view-profile .close_table {
@@ -950,13 +973,10 @@ _______________________________________________________ */
 }
 
 #search-section label {
+  font-size: 1.15rem;
   font-weight: 600;
   color: #2387CF;
   margin: .75rem 0 .34em 0
-}
-
-#search-section .find-btn button {
-  margin: 1.75rem auto
 }
 
  /* EDIT PROFILE Section
@@ -1097,13 +1117,6 @@ _______________________________________________________ */
   font-size: 1.5rem
 }
 
-#edit-profile #new_service_as_sponsor, 
-#edit-profile #new_service_as_friend {
-  color: #fff;
-  background: #2387CF;
-  border: none;
-}
-
 #edit-profile #updatePhotoForm {
   margin: 3% 0 0
 }
@@ -1140,21 +1153,6 @@ _______________________________________________________ */
   background: #FF2F2F;
   color: #fff;
   padding: 5px
-}
-
-#edit-profile #addNewPhoto button {
-  color: #fff;
-  background: #FF2F2F;
-  border-radius: 5px;
-  border: none;
-  padding: 5px 15px
-}
-
-#edit-profile .btn-save {
-  background-color: #57CF23;
-  color: #fff;  
-  border: none;
-  margin: 1.75rem auto 1.75rem auto
 }
 
 #edit-profile .preview-img-upload {
@@ -1208,10 +1206,6 @@ _______________________________________________________ */
   font-weight: 600
 }
 
-#technical-support form button {
-  margin: 3% auto
-}
-
 /* SUPPORT TICKETS SECTION
 _______________________________________________________ */
 
@@ -1246,17 +1240,6 @@ _______________________________________________________ */
 #support-tickets .new-support-tickets {
   text-align: center;
   margin: 3% auto
-}
-
-#support-tickets .new-support-tickets button {
-  background: #2387CF;
-  border: none;
-  margin: 0 auto
-}
-
-#support-tickets .new-support-tickets button a {
-  color: #fff;
-  text-decoration: none;
 }
 
 /* SINGLE ARTICLE PAGE SECTION
@@ -1357,6 +1340,11 @@ _______________________________________________________ */
   width: 100%
 }
 
+
+
+/* VUE APP Section
+_______________________________________________________ */
+
 /* FOOTER Section
 _______________________________________________________ */
 
@@ -1402,6 +1390,10 @@ footer .navbar-brand {
   width: 100%;
   margin: 0
 }
+
+/* USER SEARCH RESULT SECTION */
+
+
 
 /* CONTROLS Section
 _______________________________________________________ */
@@ -1461,24 +1453,6 @@ _______________________________________________________ */
   width: 100%
 }
 
-.delete-btn,
-.delete-btn:hover,
-.delete-btn:focus,
-.delete-btn:active {
-  background-color: #D73D3A;
-  color: #fff;
-  border: none;
-  text-decoration: none;
-  outline: none;
-  box-shadow: none;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  /* background-image: none */
-}
-
-
 .fancybox-button--zoom,
 .fancybox-button--play,
 .fancybox-button--thumbs {
@@ -1504,6 +1478,10 @@ header .navbar-toggler {
   padding: .375rem .75rem
 }
 
+.none {
+  display: none !important
+}
+
 /* REPEAT ELEMENTS
 _______________________________________________________ */
 
@@ -1516,11 +1494,11 @@ _______________________________________________________ */
 #article-page h2 {
   color: #2387CF;
   font-size: 1.7rem;
-  font-weight: 400;
+  font-weight: 500;
   margin: 5% auto 5% 0;
   padding: 1%;
   background: #fff;
-  width: 20%;
+  width: 25%;
   border-radius: .25rem;
   line-height: 1;
   text-align: center;
@@ -1538,11 +1516,65 @@ _______________________________________________________ */
 #article-page .article-page-title h3,
 #all-news-section .all-news-title h3 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #2387CF;
   margin: 3% 0
 }
 
+#support-tickets .new-support-tickets button,
+#edit-profile #new_service_as_sponsor, 
+#edit-profile #new_service_as_friend,
+#technical-support form button,
+#search-section .find-btn button {
+  background-color: #2387CF;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 1.75rem auto  
+}
+
+#support-tickets .new-support-tickets button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#edit-profile .btn-save {
+  background-color: #57CF23;
+  color: #fff;  
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 1.75rem auto
+}
+
+
+#edit-profile #addNewPhoto button {
+  background: #FF2F2F;
+  color: #fff;  
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 1.75rem auto
+}
+
+#edit-profile #usersPhoto button {
+  background: #FF2F2F;
+  color: #fff;  
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.delete-btn,
+.delete-btn:hover,
+.delete-btn:focus,
+.delete-btn:active {
+  background: #FF2F2F;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none
+}
 
 /* OFLINE USER Section
 _______________________________________________________ */
@@ -1581,19 +1613,29 @@ _______________________________________________________ */
 _______________________________________________________ */
 
 .modal-error {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100
+}
+
+.modal-card {
   color: #000;
   font-size: 20px;
   position: fixed;
-  display: none;
   top: 320px;
   left: 30%;
   width: 40%;
   padding: 3%;
   z-index: 30;
   text-align: center;
-  background-color: #fff;
-  border-radius: .25rem;
+  background-color: #f5f5f5;
+  border-radius: .25rem
 }
+
 .modal-darkening{
   display: none;
   position: fixed;
@@ -1603,11 +1645,13 @@ _______________________________________________________ */
   left: 0;
   z-index: 20;
   background:#000;
-  opacity: .5;
+  opacity: .5
 }
 .modal-error h2 {
   color: #2387CF;
-  margin: 0 auto 3%;
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0 auto 3%
 }
 
 .modal-error__close-btn {
@@ -1615,14 +1659,13 @@ _______________________________________________________ */
   height: 28px;
   width: 28px;
   position: absolute;
-  top: 5%;
-  right: 2%;
+  top: 3%;
+  right: 1%;
   font-size: 20px;
-  background-color: #2D5c92;
   border-radius: 25px;
-  color: #fff;
+  color: #2387CF;
   display: inline-block;
-  line-height: 30px;
+  line-height: 30px
 }
 
 .modal-error__close-btn:hover,
@@ -1683,6 +1726,21 @@ _______________________________________________________ */
 _______________________________________________________ */
 
 @media all and (min-width: 1200px) {
+
+  #support-tickets .new-support-tickets button,
+  #edit-profile #new_service_as_sponsor, 
+  #edit-profile #new_service_as_friend,
+  #technical-support form button,
+  #search-section .find-btn button,
+  #edit-profile .btn-save,
+  #edit-profile #addNewPhoto button,
+  #edit-profile #usersPhoto button,
+  .delete-btn,
+  .delete-btn:hover,
+  .delete-btn:focus,
+  .delete-btn:active {
+    font-size: 1rem
+  }
 
 }
 
@@ -1971,10 +2029,6 @@ _______________________________________________________ */
     font-size: 1rem
   }
 
-  #view-profile .service button span {
-    font-size: .75rem
-  }
-
   #edit-profile #countdown div,
   #edit-profile .alert label {
     font-size: 0.75rem
@@ -2106,6 +2160,26 @@ _______________________________________________________ */
 
   #single-news-section h2 {
     width: 60%
+  }
+
+  #view-profile .service {
+    padding: 30px 0
+  }
+
+  #view-profile .view-profile-character {
+    margin: 7% 0
+  }
+
+  #view-profile .table_mobile {
+    margin: 0px -10px 7%
+  }
+
+  #view-profile .user_content {
+    margin: 20% 0
+  }
+
+  #search-section label {
+    font-size: 1rem
   }
   
 }
