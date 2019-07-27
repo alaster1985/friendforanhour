@@ -124,27 +124,39 @@ class Profile extends Model
         });
     }
 
-    //last 10 records for "new friends"
-    public static function getNewProfiles()
-    {
-        return Profile::orderBy('created_at', 'desc')
-            ->where([
-                ['is_deleted', '=', 0],
-                ['is_locked', '=', 0],
-            ])
-            ->take(10)
-            ->get();
-    }
+//    public static function getNewProfiles()
+//    {
+//        return Profile::orderBy('created_at', 'desc')
+//            ->where([
+//                ['is_deleted', '=', 0],
+//                ['is_locked', '=', 0],
+//            ])
+//            ->take(10)
+//            ->get();
+//    }
+//
+//    public static function getSixProfilesForLowerBlocks()
+//    {
+//        return Profile::with(['profileAddress', 'serviceList'])
+//            ->where([
+//                ['is_deleted', '=', 0],
+//                ['is_locked', '=', 0],
+//            ])
+//            ->orderBy('created_at', 'desc')
+//            ->take(6)
+//            ->get()->filter->profileOnline(false);
+//    }
 
-    public static function getSixProfilesForLowerBlocks()
+    public static function getSomeProfilesByParam($count, $typeOfSort, $isOnline)
     {
-        return Profile::orderBy('created_at', 'desc')
+        return Profile::with(['profileAddress'])
             ->where([
                 ['is_deleted', '=', 0],
                 ['is_locked', '=', 0],
             ])
-            ->take(6)
-            ->get()->filter->profileOnline(false);
+            ->orderBy('created_at', $typeOfSort)
+            ->take($count)
+            ->get()->filter->profileOnline($isOnline);
     }
 
     public static function setSubscriptionEndDate($profileId)
