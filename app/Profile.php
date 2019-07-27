@@ -275,4 +275,9 @@ class Profile extends Model
         }
     }
 
+    public static function setLocation($profile, $longitude, $latitude)
+    {
+        return ProfileAddress::updateProfileLocationByProfileId($profile->id, $longitude, $latitude);
+    }
+
 }

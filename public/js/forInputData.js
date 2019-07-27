@@ -1,7 +1,6 @@
 (function () {
     $(document).ready(function () {
         if (window.location.pathname === '/edit' || window.location.pathname === '/admin/editProfileUser') {
-            // if (window.location.pathname === '/demo/friendforanhour/public/edit' || window.location.pathname === '/demo/friendforanhour/public/admin/editProfileUser') {
             getPhoto();
         }
 
@@ -17,10 +16,6 @@
                 alert('Select maximum ' + 2 + ' Levels!');
             }
         });
-
-        // $('#payButton').on('click', function () {
-        //     $(this).attr('disabled', 'disabled');
-        // });
 
         var i = 0;
         $('#new_service_as_sponsor').click(function () {
@@ -155,6 +150,38 @@
         $('#updatePhotoForm').submit(function (e) {
             updatePhoto();
             e.preventDefault();
+        });
+
+        /**
+         * set location function
+         */
+
+        function setLocation(longitude, latitude) {
+           var formData = new FormData;
+            formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+            formData.append('longitude', longitude);
+            formData.append('latitude', latitude);
+            $.ajax({
+                url: 'setProfileLocation',
+                data: formData,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    console.log(data)
+                },
+                error: function (data) {
+                    $('.alert-danger').show();
+                    $('.alert-danger').empty();
+                    $.each(data.responseJSON.errors, function (key, value) {
+                        $('.alert-danger').append('<p>' + value + '</p>');
+                    });
+                }
+            });
+        }
+
+        $('p').on('click', function () {
+            setLocation(36.232845, 49.988358);
         })
 
     });
@@ -169,14 +196,12 @@
         }, function (data) {
             $(data).each(function (key, val) {
                 mark = val.main_photo_marker ? 'Основная' : '';
-                // if (window.location.pathname === '/demo/friendforanhour/public/edit' || window.location.pathname === '/demo/friendforanhour/public/admin/editProfileUser') {
                 if (window.location.pathname === '/edit' || window.location.pathname === '/admin/editProfileUser') {
                     mark = '<input type="radio" class="marker_chect" name="marker" value="' + val.id + '"' + (val.main_photo_marker ? 'checked' : '') + '>';
                     removePhotoButton = '<td><button class="btn btn-primary btn-md btn-block shadow-none delete-btn" type="button" id="removePhotoButton' + val.id + '" >Удалить</button></td>';
                 }
 
                 $('#usersPhoto').append('<tr>' +
-                   // '<td><img height="10%" src="/demo/friendforanhour/public/' + val.photo_path + '"></td>' +
                     '<td><img height="10%" src="/' + val.photo_path + '"></td>' +
                     '<td>' + mark + '</td>' + removePhotoButton +
                     '</tr>');
@@ -244,7 +269,6 @@
 
     function resetPreview() {
         $('#preview').attr('src', '/images/preview.png');
-        // $('#preview').attr('src', '/demo/friendforanhour/public/images/preview.png');
         $('#imgInput').val('');
     }
 }());
