@@ -20,7 +20,7 @@
                 <div class="col-lg-6 view-profile-character">
                     <p class="name_user ">{{$profile->first_name}}
                         @auth
-                            <span id="app2">
+                            <span id="chat-vue">
                                 <online v-bind:friend="{{ $profile }}"
                                         v-bind:onlineusers="onlineUsers"></online>
                             </span>

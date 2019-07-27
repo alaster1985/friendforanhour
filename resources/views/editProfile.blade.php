@@ -11,7 +11,7 @@
                 @if ($errors)
                     <div style="display: block; color: red">{{($errors->first())}}</div>
                 @endif
-                <div id="app2" style="display: none">
+                <div id="chat-vue" style="display: none">
                     <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
                 </div>
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
