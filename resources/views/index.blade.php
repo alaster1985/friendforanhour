@@ -77,7 +77,7 @@
                                         <h5 class="card-title">
                                             <a href="profile?prf={{$lProfile->id}}"><span class="name_user_cart">{{$lProfile->first_name}},<span> {{$lProfile->getAge($lProfile->date_of_birth)}}</span></span></a>
                                         </h5>
-                                        <span class="city_user_cart">{{$lProfile->profileAddress->city->city_name}}</span>
+                                        <span class="city_user_cart">{{isset($lProfile->profileAddress->city_id) ? $lProfile->profileAddress->city->city_name : 'unknown'}}</span>
                                         <span class="title_serwise">Заплачу за:</span>
                                         @foreach(ServiceList::getServiceListByProfileIdForSponsor($lProfile->id)->where('main_service_marker', '=', 1) as $service)
                                             <span class="name_serwise_cart name_serwise">
