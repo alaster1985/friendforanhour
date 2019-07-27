@@ -90,4 +90,9 @@ class ProfileController extends Controller
         ];
         return json_encode($newLocation);
     }
+
+    public function getAllProfiles()
+    {
+        return json_encode(Profile::with(['profileAddress', 'serviceList', 'profilePhoto', 'gender'])->get());
+    }
 }

@@ -147,13 +147,20 @@ class Profile extends Model
 //            ->get()->filter->profileOnline(false);
 //    }
 
-    public static function getSomeProfilesByParam($count, $typeOfSort, $isOnline)
+    public static function getSomeProfilesByParam($count, $typeOfSort, $isOnline, $cityId = null)
     {
         return Profile::with(['profileAddress'])
             ->where([
                 ['is_deleted', '=', 0],
                 ['is_locked', '=', 0],
             ])
+            ->where(function ($query) use ($cityId) {
+                if ($cityId) {
+                    $query->whereHas('profileAddress', function ($q) use ($cityId) {
+                        $q->where('city_id', $cityId);;
+                    });
+                }
+            })
             ->orderBy('created_at', $typeOfSort)
             ->take($count)
             ->get()->filter->profileOnline($isOnline);
@@ -234,7 +241,7 @@ class Profile extends Model
 //            ['price', '<', 500],
 //        ]);})->get();
 
-        $result = Profile::with(['profileAddress', 'serviceList'])
+        $result = Profile::with(['profileAddress', 'serviceList', 'profilePhoto'])
             ->where([
                 ['gender_id', '=', $genderId],
                 ['is_deleted', '=', 0],

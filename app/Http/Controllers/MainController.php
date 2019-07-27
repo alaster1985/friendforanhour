@@ -15,12 +15,17 @@ class MainController extends Controller
 {
     public function index()
     {
+        $cityId = null;
         $typeOfSort = 'desc';
         $isOnline = false;
         $count = 10;
         $newProfiles = Profile::getSomeProfilesByParam($count, $typeOfSort, $isOnline);
         $count = 6;
-        $profilesForLowerBlocks = Profile::getSomeProfilesByParam($count, $typeOfSort, $isOnline);
+        if (isset(Auth::user()->profile_id))
+        {
+            $cityId = Auth::user()->profile->profileAddress->city_id;
+        }
+        $profilesForLowerBlocks = Profile::getSomeProfilesByParam($count, $typeOfSort, $isOnline, $cityId);
         $limit = Auth::check() ? 4 : 1; // count of news for index page
         return view('index', [
             'newProfiles' => $newProfiles,
