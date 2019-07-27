@@ -1,12 +1,12 @@
 @include('layouts.header')
 
-    <div class="container">
-        <section id="new_people_servis">
+    <section id="new_people_servis">
+        <div class="container">
             <div class="row new_people_servis_block">
-                <div class="label_new_people col-sm-2 col-md-1">
+                <div class="label_new_people col-lg-1 col-md-2 col-sm-2 col-4">
                     <p>Новые друзья</p>
                 </div>                
-                <ul class="col-sm-10 col-md-11">
+                <ul class="col-lg-11 col-md-10 col-sm-10 col-8">
                     @foreach($newProfiles as $profile)
                         <li>
                             <a href="profile?prf={{$profile->id}}">
@@ -19,16 +19,19 @@
                     @endforeach
                 </ul>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-5 col-sm-5">
                 @guest
                     @include('auth.loginTest')
                 @endguest
                 <aside id="main-page-aside-news">
                     <div class="block_news">
                         @foreach($news as $val)
-                        <div class="card border-light mb-3" style="max-width: 18rem;">
+                        <div class="card border-light mb-3">
                             <a href="newsView?nws={{$val->id}}">
                                 {{-- <div class="card-header">Header</div> --}}
                                 <div class="card-body">
@@ -45,10 +48,13 @@
                     </div>
                 </aside>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-md-7 col-sm-7">
                 <section id="map-section">
                     <div class="map_container">
-                        @include('map')
+                        <div class="map-card">
+                            <p>Карта друзей, услуг и людей, у которых можно заработать деньги на 1-HF.com</p>
+                            @include('map')
+                        </div>
                     </div>
                 </section>
             </div>
@@ -71,7 +77,7 @@
                                         <h5 class="card-title">
                                             <a href="profile?prf={{$lProfile->id}}"><span class="name_user_cart">{{$lProfile->first_name}},<span> {{$lProfile->getAge($lProfile->date_of_birth)}}</span></span></a>
                                         </h5>
-                                        <span class="city_user_cart">{{$lProfile->profileAddress->city->city_name}}</span>
+                                        <span class="city_user_cart">{{isset($lProfile->profileAddress->city_id) ? $lProfile->profileAddress->city->city_name : 'unknown'}}</span>
                                         <span class="title_serwise">Заплачу за:</span>
                                         @foreach(ServiceList::getServiceListByProfileIdForSponsor($lProfile->id)->where('main_service_marker', '=', 1) as $service)
                                             <span class="name_serwise_cart name_serwise">
@@ -107,9 +113,9 @@
                                     @guest
                                         <div class="row" style="justify-content: space-between;margin:0;">
                                             @if($lProfile->profileOnline())
-                                                <span class="online-color"><img style="height: 15px;margin: auto 2%;" src="/images/monitor1.svg">Онлайн</span>
+                                                <span class="online-color"><img style="height:13px;margin:auto 3px auto 0;" src="/images/monitor1.svg">Онлайн</span>
                                             @else
-                                                <span class="offline-color"><img style="height: 15px;margin: auto 2%;" src="/images/monitor0.svg">Офлайн</span>
+                                                <span class="offline-color"><img style="height:13px;margin:auto 3px auto 0;" src="/images/monitor0.svg">Офлайн</span>
                                             @endif
                                                 <div class="bottom-card-section">
                                                     <button class="btn btn-primary btn-md btn-block offline-write-btn" type="submit">
@@ -179,11 +185,5 @@
             </div>
         </section>
     </div>
-
-<!--Load the API from the specified URL
-* The async attribute allows the browser to render the page while the API loads
-* The key parameter will contain your own API key (which is not needed for this tutorial)
-* The callback parameter executes the initMap() function
--->
 
 @include('layouts.footer')

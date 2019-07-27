@@ -1,8 +1,9 @@
 @include('layouts.header')
 <section id="view-profile">
     <div class="container">
-        <div class="row">
-            <div class="row col-lg-12 view-profile-card">
+        <h2>Анкета:</h2>
+        <div class="row justify-content-center">
+            <div class="row col-lg-10 col-md-10 col-sm-10 col-11 view-profile-card mobile_shadow_off justify-content-center">
 
                 <div class="col-lg-6 view-profile-photo">
                     <a data-fancybox="images" rel="group" href="{{asset($profile->profilePhoto()
@@ -64,13 +65,13 @@
                 </div>
 
                 
-                <div class="row row col-lg-12 service service_close">
+                <div class="row col-lg-12 service service_close">
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 table_mobile">
                         <table class="table_for_me">
                             <tr>
                                 <th class="table_title_service">
-                                    <h5>Сделаю за деньги:</h5>
+                                    <h4>Сделаю за деньги:</h4>
                                 </th>
                             </tr>
                             @foreach($friendsServices as $list)
@@ -81,16 +82,16 @@
                             @endforeach
                         </table>
                         <button class="table_for_me_open">
-                            <span class="open_table"><i class="fas fa-chevron-down"></i>Подробнее</span>
-                            <span class="close_table"><i class="fas fa-chevron-up"></i>Свернуть</span>
+                            <span class="open_table">Подробнее<i class="fas fa-chevron-down"></i></span>
+                            <span class="close_table">Свернуть<i class="fas fa-chevron-up"></i></span>
                         </button>
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 table_mobile">
                         <table class="table_paid">
                             <tr>
                                 <th class="table_title_service">
-                                    <h5>Заплачу за:</h5>
+                                    <h4>Заплачу за:</h4>
                                 </th>
                             </tr>
                             @foreach($sponsorsServices as $list)
@@ -101,8 +102,8 @@
                             @endforeach
                         </table>
                         <button class="table_paid_open">
-                            <span class="open_table"><i class="fas fa-chevron-down"></i>Подробнее</span>
-                            <span class="close_table"><i class="fas fa-chevron-up"></i>Свернуть</span>
+                            <span class="open_table">Подробнее<i class="fas fa-chevron-down"></i></span>
+                            <span class="close_table">Свернуть<i class="fas fa-chevron-up"></i></span>
                         </button>
                     </div>
                 </div>
@@ -115,20 +116,17 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="col-lg-12" style="margin: 0 auto;">
+                <div class="col-lg-12 map_mobile_padding" style="margin: 0 auto;">
                     <section id="map-section">
                         <div class="view_profile_map_container">
                             @include('map')
                         </div>
                     </section>
                 </div>
-
             </div>
-            
-
         </div>
-
-        {# MODAL #}
+    </div>
+        {{-- MODAL --}}
 
         @auth
             <div class="container">
@@ -167,7 +165,7 @@
             </div>
         @endauth
 
-        {# END MODAL #}
+        {{-- END MODAL --}}
 
     </div>
 </section>

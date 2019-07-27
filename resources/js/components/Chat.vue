@@ -1,17 +1,21 @@
 <style scoped>
     .panel-block {
         flex-direction: column;
-        border: none;
+        /* border: none;*/
+
     }
 
     .chat {
         width: 100%;
         padding: 20px;
-        box-shadow: inset 0 0 20px 0 grey;
-        margin-bottom: 20px;
-        border: 1px solid gray;
+        /* box-shadow: inset 0 0 20px 0 grey;
+         margin-bottom: 20px;*/
+        /*border: 1px solid lightgrey;*/
+        /*border-bottom: 1px solid lightgrey;*/
         max-height: 600px;
         overflow-x: auto;
+        background: #fff;
+        box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
     }
     .chat span {
         font-size: 8px;
@@ -19,14 +23,19 @@
 
     .chat p {
         margin-bottom: -1px;
+        color: #465160;
+        font: 13px/20px Tahoma, Helvetica, sans-serif;
     }
 
     .chat .chat-right, .chat .chat-left {
         max-width: 70%;
-        box-shadow: 0 0 8px 0px gray;
+        box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+        border-radius: .25rem;
+        background: #f9f9f9;
         padding: 8px;
         margin: 4px;
     }
+
 
     .chat-right {
         float: right;
@@ -34,6 +43,7 @@
 
     .chat-left {
         float: left;
+
     }
 
     .no-message {
@@ -41,6 +51,7 @@
         display: flex;
         align-items: center;
     }
+
 </style>
 <template>
     <div class="panel-block">
@@ -58,7 +69,7 @@
             </div>
         </div>
         <div v-else class="no-message">
-            There are no messages for you
+            Для вас нет сообщений.
         </div>
         <chat-composer v-bind:profileid="profileid" v-bind:chats="chats" v-bind:friendid="friendid"></chat-composer>
     </div>
