@@ -269,7 +269,7 @@ header #navbarSupportedContent ul li a.dropdown-toggle {
     -ms-user-select: none;
     user-select: none;
     background-color: #fff;
-    padding: .375rem .75rem;
+    padding: .5rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
@@ -340,8 +340,8 @@ _______________________________________________________ */
 
 #main-page-aside-news .block_news .card-body {
     border-radius: .25rem;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -381,8 +381,8 @@ _______________________________________________________ */
 
 #new_people_servis {
     background: #fff;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -411,9 +411,9 @@ _______________________________________________________ */
   height: 100%;
   border-radius: .25rem;
   padding: 0px;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
 }
 
 #new_people_servis .label_new_people p {
@@ -510,9 +510,9 @@ _______________________________________________________ */
     background-color: #fff;
     background-clip: border-box;
     border-radius: .25rem;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     margin: 1rem 0 0 0
 }
 
@@ -561,8 +561,8 @@ _______________________________________________________ */
   background: #fff;
   padding: 1rem;
   border-radius: .25rem;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -597,6 +597,11 @@ _______________________________________________________ */
   font-size: 12px
 }
 
+#map .gm-style-mtc,
+#map .gm-svpc {
+  display: none
+}
+
 /* LAST ACTIVE USERS Section
 _______________________________________________________ */
 
@@ -617,13 +622,13 @@ _______________________________________________________ */
 }
 
 #last-active-users .card {
-    width: 32%;
+    width: 49%;
     border-radius: .25rem;
     overflow: hidden;
     border: none;
     margin: 1% 0;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -744,8 +749,7 @@ _______________________________________________________ */
 #last-active-users .btn-primary {
     color: #fff;
     background: #2387CF;
-    font-size: 11px;
-    padding: 0 6px
+    font-size: 11px
 }
 
 #last-active-users .name_serwise_cart_link span {
@@ -815,9 +819,9 @@ _______________________________________________________ */
 #view-profile .view-profile-card {
   background: #fff;
   border-radius: .25rem;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
   padding: 1.75rem 1rem
 }
 
@@ -968,8 +972,8 @@ _______________________________________________________ */
 
 #search-section .form-control {
     border: none;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -1159,9 +1163,9 @@ h3 {
   -ms-flex-pack: center;
   justify-content: center;
   background: #2387CF;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
   margin: 0 3%
 }
 
@@ -1318,9 +1322,9 @@ transition: none ! important;
 .stackedcards-top,
 .stackedcards-none {
   background: #fff; /* set card background background */
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
   height: 100%
 }
 
@@ -1361,8 +1365,8 @@ _______________________________________________________ */
     color: #2387CF;
     border: none;
     margin: 0 0 2rem 0;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -1385,8 +1389,8 @@ _______________________________________________________ */
 #edit-profile .acc-settings-textfield textarea {
     width: 40%;
     border: none;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -1408,8 +1412,8 @@ _______________________________________________________ */
 #edit-profile .select_status_service select,
 #edit-profile #imgInput {
     border: none;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -1489,8 +1493,8 @@ _______________________________________________________ */
     border-radius: .25rem;
     padding: 1%;
     margin: 0 1% 1% 1%;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -1520,6 +1524,10 @@ _______________________________________________________ */
     text-align: start
 }
 
+#edit-profile .set-location button {
+    margin: 0 auto 3% auto
+}
+
 /* ARTICLE PAGE SECTION
 _______________________________________________________ */
 
@@ -1527,9 +1535,9 @@ _______________________________________________________ */
     width: 50%;
     background: #fff;
     border-radius: .25rem;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     margin: 1% 0  
 }
 
@@ -1582,8 +1590,8 @@ _______________________________________________________ */
     border-radius: .25rem;
     padding: .5rem .75rem;
     text-align: center;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -1604,9 +1612,9 @@ _______________________________________________________ */
 #single-article-page .single-article-card {
   background: #fff;
   border-radius: .25rem;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
   margin: 5% 0 0;
   padding: 3%
 }
@@ -1630,9 +1638,9 @@ _______________________________________________________ */
 #all-news-section .all-news-card {
   background: #fff;
   border-radius: .25rem;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
   margin: 1% 0;
   padding: 3%  
 }
@@ -1680,9 +1688,9 @@ _______________________________________________________ */
 #single-news-section .single-news-card {
   background: #fff;
   border-radius: .25rem;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
   margin: 1% 0;
   padding: 0 3%
 }
@@ -1724,8 +1732,8 @@ _______________________________________________________ */
     border: none;
     border-radius: .25rem;
     background: #FFF;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
   }
 
@@ -1737,6 +1745,7 @@ _______________________________________________________ */
   }
 
   #chat-vue .panel-heading h3 {
+    color: #fff;
     margin: 0;
     padding: 0 1%
   }
@@ -1746,8 +1755,8 @@ _______________________________________________________ */
     border-radius: .25rem;
     padding: 1% 2%;
     margin: 3% 0;
-    -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
   }
 
@@ -1822,8 +1831,8 @@ _______________________________________________________ */
   background: #fff;
   border-radius: .25rem;
   margin: 3% 0;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -1960,8 +1969,8 @@ _______________________________________________________ */
   border-radius: .25rem;
   line-height: 1;
   text-align: center;
-  -webkit-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
-  -moz-box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
   box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
@@ -1979,6 +1988,7 @@ _______________________________________________________ */
   margin: 3% 0
 }
 
+#edit-profile .set-location button,
 #support-tickets .new-support-tickets button,
 #edit-profile #new_service_as_sponsor, 
 #edit-profile #new_service_as_friend,
@@ -2183,8 +2193,9 @@ _______________________________________________________ */
 /* @MEDIA Section
 _______________________________________________________ */
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1200px) {    
 
+  #edit-profile .set-location button,
   #support-tickets .new-support-tickets button,
   #edit-profile #new_service_as_sponsor, 
   #edit-profile #new_service_as_friend,

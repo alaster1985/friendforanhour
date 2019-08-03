@@ -41,7 +41,9 @@
                 @endif
             </div>
         </div>
-        <p>set my location</p>
+        <div class="set-location">
+            <button class="col-lg-3 btn btn-primary btn-md btn-block" type="button">Мое местоположение</button>
+        </div>
         <div class="alert-danger" style="display:none; color: red;"></div>
         <form action="{{Route('updateProfile')}}" method="POST" enctype="multipart/form-data">
             @csrf
