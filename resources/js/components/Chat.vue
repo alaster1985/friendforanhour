@@ -15,7 +15,7 @@
         max-height: 600px;
         overflow-x: auto;
         background: #fff;
-        box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+        box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
     }
     .chat span {
         font-size: 8px;
@@ -29,7 +29,7 @@
 
     .chat .chat-right, .chat .chat-left {
         max-width: 70%;
-        box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+        box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
         border-radius: .25rem;
         background: #f9f9f9;
         padding: 8px;

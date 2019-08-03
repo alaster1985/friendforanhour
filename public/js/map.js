@@ -1,8 +1,15 @@
 function initMap() {
+    
+    var userCenter = {
+        lat:50.45466,
+        lng:30.5238
+    }
+
     var element = document.getElementById('map');
     var options = {
-        zoom: 10,
-        center: { lat: 55.7, lng: 37.536 }
+        center: userCenter,
+        scrollwheel:false,
+        zoom: 10
     };
 
     var map = new google.maps.Map(element, options);
@@ -78,15 +85,34 @@ function initMap() {
         content: contentString
     });
 
-    var marker = new google.maps.Marker({
-        coordinates: { lat: 55.7, lng: 37.536 },
-        position: map.getCenter(),
-        icon: markerIcon,
-        map: map,
-    });
+    $.ajax({
+        url:'profile_addresses',//запрос данных из базы
+        type:'POST',
+        data: formData,
+        success: function(res) {
+            res1=[];
+            res1 = JSON.parse(res);//парсинг в массив
+    } });
 
-    marker.addListener('click', function() {
-        infowindow.open(map, marker);
-    });
+    var markers, i;
+
+    for (var i = 0; i<= res1.length; i++) {
+      var info = '<p>' + res1[i].name + '</p>' + '<p>' + res1[i].adr + '</p>' + "<p>" 
+           + res1[i].contact + '</p>';
+      contentStr = '<p>' + info + '</p>';
+      markers[i] = new google.maps.Marker({
+                position: new google.maps.LatLng(res1[i].lat, res1[i].lng),
+                title: res1[i].name,
+                icon: markerIcon,
+                map: map,
+                buborek: contentStr
+            });
+      google.maps.event.addListener(markers[i], 'click',
+          function () { //ВЫВОД ОКНА С ИНФОРМАЦИЕЙ
+                              infowindow.setContent(this.buborek);
+                              infowindow.open(map, this);
+            });
+      markers[i].setMap(map);
+    }
 
 }

@@ -54,7 +54,7 @@ textarea {
     border-radius: .25rem;
     background: #FFF;
     /*box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);*/
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
 }
 .button {
     text-shadow: -1px -1px 0 #0D79BD;
