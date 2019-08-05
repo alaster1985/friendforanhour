@@ -597,11 +597,6 @@ _______________________________________________________ */
   font-size: 12px
 }
 
-#map .gm-style-mtc,
-#map .gm-svpc {
-  display: none
-}
-
 /* LAST ACTIVE USERS Section
 _______________________________________________________ */
 
@@ -1394,6 +1389,10 @@ _______________________________________________________ */
     box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
+#edit-profile .acc-settings-textfield .set-location {
+  width: 40%
+}
+
 #edit-profile .newCity,
 #edit-profile .newCountry {
     margin-top: 10px
@@ -1452,22 +1451,29 @@ _______________________________________________________ */
 }
 
 #edit-profile .select_status_service {
-    padding: 0px!important
-}
-
-#edit-profile .delete_service {
-    text-align: center;
-    color: #FF2F2F
+  width: 14%;
+  padding: 0px!important
 }
 
 #edit-profile .prise_service {
-    text-align: center
+  width: 10%
+}
+
+#edit-profile .delete_service {
+  width: 10%;
+  text-align: center;
+  color: #FF2F2F
+}
+
+#edit-profile .prise_service {
+  text-align: center
 }
 
 #edit-profile .edit_profile_general_block label {
-    color: #2387CF;
-    font-weight: 600;
-    margin: auto 0
+  width: 30%;
+  color: #2387CF;
+  font-weight: 600;
+  margin: auto 0
 }
 
 #edit-profile .table_services_as_sponsor h2 {
@@ -1482,7 +1488,7 @@ _______________________________________________________ */
 }
 
 #edit-profile #updatePhotoForm table tr:first-child {
-    display: none!important
+    display: none !important
 }
 
 #edit-profile #updatePhotoForm table tbody tr {
@@ -1522,10 +1528,6 @@ _______________________________________________________ */
 
 #edit-profile .custom-file-label {
     text-align: start
-}
-
-#edit-profile .set-location button {
-    margin: 0 auto 3% auto
 }
 
 /* ARTICLE PAGE SECTION
@@ -1988,7 +1990,6 @@ _______________________________________________________ */
   margin: 3% 0
 }
 
-#edit-profile .set-location button,
 #support-tickets .new-support-tickets button,
 #edit-profile #new_service_as_sponsor, 
 #edit-profile #new_service_as_friend,
@@ -2195,7 +2196,6 @@ _______________________________________________________ */
 
 @media all and (min-width: 1200px) {    
 
-  #edit-profile .set-location button,
   #support-tickets .new-support-tickets button,
   #edit-profile #new_service_as_sponsor, 
   #edit-profile #new_service_as_friend,
@@ -2379,6 +2379,11 @@ _______________________________________________________ */
   #edit-profile .acc-settings-textfield select, 
   #edit-profile .acc-settings-textfield textarea {
     width: 100%
+  }
+
+  #edit-profile .acc-settings-textfield  .et-location {
+    width: 100%;
+    margin: 0 0 5% 0
   }
 
   #edit-profile .acc-settings-textfield label {

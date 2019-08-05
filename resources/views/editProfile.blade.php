@@ -41,14 +41,19 @@
                 @endif
             </div>
         </div>
-        <div class="set-location">
-            <button class="col-lg-3 btn btn-primary btn-md btn-block" type="button">Мое местоположение</button>
-        </div>
+
         <div class="alert-danger" style="display:none; color: red;"></div>
+
         <form action="{{Route('updateProfile')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row edit_profile_general_block">
                 <div class="row">
+
+                    {{-- Set User Location Field --}}
+                    <div class="col-lg-12 acc-settings-textfield">
+                        <label>Мое местоположени:</label>
+                        <input class="form-control form-control-md set-location" type="button" name="set_location" value="{{$profile->profileAddress->latitude}}° - {{$profile->profileAddress->longitude}}°">
+                    </div>
 
                     {{-- Nickname Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
@@ -181,8 +186,8 @@
                                 <input class="form-control form-control-md" type="text" name="service_description[1c{{$list->id}}]"
                                     value="{{$list->service_description}}">
                             </td>
-                            <td>
-                                <input class="form-control form-control-md prise_service" type="number" min="0" max="100000"
+                            <td class="prise_service">
+                                <input class="form-control form-control-md" type="number" min="0" max="100000"
                                     name="price[1c{{$list->id}}]" value="{{$list->price}}">
                             </td>
                             <td>
@@ -230,8 +235,8 @@
                                 <input class="form-control form-control-md" type="text" name="service_description[2c{{$list->id}}]"
                                     value="{{$list->service_description}}">
                             </td>
-                            <td>
-                                <input class="form-control form-control-md prise_service" type="number" min="0" max="100000"
+                            <td class="prise_service">
+                                <input class="form-control form-control-md" type="number" min="0" max="100000"
                                     name="price[2c{{$list->id}}]" value="{{$list->price}}">
                             </td>
                             <td>
