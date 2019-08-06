@@ -1,5 +1,4 @@
     </main>
-
     
     <div class="modal-error">
         <div class="modal-card">
@@ -62,7 +61,6 @@
     <script type="text/javascript" src="{{ asset('js/forComplain.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/slick.js') }} " defer></script>
-    {{-- <script type="text/javascript" src="{{ asset('js/search-user-slider.js') }} " defer></script> --}}
     <script type="text/javascript" src="{{ asset('js/jquery.fancybox.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/main.script.js') }}"></script>
 
