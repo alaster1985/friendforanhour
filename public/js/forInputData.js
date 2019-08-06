@@ -152,37 +152,9 @@
             e.preventDefault();
         });
 
-        /**
-         * set location function
-         */
-
-        function setLocation(longitude, latitude) {
-           var formData = new FormData;
-            formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
-            formData.append('longitude', longitude);
-            formData.append('latitude', latitude);
-            $.ajax({
-                url: 'setProfileLocation',
-                data: formData,
-                type: 'POST',
-                contentType: false,
-                processData: false,
-                success: function (data) {
-                    console.log(data)
-                },
-                error: function (data) {
-                    $('.alert-danger').show();
-                    $('.alert-danger').empty();
-                    $.each(data.responseJSON.errors, function (key, value) {
-                        $('.alert-danger').append('<p>' + value + '</p>');
-                    });
-                }
-            });
-        }
-
-        $('p').on('click', function () {
-            setLocation(36.232845, 49.988358);
-        })
+        // $('p').on('click', function () {
+        //     setLocation(36.232845, 49.988358);
+        // })
 
     });
 

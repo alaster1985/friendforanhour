@@ -52,7 +52,7 @@
                     {{-- Set User Location Field --}}
                     <div class="col-lg-12 acc-settings-textfield">
                         <label>Мое местоположени:</label>
-                        <input class="form-control form-control-md set-location" type="button" name="set_location" value="{{$profile->profileAddress->latitude}}° - {{$profile->profileAddress->longitude}}°">
+                        <button class="btn btn-primary btn-md btn-block set-location" type="button" data-toggle="modal" data-target="#myModal">Указать на карте</button>
                     </div>
 
                     {{-- Nickname Field --}}
@@ -289,6 +289,26 @@
             <button class="col-lg-3 btn btn-primary btn-md btn-block shadow-none btn-save" type="submit">Сохранить галерею</button>
         </form>
         <div class="alert-danger" style="display:none; color: red;"></div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" style="margin: 10% auto 0 auto" role="document">
+            <div class="modal-content" style="padding:1rem">
+                <div class="modal-header" style="padding:0">
+                    {{-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4> --}}
+                </div>
+                <div class="row">
+                    <div class="col-md-12 modal_body_map">
+                        <div class="location-map" id="location-map">
+                            <div style="width: 100%; height: 450px;" id="map_canvas">
+                                @include('mapSetLocation')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 @include('layouts.footer')

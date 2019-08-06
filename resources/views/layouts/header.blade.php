@@ -24,7 +24,7 @@
 
     </head>
 
-    <body onload="init()">
+    <body>
         
         @if (Route::has('login'))
 

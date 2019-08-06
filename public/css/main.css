@@ -1366,27 +1366,27 @@ _______________________________________________________ */
 }
 
 #edit-profile .alert-warning label {
-    margin: 0
+  margin: 0
 }
 
 #edit-profile .acc-settings-textfield {
-    display: flex;
-    justify-content: center;
-    margin: 0.5rem 0
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem 0
 }
 
 #edit-profile .acc-settings-textfield label {
-    width: 20%
+  width: 20%
 }
 
 #edit-profile .acc-settings-textfield  input,
 #edit-profile .acc-settings-textfield select,
 #edit-profile .acc-settings-textfield textarea {
-    width: 40%;
-    border: none;
-    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+  width: 40%;
+  border: none;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 #edit-profile .acc-settings-textfield .set-location {
@@ -1395,11 +1395,11 @@ _______________________________________________________ */
 
 #edit-profile .newCity,
 #edit-profile .newCountry {
-    margin-top: 10px
+  margin-top: 10px
 }
 
 #edit-profile .services_as_sponsor {
-    width: 100%
+  width: 100%
 }
 
 #edit-profile .table_services_as_sponsor {
@@ -2142,6 +2142,13 @@ _______________________________________________________ */
     opacity: 0.8
 }
 
+/* MAP SET LOCATION MODAL
+_______________________________________________________ */
+
+#map-set-location {
+  height: 100%
+}
+
 /* VIEV PROFILE MODAL
 _______________________________________________________ */
 #myModal .modal-dialog{
@@ -2381,9 +2388,8 @@ _______________________________________________________ */
     width: 100%
   }
 
-  #edit-profile .acc-settings-textfield  .et-location {
+  #edit-profile .acc-settings-textfield  .set-location {
     width: 100%;
-    margin: 0 0 5% 0
   }
 
   #edit-profile .acc-settings-textfield label {
