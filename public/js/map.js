@@ -1,8 +1,11 @@
 function initMap() {
     
-  var userCenter = {
-      lat:50.45466,
-      lng:30.5238
+  var userLat = parseInt($('#lat').text());
+  var userlng = parseInt($('#lng').text());
+
+  var userCenter = { 
+    lat: userLat,
+    lng: userlng
   }
 
   var element = document.getElementById('map');
@@ -150,99 +153,61 @@ function initMap() {
   };
 
   var contentString = 
-      '<div id="profile_map_marker">'+
-          '<div class="card">' +
-              '<div class="column no-gutters" style="height: 100%;">' +
-                  '<div class="col-lg-12" style="overflow: hidden;">' +
-                      '<a href="profile?prf=1" class="profile-img-link">' +
-                          '<img src="http://friendforanhour/profilepictures/1/fennec1.jpg" class="user_image card-img">' +
-                      '</a>' +
-                  '</div>' + 
-                  '<div class="col-lg-12">' +
-                      '<div class="card-body">' +
-                          '<div class="last-active-users-about">' +
+    '<div id="profile_map_marker">'+
+      '<div class="card">' +
+        '<div class="column no-gutters" style="height: 100%;">' +
+          '<div class="col-lg-12" style="overflow: hidden;">' +
+            '<a href="profile?prf=1" class="profile-img-link">' +
+              '<img src="http://friendforanhour/profilepictures/1/fennec1.jpg" class="user_image card-img">' +
+            '</a>' +
+          '</div>' + 
+          '<div class="col-lg-12">' +
+            '<div class="card-body">' +
+              '<div class="last-active-users-about">' +
 
-                              '<h6 class="card-title">' +
-                                  '<a href="profile?prf=1">' +
-                                      '<span class="name_user_cart">Спиридон,<span> 19</span></span>' +
-                                  '</a>' +
-                              '</h6>' +
+                '<h6 class="card-title">' +
+                  '<a href="profile?prf=1">' +
+                    '<span class="name_user_cart">Спиридон,<span> 19</span></span>' +
+                  '</a>' +
+                '</h6>' +
 
-                              '<div class="name_serwise_cart name_serwise">' +
-                                  '<span class="city_user_cart">Волгоград</span>' +
-                              '</div>' +
+                '<div class="name_serwise_cart name_serwise">' +
+                  '<span class="city_user_cart">Волгоград</span>' +
+                '</div>' +
 
-                              '<div class="name_serwise_cart name_serwise">' +
-                                  '<span class="title_serwise">Заплачу за:</span>' +
-                              '</div>' +
-                              
-                                  '<div class="name_serwise_cart name_serwise">' +
-                                      '<span>хочу массаж1:</span> <span class="serwise_cart_price">900р</span>' +
-                                  '</div>' +
+                '<div class="name_serwise_cart name_serwise">' +
+                  '<span class="title_serwise">Заплачу за:</span>' +
+                '</div>' +
+                  
+                '<div class="name_serwise_cart name_serwise">' +
+                  '<span>хочу массаж1:</span> <span class="serwise_cart_price">900р</span>' +
+                '</div>' +
 
-                                  '<div class="name_serwise_cart name_serwise">' +
-                                      '<span>угощусь пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
-                                  '</div>' +
+                '<div class="name_serwise_cart name_serwise">' +
+                  '<span>угощусь пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
+                '</div>' +
 
-                              '<div class="name_serwise_cart name_serwise">' +
-                                  '<span class="title_serwise">Сделаю за деньги:</span>' +
-                              '</div>' +
-                              
-                                  '<div class="name_serwise_cart name_serwise">' +
-                                      '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
-                                  '</div>' +
+                '<div class="name_serwise_cart name_serwise">' +
+                  '<span class="title_serwise">Сделаю за деньги:</span>' +
+                '</div>' +
+                  
+                '<div class="name_serwise_cart name_serwise">' +
+                  '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
+                '</div>' +
 
-                                  '<div class="name_serwise_cart name_serwise">' +
-                                      '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
-                                  '</div>' +
+                '<div class="name_serwise_cart name_serwise">' +
+                  '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
+                '</div>' +
 
-                                  '<div class="name_serwise_cart name_serwise">' +
-                                      '<span>угощу пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
-                                  '</div>' +                                
-                              
-                          '</div>' +
-                      '</div>' +
-                  '</div>' +
+                '<div class="name_serwise_cart name_serwise">' +
+                  '<span>угощу пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
+                '</div>' +                                
+                  
               '</div>' +
+            '</div>' +
           '</div>' +
-      '</div>';
-
-  var infowindow = new google.maps.InfoWindow({
-      content: contentString
-  });
-
-  $.ajax({
-      url:'database.php',//запрос данных из базы
-      type:'GET',
-      data: formData,
-      success: function(res) {
-          res1=[];
-          res1 = JSON.parse(res);//парсинг в массив
-  } });
-
-  var markers, i;
-
-  for (var i = 0; i<= res1.length; i++) {
-    var info = '<p>' + res1[i].name + '</p>' + '<p>' + res1[i].adr + '</p>' + "<p>" 
-          + res1[i].contact + '</p>';
-    contentStr = '<p>' + info + '</p>';
-    markers[i] = new google.maps.Marker({
-              position: new google.maps.LatLng(res1[i].lat, res1[i].lng),
-              title: res1[i].name,
-              icon: markerIcon,
-              map: map,
-              buborek: contentStr
-          });
-    google.maps.event.addListener(markers[i], 'click',
-        function () { //ВЫВОД ОКНА С ИНФОРМАЦИЕЙ
-                            infowindow.setContent(this.buborek);
-                            infowindow.open(map, this);
-          });
-    markers[i].setMap(map);
-  }
-
-  google.maps.event.addListener(map, 'click', function(event) {
-    alert(event.latLng.lat() + ", " + event.latLng.lng());
-  });
+        '</div>' +
+      '</div>' +
+    '</div>';
 
 }

@@ -25,6 +25,9 @@
     </head>
 
     <body>
+
+        <div id="lng" style="display:none">{{(Auth::check() && Auth::user()->hasRole('user')) ? Auth::user()->profile->profileAddress->longitude : ''}}</div>
+        <div id="lat" style="display:none">{{(Auth::check() && Auth::user()->hasRole('user')) ? Auth::user()->profile->profileAddress->latitude : ''}}</div>
         
         @if (Route::has('login'))
 

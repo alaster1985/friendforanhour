@@ -1,11 +1,15 @@
 function initMap() {
-    
-  var userCenter = {
-      lat:50.45466,
-      lng:30.5238
+
+  var userLat = parseInt($('#lat').text());
+  var userlng = parseInt($('#lng').text());
+
+  var userCenter = { 
+    lat: userLat,
+    lng: userlng
   }
 
   var element = document.getElementById('map-set-location');
+
   var options = {
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     center: userCenter,
@@ -144,15 +148,50 @@ function initMap() {
       path: 'M242.606,0C142.124,0,60.651,81.473,60.651,181.955c0,40.928,13.504,78.659,36.31,109.075l145.646,194.183L388.252,291.03c22.808-30.416,36.31-68.146,36.31-109.075C424.562,81.473,343.089,0,242.606,0z M242.606,303.257c-66.989,0-121.302-54.311-121.302-121.302c0-66.989,54.313-121.304,121.302-121.304c66.991,0,121.302,54.315,121.302,121.304C363.908,248.947,309.598,303.257,242.606,303.257z',
       fillColor: '#F68727',
       fillOpacity: 0.8,
-      scale: 0.08,
+      scale: 0.1,
       strokeColor: '#F68727',
       strokeWeight: 1,
   };
 
+  function placeMarker(location) {
+    var marker = new google.maps.Marker({
+      position: location, 
+      map: map,
+      icon: markerIcon,
+      draggable: true
+    });
+  }
+
+  function setLocation(latitude, longitude) {
+    var formData = new FormData;
+    formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+    formData.append('latitude', latitude);
+    formData.append('longitude', longitude);      
+    $.ajax({
+      url: 'setProfileLocation',
+      data: formData,
+      type: 'POST',
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        alert(data);
+      },
+      error: function (data) {
+        $('.alert-danger').show();
+        $('.alert-danger').empty();
+        $.each(data.responseJSON.errors, function (key, value) {
+          $('.alert-danger').append('<p>' + value + '</p>');
+        });
+      }
+    });
+  }
+
   google.maps.event.addListener(map, 'click', function(event) {
-
-    alert(event.latLng.lat() + ", " + event.latLng.lng());
-
+    // alert(event.latLng.lat() + ", " + event.latLng.lng());
+    setLocation(event.latLng.lat(), event.latLng.lng());
+    // placeMarker(event.latLng);
+    $('#lat').html(event.latLng.lat());
+    $('#lng').html(event.latLng.lng());
   });
 
 }

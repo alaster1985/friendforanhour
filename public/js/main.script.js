@@ -5,16 +5,13 @@ $(document).ready(function () {
     $('#user_search').submit(function(){
 
         $.post(
-
             'filter',
-            $("#user_search").serialize(),        
-            
+            $("#user_search").serialize(),
             function(msg) { 
                 $('#user_search').hide('slow');
                 $('#search-section h2').hide('slow');
-                // $('#user_search_result').removeClass('none');
-                console.log(JSON.parse(msg));
-                // console.log(msg);
+                $('#user_search_result').removeClass('none');
+                    console.log(JSON.parse(msg));
             }
         );
         return false;

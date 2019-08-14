@@ -4,6 +4,12 @@
     outline: none
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 html {
     height: 100%;
     line-height: 1.15;
@@ -848,12 +854,12 @@ _______________________________________________________ */
 }
 
 #view-profile .name_user span img {
-    margin: 0 .5rem 0
+  margin: 0 .5rem 0
 }
 
 #view-profile .character_user {
-    color: #999DA4;
-    margin: 0px
+  color: #999DA4;
+  margin: 0px
 }
 
 #view-profile .service {
@@ -864,24 +870,29 @@ _______________________________________________________ */
 }
 
 #view-profile .distance {
-    color: #68C42B;
-    border-bottom: #68C42B 1px dashed
+  color: #68C42B;
+  border-bottom: #68C42B 1px dashed
 }
 
 #view-profile .links_user {
-    margin-top: 15px
+  margin-top: 3%;
+  display: flex
+}
+
+#view-profile .links_user #complainButton {
+  margin-left: 3%
 }
 
 #view-profile .links_user button {
-    text-shadow: -1px -1px 0 #0D79BD;
-    border: solid 1px #037BC6;
-    border-bottom-color: #07598D;
-    border-top-color: #0285D8;
-    background-color: #009CFF;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 10px;
-    padding: 5px 15px
+  text-shadow: -1px -1px 0 #0D79BD;
+  border: solid 1px #037BC6;
+  border-bottom-color: #07598D;
+  border-top-color: #0285D8;
+  background-color: #009CFF;
+  color: #fff;
+  font-weight: 600;
+  border-radius: .25rem;
+  padding: 5px 15px
 }
 
 #view-profile .links_user a {
@@ -984,355 +995,137 @@ _______________________________________________________ */
 /* SEARCH USER RESULT SLIDER Section
 _______________________________________________________ */
 
-/*------ CSS Use Case Example START ------*/
-
-.background-0 { background: #f5f5f5; }
-.background-1 { background: #f5f5f5; }
-.background-2 { background: #f5f5f5; }
-.background-3 { background: #f5f5f5; }
-.background-4 { background: #f5f5f5; }
-.background-5 { background: #f5f5f5; }
-.background-6 { background: #f5f5f5; }
-.background-7 { background: #f5f5f5; }
-
-.background-0,
-.background-1,
-.background-2,
-.background-3,
-.background-4,
-.background-5,
-.background-6,
-.background-7 {
-transition: all 400ms ease;
-}
-
-/* class created only for a better preview*/
-.stage {
-  position: absolute;
-  opacity: 1;
-  max-width: 400px;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.stage.hidden {
-opacity: 0;
-transition: all 400ms ease;
-}
-
-@media screen and (max-width: 600px) {
-  .stage {
-      max-width: 100%;
-    }
-}
-
-h1, h2, h3 {
-  margin: 0;
-}
-
-h1 {
-  font-size: 32px;
-  font-weight: 400;
-}
-
-h2 {
-  font-size: 24px;
-  font-weight: 100;
-  color: #FFF;
-  text-align: center;
-}
-
-h3 {
-  font-size: 18px;
-  font-weight: 300;
-  color: #BFBFBE;
-  margin-top: 10px;
-}
-
-.title {
-    width: 100%;
-    padding-bottom: 30px;
-    text-align: center;
-    font-weight: 400;
-    font-size: 22px;
-    color: #fff;
-}
-
-.card-content {
+.tinder {
+  width: 100vw;
+  height: 85vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   position: relative;
-  color: #fff
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
 }
 
-.card-image {
-  width: 100%;
-  height: 100%;
-}
-.card-image img {
-  border-top-left-radius: .25rem;
-  border-top-right-radius: .25rem;
-  -o-object-fit: cover;
-    object-fit: cover;
-  width: 100%;
-  height: 100%;
-  min-height: 330px;
+.loaded.tinder {
+  opacity: 1;
 }
 
-.card-titles {
+.tinder--status {
   position: absolute;
-  bottom: 0;
-  padding: 40px 30px;
-}
-
-.card-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 25px 35px;
-}
-
-.popular-destinations-text {
-  font-size: 16px;
-  font-weight: 400;
-  color: #8E9AA4;
+  top: 50%;
+  margin-top: -30px;
+  z-index: 2;
   width: 100%;
-  min-width: 110px;
+  text-align: center;
+  pointer-events: none;
 }
 
-.popular-destinations-images {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    width: 100%;
+.tinder--status i {
+  font-size: 100px;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  width: 100px;
+  margin-left: -50px;
 }
 
-.circle {
-    width: 40px;
-    height: 40px;
-    border-radius:  50%;
-    background: #fff;
-    margin-left: 8px;
+.tinder_love .fa-heart {
+  opacity: 0.7;
+  transform: scale(1);
 }
 
-.circle img {
-    border-radius: 50%
+.tinder_nope .fa-remove {
+  opacity: 0.7;
+  transform: scale(1);
 }
 
-/* global actions buttons*/
-.global-actions {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.tinder--cards {
+  flex-grow: 1;
+  padding-top: 40px;
+  text-align: center;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 30px;
-  min-width: 200px;
-}
-
-.top-action,
-.right-action,
-.left-action {
-  border-radius: .25rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  background: #2387CF;
-  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-  margin: 0 3%
+  align-items: flex-end;
+  z-index: 1;
 }
 
-.top-action i,
-.right-action i,
-.left-action i {
-  font-size: 1.5rem;
-  color: #fff
+.tinder--card {
+  display: inline-block;
+  width: 90vw;
+  max-width: 400px;
+  height: 60vh;
+  background: #FFFFFF;
+  padding-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: absolute;
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
 }
 
-.top-action,
-.right-action,
-.left-action {
-    width: 60px;
-    height: 60px;
+.moving.tinder--card {
+  transition: none;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
 }
 
-.final-state.active {
-position: absolute;
-opacity: 1;
-top: 0;
-left: 0;
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-height: 100%;
-transition: all 400ms ease;
+.tinder--card img {
+  max-width: 100%;
+  pointer-events: none;
 }
 
-.final-state.hidden {
-opacity: 0;
+.tinder--card h3 {
+  margin-top: 32px;
+  font-size: 32px;
+  padding: 0 16px;
+  pointer-events: none;
 }
 
-
-/*------ CSS Use Case Example END ------*/
-
-/*----- Stacked Cards component css START -----*/
-body {
-  overflow-x: hidden;
+.tinder--card p {
+  margin-top: 24px;
+  font-size: 20px;
+  padding: 0 16px;
+  pointer-events: none;
 }
 
-.no-transition {
--webkit-transition: none ! important;
-transition: none ! important;
+.tinder--buttons {
+  flex: 0 0 100px;
+  text-align: center;
+  padding-top: 20px;
 }
 
-.stackedcards-overflow {
-    overflow-y: hidden !important;
+.tinder--buttons button {
+  border-radius: 50%;
+  line-height: 60px;
+  width: 60px;
+  border: 0;
+  background: #FFFFFF;
+  display: inline-block;
+  margin: 0 8px;
 }
 
-.stackedcards.init {
-    opacity: 0;/* set the opacity to 0 if you want a fade-in effect to stacked cards on page load */
+.tinder--buttons button:focus {
+  outline: 0;
 }
 
-.stackedcards {
-    position: relative;
+.tinder--buttons i {
+  font-size: 32px;
+  vertical-align: middle;
 }
 
-.stackedcards * {
-    -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-        user-select: none;
+.fa-heart {
+  color: #FFACE4;
 }
 
-.stackedcards--animatable {
-    -webkit-transition: all 400ms ease;
-            -o-transition: all 400ms ease;
-            transition: all 400ms ease;
+.fa-remove {
+  color: #CDD6DD;
 }
 
-.stackedcards .stackedcards-container > *,
-.stackedcards-overlay {
-    position: absolute;
-    width: 100%; /* set 100% */
-    height: 100%; /* set 100% */
-    will-change: transform, opacity;
-    top: 0;
-    border-radius: .25rem;
-    min-width: 265px;
-}
-
-.stackedcards-overlay.left > div,
-.stackedcards-overlay.right > div,
-.stackedcards-overlay.top > div {
-    width: 100%;
-    height: 100%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-}
-
-.stackedcards-overlay.left,
-.stackedcards-overlay.right,
-.stackedcards-overlay.top {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    left: 0;
-    opacity: 0;
-    top: 0;
-    height: 100%;
-}
-
-.stackedcards-overlay.top,
-.stackedcards-overlay.right,
-.stackedcards-overlay.left {
-    background: #2387CF;
-}
-
-.stackedcards-overlay.top i,
-.stackedcards-overlay.right i,
-.stackedcards-overlay.left i {
-  font-size: 10rem;
-  color: #fff
-}
-
-.stackedcards-overlay.left:empty,
-.stackedcards-overlay.right:empty,
-.stackedcards-overlay.top:empty {
-  display: none !important;
-}
-
-.stackedcards-overlay-hidden {
-    display: none;
-}
-
-.stackedcards-origin-bottom {
-    -webkit-transform-origin: bottom;
-            -ms-transform-origin: bottom;
-        transform-origin: bottom;
-}
-
-.stackedcards-origin-top {
-    -webkit-transform-origin: top;
-            -ms-transform-origin: top;
-        transform-origin: top;
-}
-
-.stackedcards-bottom,
-.stackedcards-top,
-.stackedcards-none {
-  background: #fff; /* set card background background */
-  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-  height: 100%
-}
-
-.stackedcards .stackedcards-container > :nth-child(1) {
-    position: relative;
-    display: block;
-}
-
-.stage .card {
-  border: none
-}
-
-/*----- Stacked Cards component css END -----*/
 
 /* EDIT PROFILE Section
 _______________________________________________________ */
@@ -1446,13 +1239,12 @@ _______________________________________________________ */
 
 #edit-profile .main_service_marker1, 
 #edit-profile .main_service_marker2 {
-    height: 20px!important;
-    vertical-align: middle;
+  box-shadow: none !important
 }
 
 #edit-profile .select_status_service {
   width: 14%;
-  padding: 0px!important
+  padding: 0px !important
 }
 
 #edit-profile .prise_service {
@@ -1460,7 +1252,7 @@ _______________________________________________________ */
 }
 
 #edit-profile .delete_service {
-  width: 10%;
+  width: 8%;
   text-align: center;
   color: #FF2F2F
 }

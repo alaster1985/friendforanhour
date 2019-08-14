@@ -152,10 +152,6 @@
             e.preventDefault();
         });
 
-        // $('p').on('click', function () {
-        //     setLocation(36.232845, 49.988358);
-        // })
-
     });
 
     function getPhoto() {

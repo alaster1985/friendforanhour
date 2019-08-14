@@ -49,10 +49,10 @@
                                 <form method="POST" action="{{Route('addToFriends')}}" enctype="multipart/form-data">
                                     <input type="hidden" name="friend_id" value="{{$profile->id}}">
                                     @csrf
-                                    <button type="submit">Написать сообщение</button>
+                                    <button class="btn btn-primary btn-md btn-block" type="submit">Написать</button>
                                 </form>
                                 @if(!$checkComplain)
-                                    <button id="complainButton" class="btn btn-info btn-lg" data-toggle="modal"
+                                    <button id="complainButton" class="col-lg-5 col-md-5 btn btn-primary btn-md btn-block" data-toggle="modal"
                                             data-target="#myModal">Пожаловаться
                                     </button>
                                 @endif
