@@ -15,6 +15,7 @@ Route::get('/', 'MainController@index')->name('index');
 Route::get('contactToSupport', 'TicketController@index')->name('contactToSupport');
 Route::post('sendTicket', 'TicketController@sendTicket')->name('sendTicket');
 
+Route::post('getAllProfiles', 'ProfileController@getAllProfiles')->name('getAllProfiles');
 
 Route::get('lara2', function () { return view('welcome2');});
 

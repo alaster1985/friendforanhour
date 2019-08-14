@@ -80,7 +80,27 @@
 
 <section id="user_search_result" class="none">
 
-    
+    <div class="tinder">
+        <div class="tinder--status">
+          <i class="fa fa-remove"></i>
+          <i class="fa fa-heart"></i>
+        </div>
+      
+        <div class="tinder--cards">
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/people">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+          
+        </div>
+      
+        <div class="tinder--buttons">
+          <button id="nope"><i class="fa fa-remove"></i></button>
+          <button id="love"><i class="fa fa-heart"></i></button>
+        </div>
+      </div>
               
 </section>
 

@@ -1,6 +1,13 @@
 @include('layouts.header')
 <section id="edit-profile">
     <div class="container">
+        {{-- Your Current Position --}}
+        <div id="userLat" style="display:none">
+            {{$profile->profileAddress->latitude}}
+        </div>
+        <div id="userLng" style="display:none">
+            {{$profile->profileAddress->longitude}}
+        </div>
         <div class="subscription">
             <div class="row justify-content-center" style="padding:0 4%;">
                 @if(session()->has('message'))
@@ -169,16 +176,16 @@
                 <h2>Заплачу за:</h2>
                 <table border="1" class="services_as_sponsor col-lg-12">
                     <tr>
-                        <th><label>Краткое описание:</label></th>
-                        <th><label>Описание услуги:</label></th>
+                        <th><label>Название:</label></th>
+                        <th><label>Описание:</label></th>
                         <th><label>Цена:</label></th>
-                        <th><label>Главная услуга:</label></th>
-                        <th><label>Активная:</label></th>
+                        <th><label>Главная:</label></th>
+                        <th><label></label></th>
                         <th><label></label></th>
                     </tr>
                     @foreach($friendsServices as $list)
                         <tr>
-                            <td>
+                            <td style="width:15%">
                                 <input class="form-control form-control-md" type="text" maxlength="14" name="service_name[1c{{$list->id}}]"
                                     value="{{$list->service_name}}">
                             </td>
@@ -218,16 +225,16 @@
                 <h2>Сделаю за деньги:</h2>
                 <table border="1" class="services_as_friend col-lg-12">
                     <tr>
-                        <th><label>Краткое описание:</label></th>
-                        <th><label>Описание услуги:</label></th>
+                        <th><label>Название:</label></th>
+                        <th><label>Описание:</label></th>
                         <th><label>Цена:</label></th>
-                        <th><label>Главная услуга:</label></th>
-                        <th><label>Активная:</label></th>
+                        <th><label>Главная:</label></th>
+                        <th><label></label></th>
                         <th><label></label></th>
                     </tr>
                     @foreach($sponsorsServices as $list)
                         <tr>
-                            <td>
+                            <td style="width:15%">
                                 <input class="form-control form-control-md" type="text" maxlength="14" name="service_name[2c{{$list->id}}]"
                                     value="{{$list->service_name}}">
                             </td>
