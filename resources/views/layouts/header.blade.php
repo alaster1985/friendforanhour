@@ -80,7 +80,9 @@
                                             @else
                                                 <a class="dropdown-item" href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">{{ Auth::user()->name }}</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
+                                                <a class="dropdown-item" href="#">Избранное</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
+                                                <a class="dropdown-item" href="#">Черный список</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/mytickets">Мои Вопросы</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/contactToSupport">Тех Поддержка</a>
                                             @endif

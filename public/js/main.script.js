@@ -2,16 +2,22 @@
 
 $(document).ready(function () {
 
-    $('#user_search').submit(function(){
+    $('#user_search').submit(function () {
 
-        $.post(
-            'filter',
-            $("#user_search").serialize(),
-            function(msg) { 
+        $.post('filter', $("#user_search").serialize(),
+            function (data) {
+                var userCardArr = JSON.parse(data);
+                console.log(userCardArr);
                 $('#user_search').hide('slow');
                 $('#search-section h2').hide('slow');
                 $('#user_search_result').removeClass('none');
-                    console.log(JSON.parse(msg));
+
+                
+                // var usersCardArr = JSON.parse(msg);
+                // for (var i = 0; i < usersCardArr.profile.length; i++) {
+                //     var profile = usersCardArr.profile[i];
+                //     console.log(profile.counter_name);
+                // }
             }
         );
         return false;
@@ -63,17 +69,17 @@ $(document).ready(function () {
     $('.forChat').on("click", function (ev) {
         ev.preventDefault();
         $(".modal-error").css("display", "block");
-        $(".modal-darkening").css("display","block");
+        $(".modal-darkening").css("display", "block");
     });
 
     $(".modal-error__close-btn").on("click", function (ev) {
         ev.preventDefault();
         $(".modal-error").css("display", "none");
-        $(".modal-darkening").css("display","none");
+        $(".modal-darkening").css("display", "none");
     });
 
     function fancybox(event) {
         $(".fancybox").fancybox({});
     }
-    
+
 })

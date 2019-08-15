@@ -18,7 +18,8 @@ html {
 
 body {
   height: 100%;
-  background-color: #f5f5f5
+  background-color: #f5f5f5;
+  font-size: 0.85rem
 }
 
 main {
@@ -837,20 +838,27 @@ _______________________________________________________ */
 #view-profile .about_user_block h4 {
   font-size: 1.17rem;
   font-weight: 500;
-  color: #2387CF
-  
+  color: #2387CF;
+  margin-bottom: 1%  
+}
+
+#view-profile .view-profile-character {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
 }
 
 #view-profile .name_user {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #2387CF
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2387CF;
+  margin-bottom: 3%
 }
 
 #view-profile .name_user span {
-    font-size: 16px
+  font-size: 16px
 }
 
 #view-profile .name_user span img {
@@ -863,10 +871,8 @@ _______________________________________________________ */
 }
 
 #view-profile .service {
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 35px 15px;
-  margin-top: 7%
+  padding: 0;
+  margin-top: 4%
 }
 
 #view-profile .distance {
@@ -874,25 +880,32 @@ _______________________________________________________ */
   border-bottom: #68C42B 1px dashed
 }
 
+#view-profile #write-link {
+  width: 100%
+}
+
 #view-profile .links_user {
-  margin-top: 3%;
+  margin: 5% 0 0;
   display: flex
 }
 
 #view-profile .links_user #complainButton {
-  margin-left: 3%
+  margin: 0
 }
 
-#view-profile .links_user button {
-  text-shadow: -1px -1px 0 #0D79BD;
-  border: solid 1px #037BC6;
-  border-bottom-color: #07598D;
-  border-top-color: #0285D8;
-  background-color: #009CFF;
+#view-profile .links_user button,
+#view-profile .links_user #complainButton {
+  background-color: #2387CF;
   color: #fff;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 400;
   border-radius: .25rem;
-  padding: 5px 15px
+  margin-top: 0;
+  margin-right: 1%
+}
+
+#view-profile .links_user form {
+  margin-right: 1%
 }
 
 #view-profile .links_user a {
@@ -1507,7 +1520,7 @@ _______________________________________________________ */
   _______________________________________________________ */  
 
   #chat-vue {
-    margin: 3% 0
+    margin: auto 0
   }
 
   #chat-vue .panel {
@@ -1571,6 +1584,116 @@ _______________________________________________________ */
     margin: auto 5px auto 0
   }
 
+
+/* FAVORITES Section
+_______________________________________________________ */
+
+#favorites .favorites-card {
+ padding: 0
+}
+
+#favorites .favorites-user-image {
+  width: 10%;  
+  border-radius: .25rem;
+  overflow: hidden
+}
+
+#favorites a img {
+  width: 100%
+}
+
+#favorites .favorites-user-name {
+  width: 100%;
+  height: 100%;
+  margin: auto 3%
+}
+
+#favorites .favorites-user-name a {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 auto
+}
+
+#favorites .favorites-item {
+  display: flex;
+  background: #fff;
+  border-radius: .25rem;
+  padding: 1%;
+  margin-bottom: 3%;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75)
+}
+
+#favorites .favorites-item button {
+  background: none;
+  color: #2387CF
+}
+
+#favorites .favorites-item button:active,
+#favorites .favorites-item button:focus {
+  outline: none !important;
+  box-shadow: none
+}
+
+#favorites .favorites-item button i {
+  font-size: 1.5rem
+}
+
+/* BLACK LIST Section
+_______________________________________________________ */
+
+#blacklist .blacklist-card {
+  padding: 0
+}
+
+#blacklist .blacklist-user-image {
+  width: 10%;  
+  border-radius: .25rem;
+  overflow: hidden
+}
+
+#blacklist a img {
+  width: 100%
+}
+
+#blacklist .blacklist-user-name {
+  width: 100%;
+  height: 100%;
+  margin: auto 3%
+}
+
+#blacklist .blacklist-user-name a {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 auto
+}
+
+#blacklist .blacklist-item {
+  display: flex;
+  background: #fff;
+  border-radius: .25rem;
+  padding: 1%;
+  margin-bottom: 3%;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75)
+}
+
+#blacklist .blacklist-item button {
+  background: none;
+  color: #2387CF
+}
+
+#blacklist .blacklist-item button:active,
+#blacklist .blacklist-item button:focus {
+  outline: none !important;
+  box-shadow: none
+}
+
+#blacklist .blacklist-item button i {
+  font-size: 1.5rem
+}
 
 /* FOOTER Section
 _______________________________________________________ */
@@ -1746,6 +1869,9 @@ header .navbar-toggler {
 /* REPEAT ELEMENTS
 _______________________________________________________ */
 
+
+#blacklist h2,
+#favorites h2,
 #single-news-section h2,
 #view-profile h2,
 #all-news-section h2,
@@ -2027,6 +2153,8 @@ _______________________________________________________ */
     display: none
   }
 
+  #blacklist h2,
+  #favorites h2,
   #single-news-section h2, 
   #view-profile h2, 
   #all-news-section h2, 
@@ -2037,89 +2165,114 @@ _______________________________________________________ */
     padding: 2%
   }
 
+  header #navbarSupportedContent ul li a.dropdown-toggle {
+    padding: .3rem .75rem
+  }
+
+  #view-profile .links_user button,
+  #view-profile .links_user #complainButton {
+    font-size: 0.75rem
+  }
+
 }
 
 @media all and (max-width: 991px) {
 
-    header #payButton,
-    header .navbar-dark .navbar-nav .nav-link {
-        font-size: 16px;
-    }
+  header #payButton,
+  header .navbar-dark .navbar-nav .nav-link {
+    font-size: 16px;
+  }
 
-    header #payButton {
-        padding: .375rem 0
-    }
+  header #payButton {
+    padding: .375rem 0
+  }
 
-    .autorization {
-        margin-left: 15px
-    }
+  .autorization {
+    margin-left: 15px
+  }
 
 
-    .mobile_vi {
-        display: none
-    }
+  .mobile_vi {
+    display: none
+  }
 
-    #new_people_servis .new_people_servis_block ul li:nth-child(5n) {
-        display: none
-    }
+  #new_people_servis .new_people_servis_block ul li:nth-child(5n) {
+    display: none
+  }
 
-    .links_user button {
-        display: block
-    }
+  .links_user button {
+    display: block
+  }
 
-    .links_user a {
-        display: inline-block;
-        margin: 10px 10px 0px 0px
-    }
+  .links_user a {
+    display: inline-block;
+    margin: 10px 10px 0px 0px
+  }
 
-    .edit_profile_general_block {
-        flex-direction: row-reverse !important
-    }
+  .edit_profile_general_block {
+    flex-direction: row-reverse !important
+  }
 
-    .edit_profile_general_block label {
-        margin-top: 5px
-    }
+  .edit_profile_general_block label {
+    margin-top: 5px
+  }
 
-    #view-profile .view-profile-character {
-        margin: 5% 0 0 0
-    }
+  #view-profile .view-profile-character {
+    margin: 5% 0 0 0
+  }
 
-    #view-profile .table_mobile {
-        padding: 0;
-        margin: 0px -10px
-    }
+  #view-profile .table_mobile {
+    padding: 0;
+    margin: 0px -10px
+  }
 
-    header .navbar-brand i,
-    footer .navbar-brand i,
-    header #navbarSupportedContent ul li a.dropdown-toggle i {
-        font-size: 1.5rem
-    }
+  header .navbar-brand i,
+  footer .navbar-brand i,
+  header #navbarSupportedContent ul li a.dropdown-toggle i {
+    font-size: 1.5rem
+  }
 
-    header #navbarSupportedContent ul li a.dropdown-toggle {
-        padding: .5rem .75rem
-    }
+  header #navbarSupportedContent ul li a.dropdown-toggle {
+    padding: .5rem .75rem
+  }
 
-    #technical-support form button {
-        margin: 10% auto
-    } 
+  #technical-support form button {
+    margin: 10% auto
+  } 
 
-    #new_people_servis .new_people_servis_block {
-        margin: 1% 0
-    }
+  #new_people_servis .new_people_servis_block {
+    margin: 1% 0
+  }
 
-    #new_people_servis ul li {
-        padding-left: 2%
-    }
+  #new_people_servis ul li {
+    padding-left: 2%
+  }
 
-    #single-news-section h2, 
-    #view-profile h2, 
-    #all-news-section h2, 
-    #support-tickets h2, 
-    #technical-support h2, 
-    #search-section h2, 
-    #article-page h2 {
-        width: 30%
-    }
+  #blacklist h2,
+  #favorites h2,
+  #single-news-section h2, 
+  #view-profile h2, 
+  #all-news-section h2, 
+  #support-tickets h2, 
+  #technical-support h2, 
+  #search-section h2, 
+  #article-page h2 {
+    width: 30%
+  }
+
+  header .navbar-toggler {
+    margin: auto 2% auto auto
+  }
+
+  #view-profile .links_user button, 
+  #view-profile .links_user #complainButton {
+    font-size: 1rem
+  }
+
+  #view-profile .service {
+    padding-right: 15px;
+    padding-left: 15px
+  }
 
 }
 
@@ -2213,6 +2366,8 @@ _______________________________________________________ */
     padding-left: 3%
   }
 
+  #blacklist h2,
+  #favorites h2,
   #single-news-section h2, 
   #view-profile h2, 
   #all-news-section h2, 
@@ -2247,93 +2402,113 @@ _______________________________________________________ */
     font-size: 0.9rem
   }
 
+  #view-profile .links_user button, 
+  #view-profile .links_user #complainButton {
+    font-size: .7rem
+  }
+
 }
 
 @media all and (max-width: 576px) {
 
-    #view-profile .view-profile-card {
-        margin: 0
-    }
+  #view-profile .view-profile-card {
+    margin: 0
+  }
 
-    .mobile_shadow_off {
-        -webkit-box-shadow: 13px 13px 18px -18px rgba(255,255,255,255) !important;
-        -moz-box-shadow: 13px 13px 18px -18px rgba(255,255,255,255) !important;
-        box-shadow: 13px 13px 18px -18px rgba(255,255,255,255) !important
-    }
+  .mobile_shadow_off {
+    -webkit-box-shadow: 13px 13px 18px -18px rgba(255,255,255,255) !important;
+    -moz-box-shadow: 13px 13px 18px -18px rgba(255,255,255,255) !important;
+    box-shadow: 13px 13px 18px -18px rgba(255,255,255,255) !important
+  }
 
-    .label_new_people:after {
-        display: none
-    }
+  .label_new_people:after {
+    display: none
+  }
 
-    #usersPhoto tbody {
-        flex-direction: column;
-        width: 100%
-    }
+  #usersPhoto tbody {
+    flex-direction: column;
+    width: 100%
+  }
 
-    #usersPhoto tbody tr {
-        width: 100% !important
-    }
+  #usersPhoto tbody tr {
+    width: 100% !important
+  }
 
-    .label_new_people {
-        height: 25%;
-        border-radius: 0
-    }
+  .label_new_people {
+    height: 25%;
+    border-radius: 0
+  }
 
-    .label_new_people p {
-        text-align: center;
-        width: 100%
-    }
+  .label_new_people p {
+    text-align: center;
+    width: 100%
+  }
 
-    #new_people_servis {
-        padding: 0px;
-    }
+  #new_people_servis {
+    padding: 0px;
+  }
 
-    .mobile_vi3 {
-        display: block
-    }
+  .mobile_vi3 {
+    display: block
+  }
 
 
-    .autorization, 
-    .registration {
-        margin: 0px
-    }
+  .autorization, 
+  .registration {
+    margin: 0px
+  }
 
-    .registration {
-        margin-top: 5px
-    }
+  .registration {
+    margin-top: 5px
+  }
 
-    .links_header {
-        margin-top: 25px
-    }
+  .links_header {
+    margin-top: 25px
+  }
 
-    .service div {
-        padding: 10px;
-        font-size: 14px
-    }
+  .service div {
+    padding: 10px;
+    font-size: 14px
+  }
 
-    #map-section .map_container {
-        height: 40rem
-    }
+  #map-section .map_container {
+    height: 40rem
+  }
 
-    #last-active-users .card {
-        width: 49%;
-        margin: 2% 0
-    }
+  #last-active-users .card {
+    width: 49%;
+    margin: 2% 0
+  }
 
-    #view-profile .table_title_service h5 {
-        font-size: 1rem
-    }
+  #view-profile .table_title_service h5 {
+    font-size: 1rem
+  }
 
   #edit-profile #countdown div,
   #edit-profile .alert label {
     font-size: 0.75rem
   }
 
-    #all-news-section .all-news-title h2,
-    #single-news-section .single-news-title h2 {
-        font-size: 1.25rem;
-        font-weight: 500
-    }
+  #all-news-section .all-news-title h2,
+  #single-news-section .single-news-title h2 {
+    font-size: 1.25rem;
+    font-weight: 500
+  }
+
+  header .navbar-toggler {
+    margin: auto 5% auto auto
+  }
+
+  #view-profile .links_user {
+    flex-direction: column
+  }
+
+  #view-profile .links_user button,
+  #view-profile .links_user #complainButton {
+    font-size: 1rem;
+    margin-top: 3%;
+    margin-right: 0
+  }
 
 }
 
@@ -2370,6 +2545,8 @@ _______________________________________________________ */
         margin: 3% 0
     }
 
+    #blacklist h2,
+    #favorites h2,
     #single-news-section h2, 
     #view-profile h2, 
     #all-news-section h2, 
@@ -2403,6 +2580,8 @@ _______________________________________________________ */
     padding-left: 5%
   }
 
+  #blacklist h2,
+  #favorites h2,
   #single-news-section h2, 
   #view-profile h2, 
   #all-news-section h2, 
@@ -2447,6 +2626,8 @@ _______________________________________________________ */
     margin: 5% 0;
   }
 
+  #blacklist h2,
+  #favorites h2,
   #single-news-section h2, 
   #view-profile h2, 
   #all-news-section h2, 

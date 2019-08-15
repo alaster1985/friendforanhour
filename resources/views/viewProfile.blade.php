@@ -1,11 +1,12 @@
 @include('layouts.header')
+
 <section id="view-profile">
     <div class="container">
         <h2>Анкета:</h2>
         <div class="row justify-content-center">
             <div class="row col-lg-10 col-md-10 col-sm-10 col-11 view-profile-card mobile_shadow_off justify-content-center">
 
-                <div class="col-lg-6 view-profile-photo">
+                <div class="col-lg-5 view-profile-photo">
                     <a data-fancybox="images" rel="group" href="{{asset($profile->profilePhoto()
                             ->where([['main_photo_marker', '=', 1], ['is_deleted', '=', 0]])
                             ->first()->photo_path ?? 'profilepictures/'
@@ -17,7 +18,7 @@
                     </a>
                 </div>
 
-                <div class="col-lg-6 view-profile-character">
+                <div class="col-lg-7 view-profile-character">
                     <p class="name_user ">{{$profile->first_name}}
                         @auth
                             <span id="chat-vue">
@@ -49,13 +50,15 @@
                                 <form method="POST" action="{{Route('addToFriends')}}" enctype="multipart/form-data">
                                     <input type="hidden" name="friend_id" value="{{$profile->id}}">
                                     @csrf
-                                    <button class="btn btn-primary btn-md btn-block" type="submit">Написать</button>
+                                    <button id="write-link" class="btn btn-primary btn-md" type="submit">Написать</button>
                                 </form>
+                                <button id="add-to-favorites" class="btn btn-primary btn-md" type="button">В избранное</button>
                                 @if(!$checkComplain)
-                                    <button id="complainButton" class="col-lg-5 col-md-5 btn btn-primary btn-md btn-block" data-toggle="modal"
+                                    <button id="complainButton" class="btn btn-primary btn-md" data-toggle="modal"
                                             data-target="#myModal">Пожаловаться
                                     </button>
                                 @endif
+                                <button id="to-blacklist" class="btn btn-primary btn-md" type="button">В черный список</button>
                             </div>
                         @endif
                     @endauth
