@@ -14,6 +14,7 @@ use App\Http\Requests\SearchRequest;
 use App\Profile;
 use App\ProfilePhoto;
 use App\ServiceList;
+use CyrildeWit\EloquentViewable\Support\Period;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -44,7 +45,7 @@ class ProfileController extends Controller
         $profile = Profile::find($request['prf']);
         views($profile)->delayInSession(2)->record();
         $counters['total'] = views($profile)->unique()->count();
-        $counters['week'] = views($profile)->unique()->count();
+        $counters['week'] = views($profile)->unique()->period(Period::pastWeeks(1))->count();
         $checkers = $this->getCheckers($profile->id);
         $dataArr = array_merge($checkers, $counters);
         return view('viewProfile', $this->getData($profile), $dataArr);
