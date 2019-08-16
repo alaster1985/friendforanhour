@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BlackList;
 use App\Chat;
 use App\Profile;
 use Illuminate\Http\Request;
@@ -12,13 +13,30 @@ class ChatController extends Controller
 
     public function index()
     {
-        $friends = Profile::find(Auth::user()->profile_id)->friends();
+        $ownersBlacklist = BlackList::where([
+            ['bl_owner_profile_id', Auth::user()->profile_id],
+        ])->pluck('non_grata_profile_id')->all();
+        $blacklistOfMine = BlackList::where([
+            ['non_grata_profile_id', Auth::user()->profile_id],
+        ])->pluck('bl_owner_profile_id')->all();
+        $blacklist = array_merge($ownersBlacklist, $blacklistOfMine);
+        $friends = Profile::find(Auth::user()->profile_id)->friends()->whereNotIn('id', $blacklist);
         return view('indexChat', ['friends' => $friends]);
     }
 
 
     public function show($id)
     {
+        $ownersBlacklist = BlackList::where([
+            ['bl_owner_profile_id', Auth::user()->profile_id],
+        ])->pluck('non_grata_profile_id')->all();
+        $blacklistOfMine = BlackList::where([
+            ['non_grata_profile_id', Auth::user()->profile_id],
+        ])->pluck('bl_owner_profile_id')->all();
+        $blacklist = array_merge($ownersBlacklist, $blacklistOfMine);
+        if (in_array($id, $blacklist)) {
+            return redirect()->back();
+        }
         $friend = Profile::find($id);
         return view('chatShow', ['friend' => $friend]);
     }
@@ -57,7 +75,7 @@ class ChatController extends Controller
 
     public function checkUnreadMessagesFromFriend($id)
     {
-        if (Auth::user()->profile_id != $id){
+        if (Auth::user()->profile_id != $id) {
             return json_encode(Chat::where([
                 ['friend_id', '=', Auth::user()->profile_id],
                 ['profile_id', '=', $id],
@@ -67,9 +85,10 @@ class ChatController extends Controller
             return null;
         }
     }
+
     public function checkMyUnreadMessagesByFriend($id)
     {
-        if (Auth::user()->profile_id != $id){
+        if (Auth::user()->profile_id != $id) {
             return json_encode(Chat::where([
                 ['profile_id', '=', Auth::user()->profile_id],
                 ['friend_id', '=', $id],

@@ -166,6 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
+        CyrildeWit\EloquentViewable\EloquentViewableServiceProvider::class,
 
         /*
          * Application Service Providers...

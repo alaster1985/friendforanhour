@@ -27,10 +27,17 @@
                             </span>
                         @endauth
                     </p>
+                    @if ($profile->last_activity)
+                    <p id="last_activity" class="character_user">
+                        Был в сети: {{$profile->lastActivity()}}
+                    </p>
+                    @endif
                     <p class="character_user">
                         Возраст: {{$profile->getAge()}}, 
                         рост {{$profile->height}}см, 
-                        вес {{$profile->weight}} кг
+                        вес {{$profile->weight}} кг,
+                        просмотров всего: {{$total}}
+                        просмотров за последнюю неделю: {{$week}}
                     </p>
                     @if($profile->profileAddress->city_id)
                     <p class="character_user">
@@ -52,13 +59,17 @@
                                     @csrf
                                     <button id="write-link" class="btn btn-primary btn-md" type="submit">Написать</button>
                                 </form>
-                                <button id="add-to-favorites" class="btn btn-primary btn-md" type="button">В избранное</button>
+                                @if(!$checkFavorite)
+                                    <button id="add-to-favorites" class="btn btn-primary btn-md" type="button">В избранное</button>
+                                @endif
                                 @if(!$checkComplain)
                                     <button id="complainButton" class="btn btn-primary btn-md" data-toggle="modal"
                                             data-target="#myModal">Пожаловаться
                                     </button>
                                 @endif
-                                <button id="to-blacklist" class="btn btn-primary btn-md" type="button">В черный список</button>
+                                @if(!$checkBlackList)
+                                    <button id="to-blacklist" class="btn btn-primary btn-md" type="button">В черный список</button>
+                                @endif
                             </div>
                         @endif
                     @endauth

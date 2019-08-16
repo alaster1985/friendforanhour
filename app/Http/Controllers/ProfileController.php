@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\City;
 use App\Complain;
+use App\Favorite;
+use App\BlackList;
 use App\Country;
 use App\Gender;
 use App\Http\Requests\LocationStoreRequest;
@@ -40,13 +42,32 @@ class ProfileController extends Controller
             ],
         ]);
         $profile = Profile::find($request['prf']);
-        if (Auth::check()){
-            $checkComplain = Complain::checkIfComplainExist(Auth::user()->profile_id, $profile->id);
+        views($profile)->delayInSession(2)->record();
+        $counters['total'] = views($profile)->unique()->count();
+        $counters['week'] = views($profile)->unique()->count();
+        $checkers = $this->getCheckers($profile->id);
+        $dataArr = array_merge($checkers, $counters);
+        return view('viewProfile', $this->getData($profile), $dataArr);
+    }
+
+    public function getCheckers($profileId)
+    {
+        if (Auth::check()) {
+            $checkComplain = Complain::checkIfComplainExist(Auth::user()->profile_id, $profileId);
+            $checkFavorite = Favorite::checkIfFavorite(Auth::user()->profile_id, $profileId);
+            $checkBlackList = BlackList::checkIfNonGrata(Auth::user()->profile_id, $profileId);
         } else {
             $checkComplain = true;
+            $checkFavorite = true;
+            $checkBlackList = true;
         }
 
-        return view('viewProfile', $this->getData($profile), ['checkComplain' => $checkComplain]);
+        return [
+            'checkComplain' => $checkComplain,
+            'checkFavorite' => $checkFavorite,
+            'checkBlackList' => $checkBlackList,
+
+        ];
     }
 
     public function edit()

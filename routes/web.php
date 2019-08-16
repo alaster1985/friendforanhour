@@ -54,6 +54,9 @@ Route::middleware('role:user')->group(function () {
     Route::post('getPhotos', 'ProfilePhotoController@getPhotos')->name('getPhotos');
     Route::get('mytickets', 'TicketController@mytickets')->name('mytickets');
 
+    Route::get('favorites', 'FavoriteController@index')->name('favorites');
+    Route::get('blacklist', 'BlackListController@index')->name('blacklist');
+
     Route::middleware('subscription', 'ban')->group(function () {
 
         Route::get('chat', 'ChatController@index')->name('indexChat');
@@ -67,6 +70,10 @@ Route::middleware('role:user')->group(function () {
         Route::post('removePhoto', 'ProfilePhotoController@removePhoto')->name('removePhoto');
         Route::post('updatePhoto', 'ProfilePhotoController@updatePhoto')->name('updatePhoto');
         Route::post('addComplain', 'ProfileController@addComplain')->name('addComplain');
+        Route::post('addToFavorite', 'FavoriteController@addToFavorite')->name('addToFavorite');
+        Route::post('addToBlackList', 'BlackListController@addToBlackList')->name('addToBlackList');
+        Route::get('deleteFromFavorite/{id}', 'FavoriteController@deleteFromFavorite')->name('deleteFromFavorite');
+        Route::get('deleteFromBlackList/{id}', 'BlackListController@deleteFromBlackList')->name('deleteFromBlackList');
         Route::post('update', 'ProfileController@update')->name('updateProfile');
         Route::get('deleteService/{id}', 'ServiceListController@deleteService')->name('deleteService');
 

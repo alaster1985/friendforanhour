@@ -63,6 +63,14 @@ class CreateForeignKeyRelationshipsTable extends Migration
         Schema::table('articles', function (Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('article_categories');
         });
+        Schema::table('favorites', function (Blueprint $table) {
+            $table->foreign('f_owner_profile_id')->references('id')->on('profiles');
+            $table->foreign('favorite_profile_id')->references('id')->on('profiles');
+        });
+        Schema::table('black_lists', function (Blueprint $table) {
+            $table->foreign('bl_owner_profile_id')->references('id')->on('profiles');
+            $table->foreign('non_grata_profile_id')->references('id')->on('profiles');
+        });
     }
 
     /**

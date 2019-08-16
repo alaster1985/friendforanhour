@@ -2,13 +2,18 @@
 
 namespace App;
 
+use DateTime;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use CyrildeWit\EloquentViewable\Viewable;
+use CyrildeWit\EloquentViewable\Contracts\Viewable as ViewableContract;
 
-class Profile extends Model
+class Profile extends Model implements ViewableContract
 {
+    use Viewable;
+
     public function user()
     {
         return $this->hasOne('App\User');
@@ -44,6 +49,26 @@ class Profile extends Model
         return $this->hasMany('App\Complain', 'complain_against_profile_id');
     }
 
+    public function favoritesOwner()
+    {
+        return $this->hasMany('App\Favorite', 'f_owner_profile_id');
+    }
+
+    public function favoriteProfiles()
+    {
+        return $this->hasMany('App\Favorite', 'favorite_profile_id');
+    }
+
+    public function blackListsOwner()
+    {
+        return $this->hasMany('App\BlackList', 'bl_owner_profile_id');
+    }
+
+    public function blackLists()
+    {
+        return $this->hasMany('App\BlackList', 'non_grata_profile_id');
+    }
+
     public function friendsOfMine()
     {
         return $this->belongsToMany('App\Profile', 'friends', 'profile_id', 'friend_id')->get();
@@ -77,6 +102,14 @@ class Profile extends Model
     public function getAge()
     {
         return date_diff(date_create($this->date_of_birth), date_create('today'))->y;
+    }
+
+    public function lastActivity()
+    {
+        $seconds = strtotime('now') - $this->last_activity;
+        $dtF = new DateTime('@0');
+        $dtT = new DateTime("@$seconds");
+        return $dtF->diff($dtT)->format('%a дней, %h часов, %i минут в назад');
     }
 
     public static function createNewDefaultProfile($data)

@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
 
     $('#user_search').submit(function () {
@@ -12,7 +10,7 @@ $(document).ready(function () {
                 $('#search-section h2').hide('slow');
                 $('#user_search_result').removeClass('none');
 
-                
+
                 // var usersCardArr = JSON.parse(msg);
                 // for (var i = 0; i < usersCardArr.profile.length; i++) {
                 //     var profile = usersCardArr.profile[i];
@@ -80,6 +78,24 @@ $(document).ready(function () {
 
     function fancybox(event) {
         $(".fancybox").fancybox({});
+    }
+
+    setInterval(lastActivity, 3000);
+
+    function lastActivity () {
+        var onlineMarker;
+        if ($('body').find('#chat-vue').length > 0) {
+            onlineMarker = $('body').find('#chat-vue').find('img').attr('src').substr(-5, 1);
+        } else {
+            onlineMarker = false
+        }
+        if ($('#last_activity').length > 0 && onlineMarker !== false) {
+            if (onlineMarker == 1){
+                $('#last_activity').hide()
+            } else {
+                $('#last_activity').show()
+            }
+        }
     }
 
 })
