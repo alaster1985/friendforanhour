@@ -109,7 +109,18 @@ class Profile extends Model implements ViewableContract
         $seconds = strtotime('now') - $this->last_activity;
         $dtF = new DateTime('@0');
         $dtT = new DateTime("@$seconds");
-        return $dtF->diff($dtT)->format('%a дней, %h часов, %i минут в назад');
+//        return $dtF->diff($dtT)->format('%a дней, %h часов, %i минут в назад');
+        return $this->getLastActivityStringFormat($dtF->diff($dtT));
+    }
+
+    public function getLastActivityStringFormat($interval)
+    {
+        if ($interval->days >= 1) {
+            return $interval->format('%a days ago');
+        } elseif ($interval->h >= 1) {
+            return $interval->format('%h hours ago');
+        }
+        return $interval->format('%i minutes ago');
     }
 
     public static function createNewDefaultProfile($data)
