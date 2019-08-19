@@ -1,39 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb678a43-abe1-44ea-85dd-5bedea43ab05" name="Default" comment="commit">
-      <change afterPath="$PROJECT_DIR$/app/BlackList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Favorite.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/BlackListController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/FavoriteController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_16_064226_create_black_lists_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_16_081207_create_favorites_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_16_130916_create_views_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/forLists.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/friendforanhour.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/friendforanhour.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="bb678a43-abe1-44ea-85dd-5bedea43ab05" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/OnlineMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/OnlineMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2029_05_13_085756_create_foreign_key_relationships_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2029_05_13_085756_create_foreign_key_relationships_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/hammer.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/hammer.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/mapSetLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/mapSetLocation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/search-user-slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/search-user-slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/indexChat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/indexChat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/mapSetLocation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mapSetLocation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/viewBlackList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/viewBlackList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/viewFavorites.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/viewFavorites.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/viewProfile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/viewProfile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -140,15 +111,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="favorites" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/indexNews.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/viewNews.blade.php" />
         <option value="$PROJECT_DIR$/database/seeds/NewsTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/console_1.sql" />
@@ -196,8 +165,10 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/OnlineMiddleware.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Profile.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" />
         <option value="$PROJECT_DIR$/resources/views/viewProfile.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php" />
       </list>
     </option>
   </component>
@@ -326,7 +297,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,6 +308,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -449,6 +420,7 @@
       <workItem from="1564212600672" duration="3908000" />
       <workItem from="1565937046630" duration="4595000" />
       <workItem from="1565941670445" duration="20801000" />
+      <workItem from="1566198569215" duration="3682000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <created>1556897042707</created>
@@ -618,11 +590,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564240786632</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="week_counter_fix">
+      <created>1565963694799</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1565963694799</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="976832000" />
+    <option name="totallyTimeSpent" value="982035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1030" extended-state="6" />
@@ -633,10 +612,9 @@
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49786553" weight="0.32962137" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49626467" visible="true" weight="0.32405347" />
-      <window_info active="true" content_ui="combo" x="833" y="294" width="254" height="510" id="Project" order="0" sideWeight="0.4980315" visible="true" weight="0.17982924" />
+      <window_info active="true" content_ui="combo" x="833" y="294" width="254" height="510" id="Project" order="0" sideWeight="0.4980315" visible="true" weight="0.18196371" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.11366062" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
       <window_info id="Structure" order="1" sideWeight="0.5019685" side_tool="true" weight="0.12646745" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
@@ -648,6 +626,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="11" weight="0.32962137" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -683,7 +662,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="seed_start" />
     <MESSAGE value="seed_start2" />
     <MESSAGE value="register_start" />
     <MESSAGE value="changed_DB_for_service_list" />
@@ -708,7 +686,8 @@
     <MESSAGE value="small_fix" />
     <MESSAGE value="commit" />
     <MESSAGE value="fix_get_profiles_for_ingex" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix_get_profiles_for_ingex" />
+    <MESSAGE value="week_counter_fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="week_counter_fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -782,20 +761,50 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_16_064112_create_favorites_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" selection-start-line="17" selection-end-line="18" selection-end-column="54" />
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/cities">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FavoritesController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="354">
+          <caret line="79" column="111" lean-forward="true" selection-start-line="79" selection-start-column="86" selection-end-line="79" selection-end-column="111" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="95" column="75" lean-forward="true" selection-start-line="95" selection-start-column="75" selection-end-line="95" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="61" lean-forward="true" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="159" column="52" selection-start-line="159" selection-start-column="52" selection-end-line="159" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_16_064112_create_favorites_table.php" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FavoritesController.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_16_064226_create_black_lists_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -809,12 +818,6 @@
           <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/favorites.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/blackList.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/header.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -862,9 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -886,9 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="15" lean-forward="true" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="34" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -913,16 +910,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/SearchRequest.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChatController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,22 +938,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/profiles">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/indexChat.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/editProfile.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/SubscriptionMiddleware.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -978,24 +959,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-99" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/OnlineUser.vue">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/components/Chat.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-564" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/components/ChatComposer.vue">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -1003,12 +975,6 @@
           <caret line="15911" column="45" selection-start-line="15911" selection-start-column="45" selection-end-line="15911" selection-end-column="45" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/forInputData.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/countdown.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/unreadMsg.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1031,42 +997,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_16_124617_create_views_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/View.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_16_124617_create_views_table.php" />
+    <entry file="file://$PROJECT_DIR$/app/View.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="168" column="75" selection-start-line="168" selection-start-column="75" selection-end-line="168" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_16_130916_create_views_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225" />
-      </provider>
-    </entry>
-    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/views">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/viewProfile.blade.php">
@@ -1076,35 +1011,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/OnlineMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="168" column="75" selection-start-line="168" selection-start-column="75" selection-end-line="168" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="e#33#72#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/views">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="1201" column="20" selection-start-line="1201" selection-start-column="20" selection-end-line="1201" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_16_130916_create_views_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_05_13_085010_create_profiles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://eeb3fcd4-3f7f-4ec1-9c45-9b8abffcd763/schema/friendforanhour/table/profiles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="-2520">
           <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="48" selection-end-column="53" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="375">
+          <caret line="47" column="93" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/OnlineMiddleware.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
-          <folding>
-            <element signature="e#39#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
