@@ -4,7 +4,7 @@
     <div class="container">
         <h2>Избранное:</h2>
         <div class="row justify-content-center">
-            <li class="col-lg-10 col-md-10 col-sm-10 col-11 favorites-card">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-11 favorites-card">
                 <ul class="favorites-list">
                     @forelse($favorites as $favorite)
                         <li class="favorites-item">
@@ -26,13 +26,13 @@
 
                         </li>
                     @empty
-                        <li class="favorites-item">
+                        {{-- <li class="favorites-item">
                             Список избранных пользователей пуст
-                        </li>
+                        </li> --}}
                     @endforelse
                 </ul>
+            </div>
         </div>
-    </div>
     </div>
 </section>
 

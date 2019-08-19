@@ -26,9 +26,9 @@
 
                         </li>
                     @empty
-                        <li class="favorites-item">
-                            Ваш ЧС пуст.
-                        </li>
+                        {{-- <li class="blacklist-item">
+                            Ваш черный список пуст.
+                        </li> --}}
                     @endforelse
                 </ul>
             </div>

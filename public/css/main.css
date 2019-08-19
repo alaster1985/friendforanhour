@@ -19,7 +19,7 @@ html {
 body {
   height: 100%;
   background-color: #f5f5f5;
-  font-size: 0.85rem
+  /* font-size: 0.85rem */
 }
 
 main {
@@ -608,211 +608,220 @@ _______________________________________________________ */
 _______________________________________________________ */
 
 #last-active-users .online-color {
-    display: flex;
-    justify-content: center;
-    color: #57CF23
+  display: flex;
+  justify-content: center;
+  color: #57CF23
 }
 
 #last-active-users .offline-color {
-    display: flex;
-    justify-content: center;
-    color: #D73D3A
+  display: flex;
+  justify-content: center;
+  color: #D73D3A;
+  margin: 4% 0 0
 }
 
 #last-active-users .forChat {
-    color: #fff
+  color: #fff
 }
 
 #last-active-users .card {
-    width: 49%;
-    border-radius: .25rem;
-    overflow: hidden;
-    border: none;
-    margin: 1% 0;
-    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+  width: 49%;
+  border-radius: .25rem;
+  overflow: hidden;
+  border: none;
+  margin: 1% 0;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 #last-active-users .card_user_prev {
-    padding: 10px;
-    background-color: #fff;
-    margin:  0px
+  padding: 10px;
+  background-color: #fff;
+  margin:  0px
 }
 
 #last-active-users .card_user_prev div {
-    margin-top: 20px
+  margin-top: 20px
 }
 
 #last-active-users #tablePreview tbody {
-    margin: 0px;
-    padding: 10px;
-    height: 210px
+  margin: 0px;
+  padding: 10px;
+  height: 210px
 }
 
 #last-active-users .card_user_prev td, 
 #last-active-users .card_user_prev tr {
-    padding: 0px
+  padding: 0px
 }
 
 #last-active-users #tablePreview tr:nth-child(2) {
-    padding-left: 15px
+  padding-left: 15px
 }
 
 #last-active-users .block_image {
-    margin-top: auto;
-    margin-bottom: auto
+  margin-top: auto;
+  margin-bottom: auto
 }
 
 #last-active-users .user_image {
-    height: 100%;
-    width: 100%;
-    border-radius: 0
+  height: 100%;
+  width: 100%;
+  border-radius: 0
 }
 
 #last-active-users .card-body {
-    font-size: 12px;
-    padding: 0 5% 3% 5%
+  font-size: 12px;
+  padding: 0 5% 3% 5%
 }
 
 #last-active-users .card-title {
-    margin: 0
+  margin: 0
 }
 
 #last-active-users .name_user_cart {
-    color:#2387CF;
-    font-size: 14px;
-    font-weight: 600
+  color:#2387CF;
+  font-size: 14px;
+  font-weight: 600
 }
 
 #last-active-users .city_user_cart {
-    color: #b3b3b3
+  color: #b3b3b3
 }
 
 #last-active-users .city_user_cart span {
-    border-bottom: 1px dashed
+  border-bottom: 1px dashed
 }
 
 #last-active-users .user_description_cart span {
-    margin: 0px;
-    font-size: 12px
+  margin: 0px;
+  font-size: 12px
 }
 
 #last-active-users .user_description_cart {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column
 }
 
 #last-active-users .title_serwise {
-    display: block;
-    font-weight: 600;
+  display: block;
+  font-weight: 600;
 }
 
 #last-active-users .name_serwise_cart{
-    display: flex;
-    justify-content: space-between
+  display: flex;
+  justify-content: space-between
 }
 
 #last-active-users .name_serwise span:nth-child(1) {
-    color:#555
+  color:#555
 }
 
 #last-active-users .name_serwise span:nth-child(2) {
-    color:#555
+  color:#555
 }
 
 #last-active-users img[data-v-9e1ff7a6] {
-    height: 13px;
-    margin: 0 3px 0 0  
+  height: 13px;
+  margin: 0 3px 0 0  
 }
 
 #last-active-users .green[data-v-9e1ff7a6],
 #last-active-users .red[data-v-9e1ff7a6] {
-    font-size: 13px
+  font-size: 13px
 }
 
 #last-active-users .name_serwise_cart_link a {
-    background-color:#F7F7F7 ;
-    border: 1px solid #D7D7D7;
-    border-radius: 2px;
-    padding: 5px;
-    color: #000;
-    font-weight: bold;
-    transition: 0.3s
+  background-color:#F7F7F7 ;
+  border: 1px solid #D7D7D7;
+  border-radius: 2px;
+  padding: 5px;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s
 }
 
 #last-active-users .name_serwise_cart_link a:hover {
-    text-decoration: none;
-    background-color: #77D134;
-    color: #fff
+  text-decoration: none;
+  background-color: #77D134;
+  color: #fff
 }
 
 #last-active-users .btn-primary {
-    color: #fff;
-    background: #2387CF;
-    font-size: 11px
+  color: #fff;
+  background: #2387CF;
+  font-size: 14px
 }
 
 #last-active-users .name_serwise_cart_link span {
-    margin-top: auto;
-    margin-bottom: auto;
-    position: relative
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative
 }
 
 #last-active-users .name_serwise_cart_link img {
-    height: 15px;
-    width: 15px;
-    position: absolute;
-    left: -20px;
-    top: 2px
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  left: -20px;
+  top: 2px
+}
+
+#last-active-users .name_serwise_cart_link form {
+  width: 100%
 }
 
 #last-active-users .card_user_prev {
-    margin-top: 20px
+  margin-top: 20px
 }
 
 #last-active-users .block_image td a {
-    position: relative;
-    height: 100%;
-    display: block
+  position: relative;
+  height: 100%;
+  display: block
 }
 
 #last-active-users .block_image td a span {
-    position: absolute;
-    right: 3px;
-    bottom: 3px;
-    display: inline-flex;
-    flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 0px 10px;
-    text-align: right;
-    border-radius: 20px;
-    color: #fff
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  display: inline-flex;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0px 10px;
+  text-align: right;
+  border-radius: 20px;
+  color: #fff
 }
 
 #last-active-users .block_image td a span img {
-    height: 15px;
-    width: 15px;
-    margin-right: 5px;
-    margin-top: auto;
-    margin-bottom: auto
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+  margin-top: auto;
+  margin-bottom: auto
 }
 
 #last-active-users .users_prew_block {
-    justify-content: space-between
+  justify-content: space-between
 }
 
 #last-active-users .last-active-users-about {
-    margin: 0 0 4% 0
+  margin: 0 0 4% 0
+}
+
+#last-active-users .users-online-indicator {
+  margin: 2% 0 0
 }
 
 .mobile_autorization {
-    display: none
+  display: none
 }
 
 #new_people_servis ul li {
-    width: auto
+  width: auto
 }
 
 /* VIEW PROFILE Section
@@ -862,12 +871,25 @@ _______________________________________________________ */
 }
 
 #view-profile .name_user span img {
-  margin: 0 .5rem 0
+  margin: 0 .75rem 0
+}
+
+#view-profile .name_user #chat-vue .pull-right span img {
+  height: 18px
 }
 
 #view-profile .character_user {
   color: #999DA4;
   margin: 0px
+}
+
+#view-profile .online_user {
+  padding: 2% 0 0
+}
+
+#view-profile .forChat {
+  width: 25%;
+  margin: 3% 0 0
 }
 
 #view-profile .service {
@@ -1520,7 +1542,7 @@ _______________________________________________________ */
   _______________________________________________________ */  
 
   #chat-vue {
-    margin: auto 0
+    margin: 5% 0 0
   }
 
   #chat-vue .panel {
@@ -1580,11 +1602,6 @@ _______________________________________________________ */
     color:#2387CF
   }
 
-  #chat-vue img[data-v-9b425b2e] {
-    margin: auto 5px auto 0
-  }
-
-
 /* FAVORITES Section
 _______________________________________________________ */
 
@@ -1593,7 +1610,7 @@ _______________________________________________________ */
 }
 
 #favorites .favorites-user-image {
-  width: 10%;  
+  width: 20%;  
   border-radius: .25rem;
   overflow: hidden
 }
@@ -1626,6 +1643,7 @@ _______________________________________________________ */
 }
 
 #favorites .favorites-item button {
+  height: 100%;
   background: none;
   color: #2387CF
 }
@@ -1637,7 +1655,8 @@ _______________________________________________________ */
 }
 
 #favorites .favorites-item button i {
-  font-size: 1.5rem
+  font-size: 1.25rem;
+  margin: auto 0
 }
 
 /* BLACK LIST Section
@@ -1648,7 +1667,7 @@ _______________________________________________________ */
 }
 
 #blacklist .blacklist-user-image {
-  width: 10%;  
+  width: 20%;  
   border-radius: .25rem;
   overflow: hidden
 }
@@ -1681,6 +1700,7 @@ _______________________________________________________ */
 }
 
 #blacklist .blacklist-item button {
+  height: 100%;
   background: none;
   color: #2387CF
 }
@@ -1692,7 +1712,8 @@ _______________________________________________________ */
 }
 
 #blacklist .blacklist-item button i {
-  font-size: 1.5rem
+  font-size: 1.25rem;
+  margin: auto 0
 }
 
 /* FOOTER Section
@@ -2510,59 +2531,77 @@ _______________________________________________________ */
     margin-right: 0
   }
 
+  #blacklist .blacklist-user-image,
+  #favorites .favorites-user-image {
+    width: 40%
+  }
+
+  #blacklist .blacklist-user-name a,
+  #favorites .favorites-user-name a {
+    font-size: 1rem
+  }
+
 }
 
 @media all and (max-width: 576px) {
 
-    #new_people_servis ul li {
-        padding-left: 4%
-    }
+  #new_people_servis ul li {
+    padding-left: 4%
+  }
+
+  #view-profile .forChat {
+    width: 30%
+  }
 
 }
 
 @media all and (max-width: 459px) {
 
-    #last-active-users .card {
-        width: 100%;
-        margin: 3% 0
-    }
+  #last-active-users .card {
+    width: 100%;
+    margin: 3% 0
+  }
 
-    #view-profile .service table {
-        font-size: 0.75rem
-    }
+  #view-profile .service table {
+    font-size: 0.75rem
+  }
 
-    #article-page .article-page-title h3,
-    #single-article-page .single-article-page-title h3 {
-        font-size: 1rem;
-        font-weight: 600
-    }
+  #article-page .article-page-title h3,
+  #single-article-page .single-article-page-title h3 {
+    font-size: 1rem;
+    font-weight: 600
+  }
 
-    #new_people_servis .new_people_servis_block ul li:nth-child(2n) {
-        display: none
-    }
+  #new_people_servis .new_people_servis_block ul li:nth-child(2n) {
+    display: none
+  }
 
-    #new_people_servis .new_people_servis_block {
-        margin: 3% 0
-    }
+  #new_people_servis .new_people_servis_block {
+    margin: 3% 0
+  }
 
-    #blacklist h2,
-    #favorites h2,
-    #single-news-section h2, 
-    #view-profile h2, 
-    #all-news-section h2, 
-    #support-tickets h2, 
-    #technical-support h2, 
-    #search-section h2, 
-    #article-page h2 {
-        width: 50%
-    }
+  #blacklist h2,
+  #favorites h2,
+  #single-news-section h2, 
+  #view-profile h2, 
+  #all-news-section h2, 
+  #support-tickets h2, 
+  #technical-support h2, 
+  #search-section h2, 
+  #article-page h2 {
+    width: 50%
+  }
 
-    #single-news-section .single-news-title h3, 
-    #article-page .article-page-title h3, 
-    #all-news-section .all-news-title h3 {
-        font-size: 1rem;
-        font-weight: 600
-    }
+  #single-news-section .single-news-title h3, 
+  #article-page .article-page-title h3, 
+  #all-news-section .all-news-title h3 {
+    font-size: 1rem;
+    font-weight: 600
+  }
+
+  #last-active-users .offline-color {
+    margin: 2% 0 0
+  }
   
 }
 
@@ -2599,7 +2638,38 @@ _______________________________________________________ */
   #chat-vue .panel-heading h3 {
     font-size: 1.25rem
   }
-  
+
+  #view-profile .online_user {
+    padding: 3% 0 0
+  }
+
+  #view-profile .forChat {
+    width: 40%
+  }
+
+  #last-active-users .offline-color {
+    margin: 3% 0 0
+  }
+
+  #blacklist .blacklist-user-image,
+  #favorites .favorites-user-image {
+    width: 50%
+  }
+
+  #blacklist .blacklist-user-name a,
+  #favorites .favorites-user-name a {
+    font-size: .85rem
+  }
+
+}
+
+@media all and (max-width: 340px) {
+
+  #blacklist .blacklist-user-name a,
+  #favorites .favorites-user-name a {
+    font-size: .75rem;
+  }
+
 }
 
 @media all and (max-width: 320px) {
@@ -2666,10 +2736,6 @@ _______________________________________________________ */
     font-size: .75rem
   }
 
-  #chat-vue img[data-v-9b425b2e] {
-    height: 11px
-  }
-
   #chat-vue .panel-contact {
     padding: 3% 3%;
     margin: 5% 0
@@ -2692,6 +2758,11 @@ _______________________________________________________ */
   #status-page .status-page-link-back {
     font-size: 0.9rem;
     padding: 5%
+  }
+
+  
+  #view-profile .online_user {
+    padding: 4% 0 0
   }
   
 }
