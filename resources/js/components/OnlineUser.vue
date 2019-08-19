@@ -1,7 +1,7 @@
 <template>
     <div class="pull-right">
-        <span v-if="checkUser()" class="green"><img src="/images/monitor1.svg">Онлайн</span>
-        <span v-else class="red"><img src="/images/monitor0.svg">Офлайн</span>
+        <span v-if="checkUser()" class="green"><img src="/images/monitor1.svg"></span>
+        <span v-else class="red"><img src="/images/monitor0.svg"></span>
 
         <!--<span v-if="checkUnreadMessages()" class="blue">You have new messages</span>-->
         <!--<span v-else></span>-->

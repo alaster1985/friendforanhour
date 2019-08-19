@@ -19,31 +19,28 @@
                 </div>
 
                 <div class="col-lg-7 view-profile-character">
-                    <p class="name_user ">{{$profile->first_name}}
-                        @auth
-                            <span id="chat-vue">
-                                <online v-bind:friend="{{ $profile }}"
-                                        v-bind:onlineusers="onlineUsers"></online>
-                            </span>
-                        @endauth
-                    </p>
-                    @if ($profile->last_activity)
-                    <p id="last_activity" class="character_user">
-                        Был в сети: {{$profile->lastActivity()}}
-                    </p>
-                    @endif
-                    <p class="character_user">
-                        Возраст: {{$profile->getAge()}}, 
-                        рост {{$profile->height}}см, 
-                        вес {{$profile->weight}} кг,
-                        просмотров всего: {{$total}}
-                        просмотров за последнюю неделю: {{$week}}
-                    </p>
-                    @if($profile->profileAddress->city_id)
+                    <div class="d-flex justify-content-between">
+                        <p class="name_user ">{{$profile->first_name}}
+                            @auth
+                                <span id="chat-vue">
+                                    <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
+                                </span>
+                            @endauth
+                        </p>
+                        @if ($profile->last_activity)
+                        <p id="last_activity" class="character_user online_user">{{$profile->lastActivity()}}</p>
+                        @endif
+                    </div>
                     <p class="character_user">
                         {{$profile->profileAddress->city->country->country_name}}, 
                         {{$profile->profileAddress->city->city_name}}
                     </p>
+                    <p class="character_user">Возраст: {{$profile->getAge()}} лет</p>
+                    <p class="character_user">Рост: {{$profile->height}} см</p>
+                    <p class="character_user">Вес: {{$profile->weight}} кг</p>
+                    <p class="character_user">Просмотров анкеты: {{$total}}</p>
+                    <p class="character_user">Просмотров за неделю: {{$week}}</p>
+                    @if($profile->profileAddress->city_id)
                     <div class="about_user_block">
                         <h4>Немного о себе:</h4>
                         <div>
@@ -74,7 +71,7 @@
                         @endif
                     @endauth
                     @guest
-                        <a class="forChat" href="javascript:void(0);">Написать</a>
+                        <a class="forChat btn btn-primary btn-md" href="javascript:void(0);">Написать</a>
                     @endguest
                 </div>
 

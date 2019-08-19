@@ -1,4 +1,4 @@
-/******/ (function(modules) { // webpackBootstrap1px 1px 7px -3px rgba(0,0,0,0.75);1px 1px 7px -3px rgba(0,0,0,0.75);1px 1px 7px -3px rgba(0,0,0,0.75);
+/******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -48198,12 +48198,10 @@ var render = function() {
   return _c("div", { staticClass: "pull-right" }, [
     _vm.checkUser()
       ? _c("span", { staticClass: "green" }, [
-          _c("img", { attrs: { src: "/images/monitor1.svg" } }),
-          _vm._v("Онлайн")
+          _c("img", { attrs: { src: "/images/monitor1.svg" } })
         ])
       : _c("span", { staticClass: "red" }, [
-          _c("img", { attrs: { src: "/images/monitor0.svg" } }),
-          _vm._v("Офлайн")
+          _c("img", { attrs: { src: "/images/monitor0.svg" } })
         ])
   ])
 }

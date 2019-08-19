@@ -74,9 +74,21 @@
                             <div class="col-lg-6">
                                 <div class="card-body">
                                     <div class="last-active-users-about">
-                                        <h5 class="card-title">
-                                            <a href="profile?prf={{$lProfile->id}}"><span class="name_user_cart">{{$lProfile->first_name}},<span> {{$lProfile->getAge($lProfile->date_of_birth)}}</span></span></a>
-                                        </h5>
+                                        <div class="d-flex justify-content-between">
+                                            <h5 class="card-title">
+                                                <a href="profile?prf={{$lProfile->id}}"><span class="name_user_cart">{{$lProfile->first_name}},<span> {{$lProfile->getAge($lProfile->date_of_birth)}}</span></span></a>
+                                            </h5>
+                                            <div class="users-online-indicator">
+                                                <online v-bind:friend="{{ $lProfile }}" v-bind:onlineusers="onlineUsers"></online>
+                                            </div>
+                                            @guest
+                                                @if($lProfile->profileOnline())
+                                                    <span class="online-color"><img style="height:13px" src="/images/monitor1.svg"></span>
+                                                @else
+                                                    <span class="offline-color"><img style="height:13px" src="/images/monitor0.svg"></span>
+                                                @endif
+                                            @endguest
+                                        </div>
                                         <span class="city_user_cart">{{isset($lProfile->profileAddress->city_id) ? $lProfile->profileAddress->city->city_name : 'unknown'}}</span>
                                         <span class="title_serwise">Заплачу за:</span>
                                         @foreach(ServiceList::getServiceListByProfileIdForSponsor($lProfile->id)->where('main_service_marker', '=', 1) as $service)
@@ -93,35 +105,24 @@
                                             </span>
                                         @endforeach
                                     </div>
-
-                                    <div class="row" style="justify-content: space-between;margin:0;">
-                                        <online v-bind:friend="{{ $lProfile }}" v-bind:onlineusers="onlineUsers"></online>
-                                        <div class="bottom-card-section">
-                                            <span class="name_serwise_cart name_serwise_cart_link">
-                                                @if(isset(Auth::user()->profile_id) && Auth::user()->profile_id != $lProfile->id)
-                                                    <form method="POST" action="{{Route('addToFriends')}}" enctype="multipart/form-data">
-                                                        <input type="hidden" name="friend_id" value="{{$lProfile->id}}">
-                                                    @csrf
-                                                        <button class="btn btn-primary btn-sm btn-block" type="submit">Написать</button>
-                                                    </form>
-                                                @endif                                        
-                                            </span>  
-                                        </div>
+                                        
+                                    <div class="bottom-card-section">
+                                        <span class="name_serwise_cart name_serwise_cart_link">
+                                            @if(isset(Auth::user()->profile_id) && Auth::user()->profile_id != $lProfile->id)
+                                                <form method="POST" action="{{Route('addToFriends')}}" enctype="multipart/form-data">
+                                                    <input type="hidden" name="friend_id" value="{{$lProfile->id}}">
+                                                @csrf
+                                                    <button class="btn btn-primary btn-sm btn-block" type="submit">Написать сообщение</button>
+                                                </form>
+                                            @endif                                        
+                                        </span>  
                                     </div>
-
                                                                           
-                                    @guest
-                                        <div class="row" style="justify-content: space-between;margin:0;">
-                                            @if($lProfile->profileOnline())
-                                                <span class="online-color"><img style="height:13px;margin:auto 3px auto 0;" src="/images/monitor1.svg">Онлайн</span>
-                                            @else
-                                                <span class="offline-color"><img style="height:13px;margin:auto 3px auto 0;" src="/images/monitor0.svg">Офлайн</span>
-                                            @endif
-                                                <div class="bottom-card-section">
-                                                    <button class="btn btn-primary btn-md btn-block offline-write-btn" type="submit">
-                                                        <a class="forChat" href="javascript:void(0);">Написать</a>
-                                                    </button>
-                                                </div>
+                                    @guest                                           
+                                        <div class="bottom-card-section">
+                                            <button class="btn btn-primary btn-md btn-block offline-write-btn" type="submit">
+                                                <a class="forChat" href="javascript:void(0);">Написать сообщение</a>
+                                            </button>
                                         </div>
                                     @endguest
                                 </div>
