@@ -2,9 +2,9 @@
 
 <section id="view-profile">
     <div class="container">
-        <h2>Анкета:</h2>
+        <h2>Профиль:</h2>
         <div class="row justify-content-center">
-            <div class="row col-lg-10 col-md-10 col-sm-10 col-11 view-profile-card mobile_shadow_off justify-content-center">
+            <div class="row col-lg-11 col-md-11 col-sm-11 col-11 view-profile-card mobile_shadow_off justify-content-center">
 
                 <div class="col-lg-5 view-profile-photo">
                     <a data-fancybox="images" rel="group" href="{{asset($profile->profilePhoto()
@@ -19,35 +19,36 @@
                 </div>
 
                 <div class="col-lg-7 view-profile-character">
-                    <div class="d-flex justify-content-between">
-                        <p class="name_user ">{{$profile->first_name}}
-                            @auth
-                                <span id="chat-vue">
-                                    <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
-                                </span>
-                            @endauth
-                        </p>
-                        @if ($profile->last_activity)
-                        <p id="last_activity" class="character_user online_user">{{$profile->lastActivity()}}</p>
-                        @endif
+                    <div class="d-flex justify-content-between view-profile-character-container">
+                        <div class="d-flex justify-content-start">
+                            <p class="name_user ">{{$profile->first_name}}
+                                @auth
+                                    <span id="chat-vue">
+                                        <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
+                                    </span>
+                                @endauth
+                            </p>
+                        </div>
+                        <div class="col-lg-6 d-flex character_user_activity">
+                            @if ($profile->last_activity)
+                            <p id="last_activity" class="character_user online_user">{{$profile->lastActivity()}}</p>
+                            @endif
+                            <p class="character_user character_user_total_views"><i class="fas fa-users"></i>{{$total}}</p>
+                            <p class="character_user character_user_week_views"><i class="fas fa-calendar-week"></i>{{$week}}</p>
+                        </div>
                     </div>
+                    
+                    <div class="view-profile-short-info">
+                        <p class="character_user">{{$profile->getAge()}}</p>
+                        <p class="character_user">&nbsp/ Рост: {{$profile->height}} см</p>
+                        <p class="character_user">&nbsp/ Вес: {{$profile->weight}} кг</p>
+                    </div>
+
                     <p class="character_user">
                         {{$profile->profileAddress->city->country->country_name}}, 
                         {{$profile->profileAddress->city->city_name}}
                     </p>
-                    <p class="character_user">Возраст: {{$profile->getAge()}} лет</p>
-                    <p class="character_user">Рост: {{$profile->height}} см</p>
-                    <p class="character_user">Вес: {{$profile->weight}} кг</p>
-                    <p class="character_user">Просмотров анкеты: {{$total}}</p>
-                    <p class="character_user">Просмотров за неделю: {{$week}}</p>
-                    @if($profile->profileAddress->city_id)
-                    <div class="about_user_block">
-                        <h4>Немного о себе:</h4>
-                        <div>
-                            {{$profile->about}}
-                        </div>
-                    </div>
-                    @endif
+
                     @auth
                         @if(isset(Auth::user()->profile_id) && Auth::user()->profile_id != $profile->id)
                             <div class="links_user">
@@ -70,54 +71,70 @@
                             </div>
                         @endif
                     @endauth
+
                     @guest
                         <a class="forChat btn btn-primary btn-md" href="javascript:void(0);">Написать</a>
                     @endguest
+                    
+                    
+
+                    <div class="d-flex">
+                        <div class="service service_close view-profile-services">
+
+                            <div class="table_mobile">
+                                <table class="table_for_me">
+                                    <tr>
+                                        <th class="table_title_service">
+                                            <h4>Сделаю за деньги:</h4>
+                                        </th>
+                                    </tr>
+                                    @foreach($friendsServices as $list)
+                                    <tr>
+                                        <td>{{$list->service_description}}</td>
+                                        <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
+                                    </tr>
+                                    @endforeach
+                                </table>
+                                <button class="table_for_me_open">
+                                    <span class="open_table">Подробнее<i class="fas fa-chevron-down"></i></span>
+                                    <span class="close_table">Свернуть<i class="fas fa-chevron-up"></i></span>
+                                </button>
+                            </div>
+        
+                            <div class="table_mobile">
+                                <table class="table_paid">
+                                    <tr>
+                                        <th class="table_title_service">
+                                            <h4>Заплачу за:</h4>
+                                        </th>
+                                    </tr>
+                                    @foreach($sponsorsServices as $list)
+                                    <tr>
+                                        <td>{{$list->service_description}}</td>
+                                        <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
+                                    </tr>
+                                    @endforeach
+                                </table>
+                                <button class="table_paid_open">
+                                    <span class="open_table">Подробнее<i class="fas fa-chevron-down"></i></span>
+                                    <span class="close_table">Свернуть<i class="fas fa-chevron-up"></i></span>
+                                </button>
+                            </div>
+                        </div>
+    
+                        @if($profile->profileAddress->city_id)
+                        <div class="about_user_block">
+                            <h4>Немного о себе:</h4>
+                            <div>
+                                <p>{{$profile->about}}</p>
+                            </div>
+                        </div>
+                        @endif
+                    </div>
                 </div>
 
                 
-                <div class="row col-lg-12 service service_close">
-
-                    <div class="col-lg-6 table_mobile">
-                        <table class="table_for_me">
-                            <tr>
-                                <th class="table_title_service">
-                                    <h4>Сделаю за деньги:</h4>
-                                </th>
-                            </tr>
-                            @foreach($friendsServices as $list)
-                            <tr>
-                                <td>{{$list->service_description}}</td>
-                                <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
-                            </tr>
-                            @endforeach
-                        </table>
-                        <button class="table_for_me_open">
-                            <span class="open_table">Подробнее<i class="fas fa-chevron-down"></i></span>
-                            <span class="close_table">Свернуть<i class="fas fa-chevron-up"></i></span>
-                        </button>
-                    </div>
-
-                    <div class="col-lg-6 table_mobile">
-                        <table class="table_paid">
-                            <tr>
-                                <th class="table_title_service">
-                                    <h4>Заплачу за:</h4>
-                                </th>
-                            </tr>
-                            @foreach($sponsorsServices as $list)
-                            <tr>
-                                <td>{{$list->service_description}}</td>
-                                <td>{{!$list->price ? 'Бесплатно' : $list->price}}</td>
-                            </tr>
-                            @endforeach
-                        </table>
-                        <button class="table_paid_open">
-                            <span class="open_table">Подробнее<i class="fas fa-chevron-down"></i></span>
-                            <span class="close_table">Свернуть<i class="fas fa-chevron-up"></i></span>
-                        </button>
-                    </div>
-                </div>
+                
                 <div class="user_content col-lg-12">
                     <div class="photo_user">
                         @foreach($photos as $photo)

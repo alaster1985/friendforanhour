@@ -33,13 +33,18 @@
 
         <header class="justify-content-between row">
             <div class="container">
-                <div class="header-nav-container">
+                <div class="col-lg-12 justify-content-center header-nav-container">
 
-                    <nav class="navbar navbar-expand-lg navbar-dark">
+                    <nav class="d-flex justify-content-between navbar navbar-expand-lg navbar-dark">
                         <a class="navbar-brand logotype" href="{{ route('index') }}">
                             <i class="fas fa-user-friends"></i>
-                            <span class="header_title">One Hour Friend</span>
+                            <span class="header_title">1-<span style="color:#f89911">HF</span>.COM</span>
                         </a>
+
+                        <a class="navbar-brand logotype second-logotype" href="{{ route('index') }}">
+                            <span class="header_title"><span style="color:#f89911">ONE HOUR </span>FRIEND <span style="color:#f89911">| ДРУГ НА ЧАС</span></span>
+                        </a>
+
                         <div class="mobile_autorization"></div> 
 
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
