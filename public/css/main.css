@@ -187,29 +187,33 @@ summary {
 }
 
 template {
-    display: none
+  display: none
 }
 
 table {
-    border-collapse: separate;
-    width: 100%;
-    border-spacing: 0.75rem
+  border-collapse: separate;
+  width: 100%;
+  border-spacing: 0.75rem
 }
 
 table,
 th,
 td {
-    border: none
+  border: none
 }
 
 [hidden] {
-    display: none
+  display: none
 }
 
 /* Login Input Fields Customization */
 .form-control:focus {
-    border: 1px solid #ced4da;
-    box-shadow: none
+  border: 1px solid #ced4da;
+  box-shadow: none
+}
+
+.container {
+  max-width: 1920px
 }
 
 /* HEADER Section
@@ -225,12 +229,12 @@ header {
 }
 
 header nav {
-    width: 100%
+  width: 100%
 }
 
 header .navbar, 
 header .navbar-brand {
-    padding: 0
+  padding: 0
 }
 
 header .navbar-toggler {
@@ -238,21 +242,21 @@ header .navbar-toggler {
 }
 
 header .header-nav-container {
-    display: flex
+  display: flex
 }
 
 header .navbar-nav {
   width: 100%;
-  justify-content: space-around;
-  text-align: center
+  justify-content: flex-end;
+  text-align: left
 }
 
 header .navbar-nav form {
-    margin: auto 0
+  margin: auto 0
 }
 
 header .navbar-dark .navbar-nav .nav-link {
-    color: #fff
+  color: #fff
 }
 
 header #navbarSupportedContent {
@@ -260,26 +264,26 @@ header #navbarSupportedContent {
 }
 
 header #navbarSupportedContent ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
 }
 
 header #navbarSupportedContent ul li a.dropdown-toggle {
-    display: inline-block;
-    font-weight: 600;
-    color: #2387CF;
-    text-align: center;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: #fff;
-    padding: .5rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
+  display: inline-block;
+  font-weight: 600;
+  color: #2387CF;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
 }
 
 header #payButton {
@@ -289,127 +293,134 @@ header #payButton {
 }
 
 header #payButton:hover {
-    color: #2387CF;
-    background-color: #fff
+  color: #2387CF;
+  background-color: #fff
 }
 
 
 header #navbarDropdown {
-    text-align: center;
-    border-radius: 10px;
-    background-color: #fff;
-    color: #000
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000
 }
 
 header .autorization, .registration {
-    padding:5px 10px;
-    border-radius: 10px;
-    background-color: #fff;
-    text-align: center;
-    color: #000
+  padding:5px 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+  color: #000
 }
+
 header .registration {
-    background-color: #007bff;
-    color: #fff
+  background-color: #007bff;
+  color: #fff
 }
 
 header .autorization:hover, .registration:hover {
-    text-decoration: none
+  text-decoration: none
 }
 
 header .autorization:hover {
-    color: #000;
-    box-shadow: inset 0 0 10px rgb(4, 44, 87, 0.8)
+  color: #000;
+  box-shadow: inset 0 0 10px rgb(4, 44, 87, 0.8)
 }
+
 header .registration:hover {
-    color: #fff;
-    box-shadow: inset 0 0 10px rgb(4, 44, 87, 0.5)
+  color: #fff;
+  box-shadow: inset 0 0 10px rgb(4, 44, 87, 0.5)
 }
 
 header .header_title {
-    color: #fff;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 30px;
-    padding: 0px
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 30px;
+  padding: 0px
 }
 
 header .header_title span {
-    color: #fff
+  color: #fff
+}
+
+header .navbar-collapse {
+  flex-grow: 0;
+  margin: 0 1% 0 0
 }
 
 /* VUE CARD Section
 _______________________________________________________ */
 
 #main-page-aside-news .block_news {
-    margin-top: 1rem
+  margin-top: 1rem
 }
 
 #main-page-aside-news .block_news .card-body {
-    border-radius: .25rem;
-    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+  border-radius: .25rem;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 #main-page-aside-news .block_news h5 {
-    color: #2C5C92
+  color: #2C5C92
 }
 
 #main-page-aside-news .block_news h6 {
-    color: #2387CF
+  color: #2387CF
 }
 
 #main-page-aside-news .block_news a p {
-    margin: 0px
+  margin: 0px
 }
 
 #main-page-aside-news .block_news a p:nth-child(1) {
-    color: #999DA4
+  color: #999DA4
 }
 
 #main-page-aside-news .block_news a p:nth-child(2) {
-    color: #465160;
-    border-bottom:1px solid #D3D7DC;
-    padding-bottom: 4%
+  color: #465160;
+  border-bottom:1px solid #D3D7DC;
+  padding-bottom: 4%
 }
 
 #main-page-aside-news .block_news a:hover p {
-    text-decoration: none;
-    color: #f89911
+  text-decoration: none;
+  color: #f89911
 }
 
 #main-page-aside-news .block_news a:hover {
-    text-decoration: none
+  text-decoration: none
 }
 
 /* NEW PEOPLE Section
 _______________________________________________________ */
 
 #new_people_servis {
-    background: #fff;
-    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+  background: #fff;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 #new_people_servis .new_people_servis_block {
-    height: 150px
+  height: 150px
 }
 
 #new_people_servis .new_people_servis_block {
-    padding: 1% 0;
-    margin: 0
+  padding: 1% 0;
+  margin: 0
 }
 
 #new_people_servis ul {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row
 }
 
 #new_people_servis ul li a img {
-    border-radius: .25rem
+  border-radius: .25rem
 }
 
 #new_people_servis .label_new_people {
@@ -672,8 +683,12 @@ _______________________________________________________ */
 }
 
 #last-active-users .card-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-size: 12px;
-  padding: 0 5% 3% 5%
+  padding: 6%
 }
 
 #last-active-users .card-title {
@@ -682,11 +697,12 @@ _______________________________________________________ */
 
 #last-active-users .name_user_cart {
   color:#2387CF;
-  font-size: 14px;
+  font-size: 1.5rem;
   font-weight: 600
 }
 
 #last-active-users .city_user_cart {
+  font-size: 1.25rem;
   color: #b3b3b3
 }
 
@@ -809,11 +825,12 @@ _______________________________________________________ */
 }
 
 #last-active-users .last-active-users-about {
+  font-size: 1rem;
   margin: 0 0 4% 0
 }
 
 #last-active-users .users-online-indicator {
-  margin: 2% 0 0
+  margin: 1% 0 0
 }
 
 .mobile_autorization {
@@ -837,15 +854,22 @@ _______________________________________________________ */
 }
 
 #view-profile .view-profile-photo a img {
-    width: 100%
+  width: 100%
 }
 
 #view-profile .about_user_block {
-    margin: 5% 0 0
+  width: 40%;
+  margin: 0 0 0 5%;
+  padding: 1%;
+  background: #f5f5f5;
+  border-radius: .25rem;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75)
 }
 
 #view-profile .about_user_block h4 {
-  font-size: 1.17rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: #2387CF;
   margin-bottom: 1%  
@@ -878,23 +902,27 @@ _______________________________________________________ */
   height: 18px
 }
 
+#view-profile .view-profile-short-info {
+  display: flex
+}
 #view-profile .character_user {
   color: #999DA4;
   margin: 0px
 }
+ 
+#view-profile .character_user_activity .character_user_total_views, 
+#view-profile .character_user_activity .character_user_week_views {
+  margin: 0 0 0 5%
+}
 
-#view-profile .online_user {
-  padding: 2% 0 0
+#view-profile .character_user_activity {
+  justify-content: flex-end;
+  padding: 2% 0 0 0
 }
 
 #view-profile .forChat {
   width: 25%;
   margin: 3% 0 0
-}
-
-#view-profile .service {
-  padding: 0;
-  margin-top: 4%
 }
 
 #view-profile .distance {
@@ -907,8 +935,9 @@ _______________________________________________________ */
 }
 
 #view-profile .links_user {
-  margin: 5% 0 0;
-  display: flex
+  display: flex;
+  flex-shrink: inherit;
+  margin: 1% 0
 }
 
 #view-profile .links_user #complainButton {
@@ -931,8 +960,8 @@ _______________________________________________________ */
 }
 
 #view-profile .links_user a {
-    color: #999DA4;
-    margin-left: 15px
+  color: #999DA4;
+  margin-left: 15px
 }
 
 #view-profile .service table tr td::first-letter {
@@ -944,13 +973,14 @@ _______________________________________________________ */
 }
 
 #view-profile .table_title_service h4 {
-  font-size: 1.17rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #F68727  
+  color: #F68727;
+  margin: 0  
 }
 
 #view-profile .service table:last-child {
-    margin-top: 15px
+  margin-top: 15px
 }
 
 #view-profile .service button {
@@ -974,20 +1004,20 @@ _______________________________________________________ */
 }
 
 #view-profile .close_table {
-    display: none
+  display: none
 }
 
 #view-profile .active_table {
-    display: block
+  display: block
 }
 
 #view-profile .dissable_block {
-    display: none
+  display: none
 }
 
 #view-profile .table_paid_open,
 #view-profile .table_for_me_open {
-    margin: 0 .75rem
+  margin: 0 .75rem
 }
 
 #view-profile .user_content {
@@ -995,27 +1025,37 @@ _______________________________________________________ */
 }
 
 #view-profile .photo_user a img {
-    width: 100%
+  width: 100%
 }
 
 #view-profile .user_description_cart a {
-    text-decoration: none
+  text-decoration: none
 }
 
 #view-profile .map_container h2 {
-    margin: 3% 0;
-    text-align: center;
-    font-weight: 400
+  margin: 3% 0;
+  text-align: center;
+  font-weight: 400
+}
+
+#view-profile .view-profile-services {
+  width: 60%;
+  margin: 0 0 0 -1.5%
+}
+
+#view-profile .table_for_me td,
+#view-profile .table_paid td {
+  line-height: .8
 }
 
 /* SEARCH Section
 _______________________________________________________ */
 
 #search-section .form-control {
-    border: none;
-    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+  border: none;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 #search-section label {
@@ -1218,7 +1258,8 @@ _______________________________________________________ */
 }
 
 #edit-profile .acc-settings-textfield .set-location {
-  width: 40%
+  width: 40%;
+  background-color: #2387CF
 }
 
 #edit-profile .newCity,
@@ -1542,7 +1583,7 @@ _______________________________________________________ */
   _______________________________________________________ */  
 
   #chat-vue {
-    margin: 5% 0 0
+    margin: 4.5% 0 0
   }
 
   #chat-vue .panel {
@@ -1903,7 +1944,7 @@ _______________________________________________________ */
   color: #2387CF;
   font-size: 1.7rem;
   font-weight: 500;
-  margin: 5% auto 5% 0;
+  margin: 1% auto 2% 0;
   padding: 1%;
   background: #fff;
   width: 25%;
@@ -2140,6 +2181,12 @@ _______________________________________________________ */
 /* @MEDIA Section
 _______________________________________________________ */
 
+@media all and (max-width: 1400px) { 
+  header .second-logotype {
+    display: none
+  }
+}
+
 @media all and (min-width: 1200px) {    
 
   #support-tickets .new-support-tickets button,
@@ -2195,6 +2242,14 @@ _______________________________________________________ */
     font-size: 0.75rem
   }
 
+  #last-active-users .name_user_cart {
+    font-size: 1.25rem
+  }
+
+  #last-active-users .users-online-indicator {
+    margin: 0
+  }
+
 }
 
 @media all and (max-width: 991px) {
@@ -2205,6 +2260,7 @@ _______________________________________________________ */
   }
 
   header #payButton {
+    text-align: left;
     padding: .375rem 0
   }
 
@@ -2242,7 +2298,8 @@ _______________________________________________________ */
     margin: 5% 0 0 0
   }
 
-  #view-profile .table_mobile {
+  #view-profile .view-profile-character .table_mobile {
+    width: 60%;
     padding: 0;
     margin: 0px -10px
   }
@@ -2293,6 +2350,14 @@ _______________________________________________________ */
   #view-profile .service {
     padding-right: 15px;
     padding-left: 15px
+  }
+
+  #view-profile .view-profile-short-info {
+    margin: 0
+  }
+
+  #last-active-users .users-online-indicator {
+    margin: -1px 0 0
   }
 
 }
@@ -2355,7 +2420,7 @@ _______________________________________________________ */
   }
 
   #edit-profile .acc-settings-textfield  .set-location {
-    width: 100%;
+    width: 100%
   }
 
   #edit-profile .acc-settings-textfield label {
@@ -2426,6 +2491,10 @@ _______________________________________________________ */
   #view-profile .links_user button, 
   #view-profile .links_user #complainButton {
     font-size: .7rem
+  }
+
+  #view-profile #chat-vue {
+    margin: 1% 0 0
   }
 
 }
@@ -2541,6 +2610,21 @@ _______________________________________________________ */
     font-size: 1rem
   }
 
+  /* Here */
+  #view-profile .view-profile-character-container {
+    flex-direction: column
+  }
+
+  #view-profile .character_user_activity {
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0 0 3% 0
+  }
+
+  #view-profile .view-profile-short-info {
+    margin: 0 0 3% 0  
+  }
+
 }
 
 @media all and (max-width: 576px) {
@@ -2553,6 +2637,12 @@ _______________________________________________________ */
     width: 30%
   }
 
+}
+
+@media all and (max-width: 476px) {
+  #view-profile #chat-vue {
+    margin: 2% 0 0
+  }
 }
 
 @media all and (max-width: 459px) {
@@ -2637,10 +2727,6 @@ _______________________________________________________ */
 
   #chat-vue .panel-heading h3 {
     font-size: 1.25rem
-  }
-
-  #view-profile .online_user {
-    padding: 3% 0 0
   }
 
   #view-profile .forChat {
@@ -2760,9 +2846,9 @@ _______________________________________________________ */
     padding: 5%
   }
 
-  
-  #view-profile .online_user {
-    padding: 4% 0 0
+  #view-profile #chat-vue {
+    margin: 0
   }
   
 }
+
