@@ -21,12 +21,8 @@
                 <div class="col-lg-7 view-profile-character">
                     <div class="d-flex justify-content-between view-profile-character-container">
                         <div class="d-flex justify-content-start">
-                            <p class="name_user ">{{$profile->first_name}}
-                                @auth
-                                    <span id="chat-vue">
-                                        <online v-bind:friend="{{ $profile }}" v-bind:onlineusers="onlineUsers"></online>
-                                    </span>
-                                @endauth
+                            <p class="name_user ">
+                                {{$profile->first_name}}
                             </p>
                         </div>
                         <div class="col-lg-6 d-flex character_user_activity">
@@ -78,7 +74,7 @@
                     
                     
 
-                    <div class="d-flex">
+                    <div class="d-flex view-profile-services-container">
                         <div class="service service_close view-profile-services">
 
                             <div class="table_mobile">
