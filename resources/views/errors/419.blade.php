@@ -1,5 +1,6 @@
-@extends('errors::minimal')
+{{--@extends('errors::minimal')--}}
 
-@section('title', __('Page Expired'))
-@section('code', '419')
-@section('message', __('Page Expired'))
+{{--@section('title', __('Page Expired'))--}}
+{{--@section('code', '419')--}}
+{{--@section('message', __('Page Expired'))--}}
+<script>window.location = "/";</script>

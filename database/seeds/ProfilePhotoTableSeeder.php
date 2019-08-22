@@ -25,7 +25,7 @@ class ProfilePhotoTableSeeder extends Seeder
         foreach ($arr as $key => $value) {
             for ($i = 1; $i <= 4; $i++) {
                 $photo = new ProfilePhoto();
-                $photo->photo_path = $pathPhoto . '/' . $key . '/' . $value . $i . '.jpg';
+                $photo->photo_path = $pathPhoto . '/' . $key . '/' . $value . $i . '1.jpg';
                 $photo->profile_id = $key;
                 if ($i === 1) {
                     $photo->main_photo_marker = true;
