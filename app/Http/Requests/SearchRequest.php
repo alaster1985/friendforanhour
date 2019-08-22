@@ -8,6 +8,11 @@ use App\ServiceType;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\ValidationException;
+
 class SearchRequest extends FormRequest
 {
     /**
@@ -18,6 +23,16 @@ class SearchRequest extends FormRequest
     public function authorize()
     {
         return true;
+    }
+
+    public function failedValidation(Validator $validator)
+    {
+        $errors = (new ValidationException($validator))->errors();
+
+        throw new HttpResponseException(response()->json([
+            'success' => false,
+            'errors' => $errors,
+        ], JsonResponse::HTTP_OK));
     }
 
     /**

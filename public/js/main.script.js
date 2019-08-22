@@ -1,14 +1,41 @@
 $(document).ready(function () {
 
     $('#user_search').submit(function () {
-
+        $('.alert-danger').empty();
+        // $.ajax({
+        //     url: 'filter',
+        //     type: "post",
+        //     data: $("#user_search").serialize(),
+        //     success: function (data) {
+        //         console.log(data)
+        //         var userCardArr = JSON.parse(data);
+        //         console.log(userCardArr);
+        //         $('#user_search').hide('slow');
+        //         $('#search-section h2').hide('slow');
+        //         $('#user_search_result').removeClass('none');
+        //     },
+        //     error: function (data) {
+        //         console.log(123)
+        //         $.each(data.responseJSON.errors, function (key, value) {
+        //             $('.alert-danger').show();
+        //             $('.alert-danger').append('<p>' + value + '</p>');
+        //         });
+        //     }
+        // });
         $.post('filter', $("#user_search").serialize(),
             function (data) {
-                var userCardArr = JSON.parse(data);
-                console.log(userCardArr);
-                $('#user_search').hide('slow');
-                $('#search-section h2').hide('slow');
-                $('#user_search_result').removeClass('none');
+                if (data.success == false) {
+                    $.each(data.errors, function (key, value) {
+                        $('.alert-danger').show();
+                        $('.alert-danger').append('<p>' + value + '</p>');
+                    });
+                } else {
+                    var userCardArr = JSON.parse(data);
+                    console.log(userCardArr);
+                    $('#user_search').hide('slow');
+                    $('#search-section h2').hide('slow');
+                    $('#user_search_result').removeClass('none');
+                }
 
 
                 // var usersCardArr = JSON.parse(msg);
@@ -82,7 +109,7 @@ $(document).ready(function () {
 
     setInterval(lastActivity, 3000);
 
-    function lastActivity () {
+    function lastActivity() {
         var onlineMarker;
         if ($('body').find('#chat-vue').length > 0) {
             onlineMarker = $('body').find('#chat-vue').find('img').attr('src').substr(-5, 1);
@@ -90,7 +117,7 @@ $(document).ready(function () {
             onlineMarker = false
         }
         if ($('#last_activity').length > 0 && onlineMarker !== false) {
-            if (onlineMarker == 1){
+            if (onlineMarker == 1) {
                 $('#last_activity').hide()
             } else {
                 $('#last_activity').show()

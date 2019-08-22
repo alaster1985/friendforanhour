@@ -7,9 +7,11 @@
             @if ($errors)
                 <div style="display: block; color: red">{{($errors->first())}}</div>
             @endif
+                <div class="alert-danger" style="display:none; color: red;"></div>
             <form id="user_search" action="" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row justify-content-center">
+
                     <div class="col-lg-6">
                         <label>Минимальный Возраст:</label>
                         <input class="form-control form-control-md" name="min_age" type="number" min="18" max="123" value="{{old('min_age')}}">
