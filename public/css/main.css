@@ -193,7 +193,7 @@ template {
 table {
   border-collapse: separate;
   width: 100%;
-  border-spacing: 0.75rem
+  border-spacing: 0 .75rem
 }
 
 table,
@@ -409,6 +409,7 @@ _______________________________________________________ */
 }
 
 #new_people_servis .new_people_servis_block {
+  justify-content: center;
   padding: 1% 0;
   margin: 0
 }
@@ -443,7 +444,7 @@ _______________________________________________________ */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 10%
+  padding: 13%
 }
 
 #new_people_servis .gallery_list {
@@ -697,12 +698,12 @@ _______________________________________________________ */
 
 #last-active-users .name_user_cart {
   color:#2387CF;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600
 }
 
 #last-active-users .city_user_cart {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #b3b3b3
 }
 
@@ -723,12 +724,16 @@ _______________________________________________________ */
 
 #last-active-users .title_serwise {
   display: block;
+  font-size: .8rem;
   font-weight: 600;
+  color: #f89911;
+  margin: 5% 0 0 0
 }
 
 #last-active-users .name_serwise_cart{
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  font-size: .8rem
 }
 
 #last-active-users .name_serwise span:nth-child(1) {
@@ -829,6 +834,10 @@ _______________________________________________________ */
   margin: 0 0 4% 0
 }
 
+#last-active-users .last-active-users-about-title {
+  margin: 0 0 3% 0
+}
+
 #last-active-users .users-online-indicator {
   margin: 1% 0 0
 }
@@ -860,7 +869,7 @@ _______________________________________________________ */
 #view-profile .about_user_block {
   width: 40%;
   margin: 0 0 0 5%;
-  padding: 1%;
+  padding: 2%;
   background: #f5f5f5;
   border-radius: .25rem;
   -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
@@ -869,7 +878,7 @@ _______________________________________________________ */
 }
 
 #view-profile .about_user_block h4 {
-  font-size: 1.35rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #2387CF;
   margin-bottom: 1%  
@@ -890,10 +899,6 @@ _______________________________________________________ */
   margin-bottom: 3%
 }
 
-#view-profile .name_user span {
-  font-size: 16px
-}
-
 #view-profile .name_user span img {
   margin: 0 .75rem 0
 }
@@ -910,9 +915,12 @@ _______________________________________________________ */
   margin: 0px
 }
  
-#view-profile .character_user_activity .character_user_total_views, 
 #view-profile .character_user_activity .character_user_week_views {
   margin: 0 0 0 5%
+}
+
+#view-profile #last_activity {
+  margin: 0 5% 0 0
 }
 
 #view-profile .character_user_activity {
@@ -1015,13 +1023,8 @@ _______________________________________________________ */
   display: none
 }
 
-#view-profile .table_paid_open,
-#view-profile .table_for_me_open {
-  margin: 0 .75rem
-}
-
 #view-profile .user_content {
-  margin: 5% 0
+  margin: 2% 0
 }
 
 #view-profile .photo_user a img {
@@ -1039,13 +1042,16 @@ _______________________________________________________ */
 }
 
 #view-profile .view-profile-services {
-  width: 60%;
-  margin: 0 0 0 -1.5%
+  width: 60%
 }
 
 #view-profile .table_for_me td,
 #view-profile .table_paid td {
-  line-height: .8
+  line-height: .75
+}
+
+#view-profile   .service div {
+  font-size: 14px
 }
 
 /* SEARCH Section
@@ -1272,22 +1278,22 @@ _______________________________________________________ */
 }
 
 #edit-profile .table_services_as_sponsor {
-    margin: 0px;
-    margin-top: 20px
+  margin: 0px;
+  margin-top: 20px
 }
 
 #edit-profile .table_services_as_sponsor input,
 #edit-profile .select_status_service select,
 #edit-profile #imgInput {
-    border: none;
-    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+  border: none;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
 }
 
 
 #edit-profile #addNewPhoto .custom-file .custom-file-label::after {
-    content: "Выбрать"
+  content: "Выбрать"
 }
 
 #edit-profile #addNewPhoto .custom-file {
@@ -1574,74 +1580,65 @@ _______________________________________________________ */
     width: 100%
 }
 
-
-
 /* VUE APP Section
 _______________________________________________________ */
 
-  /* VUE APP Section
-  _______________________________________________________ */  
+#chat-vue .panel {
+  border-bottom: 1px solid #e0e0e0
+}
 
-  #chat-vue {
-    margin: 4.5% 0 0
-  }
+#chat-vue div[data-v-77176efa] {
+  margin-bottom: 3%
+}
 
-  #chat-vue .panel {
-    border-bottom: 1px solid #e0e0e0
-  }
+#chat-vue textarea[data-v-77176efa] {
+  margin: 3% 0 0;
+  width: 100%;
+  color: #465160;
+  padding: 1%;
+  border: none;
+  border-radius: .25rem;
+  background: #FFF;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+}
 
-  #chat-vue div[data-v-77176efa] {
-    margin-bottom: 3%
-  }
+#chat-vue .panel-heading {
+  background:#2387CF;
+  color:#fff;
+  border-radius: .25rem .25rem 0 0;
+  padding: .75rem
+}
 
-  #chat-vue textarea[data-v-77176efa] {
-    margin: 3% 0 0;
-    width: 100%;
-    color: #465160;
-    padding: 1%;
-    border: none;
-    border-radius: .25rem;
-    background: #FFF;
-    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
-  }
+#chat-vue .panel-heading h3 {
+  color: #fff;
+  margin: 0;
+  padding: 0 1%
+}
 
-  #chat-vue .panel-heading {
-    background:#2387CF;
-    color:#fff;
-    border-radius: .25rem .25rem 0 0;
-    padding: .75rem
-  }
+#chat-vue .panel-contact {
+  background: #fff;
+  border-radius: .25rem;
+  padding: 1% 2%;
+  margin: 3% 0;
+  -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
+  box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
+}
 
-  #chat-vue .panel-heading h3 {
-    color: #fff;
-    margin: 0;
-    padding: 0 1%
-  }
+#chat-vue .massage-status {
+  font-weight: 400;
+  color :#999DA4;
+  font-size: 1rem;
+  margin-right: 3%;
+  float: right
+}
 
-  #chat-vue .panel-contact {
-    background: #fff;
-    border-radius: .25rem;
-    padding: 1% 2%;
-    margin: 3% 0;
-    -webkit-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: 13px 13px 18px -18px rgba(0,0,0,0.75)
-  }
-
-  #chat-vue .massage-status {
-    font-weight: 400;
-    color :#999DA4;
-    font-size: 1rem;
-    margin-right: 3%;
-    float: right
-  }
-
-  #chat-vue .panel-contact-username {
-    font-weight: 500;
-    color:#2387CF
-  }
+#chat-vue .panel-contact-username {
+  font-weight: 500;
+  color:#2387CF
+}
 
 /* FAVORITES Section
 _______________________________________________________ */
@@ -2181,6 +2178,32 @@ _______________________________________________________ */
 /* @MEDIA Section
 _______________________________________________________ */
 
+
+
+@media all and (max-width: 1920px) { 
+
+  #last-active-users .card {
+    width: 32.5%
+  }
+
+}
+
+
+
+@media all and (min-width: 1800px) { 
+  table {
+    border-spacing: 0 1.5rem
+  }
+}
+
+@media all and (max-width: 1500px) { 
+
+  #last-active-users .card {
+    width: 49%
+  }
+
+}
+
 @media all and (max-width: 1400px) { 
   header .second-logotype {
     display: none
@@ -2299,9 +2322,8 @@ _______________________________________________________ */
   }
 
   #view-profile .view-profile-character .table_mobile {
-    width: 60%;
-    padding: 0;
-    margin: 0px -10px
+    width: 100%;
+    padding: 0
   }
 
   header .navbar-brand i,
@@ -2347,17 +2369,26 @@ _______________________________________________________ */
     font-size: 1rem
   }
 
-  #view-profile .service {
-    padding-right: 15px;
-    padding-left: 15px
-  }
-
   #view-profile .view-profile-short-info {
     margin: 0
   }
 
   #last-active-users .users-online-indicator {
     margin: -1px 0 0
+  }
+
+  #view-profile .view-profile-services-container {
+    flex-direction: column
+  }
+
+  #view-profile .view-profile-services {
+    width: 100%
+  }
+
+  #view-profile .about_user_block {
+    width: 100%;
+    margin: 5% 0 0 0;
+    padding: 2%
   }
 
 }
@@ -2493,8 +2524,16 @@ _______________________________________________________ */
     font-size: .7rem
   }
 
-  #view-profile #chat-vue {
-    margin: 1% 0 0
+}
+
+@media all and (min-width: 576px) {
+
+  #view-profile .slick-track {
+    width: 100% !important
+  }
+
+  #view-profile .slick-slide {
+    width: 25% !important
   }
 
 }
@@ -2557,7 +2596,6 @@ _______________________________________________________ */
   }
 
   .service div {
-    padding: 10px;
     font-size: 14px
   }
 
@@ -2639,12 +2677,6 @@ _______________________________________________________ */
 
 }
 
-@media all and (max-width: 476px) {
-  #view-profile #chat-vue {
-    margin: 2% 0 0
-  }
-}
-
 @media all and (max-width: 459px) {
 
   #last-active-users .card {
@@ -2691,6 +2723,11 @@ _______________________________________________________ */
 
   #last-active-users .offline-color {
     margin: 2% 0 0
+  }
+
+  #view-profile .table_for_me td, 
+  #view-profile .table_paid td {
+    line-height: 2
   }
   
 }
@@ -2798,20 +2835,12 @@ _______________________________________________________ */
     width: 60%
   }
 
-  #view-profile .service {
-    padding: 30px 0
-  }
-
   #view-profile .view-profile-character {
     margin: 7% 0
   }
 
   #view-profile .table_mobile {
     margin: 0px -10px 7%
-  }
-
-  #view-profile .user_content {
-    margin: 20% 0
   }
 
   #search-section label {
@@ -2846,8 +2875,8 @@ _______________________________________________________ */
     padding: 5%
   }
 
-  #view-profile #chat-vue {
-    margin: 0
+  #view-profile .service table {
+    font-size: 0.7rem
   }
   
 }

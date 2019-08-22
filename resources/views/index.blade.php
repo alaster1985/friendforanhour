@@ -6,7 +6,7 @@
                 <div class="label_new_people col-lg-1 col-md-2 col-sm-2 col-4">
                     <p>Новые друзья</p>
                 </div>                
-                <ul class="col-lg-11 col-md-10 col-sm-10 col-8">
+                <ul class="col-xl-7 col-lg-11 col-md-10 col-sm-10 col-8">
                     @foreach($newProfiles as $profile)
                         <li>
                             <a href="profile?prf={{$profile->id}}">
@@ -24,7 +24,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-5 col-sm-5">
+            <div class="col-xl-2 col-lg-3 col-md-5 col-sm-5">
                 @guest
                     @include('auth.loginTest')
                 @endguest
@@ -48,7 +48,7 @@
                     </div>
                 </aside>
             </div>
-            <div class="col-lg-9 col-md-7 col-sm-7">
+            <div class="col-xl-10 col-lg-9 col-md-7 col-sm-7">
                 <section id="map-section">
                     <div class="map_container">
                         <div class="map-card">
@@ -66,15 +66,15 @@
                     @foreach($profilesForLowerBlocks as $lProfile)                    
                     <div class="card">
                         <div class="row no-gutters" style="height: 100%;">
-                            <div class="col-lg-6" style="overflow: hidden;">
+                            <div class="col-lg-7" style="overflow: hidden;">
                                 <a class="profile-img-link" href="profile?prf={{$lProfile->id}}">
                                     <img class="user_image card-img" src="{{asset($lProfile->profilePhoto()->where([['main_photo_marker', '=', 1], ['is_deleted', '=', 0]])->first()->photo_path ?? 'profilepictures/' .$lProfile->gender_id . '.jpg')}}">
                                 </a>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-5">
                                 <div class="card-body">
                                     <div class="last-active-users-about">
-                                        <div class="d-flex justify-content-between">
+                                        <div class="d-flex justify-content-between last-active-users-about-title">
                                             <h5 class="card-title">
                                                 <a href="profile?prf={{$lProfile->id}}"><span class="name_user_cart">{{$lProfile->first_name}},<span> {{$lProfile->getAge($lProfile->date_of_birth)}}</span></span></a>
                                             </h5>
