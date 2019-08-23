@@ -50,15 +50,15 @@ class Add1MOAccessRequest extends FormRequest
 //            ];
 //        }
         $messages = [
-            'profile_id.required' => 'You have now profile_id. Please reload page and try again',
-            'profile_id.in' => 'Something wrong with profile_id field. Please reload page and try again',
-            'password.required' => 'Please enter your password',
-            'login.required' => 'Please enter your login (email)',
-            'login.in' => 'This is not your login (email).',
-            'wrong_password.required' => 'password was not confirmed',
-            'reason.required' => 'Please, describe the reason for add 1/MO access',
-            'reason.max' => 'Shorter please, max 10000 characters',
-            'reason.min' => 'Very short reason. At least 3 characters',
+            'profile_id.required' => 'Отсутствует обязательное поле профайла. Пожалуйста, перезагрузите страницу и повторите снова.',
+            'profile_id.in' => 'Что-то пошло не так с одним из обязательных параметров профайла. Пожалуйста, перезагрузите страницу и повторите снова.',
+            'password.required' => 'Пожалуйста, введите свой пароль доступа к админке',
+            'login.required' => 'Пожалуйста, введите Ваш логин (email)',
+            'login.in' => 'Это не Ваш логин (email).',
+            'wrong_password.required' => 'Пароль не подтвержден.',
+            'reason.required' => 'Пожалуйста, опишите причину добавления одного месяца доступа.',
+            'reason.max' => 'Пожалуйста, немного короче. Максимум 10000 символов.',
+            'reason.min' => 'Очень мало текста для причины добавления. Не менее 10 символов.',
         ];
         return $messages;
     }

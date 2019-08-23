@@ -41,17 +41,17 @@ class StoreBanRequest extends FormRequest
     public function messages()
     {
         return [
-            'reason.required' => 'Please, describe the reason for bun',
-            'reason.max' => 'Shorter please, max 10000 characters',
-            'reason.min' => 'Very short reason. At least 3 characters',
-            'profile_id.required' => 'Something went wrong with profile ID field. Please reload page',
-            'profile_id.in' => 'Are you sure that this profile exist, Something went wrong with profile ID field. Please reload page',
-            'duration.required' => 'You must set duration for ban time (hours)',
-            'duration.integer' => 'You must use only numbers',
-            'duration.min' => 'At least 1 hour for ban time',
-            'duration.max' => 'It is more than 41 days. It is too long...',
-            'reason_amnesty.max' => 'Shorter please, max 10000 characters',
-            'reason_amnesty.min' => 'Very short reason for amnesty. At least 10 characters',
+            'reason.required' => 'Пожалуйста, укажите причину бана',
+            'reason.max' => 'Для поля "причина бана" максимальное количество символов ограничено - 10000',
+            'reason.min' => 'Для поля "причина бана" минимальное количество символов ограничено - 3',
+            'profile_id.required' => 'Что-то пошло не так с одним из параметров профайла. Пожалуйста перезагрузите страницу',
+            'profile_id.in' => 'Вы уверены, что данный пользователь существует? Что-то пошло не так с одним из параметров профайла. Пожалуйста перезагрузите страницу',
+            'duration.required' => 'Установите длительность бана, (час)',
+            'duration.integer' => 'Используйте только цифры для поля длительности бана',
+            'duration.min' => 'Минимальная длительность бана - 1 час',
+            'duration.max' => 'Длительность бана установлена более чем на 6 ннедель. Используйте меньшее значение',
+            'reason_amnesty.max' => 'Причина для "амнистии" бана очень большая, не более 10000 символов',
+            'reason_amnesty.min' => 'Причина для "амнистии" бана описана очень коротко. Минимум 10 символов',
             'reason_amnesty.required_if' => 'Nice try BRO ;)',
         ];
     }

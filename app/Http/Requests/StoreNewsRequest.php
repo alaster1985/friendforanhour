@@ -34,14 +34,14 @@ class StoreNewsRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'Please, set title',
-            'title.max' => 'Shorter please, max 100 characters',
-            'title.min' => 'Very short title. At least 3 characters',
-            'photo.image' => 'It was not an image',
-            'photo.mime' => 'Nice try! But It was not an image',
-            'content.required' => 'Please, set news description',
-            'content.min' => 'Very short news description',
-            'content.max' => 'Shorter please, max 10000 characters (news description)',
+            'title.required' => 'Пожалуйста, установите заголовок (title)',
+            'title.max' => 'Для заголовка (title) используйте не более 100 символов',
+            'title.min' => 'Очень короткий заголовок (title). Необходимо больше символов (3)',
+            'photo.image' => 'Загружаемый файл не является изображением (img)',
+            'photo.mime' => 'Загружаемый файл не является изображением (mime)',
+            'content.required' => 'Пожалуйста заполните текст новости',
+            'content.min' => 'Очень короткий текст для новости',
+            'content.max' => 'Текст новости слишком длинный, не более 10000 символов',
             'disabled.boolean' => 'Just set disabled field from select. Tnx',
         ];
     }

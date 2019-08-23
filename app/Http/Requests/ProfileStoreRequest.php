@@ -99,57 +99,57 @@ class ProfileStoreRequest extends FormRequest
     public function messages()
     {
         $messages = [
-            'servicesValidate.required' => 'something went wrong. Please check your services',
-            'nickname.required' => 'Please, enter your nickname',
-            'nickname.min' => 'Your nickname must consist of more than 2 characters',
-            'nickname.max' => 'Your nickname must consist of less than 50 characters',
-            'bdate.required' => 'Please, enter your own birth of date',
+            'servicesValidate.required' => 'Что-то пошло не так во время сохранения услуг. Пожалуйста, обновите страницу и попробуйте еще раз. Если Вы видите это сообщение снова - попробуйте добавить и сохранить услуги по одной.',
+            'nickname.required' => 'Пожалуйста, укажите свой nickname',
+            'nickname.min' => 'nickname не может содержать менее двух символов',
+            'nickname.max' => 'nickname не может содержать более 50 символов',
+            'bdate.required' => 'Пожалуйста, укажите свою дату рождения',
             'bdate.before_or_equal' => 'Nice try BRO! ;) But you must be over 18 years old!',
             'bdate.after' => 'Seriously 0_o, you are really so old? - Don\'t make my scripts laugh',
-            'about.min' => 'Tell me more about yourself. It\'s to short ))',
-            'about.max' => 'Shorter please, max 10000 characters',
-            'gender.required' => 'Please, set your gender',
+            'about.min' => 'Расскажи немного больше о себе, этого не достаточно ))',
+            'about.max' => 'Слишком много рассказали о себе, пожалуйста не более 10000 символов',
+            'gender.required' => 'Выбирете свой пол',
             'gender.in' => 'Nice try BRO! :) But you must set your own gender only from this list',
-            'address.min' => 'It is too short address',
-            'address.max' => 'Shorter please, if you use a city name, you can remove it ;)',
-            'city.required' => 'You need to set the city',
+            'address.min' => 'Слишком короткий адрес',
+            'address.max' => 'Пожалуйста, сократите адрес до 100 символов. Спасибо.',
+            'city.required' => 'Пожалуйста, выберите свой город',
             'city.in' => 'You\'r good :) But set city from this select list. Tnx',
-            'newCity.required_if' => 'Please, enter your city name',
-            'newCity.min' => 'I know that there are cities with a name of one character, but it’s better to contact technical support about this',
-            'newCity.max' => 'I know that there are cities with a name of more than 100 characters, but it’s better to contact technical support about this',
-            'country.required' => 'You need to set the country',
+            'newCity.required_if' => 'Введите название своего города',
+            'newCity.min' => 'Я знаю, что есть названия городов с одним символом, не думаю, что это именно этот случай.',
+            'newCity.max' => 'Я знаю, что есть города с очень длинным названием, не думаю, что это именно этот случай.',
+            'country.required' => 'Пожалуйста, выберите свою страну',
             'country.in' => 'You\'r good :) But set country from this select list. Tnx',
-            'newCountry.required_if' => 'Please, enter your country name',
-            'newCountry.min' => 'I doubt that there are countries with so short name, but if it is true it’s better to contact technical support about this',
-            'newCountry.max' => 'I know that there are countries with a name of more than 100 characters, but it’s better to contact technical support about this',
+            'newCountry.required_if' => 'Введите название страны',
+            'newCountry.min' => 'Для названия страны слишком мало символов',
+            'newCountry.max' => 'Для названия страны слишком много символов',
 //            'height.required' => 'Height must set the height',
-            'height.integer' => 'Use only numbers to set the height',
-            'height.min' => 'It\'s not enough',
-            'height.max' => 'It\'s to many for this parameter',
+            'height.integer' => 'Используйте только цифры чтоб указать свой рост',
+            'height.min' => 'Очень мало для параметра роста',
+            'height.max' => 'Очень много для параметра роста',
 //            'weight.required' => 'Weight must set the height',
-            'weight.integer' => 'Use only numbers to set the height',
-            'weight.min' => 'It\'s not enough',
-            'weight.max' => 'It\'s to many for this parameter',
+            'weight.integer' => 'Используйте только цифры чтоб указать свой вес',
+            'weight.min' => 'Очень мало для параметра веса',
+            'weight.max' => 'Очень много для параметра веса',
 
         ];
 
         foreach ($this->request->get('service_name') ?? [] as $key => $value) {
-            $messages['service_name.' . $key . '.required'] = 'Please, set short service name';
-            $messages['service_name.' . $key . '.min'] = 'It is too few characters for short service name. Min 5 characters';
-            $messages['service_name.' . $key . '.max'] = 'Max 14 characters must be at short service name field';
+            $messages['service_name.' . $key . '.required'] = 'Необходимо установить название услуги';
+            $messages['service_name.' . $key . '.min'] = 'Название услуги оказалось слишком коротким. Минимум 5 символов';
+            $messages['service_name.' . $key . '.max'] = 'Название услуги получилось не таким уж и коротким. Максимум 14 символов';
         }
         foreach ($this->request->get('service_description') ?? [] as $key => $value) {
-            $messages['service_description.' . $key . '.required'] = 'Please, set description for service';
-            $messages['service_description.' . $key . '.min'] = 'It is too few characters for service description. Min 5 characters';
-            $messages['service_description.' . $key . '.max'] = 'Shorter please. Max 100 characters for description field';
+            $messages['service_description.' . $key . '.required'] = 'Пожалуйста, опишите услугу более подробно';
+            $messages['service_description.' . $key . '.min'] = 'Поле с описанием услуги должно содержать более 5 символов';
+            $messages['service_description.' . $key . '.max'] = 'Пожалуйста, не превышайте 100 символов для описания услуги';
         }
         foreach ($this->request->get('price') ?? [] as $key => $value) {
-            $messages['price.' . $key . '.integer'] = 'Please, use only numbers to set the prise';
-            $messages['price.' . $key . '.min'] = 'You can\'t set price less than zero';
-            $messages['price.' . $key . '.max'] = 'I see you know a lot about good services )) But max price must be less than 100000';
+            $messages['price.' . $key . '.integer'] = 'Используйте только цифры для поля стоимости';
+            $messages['price.' . $key . '.min'] = 'мы не можем установить отрицательное значение для поля цены';
+            $messages['price.' . $key . '.max'] = 'Я вижу Вы знаете толк в хороших услугах, и всё же, попробуйте ограничиться числом в 100000';
         }
         foreach ($this->request->get('is_disabled') ?? [] as $key => $value) {
-            $messages['is_disabled.' . $key . '.required'] = 'Please, make your choice to hide or to show this service';
+            $messages['is_disabled.' . $key . '.required'] = 'Пожалуйста, сделайте свой выбор: показать или скрыть услугу';
             $messages['is_disabled.' . $key . '.boolean'] = 'You\'r good BRO! But use only this select. Tnx!';
         }
 
