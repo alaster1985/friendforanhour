@@ -2,7 +2,7 @@
 
 <section id="search-section">
     <div class="container">
-        <h2>Поиск:</h2>
+        {{-- <h2>Поиск:</h2> --}}
         <div class="container">
             @if ($errors)
                 <div style="display: block; color: red">{{($errors->first())}}</div>
@@ -91,7 +91,61 @@
         <div class="tinder--cards">
             
           <div class="tinder--card">
-            <img src="https://placeimg.com/600/300/people">
+            <img src="https://placeimg.com/600/300/man">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/woman">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/man">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/woman">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/man">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/woman">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/man">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/woman">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/man">
+            <h3>Demo card 1</h3>
+            <p>This is a demo for Tinder like swipe cards</p>
+          </div>
+            
+          <div class="tinder--card">
+            <img src="https://placeimg.com/600/300/woman">
             <h3>Demo card 1</h3>
             <p>This is a demo for Tinder like swipe cards</p>
           </div>

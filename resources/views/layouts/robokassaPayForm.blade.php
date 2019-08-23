@@ -17,6 +17,6 @@
                 . env('ROBOKASSA_TEST_PASS1')
                 . ":Shp_ProfileId=" . Auth::user()->profile_id
                 . ":Shp_TransactionNameId=1")}}">
-        <button id="payButton" class="btn btn-primary btn-lg btn-block" type="submit">Обновить подписку</button>
+        <button id="payButton" class="btn btn-primary btn-md btn-block" type="submit">Обновить подписку</button>
     </form>
 @endif

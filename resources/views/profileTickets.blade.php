@@ -1,7 +1,7 @@
 @include('layouts.header')
 <section id="support-tickets">
     <div class="container">
-        <h2>Мои Вопросы:</h2>
+        {{-- <h2>Мои Вопросы:</h2> --}}
         <div class="row  service service_close">            
             <table class="col-lg-12 table_paid">
                 <td><label>ID:</label></td>

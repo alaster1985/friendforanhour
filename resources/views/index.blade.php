@@ -3,10 +3,10 @@
     <section id="new_people_servis">
         <div class="container">
             <div class="row new_people_servis_block">
-                <div class="label_new_people col-lg-1 col-md-2 col-sm-2 col-4">
+                <div class="label_new_people col-xl-1 col-lg-1 col-md-2 col-sm-2 col-3">
                     <p>Новые друзья</p>
                 </div>                
-                <ul class="col-xl-7 col-lg-11 col-md-10 col-sm-10 col-8">
+                <ul class="col-xl-11 col-lg-11 col-md-10 col-sm-10 col-9">
                     @foreach($newProfiles as $profile)
                         <li>
                             <a href="profile?prf={{$profile->id}}">
@@ -24,7 +24,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xl-2 col-lg-3 col-md-5 col-sm-5">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                 @guest
                     @include('auth.loginTest')
                 @endguest
@@ -48,7 +48,7 @@
                     </div>
                 </aside>
             </div>
-            <div class="col-xl-10 col-lg-9 col-md-7 col-sm-7">
+            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-7">
                 <section id="map-section">
                     <div class="map_container">
                         <div class="map-card">
