@@ -1235,12 +1235,22 @@ _______________________________________________________ */
 /* EDIT PROFILE Section
 _______________________________________________________ */
 
+#edit-profile .edit-profile-card {
+  background: #fff;
+  border-radius: .25rem;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  padding: 1.75rem 1rem
+}
+
 #edit-profile .edit_profile_general_block {
-    margin: 0px
+  margin: 0px
 }
 
 #edit-profile .subscription {
-    margin: 2rem 0 0 0
+  width: 90%;
+  margin: 2rem 0 0 0
 }
 
 #edit-profile .subscription .close {
@@ -1253,14 +1263,14 @@ _______________________________________________________ */
 }
 
 #edit-profile .alert-warning {
-    width: 98%;
-    font-weight: 500;
-    color: #2387CF;
-    border: none;
-    margin: 0 0 2rem 0;
-    -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15)
+  width: 100%;
+  font-weight: 500;
+  color: #2387CF;
+  border: none;
+  margin: 0 0 2rem 0;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15)
 }
 
 #edit-profile .alert-warning label {
@@ -1337,13 +1347,13 @@ _______________________________________________________ */
 }
 
 #edit-profile .table_services_as_sponsor th {
-    color: #D73D3A;
-    font-weight: 600;
-    text-align: center
+  color: #D73D3A;
+  font-weight: 600;
+  text-align: center
 }
 
 #edit-profile .table_services_as_sponsor button {
-    margin: 1% auto 3% auto
+  margin: 1% auto 3% auto
 }
 
 #edit-profile .main_service_marker1, 
@@ -1384,50 +1394,59 @@ _______________________________________________________ */
 }
 
 #edit-profile #updatePhotoForm {
+  width: 100%;
   margin: 3% 0 0
 }
 
 #edit-profile #updatePhotoForm table tr:first-child {
-    display: none !important
+  display: none !important
 }
 
 #edit-profile #updatePhotoForm table tbody tr {
-  display: inline-flex;
-    flex-direction: column;
-    width: 18%;
-    background: #fff;
-    border-radius: .25rem;
-    padding: 1%;
-    margin: 0 1% 1% 1%;
-    -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15)
+display: inline-flex;
+  flex-direction: column;
+  width: 23%;
+  background: #fff;
+  border-radius: .25rem;
+  padding: 1%;
+  margin: 0 1% 1% 1%;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15)
 }
 
 #edit-profile #updatePhotoForm table tbody tr td img {
-    width: 100%;
-    border-radius: 0.3rem
+  width: 100%;
+  border-radius: 0.3rem
 }
 
 #edit-profile #usersPhoto {
-    border: none
+  border: none
 }
 
 #edit-profile #usersPhoto button {
-    border: none;
-    width:100%;
-    background: #FF2F2F;
-    color: #fff;
-    padding: 5px
+  border: none;
+  width:100%;
+  background: #FF2F2F;
+  color: #fff;
+  padding: 5px
 }
 
 #edit-profile .preview-img-upload {
-    text-align: center;
-    margin: 3% 0
+  text-align: center;
+  margin: 3% 0
 }
 
 #edit-profile .custom-file-label {
-    text-align: start
+  text-align: start
+}
+
+#edit-profile .form-control-sm {
+  height: calc(1.5em + .5rem + 7px)
+}
+
+#edit-profile .preview {
+  opacity: 0.23
 }
 
 /* ARTICLE PAGE SECTION
@@ -1684,15 +1703,16 @@ _______________________________________________________ */
   width: 100%
 }
 
-#favorites .favorites-user-name {
+#favorites .favorites-user-card-ingo {
   width: 100%;
   height: 100%;
-  margin: auto 3%
+  margin: 0 2%
 }
 
-#favorites .favorites-user-name a {
+#favorites .favorites-user-card-ingo a {
   font-size: 1.25rem;
   font-weight: 400;
+  color: #2387CF;
   margin: 0 auto
 }
 
@@ -1708,9 +1728,8 @@ _______________________________________________________ */
 }
 
 #favorites .favorites-item button {
-  height: 100%;
   background: none;
-  color: #2387CF
+  color: rgba(35, 135, 207, 0.63)
 }
 
 #favorites .favorites-item button:active,
@@ -1722,6 +1741,16 @@ _______________________________________________________ */
 #favorites .favorites-item button i {
   font-size: 1.25rem;
   margin: auto 0
+}
+
+#favorites .favorites-user-activity {
+  color: rgba(68, 68, 68, 0.39);
+  margin: 0
+}
+
+#favorites .favorites-short-info p {
+  color: rgba(68, 68, 68, 0.66);
+  margin: 0
 }
 
 /* BLACK LIST Section
@@ -2298,6 +2327,10 @@ _______________________________________________________ */
     margin: 0
   }
 
+  #favorites .favorites-user-image {
+    width: 23%
+  }
+
 }
 
 @media all and (max-width: 991px) {
@@ -2427,6 +2460,10 @@ _______________________________________________________ */
 
   #view-profile .service div {
     padding: 5%
+  }
+
+  #favorites .favorites-user-image {
+    width: 32%
   }
 
 }
@@ -2562,6 +2599,10 @@ _______________________________________________________ */
     font-size: .7rem
   }
 
+  #favorites .favorites-user-image {
+    width: 44% 
+  }
+
 }
 
 @media all and (min-width: 576px) {
@@ -2682,7 +2723,7 @@ _______________________________________________________ */
   }
 
   #blacklist .blacklist-user-name a,
-  #favorites .favorites-user-name a {
+  #favorites .favorites-user-card-ingo a {
     font-size: 1rem
   }
 
@@ -2699,6 +2740,10 @@ _______________________________________________________ */
 
   #view-profile .view-profile-short-info {
     margin: 0 0 3% 0  
+  }
+
+  #favorites .favorites-short-info p {
+    font-size: .8rem
   }
 
 }
@@ -2818,7 +2863,7 @@ _______________________________________________________ */
   }
 
   #blacklist .blacklist-user-name a,
-  #favorites .favorites-user-name a {
+  #favorites .favorites-user-card-ingo a {
     font-size: .85rem
   }
 
@@ -2829,13 +2874,21 @@ _______________________________________________________ */
 
 }
 
-@media all and (max-width: 340px) {
+@media all and (max-width: 370px) {
+  #favorites .favorites-user-activity,
+  #favorites .favorites-short-info p {
+    font-size: .6rem
+  }
+}
+
+  @media all and (max-width: 340px) {
 
   #blacklist .blacklist-user-name a,
-  #favorites .favorites-user-name a {
+  #favorites .favorites-user-card-ingo a {
     font-size: .75rem;
   }
 
+  #edit-profile .edit-profile-card
   #view-profile .view-profile-card {
     padding: 1.75rem 0
   }

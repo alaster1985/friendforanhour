@@ -7,8 +7,13 @@
         <title>@yield('title')</title>
 
         <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{asset('font-awesome-4.2.0/css/font-awesome.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset('css/fontawesome-free-5.6.3-web/css/all.css')}}"/>
+
+        <!-- Libs -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.fancybox.min.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}"/>
 
         <!-- Styles -->
         <style>
@@ -36,25 +41,62 @@
             }
 
             .code {
-                border-right: 2px solid;
-                font-size: 26px;
-                padding: 0 15px 0 15px;
-                text-align: center;
+                font-size: 4rem;
+                font-weight: 400;
+                padding: 0 15px
             }
 
             .message {
-                font-size: 18px;
                 text-align: center;
+                font-size: 4rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                padding: 0 15px;
+                color: rgba(68, 68, 68, 0.39)
             }
+
+            @media all and (max-width: 991px) {
+
+                .code {
+                    font-size: 3rem
+                }
+
+                .message {
+                    font-size: 3rem
+                } 
+            }
+
+            @media all and (max-width: 576px) {
+
+                .code {
+                    font-size: 2rem
+                }
+
+                .message {
+                    font-size: 2rem
+                } 
+            }
+
+            @media all and (max-width: 320px) {
+
+                .code {
+                    font-size: 1.75rem
+                }
+
+                .message {
+                    font-size: 1.75rem
+                } 
+            }
+            
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
+    <body style="display:flex;flex-direction:column-reverse;justify-content:center;color:rgba(68, 68, 68, 0.39);">
+        
+        <div class="flex-center position-ref">
             <div class="code">
                 @yield('code')
-
             </div>
-            <div class="message" style="padding: 10px;">
+            <div class="message" style="">
                 @yield('message')
             </div>
         </div>
