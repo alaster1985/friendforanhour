@@ -7,6 +7,12 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\ValidationException;
+
+
 class ProfilePhotoStoreRequest extends FormRequest
 {
     /**
@@ -19,6 +25,16 @@ class ProfilePhotoStoreRequest extends FormRequest
         return true;
     }
 
+    public function failedValidation(Validator $validator)
+    {
+        $errors = (new ValidationException($validator))->errors();
+
+        throw new HttpResponseException(response()->json([
+            'success' => false,
+            'errors' => $errors,
+        ], JsonResponse::HTTP_OK));
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -26,7 +42,6 @@ class ProfilePhotoStoreRequest extends FormRequest
      */
     public function rules()
     {
-
         $profilePhotoIds = ProfilePhoto::getAllPhotosByProfileId(Auth::user()->profile_id ?? $this->request->get('profileId'))->pluck('id')->all() ?? [];
         if (count($profilePhotoIds) > 9) {
             return ['toomuch' => 'required'];
@@ -45,14 +60,14 @@ class ProfilePhotoStoreRequest extends FormRequest
     public function messages()
     {
         return [
-            'toomuch.required' => 'You have more than 9 photos in your "photo album"',
+            'toomuch.required' => 'у вас более 9 фото в Вашем альбоме',
             'mainPhoto_id.in' => 'Nice try! Please, reload page and try again ;)',
-            'file.image' => 'It is not image',
-            'file.mimes' => 'It is still not photo',
-            'count.required' => 'Some field must be here. Please, reload page and try again ;)',
-            'count.integer' => 'Some field must be only numeric. Please, reload page and try again ;)',
-            'count.min' => 'Some field must be only numeric and more than 0. Please, reload page and try again ;)',
-            'count.max' => 'Only 9 photos can be here. Please, reload page and try again ;)',
+            'file.image' => 'Загружаемый файл не яляется изображением (img)',
+            'file.mimes' => 'Загружаемый файл не яляется изображением (mime)',
+            'count.required' => 'Одно из необходимых полей отсутствует. Пожалуйста, перезагрузите страницу и попробуйте снова',
+            'count.integer' => 'Одно из необходимых полей не является числом. Пожалуйста, перезагрузите страницу и попробуйте снова',
+            'count.min' => 'Одно из необходимых полей не может быть отрицательным числом. Пожалуйста, перезагрузите страницу и попробуйте снова',
+            'count.max' => 'Только 9 изображений можно загрузить. Пожалуйста, перезагрузите страницу и попробуйте снова',
         ];
     }
 }

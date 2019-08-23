@@ -70,7 +70,7 @@ class ServiceList extends Model
                 $newService = new ServiceList();
                 $newService->service_name = $service_name;
                 $newService->service_description = $request->service_description[$key];
-                $newService->price = $request->price[$key];
+                $newService->price = $request->price[$key] ?? 0;
                 $newService->service_type_id = $key[0];
                 $newService->is_disabled = false;
                 $newService->is_deleted = false;

@@ -35,11 +35,11 @@ class StoreTicketRequest extends FormRequest
     public function messages()
     {
         return [
-            'report.required' => 'Please, report this',
-            'report.max' => 'Shorter please, max 10000 characters',
-            'report.min' => 'Very short report. At least 3 characters',
-            'id.required' => 'Something went wrong with ID field. Please reload page',
-            'status_id.in' => 'Something went wrong with Status field. Please reload page',
+            'report.required' => 'Пожалуйста, заполните поле отчета (report)',
+            'report.max' => 'Максимальная длина для поля отчета (report) превышена. Максмум 10000 символов.',
+            'report.min' => 'Для поля отчёта (report) минимальное количество символов установлено в размере 3 символа',
+            'id.required' => 'Что-то пошло не так с одним из обязательных полей. Пожалуйста, перезагрузите страницу',
+            'status_id.in' => 'Что-то пошло не так с полем статуса. Пожалуйста, перезагрузите страницу',
         ];
     }
 
