@@ -62,7 +62,7 @@
     <script type="text/javascript" src="{{asset('js/forComplain.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/forLists.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/app.js')}}" defer></script>
-    <script type="text/javascript" src="{{asset('js/slick.js')}}" defer async></script>
+    <script type="text/javascript" src="{{asset('js/slick.js')}}" defer></script>
     <script type="text/javascript" src="{{asset('js/hammer.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/search-user-slider.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.fancybox.min.js')}}"></script>

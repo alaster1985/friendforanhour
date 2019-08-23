@@ -16,8 +16,19 @@
                               .$favorite->profileFavorite->gender_id . '.jpg')}}">
                                 </a>
                             </div>
-                            <div class="favorites-user-name">
+                            <div class="favorites-user-card-ingo">
                                 <a href="profile?prf={{$favorite->profileFavorite->id}}">{{$favorite->profileFavorite->first_name . ' ' . $favorite->profileFavorite->second_name}}</a>
+
+                                <div class="d-flex favorites-short-info">
+                                    <p class="character_user">{{$favorite->profileFavorite->getAge()}}</p>
+                                    <p class="character_user">&nbsp<span style="color:#eaeaea;font-weight: 900;"> /</span>&nbsp Рост: {{$favorite->profileFavorite->height}} см</p>
+                                    <p class="character_user">&nbsp<span style="color:#eaeaea;font-weight: 900;"> /</span>&nbsp Вес: {{$favorite->profileFavorite->weight}} кг&nbsp</p>
+                                </div>
+
+                                @if ($favorite->profileFavorite->last_activity)
+                                    <p class="favorites-user-activity">{{$favorite->profileFavorite->lastActivity()}}</p>
+                                @endif
+
                             </div>
                             <a href="{{route('deleteFromFavorite',$favorite->id)}}"  onclick="return confirm('Вы действительно хотите удалить пользователя?');">
                                 <button type="button" class="btn btn-default btn btn-primary btn-md"><i
