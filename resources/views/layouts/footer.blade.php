@@ -44,7 +44,7 @@
                         </div>
                     </nav>
                     <div class="copyright">
-                        <a href="http://1-hf.com/"><p>&copy 2019 «1-hf.com».</p></a>
+                        <a href="http://1-hf.com/">&copy 2019 «1-hf.com».</a>
                     </div>
                     @else
                 </div>
@@ -54,6 +54,7 @@
     </footer>
 
     <script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js')}}"></script>
     @guest
     <script type="text/javascript" src="http://ulogin.ru/js/ulogin.js"></script>
     @endguest
@@ -61,7 +62,7 @@
     <script type="text/javascript" src="{{asset('js/forComplain.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/forLists.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/app.js')}}" defer></script>
-    <script type="text/javascript" src="{{asset('js/slick.js')}}" defer></script>
+    <script type="text/javascript" src="{{asset('js/slick.js')}}" defer async></script>
     <script type="text/javascript" src="{{asset('js/hammer.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/search-user-slider.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.fancybox.min.js')}}"></script>

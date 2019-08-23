@@ -1,7 +1,7 @@
 @include('layouts.header')
 <section id="article-page">
     <div class="container">
-    <h2>{{ArticleCategory::where('category_name', Request::get('ctg'))->first()->display_name ?? 'Все статьи'}}:</h2>
+    {{-- <h2>{{ArticleCategory::where('category_name', Request::get('ctg'))->first()->display_name ?? 'Все статьи'}}:</h2> --}}
         <div class="single-article">
             @forelse($articles as $article)
                 <div class="row justify-content-center">

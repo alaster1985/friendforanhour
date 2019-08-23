@@ -1,7 +1,7 @@
 @include('layouts.header')
 <section id="technical-support">
     <div class="container">
-        <h2>Поддержка:</h2>
+        {{-- <h2>Поддержка:</h2> --}}
         @if ($errors)
             <div class="error" style="display: block; color: red">{{($errors->first())}}</div>
         @endif
