@@ -3,7 +3,7 @@
 <section id="single-article-page">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-10 col-md-10 col-sm-10 col-11 single-article-card">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-11 justify-content-center article-card">
                 <div class="single-article-page-title">
                     <h3>{{$article->title}}</h3>
                 </div>

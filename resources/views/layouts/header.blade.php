@@ -80,11 +80,11 @@
                                                 <a class="dropdown-item" href="admin/dashboard">Админ Панель</a>
                                             @else
                                                 <a class="dropdown-item" href="{{Request::root() . '/profile?prf=' .Auth::user()->profile_id}}">{{ Auth::user()->name }}</a>
-                                                <a class="dropdown-item" href="{{Request::root()}}/edit">Настройки</a>
+                                                <a class="dropdown-item" href="{{Request::root()}}/chat">Мои сообщения</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/favorites">Избранное</a>
-                                                <a class="dropdown-item" href="{{Request::root()}}/chat">Чат</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/blacklist">Черный список</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/mytickets">Мои Вопросы</a>
+                                                <a class="dropdown-item" href="{{Request::root()}}/edit">Мои настройки</a>
                                                 <a class="dropdown-item" href="{{Request::root()}}/contactToSupport">Тех Поддержка</a>
                                             @endif
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

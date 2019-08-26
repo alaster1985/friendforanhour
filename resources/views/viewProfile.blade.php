@@ -4,7 +4,7 @@
     <div class="container">
         {{-- <h2>Профиль:</h2> --}}
         <div class="row justify-content-center">
-            <div class="row col-lg-11 col-md-11 col-sm-11 col-11 view-profile-card mobile_shadow_off justify-content-center">
+            <div class="row col-lg-12 col-md-12 col-sm-12 col-12 view-profile-card mobile_shadow_off justify-content-center">
 
                 <div class="col-lg-6 view-profile-photo">
                     <a data-fancybox="images" rel="group" href="{{asset($profile->profilePhoto()
@@ -18,68 +18,70 @@
                     </a>
                 </div>
 
-                <div class="col-lg-6 view-profile-character">
-                    <div class="d-flex justify-content-between view-profile-character-container">
-                        <div class="d-flex justify-content-start">
-                            <p class="name_user ">
-                                {{$profile->first_name}}
-                            </p>
+                <div class="col-lg-6 view-profile-character-container">
+                    <div class="view-profile-character">
+                        <div class="d-flex justify-content-between view-profile-character-container">
+                            <div class="d-flex justify-content-start">
+                                <p class="name_user ">
+                                    {{$profile->first_name}}
+                                </p>
+                            </div>
+                            <div class="col-lg-6 d-flex character_user_activity">
+                                @if ($profile->last_activity)
+                                <p id="last_activity" class="character_user online_user">{{$profile->lastActivity()}}</p>
+                                @endif
+                                <p class="character_user character_user_total_views"><i class="fas fa-users"></i>{{$total}}</p>
+                                <p class="character_user character_user_week_views"><i class="fas fa-calendar-week"></i>{{$week}}</p>
+                            </div>
                         </div>
-                        <div class="col-lg-6 d-flex character_user_activity">
-                            @if ($profile->last_activity)
-                            <p id="last_activity" class="character_user online_user">{{$profile->lastActivity()}}</p>
+                        
+                        <div class="view-profile-short-info">
+                            <p class="character_user">{{$profile->getAge()}}</p>
+                            <p class="character_user">&nbsp<span style="color:#eaeaea;font-weight: 900;">/</span> Рост: {{$profile->height}} см</p>
+                            <p class="character_user">&nbsp<span style="color:#eaeaea;font-weight: 900;">/</span> Вес: {{$profile->weight}} кг&nbsp<span style="color:#eaeaea;font-weight: 900;">/</span></p>
+                        </div>
+    
+                        <p class="character_user">
+                            {{$profile->profileAddress->city->country->country_name}}, 
+                            {{$profile->profileAddress->city->city_name}}
+                        </p>
+    
+                        @auth
+                            @if(isset(Auth::user()->profile_id) && Auth::user()->profile_id != $profile->id)
+                                <div class="links_user">
+                                    <form method="POST" action="{{Route('addToFriends')}}" enctype="multipart/form-data">
+                                        <input type="hidden" name="friend_id" value="{{$profile->id}}">
+                                        @csrf
+                                        <button id="write-link" class="btn btn-md" type="submit">Написать</button>
+                                    </form>
+                                    @if(!$checkFavorite)
+                                        <button id="add-to-favorites" class="btn btn-md" type="button">В избранное</button>
+                                    @endif
+                                    @if(!$checkComplain)
+                                        <button id="complainButton" class="btn btn-md" data-toggle="modal"
+                                                data-target="#myModal">Пожаловаться
+                                        </button>
+                                    @endif
+                                    @if(!$checkBlackList)
+                                        <button id="to-blacklist" class="btn btn-md" type="button">В черный список</button>
+                                    @endif
+                                </div>
                             @endif
-                            <p class="character_user character_user_total_views"><i class="fas fa-users"></i>{{$total}}</p>
-                            <p class="character_user character_user_week_views"><i class="fas fa-calendar-week"></i>{{$week}}</p>
-                        </div>
-                    </div>
-                    
-                    <div class="view-profile-short-info">
-                        <p class="character_user">{{$profile->getAge()}}</p>
-                        <p class="character_user">&nbsp<span style="color:#eaeaea;font-weight: 900;">/</span> Рост: {{$profile->height}} см</p>
-                        <p class="character_user">&nbsp<span style="color:#eaeaea;font-weight: 900;">/</span> Вес: {{$profile->weight}} кг&nbsp<span style="color:#eaeaea;font-weight: 900;">/</span></p>
-                    </div>
-
-                    <p class="character_user">
-                        {{$profile->profileAddress->city->country->country_name}}, 
-                        {{$profile->profileAddress->city->city_name}}
-                    </p>
-
-                    @auth
-                        @if(isset(Auth::user()->profile_id) && Auth::user()->profile_id != $profile->id)
-                            <div class="links_user">
-                                <form method="POST" action="{{Route('addToFriends')}}" enctype="multipart/form-data">
-                                    <input type="hidden" name="friend_id" value="{{$profile->id}}">
-                                    @csrf
-                                    <button id="write-link" class="btn btn-primary btn-md" type="submit">Написать</button>
-                                </form>
-                                @if(!$checkFavorite)
-                                    <button id="add-to-favorites" class="btn btn-primary btn-md" type="button">В избранное</button>
-                                @endif
-                                @if(!$checkComplain)
-                                    <button id="complainButton" class="btn btn-primary btn-md" data-toggle="modal"
-                                            data-target="#myModal">Пожаловаться
-                                    </button>
-                                @endif
-                                @if(!$checkBlackList)
-                                    <button id="to-blacklist" class="btn btn-primary btn-md" type="button">В черный список</button>
-                                @endif
+                        @endauth
+    
+                        @guest
+                            <a class="forChat btn btn-md" href="javascript:void(0);">Написать</a>
+                        @endguest
+                        
+                        @if($profile->profileAddress->city_id)
+                            <div class="about_user_block">
+                                <h4>Немного о себе:</h4>
+                                <div>
+                                    <p>{{$profile->about}}</p>
+                                </div>
                             </div>
                         @endif
-                    @endauth
-
-                    @guest
-                        <a class="forChat btn btn-primary btn-md" href="javascript:void(0);">Написать</a>
-                    @endguest
-                    
-                    @if($profile->profileAddress->city_id)
-                        <div class="about_user_block">
-                            <h4>Немного о себе:</h4>
-                            <div>
-                                <p>{{$profile->about}}</p>
-                            </div>
-                        </div>
-                    @endif
+                    </div>
                 </div>
 
                 <div class="col-lg-12 d-flex view-profile-services-container">
@@ -161,8 +163,6 @@
                         <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                
-                                <h2 class="modal-title">Пожаловаться</h2>
                                 <button type="button" class="close" data-dismiss="modal"><i class="fas fa-times"></i></button>
                             </div>
                             <div class="modal-body">
@@ -173,9 +173,9 @@
                                 <textarea id="complain" class="form-control form-control-md"></textarea>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" id="sendComplain" class="btn btn-default btn btn-primary btn-md" data-dismiss="modal">Отправить жалобу
+                                <button type="button" id="sendComplain" class="btn btn-default btn btn-md" data-dismiss="modal">Отправить жалобу
                                 </button>
-                                <button type="button" class="btn btn-default btn btn-primary btn-md" data-dismiss="modal">Закрыть</button>
+                                <button type="button" class="btn btn-default btn btn-md" data-dismiss="modal">Закрыть</button>
                             </div>
                         </div>
 

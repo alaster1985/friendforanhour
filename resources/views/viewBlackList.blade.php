@@ -18,6 +18,15 @@
                             </div>
                             <div class="blacklist-user-name">
                                 <a href="profile?prf={{$nonGrata->profileNonGrata->id}}">{{$nonGrata->profileNonGrata->first_name . ' ' . $nonGrata->profileNonGrata->second_name}}</a>
+                                
+                                <div class="d-flex blacklist-short-info">
+                                    
+                                </div>
+
+                                @if ($nonGrata->profileNonGrata->last_activity)
+                                    <p class="blacklist-user-activity">{{$nonGrata->profileNonGrata->lastActivity()}}</p>
+                                @endif
+
                             </div>
                             <a href="{{route('deleteFromBlackList',$nonGrata->id)}}"  onclick="return confirm('Вы действительно хотите удалить пользователя?');">
                                 <button type="button" class="btn btn-default btn btn-primary btn-md"><i

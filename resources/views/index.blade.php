@@ -24,7 +24,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12">
                 @guest
                     @include('auth.loginTest')
                 @endguest
@@ -48,7 +48,7 @@
                     </div>
                 </aside>
             </div>
-            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-7">
+            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
                 <section id="map-section">
                     <div class="map_container">
                         <div class="map-card">
@@ -61,7 +61,11 @@
         </div>
 
         <section id="last-active-users">
-            <div class="container">
+            <div class="container"
+            @guest
+                style="padding-right:15px;padding-left:15px;"
+            @endguest
+            >
                 <div id="{{Auth::check() ? 'chat-vue' : ''}}" class="row users_prew_block">
                     @foreach($profilesForLowerBlocks as $lProfile)                    
                     <div class="card">

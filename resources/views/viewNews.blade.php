@@ -2,7 +2,7 @@
 <section id="single-news-section">
     <div class="container">
         <div class="page-title">
-            <h2>Новости:</h2>
+            {{-- <h2>Новости:</h2> --}}
             <div class="all-news-link">
                 <a href="news"><i class="fas fa-chevron-left"></i>Все Новости</a>
             </div>

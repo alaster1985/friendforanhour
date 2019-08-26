@@ -24,6 +24,7 @@ $(document).ready(function () {
         // });
         $.post('filter', $("#user_search").serialize(),
             function (data) {
+
                 if (data.success == false) {
                     $.each(data.errors, function (key, value) {
                         $('.alert-danger').show();
@@ -31,18 +32,35 @@ $(document).ready(function () {
                     });
                 } else {
                     var userCardArr = JSON.parse(data);
+
+                    userCardArr.forEach(function(item, i, arr) {
+                        alert( i + ": " + item + " (массив:" + arr + ")" );
+                    });
+
+                    for(var i = 0 in userCardArr) {
+                            
+                        console.log(userCardArr[i]);
+                    }
+
+                    // for (var userCard in userCardArr) {
+                    //     $.each(userCard, function(index, value) {
+                    //         var el = document.getElementById('tinder--cards');
+                    //         el.innerHTML = 
+                    //             '<div id="tinder--card">' +
+                    //                 '<img src="">' +
+                    //                 '<h3></h3>' +
+                    //                 '<p>This is a demo for Tinder like swipe cards</p>' +
+                    //             '</div>';
+                    //     });
+                    // }
+
+                    
+
                     console.log(userCardArr);
                     $('#user_search').hide('slow');
                     $('#search-section h2').hide('slow');
                     $('#user_search_result').removeClass('none');
-                }
-
-
-                // var usersCardArr = JSON.parse(msg);
-                // for (var i = 0; i < usersCardArr.profile.length; i++) {
-                //     var profile = usersCardArr.profile[i];
-                //     console.log(profile.counter_name);
-                // }
+                }                
             }
         );
         return false;
