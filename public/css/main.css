@@ -217,6 +217,239 @@ td {
   max-width: 1920px
 } */
 
+/* CONTROLS Section
+_______________________________________________________ */
+
+.btn, 
+.btn-primary, 
+.btn-sm, 
+.btn-block {
+  outline: none !important;
+  box-shadow: none;
+  background-color: #b8b9bc;
+  border: 1px solid #b8b9bca1 !important;
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 500
+}
+
+.btn:hover, 
+.btn-primary:hover, 
+.btn-sm:hover, 
+.btn-block:hover {
+  outline: none !important;
+  box-shadow: none;
+  background-color: #fff;
+  border: 1px solid #b8b9bca1 !important;
+  color: #b8b9bc;
+  font-size: 1rem;
+  font-weight: 500
+}
+
+.btn:focus, 
+.btn-primary:focus, 
+.btn-sm:focus, 
+.btn-block:focus {
+  outline: none !important;
+  box-shadow: none;
+  background-color: #fff;
+  border: 1px solid #b8b9bca1 !important;
+  color: #b8b9bc;
+  font-size: 1rem;
+  font-weight: 500
+}
+
+.btn:active, 
+.btn-primary:active, 
+.btn-sm:active, 
+.btn-block:active {
+  outline: none !important;
+  box-shadow: none;
+  background-color: #fff;
+  border: 1px solid #b8b9bca1 !important;
+  color: #b8b9bc;
+  font-size: 1rem;
+  font-weight: 500
+}
+
+.slick-slide {
+    padding: 5px
+}
+
+/* #cancelServiceButton0 {
+  margin: 0px;
+  padding:5px 15px;
+  height:31px;
+  width: 100%;
+  background: #FF2F2F;
+  border: none;
+  color: #fff
+} */
+
+.marker_chect {
+    margin: auto;
+    width: 100%
+}
+
+.fancybox-button--zoom,
+.fancybox-button--play,
+.fancybox-button--thumbs {
+  display: none !important
+}
+
+.fancybox-button {
+  height: 60px;
+  width: 60px;
+  padding: 20%
+}
+
+.fancybox-navigation .fancybox-button {
+  height: 120px;
+  width: 90px
+}
+
+.fancybox-infobar {
+  font-size: 1rem
+}
+
+header .navbar-toggler {
+  padding: .375rem .75rem
+}
+
+.none {
+  display: none !important
+}
+
+/* REPEAT ELEMENTS
+_______________________________________________________ */
+
+#article-page,
+#search-section,
+#technical-support,
+#support-tickets,
+#blacklist,
+#favorites,
+#chat-vue {
+  margin: 0
+}
+
+#blacklist h2,
+#favorites h2,
+#single-news-section h2,
+#view-profile h2,
+#all-news-section h2,
+#support-tickets h2,
+#technical-support h2,
+#search-section h2,
+#article-page h2 {
+  color: #2387CF;
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 1% auto 2% 0;
+  padding: 1%;
+  background: #fff;
+  width: 25%;
+  border-radius: .25rem;
+  line-height: 1;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15)
+}
+
+#all-news-section .all-news-title h3 a,
+#article-page .article-page-title h3 a {
+  color: #2387CF;
+}
+
+#single-news-section .single-news-title h3,
+#article-page .article-page-title h3,
+#all-news-section .all-news-title h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2387CF;
+  margin: 3% 0
+}
+
+#support-tickets .new-support-tickets a,
+#edit-profile #new_service_as_sponsor, 
+#edit-profile #new_service_as_friend,
+#technical-support form button,
+#search-section .find-btn button {
+  background: #fff;
+  border: 1px solid #fff !important;
+  border-radius: .25rem;
+  padding: .5rem .75rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  color: #0000004f;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1.75rem auto  
+}
+
+#support-tickets .new-support-tickets a:hover,
+#edit-profile #new_service_as_sponsor:hover, 
+#edit-profile #new_service_as_friend:hover,
+#technical-support form button:hover,
+#search-section .find-btn button:hover {
+  background: #b8b9bc;
+  border: 1px solid #b8b9bc !important;
+  color: #fff
+}
+
+#edit-profile .btn-save {
+  background-color: #b8b9bc;
+  border: 1px solid #b8b9bca1 !important;
+  color: #fff;  
+}
+
+#edit-profile .btn-save:hover {
+  background: #FFF;
+  border: 1px solid #b8b9bca1 !important;
+  color: #b8b9bca1;
+}
+
+
+#edit-profile #addNewPhoto button {
+  background: #FFF;
+  border: 1px solid #b8b9bca1 !important;
+  color: #b8b9bca1;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 1.75rem auto
+}
+
+#edit-profile #addNewPhoto button:hover {
+  background: #b8b9bc;
+  color: #fff;
+}
+
+#edit-profile #usersPhoto button {
+  background: #FF2F2F;
+  color: #fff;  
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.delete-btn,
+.delete-btn:hover,
+.delete-btn:focus,
+.delete-btn:active {
+  background: #ff6e6e;
+  border: 1px solid #ff6e6e !important;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none
+}
+
 /* HEADER Section
 _______________________________________________________ */
 
@@ -261,7 +494,7 @@ header .navbar-dark .navbar-nav .nav-link {
 }
 
 header #navbarSupportedContent {
-  margin: 2px 0 auto auto
+  margin: 2px 0 auto 1%
 }
 
 header #navbarSupportedContent ul {
@@ -289,7 +522,7 @@ header #navbarSupportedContent ul li a.dropdown-toggle {
 
 header #payButton {
   font-size: 1rem;
-  border: none;
+  border: none !important;
   background: none
 }
 
@@ -346,8 +579,7 @@ header .header_title span {
 }
 
 header .navbar-collapse {
-  flex-grow: 0;
-  margin: 0 1% 0 0
+  flex-grow: 0
 }
 
 /* VUE CARD Section
@@ -410,6 +642,7 @@ _______________________________________________________ */
 }
 
 #new_people_servis .new_people_servis_block {
+  height: 100%;
   justify-content: center;
   padding: 1% 0;
   margin: 0
@@ -426,9 +659,9 @@ _______________________________________________________ */
 }
 
 #new_people_servis .label_new_people {
+  height: auto;
   background: #f89911;
   position: relative;
-  height: 100%;
   border-radius: .25rem;
   padding: 0px;
   -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
@@ -449,20 +682,20 @@ _______________________________________________________ */
 }
 
 #new_people_servis .gallery_list {
-    display: flex;
-    flex-direction: row;
-    list-style: none
+  display: flex;
+  flex-direction: row;
+  list-style: none
 }
 
 #new_people_servis .content {
-    margin-top: 20px
+  margin-top: 20px
 }
 
 #new_people_servis ul {
-    height: 100%;
-    list-style: none;
-    padding: 0px;
-    margin: 0px
+  width: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0px
 }
 
 #new_people_servis ul li {
@@ -472,89 +705,100 @@ _______________________________________________________ */
 }
 
 #new_people_servis ul li a img {
-    width: 100%;
-    height: 100%;
-    position: relative
+  width: 100%;
+  height: 100%;
+  position: relative
 }
 
 #new_people_servis ul li a div {
-    position: absolute;
-    bottom:-85%;
-    z-index: 10;
-    background-color: #f89911;
-    padding: 10px;
-    visibility: hidden;
-    width:100%;
-    border-radius: 10px
+  position: absolute;
+  bottom:-85%;
+  z-index: 10;
+  background-color: #f89911;
+  padding: 10px;
+  visibility: hidden;
+  width:100%;
+  border-radius: 10px
 }
 
 #new_people_servis ul li a div:before {
-    content: "";
-    border: solid transparent;
-    position: absolute;
-    bottom: 100%;
-    right: 50%;
-    transform: translateX(50%);
-    border-bottom-color: #f89911;
-    border-width: 9px;
-    margin-right: -1px
+  content: "";
+  border: solid transparent;
+  position: absolute;
+  bottom: 100%;
+  right: 50%;
+  transform: translateX(50%);
+  border-bottom-color: #f89911;
+  border-width: 9px;
+  margin-right: -1px
 }
 
 #new_people_servis ul li a:hover {
-    text-decoration: none
+  text-decoration: none
 }
 
 #new_people_servis ul li a:hover>div {
-    visibility: visible
+  visibility: visible
 }
 
 #new_people_servis ul li a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%
 }
 
 #new_people_servis ul li a div p, 
 #new_people_servis ul li a div span {
-    margin: 0px;
-    font-size: 12px;
-    color: #fff
+  margin: 0px;
+  font-size: 12px;
+  color: #fff
 }
 
 /* Authorization Section
 _______________________________________________________ */
 
 #auth .card-body {
-    background-color: #fff;
-    background-clip: border-box;
-    border-radius: .25rem;
-    -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    margin: 1rem 0 0 0
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: .25rem;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  margin: 1rem 0 0 0
 }
 
 #auth h5 {
-    color: #2387CF;
-    text-align: center;
-    margin: 0 0 1rem 0
+  color: #2387CF;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 0 1rem 0
 }
 
 #auth .form-check {
-    text-align: center
+  text-align: center;
+  padding: 0
 }
 
 #auth .form-check .form-check-input {
-    position: relative;
-    -ms-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-    padding: 10px;
-    margin: auto 0
+  position: relative
+}
+
+#auth .btn {
+  outline: none !important;
+  box-shadow: none;
+  background-color: #fff;
+  border: 1px solid #f89911 !important;
+  color: #f89911;
+  font-size: .85rem;
+  font-weight: 500;
+}
+
+#auth .btn:hover {
+  background-color: #f89911;
+  border: 1px solid #f89911 !important;
+  color: #fff;
 }
 
 
@@ -563,15 +807,15 @@ _______________________________________________________ */
 
 #map,
 #map-section {
-    height: 100%;
-    width: 100%
+  height: 100%;
+  width: 100%
 }
 
 #map-section .map_container {
-    height: 100%;
-    width: 100%;
-    padding: 1rem 0;
-    color: #2387CF
+  height: 100%;
+  width: 100%;
+  padding: 1rem 0;
+  color: #2387CF
 }
 
 #map-section .map-card {
@@ -620,9 +864,11 @@ _______________________________________________________ */
 /* LAST ACTIVE USERS Section
 _______________________________________________________ */
 
-#last-active-users {
-  margin: 1% 0 3% 0
+#last-active-users .container {
+  padding: 0
 }
+
+#last-active-users 
 
 #last-active-users .online-color {
   display: flex;
@@ -868,14 +1114,15 @@ _______________________________________________________ */
 }
 
 #view-profile .view-profile-photo a img {
-  width: 100%
+  width: 100%;
+  height: 100%
 }
 
 #view-profile .about_user_block {
   width: 100%;
   height: 100%;
-  padding: 5%;
-  margin: 3% 0 0 0;
+  padding: 4%;
+  margin: 4% 0;
   background: #fff;
   border-radius: .25rem;
   -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
@@ -895,9 +1142,15 @@ _______________________________________________________ */
 }
 
 #view-profile .view-profile-character {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between
+  justify-content: space-between;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  border-radius: .25rem;
+  padding: 4% 4% 0 4%
 }
 
 #view-profile .name_user {
@@ -921,9 +1174,14 @@ _______________________________________________________ */
   display: flex;
   margin: 3% 0
 }
+
 #view-profile .character_user {
   color: rgba(68, 68, 68, 0.39);
   margin: 0px
+}
+
+#view-profile .character_user i {
+  padding: 0 5px 0 0
 }
  
 #view-profile .character_user_activity .character_user_week_views {
@@ -956,26 +1214,12 @@ _______________________________________________________ */
 #view-profile .links_user {
   display: flex;
   flex-shrink: inherit;
+  justify-content: space-between;
   margin: 1% 0
 }
 
 #view-profile .links_user #complainButton {
   margin: 0
-}
-
-#view-profile .links_user button,
-#view-profile .links_user #complainButton {
-  background-color: #2387CF;
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 400;
-  border-radius: .25rem;
-  margin-top: 0;
-  margin-right: 1%
-}
-
-#view-profile .links_user form {
-  margin-right: 1%
 }
 
 #view-profile .links_user a {
@@ -1091,8 +1335,12 @@ _______________________________________________________ */
 #search-section label {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #2387CF;
+  color: #b8b9bc;
   margin: .75rem 0 .34em 0
+}
+
+#search-section #user_search {
+  margin: 6% 0 0 0
 }
 
 
@@ -1371,7 +1619,7 @@ _______________________________________________________ */
 }
 
 #edit-profile .delete_service {
-  width: 8%;
+  width: 4%;
   text-align: center;
   color: #FF2F2F
 }
@@ -1395,6 +1643,13 @@ _______________________________________________________ */
 
 #edit-profile #updatePhotoForm {
   width: 100%;
+  background: #fff;
+  border-radius: .25rem;
+  padding: 1%;
+  margin: 0 1% 1% 1%;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   margin: 3% 0 0
 }
 
@@ -1453,28 +1708,28 @@ display: inline-flex;
 _______________________________________________________ */
 
 #article-page .article-card {
-    width: 50%;
-    background: #fff;
-    border-radius: .25rem;
-    -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-    margin: 1% 0  
+  width: 50%;
+  background: #fff;
+  border-radius: .25rem;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  margin: 3% 0  
 }
 
 #article-page .article-page-img img {
-    width: 100%
+  width: 100%
 }
 
 #article-page .article-page-txt p {
-    margin: 3% 0
+  margin: 3% 0
 }
 
 /* TECHNICAL SUPPORT SECTION
 _______________________________________________________ */
 
 #technical-support .technical-support-contact-form {
-    margin: 3% auto
+  margin: 6% auto 0
 }
 
 #technical-support .form-control {
@@ -1496,11 +1751,19 @@ _______________________________________________________ */
 _______________________________________________________ */
 
 #support-tickets .service_close {
+  background: #fff;
+  border-radius: .25rem;
+  padding: .5rem .75rem;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   margin: 5% 0
 }
 
 #support-tickets table {
-  width: 100%
+  width: 100%;
+  margin: 3% 0 0
 }
 
 #support-tickets td {
@@ -1531,7 +1794,7 @@ _______________________________________________________ */
 /* SINGLE ARTICLE PAGE SECTION
 _______________________________________________________ */
 
-#single-article-page .single-article-card {
+#single-article-page .article-card {
   background: #fff;
   border-radius: .25rem;
   -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
@@ -1563,8 +1826,8 @@ _______________________________________________________ */
   -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-  margin: 1% 0;
-  padding: 3%  
+  margin: 5% 0 0;
+  padding: 0 3% 3% 3%
 }
 
 #all-news-section .article-page-img {
@@ -1584,11 +1847,12 @@ _______________________________________________________ */
 
 #single-news-section .page-title {
   display: inline-flex;
-  width: 100%
+  width: 100%;
+  margin: 3% 0 2% 0
 }
 
 #single-news-section .all-news-link {
-  width: 50%;
+  width: 100%;
   text-align: right;
   margin: auto 0
 }
@@ -1629,8 +1893,13 @@ _______________________________________________________ */
 /* VUE APP Section
 _______________________________________________________ */
 
+#chat-vue .container {
+  padding: 0
+}
+
 #chat-vue .panel {
-  border-bottom: 1px solid #e0e0e0
+  border-bottom: 1px solid #e0e0e0;
+  margin: 6% 0 0
 }
 
 #chat-vue div[data-v-77176efa] {
@@ -1659,8 +1928,12 @@ _______________________________________________________ */
 
 #chat-vue .panel-heading h3 {
   color: #fff;
-  margin: 0;
-  padding: 0 1%
+  margin: 0
+}
+
+#chat-vue .panel-content {
+  color: rgba(68, 68, 68, 0.39);
+  padding: 0.75rem
 }
 
 #chat-vue .panel-contact {
@@ -1690,7 +1963,8 @@ _______________________________________________________ */
 _______________________________________________________ */
 
 #favorites .favorites-card {
- padding: 0
+  margin: 6% 0 0;
+  padding: 0
 }
 
 #favorites .favorites-user-image {
@@ -1729,12 +2003,14 @@ _______________________________________________________ */
 
 #favorites .favorites-item button {
   background: none;
+  border: none !important;
   color: rgba(35, 135, 207, 0.63)
 }
 
 #favorites .favorites-item button:active,
 #favorites .favorites-item button:focus {
   outline: none !important;
+  border: none !important;
   box-shadow: none
 }
 
@@ -1743,11 +2019,13 @@ _______________________________________________________ */
   margin: auto 0
 }
 
+#blacklist .blacklist-user-activity,
 #favorites .favorites-user-activity {
   color: rgba(68, 68, 68, 0.39);
   margin: 0
 }
 
+#blacklist .blacklist-short-info p,
 #favorites .favorites-short-info p {
   color: rgba(68, 68, 68, 0.66);
   margin: 0
@@ -1757,6 +2035,7 @@ _______________________________________________________ */
 _______________________________________________________ */
 
 #blacklist .blacklist-card {
+  margin: 6% 0 0;
   padding: 0
 }
 
@@ -1773,12 +2052,13 @@ _______________________________________________________ */
 #blacklist .blacklist-user-name {
   width: 100%;
   height: 100%;
-  margin: auto 3%
+  margin: 0 2%
 }
 
 #blacklist .blacklist-user-name a {
   font-size: 1.25rem;
   font-weight: 400;
+  color: #2387CF;
   margin: 0 auto
 }
 
@@ -1794,14 +2074,15 @@ _______________________________________________________ */
 }
 
 #blacklist .blacklist-item button {
-  height: 100%;
   background: none;
-  color: #2387CF
+  border: none !important;
+  color: rgba(35, 135, 207, 0.63)
 }
 
 #blacklist .blacklist-item button:active,
 #blacklist .blacklist-item button:focus {
   outline: none !important;
+  border: none !important;
   box-shadow: none
 }
 
@@ -1889,199 +2170,6 @@ _______________________________________________________ */
 #status-page .status-page-link-back {
   padding: 1%;
   text-align: right
-}
-
-/* CONTROLS Section
-_______________________________________________________ */
-
-.btn, 
-.btn-primary, 
-.btn-sm, 
-.btn-block {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none
-}
-
-.btn, 
-.btn-primary, 
-.btn-sm, 
-.btn-block {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none
-}
-
-.btn:focus, 
-.btn-primary:focus, 
-.btn-sm:focus, 
-.btn-block:focus {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none
-}
-
-.btn:active, 
-.btn-primary:active, 
-.btn-sm:active, 
-.btn-block:active {
-    border: none !important;
-    outline: none !important;
-    box-shadow: none
-}
-
-.slick-slide {
-    padding: 5px
-}
-
-/* #cancelServiceButton0 {
-  margin: 0px;
-  padding:5px 15px;
-  height:31px;
-  width: 100%;
-  background: #FF2F2F;
-  border: none;
-  color: #fff
-} */
-
-.marker_chect {
-    margin: auto;
-    width: 100%
-}
-
-.fancybox-button--zoom,
-.fancybox-button--play,
-.fancybox-button--thumbs {
-  display: none !important
-}
-
-.fancybox-button {
-  height: 60px;
-  width: 60px;
-  padding: 20%
-}
-
-.fancybox-navigation .fancybox-button {
-  height: 120px;
-  width: 90px
-}
-
-.fancybox-infobar {
-  font-size: 1rem
-}
-
-header .navbar-toggler {
-  padding: .375rem .75rem
-}
-
-.none {
-  display: none !important
-}
-
-/* REPEAT ELEMENTS
-_______________________________________________________ */
-
-#article-page,
-#search-section,
-#technical-support,
-#support-tickets,
-#blacklist,
-#favorites,
-#chat-vue {
-  margin: 3% 0 0 0
-}
-
-#blacklist h2,
-#favorites h2,
-#single-news-section h2,
-#view-profile h2,
-#all-news-section h2,
-#support-tickets h2,
-#technical-support h2,
-#search-section h2,
-#article-page h2 {
-  color: #2387CF;
-  font-size: 1.7rem;
-  font-weight: 500;
-  margin: 1% auto 2% 0;
-  padding: 1%;
-  background: #fff;
-  width: 25%;
-  border-radius: .25rem;
-  line-height: 1;
-  text-align: center;
-  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15)
-}
-
-#all-news-section .all-news-title h3 a,
-#article-page .article-page-title h3 a {
-  color: #2387CF;
-}
-
-#single-news-section .single-news-title h3,
-#article-page .article-page-title h3,
-#all-news-section .all-news-title h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #2387CF;
-  margin: 3% 0
-}
-
-#support-tickets .new-support-tickets button,
-#edit-profile #new_service_as_sponsor, 
-#edit-profile #new_service_as_friend,
-#technical-support form button,
-#search-section .find-btn button {
-  background-color: #2387CF;
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin: 1.75rem auto  
-}
-
-#support-tickets .new-support-tickets button a {
-  color: #fff;
-  text-decoration: none;
-}
-
-#edit-profile .btn-save {
-  background-color: #57CF23;
-  color: #fff;  
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin: 1.75rem auto
-}
-
-
-#edit-profile #addNewPhoto button {
-  background: #FF2F2F;
-  color: #fff;  
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin: 1.75rem auto
-}
-
-#edit-profile #usersPhoto button {
-  background: #FF2F2F;
-  color: #fff;  
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-.delete-btn,
-.delete-btn:hover,
-.delete-btn:focus,
-.delete-btn:active {
-  background: #FF2F2F;
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 500;
-  border: none;
-  text-decoration: none;
-  outline: none;
-  box-shadow: none
 }
 
 /* OFLINE USER Section
@@ -2191,35 +2279,40 @@ _______________________________________________________ */
 /* VIEV PROFILE MODAL
 _______________________________________________________ */
 #myModal .modal-dialog{
-    margin: 20% auto 0 auto;
+  margin: 20% auto 0 auto;
 }
 
 #myModal .modal-header{
-    border-bottom: none;
+  border-bottom: none;
 }
+
 #myModal .modal-footer{
-    border-top: none;
+  border-top: none;
 }
+
 #myModal .modal-header h2 {
-    color: #2387CF;
-    margin: 5% 0 0 28%;
+  color: #2387CF;
+  margin: 5% 0 0 28%;
 }
-#myModal .modal-header .close {
-    padding: 0 0 .04rem 0;
-    margin: 0;
-    width: 1.7rem;
-    height: 1.7rem;
-    border-radius: 50%;
-    background:  #007bff;
-    opacity: 1;
-    text-align: center;
-}
+
+/* #myModal .modal-header .close {
+  padding: 0 0 .04rem 0;
+  margin: 0;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background:  #b8b9bc;
+  opacity: 1;
+  text-align: center;
+} */
+
 #myModal .modal-header .close i{
-    color: #fff;
-    font-size: 1.25rem
+  color: #b8b9bc;
+  font-size: 1.25rem
 }
+
 #myModal .modal-body {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 /* Dont see where used this classes
@@ -2280,6 +2373,21 @@ _______________________________________________________ */
   .delete-btn:active {
     font-size: 1rem
   }
+  
+  #support-tickets .new-support-tickets button,
+  #edit-profile #new_service_as_sponsor, 
+  #edit-profile #new_service_as_friend,
+  #technical-support form button,
+  #search-section .find-btn button,
+  #edit-profile .btn-save,
+  #edit-profile #addNewPhoto button,
+  #edit-profile #usersPhoto button,
+  .delete-btn,
+  .delete-btn:hover,
+  .delete-btn:focus,
+  .delete-btn:active {
+    font-size: 1rem
+  }
 
 }
 
@@ -2316,7 +2424,7 @@ _______________________________________________________ */
 
   #view-profile .links_user button,
   #view-profile .links_user #complainButton {
-    font-size: 0.75rem
+    font-size: 0.7rem
   }
 
   #last-active-users .name_user_cart {
@@ -2327,6 +2435,7 @@ _______________________________________________________ */
     margin: 0
   }
 
+  #blacklist .blacklist-user-image,
   #favorites .favorites-user-image {
     width: 23%
   }
@@ -2424,7 +2533,7 @@ _______________________________________________________ */
 
   #view-profile .links_user button, 
   #view-profile .links_user #complainButton {
-    font-size: 1rem
+    font-size: 1.2rem
   }
 
   #last-active-users .users-online-indicator {
@@ -2441,7 +2550,7 @@ _______________________________________________________ */
 
   #view-profile .about_user_block {
     width: 100%;
-    margin: 5% 0 0 0;
+    margin: 5% 0;
     padding: 5%
   }
 
@@ -2462,8 +2571,24 @@ _______________________________________________________ */
     padding: 5%
   }
 
+  #blacklist .blacklist-user-image,
   #favorites .favorites-user-image {
     width: 32%
+  }
+
+  #support-tickets .support-tickets-content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 5% 0
+  }
+
+  #support-tickets .support-tickets-content td {
+    text-align: left;
+    margin: 0 0 3% 0
+  }
+
+  #view-profile .view-profile-character-container {
+    height: fit-content
   }
 
 }
@@ -2596,11 +2721,16 @@ _______________________________________________________ */
 
   #view-profile .links_user button, 
   #view-profile .links_user #complainButton {
-    font-size: .7rem
+    font-size: .8rem
   }
 
+  #blacklist .blacklist-user-image,
   #favorites .favorites-user-image {
     width: 44% 
+  }
+
+  #map-section .map_container {
+    height: 480px
   }
 
 }
@@ -2678,10 +2808,6 @@ _______________________________________________________ */
     font-size: 14px
   }
 
-  #map-section .map_container {
-    height: 40rem
-  }
-
   #last-active-users .card {
     width: 49%;
     margin: 2% 0
@@ -2734,14 +2860,18 @@ _______________________________________________________ */
 
   #view-profile .character_user_activity {
     justify-content: flex-start;
-    padding: 0;
-    margin: 0 0 3% 0
+    padding: 2% 0
+  }
+
+  #view-profile .view-profile-character-container {
+    flex-direction: column
   }
 
   #view-profile .view-profile-short-info {
     margin: 0 0 3% 0  
   }
 
+  #blacklist .blacklist-short-info p,
   #favorites .favorites-short-info p {
     font-size: .8rem
   }
@@ -2875,7 +3005,9 @@ _______________________________________________________ */
 }
 
 @media all and (max-width: 370px) {
+  #blacklist .blacklist-user-activity,
   #favorites .favorites-user-activity,
+  #blacklist .blacklist-short-info,
   #favorites .favorites-short-info p {
     font-size: .6rem
   }
@@ -2980,6 +3112,18 @@ _______________________________________________________ */
 
   #view-profile .character_user_activity {
     margin: 3% 0 7% 0
+  }
+
+  #edit-profile .custom-file-label {
+    font-size: .81rem
+  }
+
+  #view-profile .view-profile-character-container {
+    padding: 0
+  }
+
+  #view-profile .view-profile-character {
+    padding: 5%
   }
   
 }

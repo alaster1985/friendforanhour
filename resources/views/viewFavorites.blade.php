@@ -20,9 +20,7 @@
                                 <a href="profile?prf={{$favorite->profileFavorite->id}}">{{$favorite->profileFavorite->first_name . ' ' . $favorite->profileFavorite->second_name}}</a>
 
                                 <div class="d-flex favorites-short-info">
-                                    <p class="character_user">{{$favorite->profileFavorite->getAge()}}</p>
-                                    <p class="character_user">&nbsp<span style="color:#eaeaea;font-weight: 900;"> /</span>&nbsp Рост: {{$favorite->profileFavorite->height}} см</p>
-                                    <p class="character_user">&nbsp<span style="color:#eaeaea;font-weight: 900;"> /</span>&nbsp Вес: {{$favorite->profileFavorite->weight}} кг&nbsp</p>
+
                                 </div>
 
                                 @if ($favorite->profileFavorite->last_activity)

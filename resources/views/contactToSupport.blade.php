@@ -5,7 +5,7 @@
         @if ($errors)
             <div class="error" style="display: block; color: red">{{($errors->first())}}</div>
         @endif
-        <div class="col-lg-12 justify-content-center technical-support-contact-form">
+        <div class="col-lg-8 justify-content-center technical-support-contact-form">
             <form method="POST" enctype="multipart/form-data" action="{{Route('sendTicket')}}">
                 @csrf
                     <label>Заголовок:</label>

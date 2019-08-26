@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3>Список ваших друзей:</h3>
+                    <h3>Мои сообщения:</h3>
                 </div>
                 @forelse($friends as $friend)
                 <div class="panel-contact">
@@ -19,10 +19,7 @@
                     </div>
                 @empty
                     <div class="panel-content">
-                        Список Ваших друзей в чате пуст. Возможные причины:
-                        - У Вас нет еще друзей для переписки
-                        - Вы занесли своих друзей в ЧС
-                        - Вас занесли в ЧС
+                        Нет сообщений.
                     </div>
                 @endforelse
             </div>

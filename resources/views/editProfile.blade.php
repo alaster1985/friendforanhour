@@ -2,7 +2,7 @@
 <section id="edit-profile">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="row col-lg-11 col-md-11 col-sm-11 col-11 mobile_shadow_off justify-content-center edit-profile-card">
+            <div class="row col-lg-12 col-md-12 col-sm-12 col-12 mobile_shadow_off justify-content-center edit-profile-card">
                 {{-- Your Current Position --}}
                 <div id="userLat" style="display:none">
                     {{$profile->profileAddress->latitude}}
@@ -215,13 +215,13 @@
                                     </td>
                                     <td class="delete_service">
                                         <div>
-                                            <a class="btn btn-primary btn-md btn-block shadow-none delete-btn" href="{{route('deleteService',$list->id)}}" onclick="return confirm('Are you sure you want to delete this service?');">Удалить</a>
+                                            <a class="btn btn-md btn-block shadow-none delete-btn" href="{{route('deleteService',$list->id)}}" onclick="return confirm('Are you sure you want to delete this service?');"><i class="fas fa-times"></i></a>
                                         </div>
                                     </td>
                                 </tr>
                             @endforeach
                         </table>
-                        <button id="new_service_as_sponsor" class="col-lg-3 btn btn-primary btn-md btn-block" type="button">Добавить услугу</button>
+                        <button id="new_service_as_sponsor" class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block" type="button">Добавить услугу</button>
                     </div>
                     <div class="table_services_as_sponsor row">
                         <h2>Сделаю за деньги:</h2>
@@ -264,15 +264,15 @@
                                     </td>
                                     <td class="delete_service">
                                         <div>
-                                            <a class="btn btn-primary btn-md btn-block shadow-none delete-btn" href="{{route('deleteService',$list->id)}}" onclick="return confirm('Are you sure you want to delete this service?');">Удалить</a>
+                                            <a class="btn btn-md btn-block shadow-none delete-btn" href="{{route('deleteService',$list->id)}}" onclick="return confirm('Are you sure you want to delete this service?');"><i class="fas fa-times"></i></a>
                                         </div>
                                     </td>
                                 </tr>
                             @endforeach
                         </table>
-                        <button id="new_service_as_friend" class="col-lg-3 btn btn-primary btn-md btn-block" type="button">Добавить услугу</button>
+                        <button id="new_service_as_friend" class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block" type="button">Добавить услугу</button>
                     </div>
-                    <button class="col-lg-3 btn btn-primary btn-md btn-block shadow-none btn-save" type="submit">Сохранить настройки</button>
+                    <button class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block shadow-none btn-save" type="submit">Сохранить</button>
                 </form>
                 <form id="updatePhotoForm">
                     <table border="1" id="usersPhoto">
@@ -292,10 +292,10 @@
                             <img id="preview" class="preview" height="300px" src="{{asset('images/preview.png')}}" alt="your new photo">
                         </div>
                         <div class="cancel-img-upload">
-                            <button class="col-lg-3 btn btn-primary btn-md btn-block" id="cancelPreview" type="button">Отмена</button>
+                            <button class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block" id="cancelPreview" type="button">Отмена</button>
                         </div>                
                     </div>
-                    <button class="col-lg-3 btn btn-primary btn-md btn-block shadow-none btn-save" type="submit">Сохранить галерею</button>
+                    <button class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block shadow-none btn-save" type="submit">Сохранить</button>
                 </form>
                 <div class="alert-danger" style="display:none; color: red;"></div>
             </div>
