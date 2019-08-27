@@ -220,75 +220,132 @@ td {
 /* CONTROLS Section
 _______________________________________________________ */
 
+#edit-profile .btn-save,
+#blacklist .blacklist-item button,
+#favorites .favorites-item button,
+#edit-profile #addNewPhoto button,
+#support-tickets .new-support-tickets a,
+#edit-profile #new_service_as_sponsor, 
+#edit-profile #new_service_as_friend,
+#technical-support form button,
+#search-section .find-btn button,
 .btn, 
 .btn-primary, 
 .btn-sm, 
 .btn-block {
-  outline: none !important;
-  box-shadow: none;
-  background-color: #b8b9bc;
-  border: 1px solid #b8b9bca1 !important;
+  background: #2387cfb5;
+  border: 1px solid #50abeca6;
+  border-radius: .25rem;
+  padding: .5rem .75rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(0, 0, 0, 0.541) !important;
+  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15) !important;
   color: #fff;
-  font-size: .85rem;
-  font-weight: 500
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 3% auto
 }
 
+#edit-profile .btn-save:hover,
+#blacklist .blacklist-item button:hover,
+#favorites .favorites-item button:hover
+#edit-profile #addNewPhoto button:hover,
+#support-tickets .new-support-tickets a:hover,
+#edit-profile #new_service_as_sponsor:hover, 
+#edit-profile #new_service_as_friend:hover,
+#technical-support form button:hover,
+#search-section .find-btn button:hover,
 .btn:hover, 
 .btn-primary:hover, 
 .btn-sm:hover, 
 .btn-block:hover {
   outline: none !important;
-  box-shadow: none;
-  background-color: #fff;
-  border: 1px solid #b8b9bca1 !important;
-  color: #b8b9bc;
-  font-size: 1rem;
-  font-weight: 500
+  background-color: #fdfdfd !important;
+  border: 1px solid #fdfdfd !important;
+  -webkit-box-shadow: 0px 0px 13px -2px rgba(0, 0, 0, 0.541) !important;
+  -moz-box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 0px 13px -2px rgba(0,0,0,0.15) !important;
+  color: #0000004f !important;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
 }
 
+#edit-profile .btn-save:focus,
+#blacklist .blacklist-item button:focus,
+#favorites .favorites-item button:focus,
+#edit-profile #addNewPhoto button:focus,
+#support-tickets .new-support-tickets a:focus,
+#edit-profile #new_service_as_sponsor:focus, 
+#edit-profile #new_service_as_friend:focus,
+#technical-support form button:focus,
+#search-section .find-btn button:focus,
 .btn:focus, 
 .btn-primary:focus, 
 .btn-sm:focus, 
 .btn-block:focus {
-  outline: none !important;
+  outline: none;
   box-shadow: none;
-  background-color: #fff;
-  border: 1px solid #b8b9bca1 !important;
-  color: #b8b9bc;
-  font-size: 1rem;
-  font-weight: 500
+  background-color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.541) !important;
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15) !important;
+  color: #0000004f
 }
 
+#edit-profile .btn-save:active,
+#blacklist .blacklist-item button:active,
+#favorites .favorites-item button:active,
+#edit-profile #addNewPhoto button:active,
+#support-tickets .new-support-tickets a:active,
+#edit-profile #new_service_as_sponsor:active, 
+#edit-profile #new_service_as_friend:active,
+#technical-support form button:active,
+#search-section .find-btn button:active,
 .btn:active, 
 .btn-primary:active, 
 .btn-sm:active, 
 .btn-block:active {
-  outline: none !important;
+  outline: none;
   box-shadow: none;
-  background-color: #fff;
-  border: 1px solid #b8b9bca1 !important;
-  color: #b8b9bc;
-  font-size: 1rem;
-  font-weight: 500
+  background-color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.541) !important;
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15) !important;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.15) !important;
+  color: #0000004f
+}
+
+.delete-btn,
+.delete-btn:hover,
+.delete-btn:focus,
+.delete-btn:active {
+  background: #ff6e6e;
+  border: 1px solid #ff6e6e !important;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none
+}
+
+#edit-profile #usersPhoto button {
+  background: #FF2F2F;
+  color: #fff;  
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .slick-slide {
     padding: 5px
 }
 
-/* #cancelServiceButton0 {
-  margin: 0px;
-  padding:5px 15px;
-  height:31px;
-  width: 100%;
-  background: #FF2F2F;
-  border: none;
-  color: #fff
-} */
-
 .marker_chect {
-    margin: auto;
-    width: 100%
+  margin: auto;
+  width: 100%
 }
 
 .fancybox-button--zoom,
@@ -371,85 +428,6 @@ _______________________________________________________ */
   margin: 3% 0
 }
 
-#support-tickets .new-support-tickets a,
-#edit-profile #new_service_as_sponsor, 
-#edit-profile #new_service_as_friend,
-#technical-support form button,
-#search-section .find-btn button {
-  background: #fff;
-  border: 1px solid #fff !important;
-  border-radius: .25rem;
-  padding: .5rem .75rem;
-  text-align: center;
-  text-decoration: none;
-  -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-  box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
-  color: #0000004f;
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 1.75rem auto  
-}
-
-#support-tickets .new-support-tickets a:hover,
-#edit-profile #new_service_as_sponsor:hover, 
-#edit-profile #new_service_as_friend:hover,
-#technical-support form button:hover,
-#search-section .find-btn button:hover {
-  background: #b8b9bc;
-  border: 1px solid #b8b9bc !important;
-  color: #fff
-}
-
-#edit-profile .btn-save {
-  background-color: #b8b9bc;
-  border: 1px solid #b8b9bca1 !important;
-  color: #fff;  
-}
-
-#edit-profile .btn-save:hover {
-  background: #FFF;
-  border: 1px solid #b8b9bca1 !important;
-  color: #b8b9bca1;
-}
-
-
-#edit-profile #addNewPhoto button {
-  background: #FFF;
-  border: 1px solid #b8b9bca1 !important;
-  color: #b8b9bca1;
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin: 1.75rem auto
-}
-
-#edit-profile #addNewPhoto button:hover {
-  background: #b8b9bc;
-  color: #fff;
-}
-
-#edit-profile #usersPhoto button {
-  background: #FF2F2F;
-  color: #fff;  
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-.delete-btn,
-.delete-btn:hover,
-.delete-btn:focus,
-.delete-btn:active {
-  background: #ff6e6e;
-  border: 1px solid #ff6e6e !important;
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 500;
-  border: none;
-  text-decoration: none;
-  outline: none;
-  box-shadow: none
-}
-
 /* HEADER Section
 _______________________________________________________ */
 
@@ -521,9 +499,11 @@ header #navbarSupportedContent ul li a.dropdown-toggle {
 }
 
 header #payButton {
-  font-size: 1rem;
+  font-size: .8rem;
   border: none !important;
-  background: none
+  background: none;
+  margin: auto 0;
+  color: #fff;
 }
 
 header #payButton:hover {
@@ -1218,8 +1198,11 @@ _______________________________________________________ */
   margin: 1% 0
 }
 
-#view-profile .links_user #complainButton {
-  margin: 0
+#view-profile #write-link,
+#view-profile #add-to-favorites,
+#view-profile #complainButton,
+#view-profile #to-blacklist {
+  font-size: 0.85em
 }
 
 #view-profile .links_user a {
@@ -1335,12 +1318,16 @@ _______________________________________________________ */
 #search-section label {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #b8b9bc;
+  color: #2387cfb5;
   margin: .75rem 0 .34em 0
 }
 
 #search-section #user_search {
   margin: 6% 0 0 0
+}
+
+#search-section .find-btn {
+  margin: 5% 0 0
 }
 
 
@@ -1483,6 +1470,14 @@ _______________________________________________________ */
 /* EDIT PROFILE Section
 _______________________________________________________ */
 
+#edit-profile .btn-save {
+  margin: 3% auto;
+  background: #6cdda4;
+  border: 1px solid #6cdda4 !important;
+  border-radius: .25rem;
+  color: #fff;
+}
+
 #edit-profile .edit-profile-card {
   background: #fff;
   border-radius: .25rem;
@@ -1507,13 +1502,14 @@ _______________________________________________________ */
 }
 
 #edit-profile .alert-warning {
+  background-color: #ffffff;
   padding: .75rem 1.25rem
 }
 
 #edit-profile .alert-warning {
   width: 100%;
   font-weight: 500;
-  color: #2387CF;
+  color: #2387cfb5;
   border: none;
   margin: 0 0 2rem 0;
   -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
@@ -1547,7 +1543,7 @@ _______________________________________________________ */
 
 #edit-profile .acc-settings-textfield .set-location {
   width: 40%;
-  background-color: #2387CF
+  margin: auto 0
 }
 
 #edit-profile .newCity,
@@ -1610,7 +1606,7 @@ _______________________________________________________ */
 }
 
 #edit-profile .select_status_service {
-  width: 14%;
+  width: 11%;
   padding: 0px !important
 }
 
@@ -1630,7 +1626,7 @@ _______________________________________________________ */
 
 #edit-profile .edit_profile_general_block label {
   width: 30%;
-  color: #2387CF;
+  color: #2387cfb5;
   font-weight: 600;
   margin: auto 0
 }
@@ -1697,7 +1693,7 @@ display: inline-flex;
 }
 
 #edit-profile .form-control-sm {
-  height: calc(1.5em + .5rem + 7px)
+  height: calc(1.5em + .5rem + 9px)
 }
 
 #edit-profile .preview {
@@ -1743,7 +1739,7 @@ _______________________________________________________ */
 
 #technical-support form label {
   font-size: 1.15rem;
-  color: #2387CF;
+  color: #2387cfb5;
   font-weight: 600
 }
 
@@ -2001,24 +1997,6 @@ _______________________________________________________ */
   box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15)
 }
 
-#favorites .favorites-item button {
-  background: none;
-  border: none !important;
-  color: rgba(35, 135, 207, 0.63)
-}
-
-#favorites .favorites-item button:active,
-#favorites .favorites-item button:focus {
-  outline: none !important;
-  border: none !important;
-  box-shadow: none
-}
-
-#favorites .favorites-item button i {
-  font-size: 1.25rem;
-  margin: auto 0
-}
-
 #blacklist .blacklist-user-activity,
 #favorites .favorites-user-activity {
   color: rgba(68, 68, 68, 0.39);
@@ -2071,24 +2049,6 @@ _______________________________________________________ */
   -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15)
-}
-
-#blacklist .blacklist-item button {
-  background: none;
-  border: none !important;
-  color: rgba(35, 135, 207, 0.63)
-}
-
-#blacklist .blacklist-item button:active,
-#blacklist .blacklist-item button:focus {
-  outline: none !important;
-  border: none !important;
-  box-shadow: none
-}
-
-#blacklist .blacklist-item button i {
-  font-size: 1.25rem;
-  margin: auto 0
 }
 
 /* FOOTER Section
@@ -2422,8 +2382,10 @@ _______________________________________________________ */
     padding: .3rem .75rem
   }
 
-  #view-profile .links_user button,
-  #view-profile .links_user #complainButton {
+  #view-profile #write-link, 
+  #view-profile #add-to-favorites, 
+  #view-profile #complainButton, 
+  #view-profile #to-blacklist {
     font-size: 0.7rem
   }
 
@@ -2531,9 +2493,11 @@ _______________________________________________________ */
     margin: auto 2% auto auto
   }
 
-  #view-profile .links_user button, 
-  #view-profile .links_user #complainButton {
-    font-size: 1.2rem
+  #view-profile #write-link, 
+  #view-profile #add-to-favorites, 
+  #view-profile #complainButton, 
+  #view-profile #to-blacklist {
+    font-size: 1.1rem
   }
 
   #last-active-users .users-online-indicator {
@@ -2733,6 +2697,13 @@ _______________________________________________________ */
     height: 480px
   }
 
+  #view-profile #write-link, 
+  #view-profile #add-to-favorites, 
+  #view-profile #complainButton, 
+  #view-profile #to-blacklist {
+    font-size: .75rem
+  }
+
 }
 
 @media all and (min-width: 576px) {
@@ -2836,11 +2807,13 @@ _______________________________________________________ */
     flex-direction: column
   }
 
-  #view-profile .links_user button,
-  #view-profile .links_user #complainButton {
-    font-size: 1rem;
+  #view-profile #write-link, 
+  #view-profile #add-to-favorites, 
+  #view-profile #complainButton, 
+  #view-profile #to-blacklist {
+    font-size: 1rem !important;
     margin-top: 3%;
-    margin-right: 0
+    width: 100%
   }
 
   #blacklist .blacklist-user-image,

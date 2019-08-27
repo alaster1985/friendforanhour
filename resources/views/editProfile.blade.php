@@ -61,7 +61,7 @@
                             {{-- Set User Location Field --}}
                             <div class="col-lg-12 acc-settings-textfield">
                                 <label>Мое местоположени:</label>
-                                <button class="btn btn-primary btn-md btn-block set-location" type="button" data-toggle="modal" data-target="#myModal">Указать на карте</button>
+                                <button class="btn btn-md btn-block set-location" type="button" data-toggle="modal" data-target="#myModal">Указать на карте</button>
                             </div>
     
                             {{-- Nickname Field --}}
@@ -221,7 +221,7 @@
                                 </tr>
                             @endforeach
                         </table>
-                        <button id="new_service_as_sponsor" class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block" type="button">Добавить услугу</button>
+                        <button id="new_service_as_sponsor" class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-md btn-block" type="button">Добавить услугу</button>
                     </div>
                     <div class="table_services_as_sponsor row">
                         <h2>Сделаю за деньги:</h2>
@@ -270,9 +270,9 @@
                                 </tr>
                             @endforeach
                         </table>
-                        <button id="new_service_as_friend" class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block" type="button">Добавить услугу</button>
+                        <button id="new_service_as_friend" class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-md btn-block" type="button">Добавить услугу</button>
                     </div>
-                    <button class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block shadow-none btn-save" type="submit">Сохранить</button>
+                    <button class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-md btn-block shadow-none btn-save" type="submit">Сохранить</button>
                 </form>
                 <form id="updatePhotoForm">
                     <table border="1" id="usersPhoto">
@@ -292,10 +292,10 @@
                             <img id="preview" class="preview" height="300px" src="{{asset('images/preview.png')}}" alt="your new photo">
                         </div>
                         <div class="cancel-img-upload">
-                            <button class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block" id="cancelPreview" type="button">Отмена</button>
+                            <button class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-md btn-block" id="cancelPreview" type="button">Отмена</button>
                         </div>                
                     </div>
-                    <button class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-primary btn-md btn-block shadow-none btn-save" type="submit">Сохранить</button>
+                    <button class="col-lg-3 col-md-4 col-sm-5 col-9 btn btn-md btn-block shadow-none btn-save" type="submit">Сохранить</button>
                 </form>
                 <div class="alert-danger" style="display:none; color: red;"></div>
             </div>

@@ -33,14 +33,23 @@ $(document).ready(function () {
                 } else {
                     var userCardArr = JSON.parse(data);
 
-                    userCardArr.forEach(function(item, i, arr) {
-                        alert( i + ": " + item + " (массив:" + arr + ")" );
+                    userCardArr.forEach(function(key, i) {
+                        // alert( key + [i] );
+
+                        for(var i = 0 in userCardArr) {                            
+                            console.log(userCardArr[i]);                           
+
+                            // $("#tinder--cards").html(
+                            //     "<div class='tinder--card'>" +
+                            //         "<img>" +
+                            //         "<h3></h3>" +
+                            //         "<p>This is a demo for Tinder like swipe cards</p>" +
+                            //     "</div>"
+                            // );
+                        }
                     });
 
-                    for(var i = 0 in userCardArr) {
-                            
-                        console.log(userCardArr[i]);
-                    }
+                    
 
                     // for (var userCard in userCardArr) {
                     //     $.each(userCard, function(index, value) {
