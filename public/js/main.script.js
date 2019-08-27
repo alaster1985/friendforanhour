@@ -36,7 +36,7 @@ $(document).ready(function () {
                     userCardArr.forEach(function(key, i) {
                         // alert( key + [i] );
 
-                        for(var i = 0 in userCardArr) {                            
+                        for(var i = 0 in userCardArr[i]) {                            
                             console.log(userCardArr[i]);                           
 
                             // $("#tinder--cards").html(
