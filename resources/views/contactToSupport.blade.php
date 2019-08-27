@@ -3,7 +3,10 @@
     <div class="container">
         {{-- <h2>Поддержка:</h2> --}}
         @if ($errors)
-            <div class="error" style="display: block; color: red">{{($errors->first())}}</div>
+            <div class="error">{{($errors->first())}}</div>
+        @endif
+        @if(session()->has('message'))
+            <div class="alert alert-success" align="center">{{ session()->get('message') }}</div>
         @endif
         <div class="col-lg-8 justify-content-center technical-support-contact-form">
             <form method="POST" enctype="multipart/form-data" action="{{Route('sendTicket')}}">
@@ -23,10 +26,7 @@
                 @endauth
                 <button class="col-lg-2 btn btn-primary btn-md btn-block" type="submit">Отправить</button>
             </form>
-        </div>
-        @if(session()->has('message'))
-            <div class="alert alert-success" align="center">{{ session()->get('message') }}</div>
-        @endif
+        </div>        
     </div>
 </section>
 @include('layouts.footer')
