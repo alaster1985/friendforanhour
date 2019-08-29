@@ -56,7 +56,8 @@
     <script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.validate.min.js')}}"></script>
     @guest
-    <script type="text/javascript" src="http://ulogin.ru/js/ulogin.js"></script>
+    {{--<script type="text/javascript" src="http://ulogin.ru/js/ulogin.js"></script>--}}
+    <script type="text/javascript" src="//ulogin.ru/js/ulogin.js"></script>
     @endguest
     <script type="text/javascript" src="{{asset('js/forInputData.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/forComplain.js')}}"></script>
