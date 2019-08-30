@@ -32,14 +32,26 @@ function initialize() {
 
     $.post('getProfilesByChordsAndRadius', data, function (data) {
 
-      console.log(JSON.parse(data));
+      //console.log(JSON.parse(data));
+      
 
-      getProfilesByChords = (JSON.parse(data));
+      getProfilesByChords = JSON.parse(data);
+      $.each(getProfilesByChords, function(id, obj) {
+        console.log(obj.profile_address.latitude);
+        console.log(obj.profile_address.longitude);
+        var loc = {
+          lat : obj.profile_address.latitude, 
+          lng : obj.profile_address.longitude 
+        };
+        
+        addMarker(loc, map);
+      });
+      
 
-      for (var i = 0 in getProfilesByChords) {
-        console.log(getProfilesByChords[i]);
-        // addMarker(getProfilesByChords[i].profile_address.latitude + getProfilesByChords[i].profile_address.longitude);
-      }
+      // for (var i = 0 in getProfilesByChords) {
+
+      //   addMarker(getProfilesByChords[i].profile_address.latitude + getProfilesByChords[i].profile_address.longitude, map);
+      // }
       
 
       // for (var i = 0 in getProfilesByChords) {
