@@ -174,6 +174,7 @@
                         </div>
                         
                     </div>
+
                     <div class="table_services_as_sponsor row">
                         <h2>Заплачу за:</h2>
                         <table border="1" class="services_as_sponsor col-lg-12">
