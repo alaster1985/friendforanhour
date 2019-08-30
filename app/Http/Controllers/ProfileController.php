@@ -117,4 +117,18 @@ class ProfileController extends Controller
     {
         return json_encode(Profile::with(['profileAddress', 'serviceList', 'profilePhoto', 'gender'])->get());
     }
+
+    public function getProfilesByChordsAndRadius(Request $request)
+    {
+        if (empty($request['longitude']) || empty($request['latitude'])) {
+            $longitude = 37.61556;
+            $latitude = 55.75222;
+        } else {
+            $longitude = $request['longitude'];
+            $latitude = $request['latitude'];
+        }
+        $radius = $request['radius'] ?? 25;
+        $result = Profile::getProfilesByChordsAndRadius($longitude, $latitude, $radius);
+        return $result;
+    }
 }

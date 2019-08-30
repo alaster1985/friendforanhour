@@ -343,4 +343,18 @@ class Profile extends Model implements ViewableContract
         return ProfileAddress::updateProfileLocationByProfileId($profile->id, $longitude, $latitude);
     }
 
+    public static function getProfilesByChordsAndRadius($longitude, $latitude, $radius)
+    {
+        $result = Profile::with(['profileAddress', 'serviceList', 'profilePhoto', 'gender'])
+            ->where(function ($query) use ($latitude, $longitude, $radius) {
+                $query->whereHas('profileAddress', function ($q) use ($latitude, $longitude, $radius) {
+                    $q->whereRaw(DB::raw("(6371 * acos( cos( radians(" . $latitude . ") ) * cos( radians( latitude ) )  *
+                          cos( radians( longitude ) - radians(" . $longitude . ") ) + sin( radians(" . $latitude . ") ) * sin(
+                          radians( latitude ) ) ) ) < " . $radius));
+                });
+            })
+            ->get();
+        return json_encode($result);
+    }
+
 }
