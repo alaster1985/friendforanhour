@@ -1,9 +1,22 @@
 var map, infoWindow;
 
+var markerIconRed = {
+  url: 'https://img.icons8.com/office/40/000000/marker.png'
+};
+
+var markerIconBlue = {
+  url: 'https://img.icons8.com/ultraviolet/40/000000/marker.png'
+};
+
 function addMarker(location, map) {
-  var marker = new google.maps.Marker({
+  new google.maps.Marker({
+    map: map,
+    animation: google.maps.Animation.DROP,
     position: location,
-    map: map
+    icon: markerIconRed,
+    fillOpacity: 0.8,
+    scale: 0.08,
+    strokeWeight: 1,
   });
 };
 
@@ -16,12 +29,80 @@ function initialize() {
       radius: 25,
       _token: $('meta[name="csrf-token"]').attr('content'),
     };
-    $.post('getProfilesByChordsAndRadius', data, function (data) {
-      console.log(JSON.parse(data))
-    })
-  })
 
-}
+    $.post('getProfilesByChordsAndRadius', data, function (data) {
+
+      console.log(JSON.parse(data));
+
+      getProfilesByChords = (JSON.parse(data));
+
+      for (var i = 0 in getProfilesByChords) {
+        console.log(getProfilesByChords[i]);
+        // addMarker(getProfilesByChords[i].profile_address.latitude + getProfilesByChords[i].profile_address.longitude);
+      }
+      
+
+      // for (var i = 0 in getProfilesByChords) {
+      //   para.innerHTML = 
+      //     '<div id="profile_map_marker">'+
+      //       '<div class="card">' +
+      //         '<div class="column no-gutters" style="height: 100%;">' +
+      //           '<div class="col-lg-12" style="overflow: hidden;">' +
+      //             '<a href="profile?prf=1" class="profile-img-link">' +
+      //               '<img src="http://friendforanhour/profilepictures/1/fennec1.jpg" class="user_image card-img">' +
+      //             '</a>' +
+      //           '</div>' + 
+      //           '<div class="col-lg-12">' +
+      //             '<div class="card-body">' +
+      //               '<div class="last-active-users-about">' +
+
+      //                 '<h6 class="card-title">' +
+      //                   '<a href="profile?prf=1">' +
+      //                     '<span class="name_user_cart">Спиридон,<span> 19</span></span>' +
+      //                   '</a>' +
+      //                 '</h6>' +
+
+      //                 '<div class="name_serwise_cart name_serwise">' +
+      //                   '<span class="city_user_cart">Волгоград</span>' +
+      //                 '</div>' +
+
+      //                 '<div class="name_serwise_cart name_serwise">' +
+      //                   '<span class="title_serwise">Заплачу за:</span>' +
+      //                 '</div>' +
+                        
+      //                 '<div class="name_serwise_cart name_serwise">' +
+      //                   '<span>хочу массаж1:</span> <span class="serwise_cart_price">900р</span>' +
+      //                 '</div>' +
+
+      //                 '<div class="name_serwise_cart name_serwise">' +
+      //                   '<span>угощусь пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
+      //                 '</div>' +
+
+      //                 '<div class="name_serwise_cart name_serwise">' +
+      //                   '<span class="title_serwise">Сделаю за деньги:</span>' +
+      //                 '</div>' +
+                        
+      //                 '<div class="name_serwise_cart name_serwise">' +
+      //                   '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
+      //                 '</div>' +
+
+      //                 '<div class="name_serwise_cart name_serwise">' +
+      //                   '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
+      //                 '</div>' +
+
+      //                 '<div class="name_serwise_cart name_serwise">' +
+      //                   '<span>угощу пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
+      //                 '</div>' +                                
+                        
+      //               '</div>' +
+      //             '</div>' +
+      //           '</div>' +
+      //         '</div>' +
+      //       '</div>' +
+      //     '</div>';
+      });
+    });
+};
 
 function initUserMap() {
 
@@ -78,7 +159,7 @@ function initUserMap() {
 
       addMarker(pos, map);  
     }
-    )};
+  )};
 };
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -157,59 +238,4 @@ function initMap(userLat, userlng) {
 // }
 
 // var contentString = 
-//   '<div id="profile_map_marker">'+
-//     '<div class="card">' +
-//       '<div class="column no-gutters" style="height: 100%;">' +
-//         '<div class="col-lg-12" style="overflow: hidden;">' +
-//           '<a href="profile?prf=1" class="profile-img-link">' +
-//             '<img src="http://friendforanhour/profilepictures/1/fennec1.jpg" class="user_image card-img">' +
-//           '</a>' +
-//         '</div>' + 
-//         '<div class="col-lg-12">' +
-//           '<div class="card-body">' +
-//             '<div class="last-active-users-about">' +
-
-//               '<h6 class="card-title">' +
-//                 '<a href="profile?prf=1">' +
-//                   '<span class="name_user_cart">Спиридон,<span> 19</span></span>' +
-//                 '</a>' +
-//               '</h6>' +
-
-//               '<div class="name_serwise_cart name_serwise">' +
-//                 '<span class="city_user_cart">Волгоград</span>' +
-//               '</div>' +
-
-//               '<div class="name_serwise_cart name_serwise">' +
-//                 '<span class="title_serwise">Заплачу за:</span>' +
-//               '</div>' +
-                
-//               '<div class="name_serwise_cart name_serwise">' +
-//                 '<span>хочу массаж1:</span> <span class="serwise_cart_price">900р</span>' +
-//               '</div>' +
-
-//               '<div class="name_serwise_cart name_serwise">' +
-//                 '<span>угощусь пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
-//               '</div>' +
-
-//               '<div class="name_serwise_cart name_serwise">' +
-//                 '<span class="title_serwise">Сделаю за деньги:</span>' +
-//               '</div>' +
-                
-//               '<div class="name_serwise_cart name_serwise">' +
-//                 '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
-//               '</div>' +
-
-//               '<div class="name_serwise_cart name_serwise">' +
-//                 '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
-//               '</div>' +
-
-//               '<div class="name_serwise_cart name_serwise">' +
-//                 '<span>угощу пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
-//               '</div>' +                                
-                
-//             '</div>' +
-//           '</div>' +
-//         '</div>' +
-//       '</div>' +
-//     '</div>' +
-//   '</div>';
+//   
