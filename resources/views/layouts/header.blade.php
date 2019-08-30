@@ -22,6 +22,8 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}"/>
 
+        <script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js')}}"></script>
+
     </head>
 
     <body>
