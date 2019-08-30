@@ -73,7 +73,7 @@
             <label>Пол:</label>
             <select class="form-control form-control-md" name="gender">
               @foreach(Gender::all() as $gender)
-              <option value="{{$gender->id}}">{{$gender->gender}}</option>
+              <option value="{{$gender->id}}">{{$gender->gender_rus}}</option>
               @endforeach
             </select>
           </div>

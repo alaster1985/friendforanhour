@@ -18,6 +18,7 @@ Route::post('sendTicket', 'TicketController@sendTicket')->name('sendTicket');
 Route::post('getAllProfiles', 'ProfileController@getAllProfiles')->name('getAllProfiles');
 
 Route::get('lara2', function () { return view('welcome2');});
+Route::get('testmap', function () { return view('testMap');});
 
 Route::get('ok', 'MainController@ok')->name('ok');
 Route::get('bad', 'MainController@bad')->name('bad');
