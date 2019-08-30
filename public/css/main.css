@@ -791,16 +791,6 @@ _______________________________________________________ */
   position: relative
 }
 
-#auth .btn {
-  outline: none !important;
-  box-shadow: none;
-  background-color: #f89911;
-  border: 1px solid #f89911;
-  color: #fff;
-  font-size: .85rem;
-  font-weight: 500;
-}
-
 /* MAP Section
 _______________________________________________________ */
 
@@ -1417,7 +1407,17 @@ _______________________________________________________ */
   transition: all 0.3s ease-in-out;
   cursor: -webkit-grab;
   cursor: -moz-grab;
-  cursor: grab;
+  cursor: grab
+}
+
+.tinder-cover {
+  background: #2387cf;
+  color: #fff
+}
+
+.tinder-cover:hover {
+  background: #2e90d8;
+  color: #fff
 }
 
 .moving.tinder--card {
@@ -1437,6 +1437,11 @@ _______________________________________________________ */
   font-size: 32px;
   padding: 0 16px;
   pointer-events: none;
+}
+
+.tinder-cover h3 {
+  font-size: 3rem;
+  margin: 50% 0
 }
 
 .tinder--card p {

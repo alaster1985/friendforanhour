@@ -1,9 +1,10 @@
 'use strict';
 
 var tinderContainer = document.querySelector('.tinder');
-var allCards = document.querySelectorAll('.tinder--card');
+
 var nope = document.getElementById('nope');
 var love = document.getElementById('love');
+var allCards = document.querySelectorAll('.tinder--card');
 
 function initCards(card, index) {
   var newCards = document.querySelectorAll('.tinder--card:not(.removed)');
