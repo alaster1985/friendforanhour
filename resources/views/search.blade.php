@@ -103,11 +103,20 @@
   
     <div id="tinder--cards" class="tinder--cards">
         
-      <div class="tinder--card">
-        <img src="https://placeimg.com/600/300/man">
-        <h3>Demo card 1</h3>
-        <p>This is a demo for Tinder like swipe cards</p>
+      <div class="tinder--card tinder-cover">
+        <h3>Slide to find a friends</h3>
       </div>
+      <div class="tinder--card tinder-cover">
+        <h3>Slide to find a friends</h3>
+      </div>
+      <div class="tinder--card tinder-cover">
+        <h3>Slide to find a friends</h3>
+      </div>
+      <div class="tinder--card tinder-cover">
+        <h3>Slide to find a friends</h3>
+      </div>
+
+    </div>
         
     <div class="tinder--buttons">
       <button id="nope"><i class="fa fa-remove"></i></button>
@@ -115,8 +124,5 @@
     </div>
   </div>              
 </section>
-
-<script type="text/javascript" src="{{asset('js/hammer.min.js')}}" async></script>
-<script type="text/javascript" src="{{asset('js/search-user-slider.js')}}" async></script>
 
 @include('layouts.footer')

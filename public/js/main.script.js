@@ -1,71 +1,31 @@
 $(document).ready(function () {
 
+    // Search User Slider
     $('#user_search').submit(function () {
         $('.alert-danger').empty();
-        // $.ajax({
-        //     url: 'filter',
-        //     type: "post",
-        //     data: $("#user_search").serialize(),
-        //     success: function (data) {
-        //         console.log(data)
-        //         var userCardArr = JSON.parse(data);
-        //         console.log(userCardArr);
-        //         $('#user_search').hide('slow');
-        //         $('#search-section h2').hide('slow');
-        //         $('#user_search_result').removeClass('none');
-        //     },
-        //     error: function (data) {
-        //         console.log(123)
-        //         $.each(data.responseJSON.errors, function (key, value) {
-        //             $('.alert-danger').show();
-        //             $('.alert-danger').append('<p>' + value + '</p>');
-        //         });
-        //     }
-        // });
+        
         $.post('filter', $("#user_search").serialize(),
             function (data) {
-
                 if (data.success == false) {
                     $.each(data.errors, function (key, value) {
                         $('.alert-danger').show();
                         $('.alert-danger').append('<p>' + value + '</p>');
                     });
                 } else {
+
                     var userCardArr = JSON.parse(data);
+                        
+                    for (var i = 0 in userCardArr) {
+                        var para = document.createElement("div");
+                        para.classList = "tinder--card";
+                        para.innerHTML = 
+                            '<img src="' + userCardArr[i].profile_photo[0].photo_path + '">' +
+                            '<h3>' + userCardArr[i].first_name + '</h3>' +
+                            '<p>' + userCardArr[i].about + '</p>';
+                        document.getElementById('tinder--cards').appendChild(para);
 
-                    userCardArr.forEach(function(key, i) {
-                        // alert( key + [i] );
-
-                        for(var i = 0 in userCardArr[i]) {                            
-                            console.log(userCardArr[i]);                           
-
-                            // $("#tinder--cards").html(
-                            //     "<div class='tinder--card'>" +
-                            //         "<img>" +
-                            //         "<h3></h3>" +
-                            //         "<p>This is a demo for Tinder like swipe cards</p>" +
-                            //     "</div>"
-                            // );
-                        }
-                    });
-
-                    
-
-                    // for (var userCard in userCardArr) {
-                    //     $.each(userCard, function(index, value) {
-                    //         var el = document.getElementById('tinder--cards');
-                    //         el.innerHTML = 
-                    //             '<div id="tinder--card">' +
-                    //                 '<img src="">' +
-                    //                 '<h3></h3>' +
-                    //                 '<p>This is a demo for Tinder like swipe cards</p>' +
-                    //             '</div>';
-                    //     });
-                    // }
-
-                    
-
-                    console.log(userCardArr);
+                        // console.log(userCardArr[i]);
+                    }
                     $('#user_search').hide('slow');
                     $('#search-section h2').hide('slow');
                     $('#user_search_result').removeClass('none');
