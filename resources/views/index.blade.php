@@ -116,7 +116,7 @@
                                                 <form method="POST" action="{{Route('addToFriends')}}" enctype="multipart/form-data">
                                                     <input type="hidden" name="friend_id" value="{{$lProfile->id}}">
                                                 @csrf
-                                                    <button class="btn btn-primary btn-sm btn-block" type="submit">Написать сообщение</button>
+                                                    <button class="btn btn-sm btn-block" type="submit">Написать сообщение</button>
                                                 </form>
                                             @endif                                        
                                         </span>  
@@ -124,7 +124,7 @@
                                                                           
                                     @guest                                           
                                         <div class="bottom-card-section">
-                                            <button class="btn btn-primary btn-md btn-block offline-write-btn" type="submit">
+                                            <button class="btn btn-md btn-block offline-write-btn" type="submit">
                                                 <a class="forChat" href="javascript:void(0);">Написать сообщение</a>
                                             </button>
                                         </div>

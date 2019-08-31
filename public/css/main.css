@@ -222,7 +222,6 @@ _______________________________________________________ */
 
 #edit-profile .btn-save,
 #blacklist .blacklist-item button,
-#favorites .favorites-item button,
 #edit-profile #addNewPhoto button,
 #support-tickets .new-support-tickets a,
 #edit-profile #new_service_as_sponsor, 
@@ -230,11 +229,10 @@ _______________________________________________________ */
 #technical-support form button,
 #search-section .find-btn button,
 .btn, 
-.btn-primary, 
 .btn-sm, 
 .btn-block {
-  background: #2387cfb5;
-  border: 1px solid #2387cf21;
+  background-color: #2387CF;
+  border: 1px solid #2387CF;
   border-radius: .25rem;
   padding: .5rem .75rem;
   text-align: center;
@@ -243,13 +241,11 @@ _______________________________________________________ */
   -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   color: #fff;
-  font-size: 1rem;
-  font-weight: 500
+  font-size: 1rem
 }
 
 #edit-profile .btn-save:hover,
 #blacklist .blacklist-item button:hover,
-#favorites .favorites-item button:hover
 #edit-profile #addNewPhoto button:hover,
 #support-tickets .new-support-tickets a:hover,
 #edit-profile #new_service_as_sponsor:hover, 
@@ -257,7 +253,6 @@ _______________________________________________________ */
 #technical-support form button:hover,
 #search-section .find-btn button:hover,
 .btn:hover, 
-.btn-primary:hover, 
 .btn-sm:hover, 
 .btn-block:hover {
   outline: none;
@@ -271,7 +266,6 @@ _______________________________________________________ */
 
 #edit-profile .btn-save:focus,
 #blacklist .blacklist-item button:focus,
-#favorites .favorites-item button:focus,
 #edit-profile #addNewPhoto button:focus,
 #support-tickets .new-support-tickets a:focus,
 #edit-profile #new_service_as_sponsor:focus, 
@@ -279,7 +273,6 @@ _______________________________________________________ */
 #technical-support form button:focus,
 #search-section .find-btn button:focus,
 .btn:focus, 
-.btn-primary:focus, 
 .btn-sm:focus, 
 .btn-block:focus {
   outline: none;
@@ -294,7 +287,6 @@ _______________________________________________________ */
 
 #edit-profile .btn-save:active,
 #blacklist .blacklist-item button:active,
-#favorites .favorites-item button:active,
 #edit-profile #addNewPhoto button:active,
 #support-tickets .new-support-tickets a:active,
 #edit-profile #new_service_as_sponsor:active, 
@@ -302,7 +294,6 @@ _______________________________________________________ */
 #technical-support form button:active,
 #search-section .find-btn button:active,
 .btn:active, 
-.btn-primary:active, 
 .btn-sm:active, 
 .btn-block:active {
   outline: none;
@@ -1102,10 +1093,8 @@ _______________________________________________________ */
 }
 
 #view-profile .about_user_block {
-  width: 100%;
-  height: 100%;
+  margin: 0 0 5%;
   padding: 4%;
-  margin: 4% 0;
   background: #fff;
   border-radius: .25rem;
   -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
@@ -1125,10 +1114,10 @@ _______________________________________________________ */
 }
 
 #view-profile .view-profile-character {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
   -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
@@ -1198,7 +1187,7 @@ _______________________________________________________ */
   display: flex;
   flex-shrink: inherit;
   justify-content: space-between;
-  margin: 1% 0
+  margin: 6% 0 7%
 }
 
 #view-profile #write-link,
@@ -1321,7 +1310,7 @@ _______________________________________________________ */
 #search-section label {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #2387cfb5;
+  color: #2387CF;
   margin: .75rem 0 .34em 0
 }
 
@@ -2030,6 +2019,12 @@ _______________________________________________________ */
   -webkit-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   -moz-box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15);
   box-shadow: 0px 0px 19px -2px rgba(0,0,0,0.15)
+}
+
+#favorites .favorites-item button {
+  background: none !important;
+  border: none;
+  color: #2387CF
 }
 
 #blacklist .blacklist-user-activity,

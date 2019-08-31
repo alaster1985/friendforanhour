@@ -48166,7 +48166,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticStyle: { "text-align": "right" } }, [
       _c("input", {
-        staticClass: "btn btn-primary",
+        staticClass: "btn",
         attrs: { type: "submit", value: "Отправить" },
         on: { click: _vm.sendChat }
       })

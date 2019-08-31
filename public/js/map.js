@@ -1,4 +1,4 @@
-var map, infoWindow;
+var map, marker, contentString, infoWindow, activeInfoWindow;
 
 var markerIconRed = {
   url: 'https://img.icons8.com/office/40/000000/marker.png'
@@ -8,21 +8,23 @@ var markerIconBlue = {
   url: 'https://img.icons8.com/ultraviolet/40/000000/marker.png'
 };
 
+// ADD MARKER
+
 function addMarker(location, map) {
-  new google.maps.Marker({
+  marker = new google.maps.Marker ({
     map: map,
     animation: google.maps.Animation.DROP,
     position: location,
     icon: markerIconRed,
     fillOpacity: 0.8,
     scale: 0.08,
-    strokeWeight: 1,
+    strokeWeight: 1
   });
 };
 
 function initialize() {
-
   $(document).ready(function () {
+
     var data = {
       longitude: 44.619724,
       latitude: 48.802045,
@@ -32,98 +34,106 @@ function initialize() {
 
     $.post('getProfilesByChordsAndRadius', data, function (data) {
 
-      //console.log(JSON.parse(data));
-      
-
       getProfilesByChords = JSON.parse(data);
+
       $.each(getProfilesByChords, function(id, obj) {
-        console.log(obj.profile_address.latitude);
-        console.log(obj.profile_address.longitude);
+
+        console.log(obj);
+
         var loc = {
           lat : obj.profile_address.latitude, 
           lng : obj.profile_address.longitude 
         };
+
+        contentString = 
+          '<div id="profile_map_marker">'+
+            '<div class="card">' +
+              '<div class="column no-gutters" style="height: 100%;">' +
+                '<div class="col-lg-12" style="overflow: hidden;">' +
+                  '<a href="profile?prf=' + obj.id +'" class="profile-img-link">' +
+                    '<img src="' + obj.profile_photo[0].photo_path +'" class="user_image card-img">' +
+                  '</a>' +
+                '</div>' + 
+                '<div class="col-lg-12">' +
+                  '<div class="card-body">' +
+                    '<div class="last-active-users-about">' +
+
+                      '<h6 class="card-title">' +
+                        '<a href="profile?prf=' + obj.id +'">' +
+                          '<span class="name_user_cart">' + obj.first_name + '</span>' +
+                        '</a>' +
+                      '</h6>' +
+
+                      '<div id="pay_for" class="name_serwise_cart name_serwise">' +
+                        '<span class="title_serwise">Заплачу за:</span>' +
+                      '</div>' +
+
+                      '<div id="for_cash" class="name_serwise_cart name_serwise">' +
+                        '<span class="title_serwise">Сделаю за деньги:</span>' +
+                      '</div>' + 
+
+                    '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+
+        $.each(getProfilesByChords.service_list, function(id, obj) {
+
+          var serwiseCart = document.createElement("div");
+
+          serwiseCart.classList = "name_serwise_cart name_serwise"; 
         
+          if (obj.service_type_id == 2) {
+
+            this.serwiseCart.innerHTML = 
+            '<div class="name_serwise_cart name_serwise">' +
+              '<span>' + obj.service_list.service_name + ':</span> <span class="serwise_cart_price">' + obj.service_list.price + '</span>' +
+            '</div>';    
+  
+            $('#pay_for').insertAfter(serwiseCart);
+          } else if (obj.service_type_id == 1) {
+  
+            this.serwiseCart.innerHTML = 
+            '<div class="name_serwise_cart name_serwise">' +
+              '<span>' + obj.service_list.service_name + ':</span> <span class="serwise_cart_price">' + obj.service_list.price + '</span>' +
+            '</div>';
+  
+            $('#for_cash').after(serwiseCart);
+          }  
+
+        });
+          
         addMarker(loc, map);
-      });
+
+        var infoWindow = new google.maps.InfoWindow ({
+          content: contentString,
+          maxWidth: 200
+        });
       
+        google.maps.event.addListener(marker, "click", function() {
+          if (infoWindow) {infoWindow.close();}
+          infoWindow.open(map, this);
+        });
 
-      // for (var i = 0 in getProfilesByChords) {
+        google.maps.event.addListener(map, "click", function(event) {
+          infoWindow.close();
+        });
 
-      //   addMarker(getProfilesByChords[i].profile_address.latitude + getProfilesByChords[i].profile_address.longitude, map);
-      // }
-      
-
-      // for (var i = 0 in getProfilesByChords) {
-      //   para.innerHTML = 
-      //     '<div id="profile_map_marker">'+
-      //       '<div class="card">' +
-      //         '<div class="column no-gutters" style="height: 100%;">' +
-      //           '<div class="col-lg-12" style="overflow: hidden;">' +
-      //             '<a href="profile?prf=1" class="profile-img-link">' +
-      //               '<img src="http://friendforanhour/profilepictures/1/fennec1.jpg" class="user_image card-img">' +
-      //             '</a>' +
-      //           '</div>' + 
-      //           '<div class="col-lg-12">' +
-      //             '<div class="card-body">' +
-      //               '<div class="last-active-users-about">' +
-
-      //                 '<h6 class="card-title">' +
-      //                   '<a href="profile?prf=1">' +
-      //                     '<span class="name_user_cart">Спиридон,<span> 19</span></span>' +
-      //                   '</a>' +
-      //                 '</h6>' +
-
-      //                 '<div class="name_serwise_cart name_serwise">' +
-      //                   '<span class="city_user_cart">Волгоград</span>' +
-      //                 '</div>' +
-
-      //                 '<div class="name_serwise_cart name_serwise">' +
-      //                   '<span class="title_serwise">Заплачу за:</span>' +
-      //                 '</div>' +
-                        
-      //                 '<div class="name_serwise_cart name_serwise">' +
-      //                   '<span>хочу массаж1:</span> <span class="serwise_cart_price">900р</span>' +
-      //                 '</div>' +
-
-      //                 '<div class="name_serwise_cart name_serwise">' +
-      //                   '<span>угощусь пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
-      //                 '</div>' +
-
-      //                 '<div class="name_serwise_cart name_serwise">' +
-      //                   '<span class="title_serwise">Сделаю за деньги:</span>' +
-      //                 '</div>' +
-                        
-      //                 '<div class="name_serwise_cart name_serwise">' +
-      //                   '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
-      //                 '</div>' +
-
-      //                 '<div class="name_serwise_cart name_serwise">' +
-      //                   '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
-      //                 '</div>' +
-
-      //                 '<div class="name_serwise_cart name_serwise">' +
-      //                   '<span>угощу пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
-      //                 '</div>' +                                
-                        
-      //               '</div>' +
-      //             '</div>' +
-      //           '</div>' +
-      //         '</div>' +
-      //       '</div>' +
-      //     '</div>';
       });
     });
+  });
 };
 
 function initUserMap() {
 
-  infoWindow = new google.maps.InfoWindow;
   var pos;
 
-  // Try HTML5 geolocation.
-  if (navigator.geolocation) {
+  // HTML5 GEOLOCATION
+  if (navigator.geolocation) {    
     navigator.geolocation.getCurrentPosition(function(position) {
+
       pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
@@ -164,10 +174,77 @@ function initUserMap() {
           { "featureType": "water", "elementType": "geometry.fill", "stylers": [{"color": "#b9d3c2"}] },
           { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{"color": "#92998d"}] }
         ]   
-      }); 
-
+      });
 
       window.google.maps.event.addDomListener(window, 'load', initialize);
+
+      // contentString = 
+      //   '<div id="profile_map_marker">'+
+      //     '<div class="card">' +
+      //       '<div class="column no-gutters" style="height: 100%;">' +
+      //         '<div class="col-lg-12" style="overflow: hidden;">' +
+      //           '<a href="profile?prf=' + '" class="profile-img-link">' +
+      //             '<img src="' + '" class="user_image card-img">' +
+      //           '</a>' +
+      //         '</div>' + 
+      //         '<div class="col-lg-12">' +
+      //           '<div class="card-body">' +
+      //             '<div class="last-active-users-about">' +
+
+      //               '<h6 class="card-title">' +
+      //                 '<a href="profile?prf=' + '">' +
+      //                   '<span class="name_user_cart">' + '</span>' +
+      //                 '</a>' +
+      //               '</h6>' +
+
+      //               '<div class="name_serwise_cart name_serwise">' +
+      //                 '<span class="title_serwise">Заплачу за:</span>' +
+      //               '</div>' +
+                      
+      //               '<div class="name_serwise_cart name_serwise">' +
+      //                 '<span>хочу массаж1:</span> <span class="serwise_cart_price">900р</span>' +
+      //               '</div>' +
+
+      //               '<div class="name_serwise_cart name_serwise">' +
+      //                 '<span>угощусь пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
+      //               '</div>' +
+
+      //               '<div class="name_serwise_cart name_serwise">' +
+      //                 '<span class="title_serwise">Сделаю за деньги:</span>' +
+      //               '</div>' +
+                      
+      //               '<div class="name_serwise_cart name_serwise">' +
+      //                 '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
+      //               '</div>' +
+
+      //               '<div class="name_serwise_cart name_serwise">' +
+      //                 '<span>сделаю массаж1:</span> <span class="serwise_cart_price">600р</span>' +
+      //               '</div>' +
+
+      //               '<div class="name_serwise_cart name_serwise">' +
+      //                 '<span>угощу пивом1:</span> <span class="serwise_cart_price">беспл.</span>' +
+      //               '</div>' +                                
+                      
+      //             '</div>' +
+      //           '</div>' +
+      //         '</div>' +
+      //       '</div>' +
+      //     '</div>' +
+      //   '</div>';
+
+      // var myInfoWindow = new google.maps.InfoWindow ({
+      //   content: contentString,
+      //   maxWidth: 200
+      // });
+    
+      // google.maps.event.addListener(marker, "click", function() {
+      //   if (myInfoWindow) {myInfoWindow.close();}
+      //   myInfoWindow.open(map, this);
+      // });
+
+      // google.maps.event.addListener(map, "click", function(event) {
+      //   myInfoWindow.close();
+      // });
 
       addMarker(pos, map);  
     }
@@ -181,73 +258,3 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     'Error: Your browser doesn\'t support geolocation.');
   infoWindow.open(map);
 }
-
-function initMap(userLat, userlng) {
-  
-};
-
-
-
-
-// function initMap() {
-
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     center: { lat: 37.61556, lng: 55.75222 },
-//     mapTypeId: google.maps.MapTypeId.ROADMAP,
-//     scrollwheel:false,
-//     streetViewControl: false,
-//     mapTypeControl: false,
-//     panControl: false,
-//     zoomControlOptions: { position: google.maps.ControlPosition.LEFT_BOTTOM},
-//     zoom: 10
-//   });
-
-//   // Adds a marker to the map.
-//   function addMarker(location, map) {
-//     var marker = new google.maps.Marker({
-//       path: 'M242.606,0C142.124,0,60.651,81.473,60.651,181.955c0,40.928,13.504,78.659,36.31,109.075l145.646,194.183L388.252,291.03c22.808-30.416,36.31-68.146,36.31-109.075C424.562,81.473,343.089,0,242.606,0z M242.606,303.257c-66.989,0-121.302-54.311-121.302-121.302c0-66.989,54.313-121.304,121.302-121.304c66.991,0,121.302,54.315,121.302,121.304C363.908,248.947,309.598,303.257,242.606,303.257z',
-//       fillColor: '#F68727',
-//       fillOpacity: 0.8,
-//       scale: 0.08,
-//       strokeColor: '#F68727',
-//       strokeWeight: 1,
-//       position: location,
-//       label: labels[labelIndex++ % labels.length],
-//       map: map
-//     });
-//   }
-
-//   // infoWindow = new google.maps.InfoWindow;
-
-//   // // Try HTML5 geolocation.
-//   // if (navigator.geolocation) {
-//   //   navigator.geolocation.getCurrentPosition(function(position) {
-//   //     var pos = {
-//   //       lat: position.coords.latitude,
-//   //       lng: position.coords.longitude
-//   //     };
-
-//   //     infoWindow.setPosition(pos);
-//   //     infoWindow.setContent('Location found.');
-//   //     infoWindow.open(map);
-//   //     map.setCenter(pos);
-//   //   }, function() {
-//   //     handleLocationError(true, infoWindow, map.getCenter());
-//   //   });
-//   // } else {
-//   //   // Browser doesn't support Geolocation
-//   //   handleLocationError(false, infoWindow, map.getCenter());
-//   // }
-
-// }
-
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//   infoWindow.setPosition(pos);
-//   infoWindow.setContent(browserHasGeolocation ?
-//     'Error: The Geolocation service failed.' :
-//     'Error: Your browser doesn\'t support geolocation.');
-//   infoWindow.open(map);
-// }
-
-// var contentString = 
-//   

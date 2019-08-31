@@ -79,7 +79,7 @@
           </div>
 
           <div class="col-lg-2 find-btn">
-            <button class="btn btn-primary btn-md btn-block" type="submit">Искать</button>
+            <button class="btn btn-md btn-block" type="submit">Искать</button>
           </div>
 
         </div>
