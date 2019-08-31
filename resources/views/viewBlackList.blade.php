@@ -29,7 +29,7 @@
 
                             </div>
                             <a href="{{route('deleteFromBlackList',$nonGrata->id)}}"  onclick="return confirm('Вы действительно хотите удалить пользователя?');">
-                                <button type="button" class="btn btn-default btn btn-primary btn-md"><i
+                                <button type="button" class="btn btn-default btn btn-md"><i
                                             class="fas fa-times"></i></button>
                             </a>
 
